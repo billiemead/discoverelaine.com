@@ -69,12 +69,12 @@ class ET_Theme_Builder_Request {
 			return new self( self::TYPE_POST_TYPE_ARCHIVE, 'post', $id );
 		}
 
-		if ( is_post_type_archive() ) {
-			return new self( self::TYPE_POST_TYPE_ARCHIVE, $object->name, $id );
-		}
-
 		if ( is_category() || is_tag() || is_tax() ) {
 			return new self( self::TYPE_TERM, $object->taxonomy, $id );
+		}
+
+		if ( is_post_type_archive() ) {
+			return new self( self::TYPE_POST_TYPE_ARCHIVE, $object->name, $id );
 		}
 
 		if ( is_author() ) {
@@ -114,9 +114,9 @@ class ET_Theme_Builder_Request {
 	 *
 	 * @since 4.0
 	 *
-	 * @param string $type
-	 * @param string $subtype
-	 * @param integer $id
+	 * @param string  $type    Type.
+	 * @param string  $subtype Subtype.
+	 * @param integer $id      ID.
 	 */
 	public function __construct( $type, $subtype, $id ) {
 		$this->type    = $type;
@@ -164,8 +164,8 @@ class ET_Theme_Builder_Request {
 	 *
 	 * @since 4.0
 	 *
-	 * @param array $flat_settings
-	 * @param string $setting_id
+	 * @param array  $flat_settings Flat settings.
+	 * @param string $setting_id    Setting ID.
 	 *
 	 * @return array
 	 */
@@ -196,9 +196,9 @@ class ET_Theme_Builder_Request {
 	 *
 	 * @since 4.0
 	 *
-	 * @param array $flat_settings
-	 * @param string $a
-	 * @param string $b
+	 * @param array  $flat_settings Flat settings.
+	 * @param string $a             First template setting.
+	 * @param string $b             Second template setting.
 	 *
 	 * @return string
 	 */
@@ -295,10 +295,23 @@ class ET_Theme_Builder_Request {
 			}
 
 			if ( is_numeric( $a_piece ) ) {
-				return (float) $a_piece <= (float) $b_piece ? $a : $b;
+				$prioritized = (float) $a_piece <= (float) $b_piece ? $a : $b;
+			} else {
+				$prioritized = strcmp( $a, $b ) <= 0 ? $a : $b;
 			}
 
-			return strcmp( $a, $b ) <= 0 ? $a : $b;
+			/**
+			 * Filters the higher prioritized setting in a given pair that
+			 * has equal built-in priority.
+			 *
+			 * @since 4.2
+			 *
+			 * @param string $prioritized_setting
+			 * @param string $setting_a
+			 * @param string $setting_b
+			 * @param ET_Theme_Builder_Request $request
+			 */
+			return apply_filters( 'et_theme_builder_prioritized_template_setting', $prioritized, $a, $b, $this );
 		}
 
 		// We should only reach this point if $a and $b are equal so it doesn't
@@ -311,8 +324,8 @@ class ET_Theme_Builder_Request {
 	 *
 	 * @since 4.0
 	 *
-	 * @param array $flat_settings
-	 * @param string $setting_id
+	 * @param array  $flat_settings Flat settings.
+	 * @param string $setting_id    Setting ID.
 	 *
 	 * @return boolean
 	 */
@@ -321,6 +334,7 @@ class ET_Theme_Builder_Request {
 		$fulfilled = false;
 
 		if ( ! empty( $ancestor ) && isset( $ancestor['validate'] ) && is_callable( $ancestor['validate'] ) ) {
+			// @phpcs:ignore Generic.PHP.ForbiddenFunctions.Found
 			$fulfilled = call_user_func(
 				$ancestor['validate'],
 				$this->get_type(),
@@ -404,7 +418,7 @@ class ET_Theme_Builder_Request {
 		}
 
 		$__et_theme_builder_request_flat_settings = $flat_settings;
-		$applicable_template = array_reduce( $applicable_templates, array( $this, 'reduce_get_template' ), array() );
+		$applicable_template                      = array_reduce( $applicable_templates, array( $this, 'reduce_get_template' ), array() );
 		$__et_theme_builder_request_flat_settings = array();
 
 		if ( ! empty( $applicable_template ) ) {

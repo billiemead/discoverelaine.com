@@ -11,16 +11,6 @@ if ( ! defined( 'ABSPATH' ) ) {
 	die( 'Direct access forbidden.' );
 }
 
-// Include dependency for ResponsiveOptions.
-if ( ! function_exists( 'et_pb_responsive_options' ) ) {
-	require_once 'ResponsiveOptions.php';
-}
-
-// Include dependency for HoverOptions.
-if ( ! function_exists( 'et_pb_hover_options' ) ) {
-	require_once 'HoverOptions.php';
-}
-
 /**
  * Multi View Options helper class
  *
@@ -49,11 +39,11 @@ class ET_Builder_Module_Helper_MultiViewOptions {
 	protected $pattern = '/\{\{(.+)\}\}/';
 
 	/**
-	 * Module slug.
+	 * Module Object.
 	 *
-	 * @since 3.27.1
+	 * @since 4.10.0
 	 *
-	 * @var string
+	 * @var ET_Builder_Element
 	 */
 	protected $module;
 
@@ -212,7 +202,7 @@ class ET_Builder_Module_Helper_MultiViewOptions {
 	 * @return string
 	 */
 	public static function get_regex_suffix() {
-		return '/(__hover|__hover_enabled|_last_edited|_tablet|_phone)$/';
+		return '/(__hover|__hover_enabled|__sticky|__sticky_enabled|_last_edited|_tablet|_phone)$/';
 	}
 
 	/**
@@ -268,7 +258,7 @@ class ET_Builder_Module_Helper_MultiViewOptions {
 	 *
 	 * @since 3.27.1
 	 *
-	 * @param bool $include_enabled_suffix Wethere to include the responsive enabled suffix or not.
+	 * @param bool $include_enabled_suffix Whether to include the responsive enabled suffix or not.
 	 *
 	 * @return array
 	 */
@@ -287,7 +277,7 @@ class ET_Builder_Module_Helper_MultiViewOptions {
 	 *
 	 * @since 3.27.1
 	 *
-	 * @param bool $include_enabled_suffix Wethere to include the hover enabled suffix or not.
+	 * @param bool $include_enabled_suffix Whether to include the hover enabled suffix or not.
 	 *
 	 * @return array
 	 */
@@ -302,7 +292,7 @@ class ET_Builder_Module_Helper_MultiViewOptions {
 	}
 
 	/**
-	 * Check wheter an option is responsive enabled.
+	 * Check whether an option is responsive enabled.
 	 *
 	 * @since 3.27.1
 	 *
@@ -311,11 +301,11 @@ class ET_Builder_Module_Helper_MultiViewOptions {
 	 * @return bool
 	 */
 	public function responsive_is_enabled( $name ) {
-		return et_pb_responsive_options()->is_enabled( $name, $this->props );
+		return et_pb_responsive_options()->is_enabled( $name, $this->get_module_props() );
 	}
 
 	/**
-	 * Check wheter an option is hover enabled.
+	 * Check whether an option is hover enabled.
 	 *
 	 * @since 3.27.1
 	 *
@@ -324,7 +314,7 @@ class ET_Builder_Module_Helper_MultiViewOptions {
 	 * @return bool
 	 */
 	public function hover_is_enabled( $name ) {
-		return et_pb_hover_options()->is_enabled( $name, $this->props );
+		return et_pb_hover_options()->is_enabled( $name, $this->get_module_props() );
 	}
 
 	/**
@@ -430,7 +420,7 @@ class ET_Builder_Module_Helper_MultiViewOptions {
 						continue;
 					}
 
-					$value = et_()->array_get( $this->props, self::get_name_by_mode( $name, $mode ), '' );
+					$value = $this->get_prop( self::get_name_by_mode( $name, $mode ) );
 
 					if ( '' === $value && isset( $this->default_values[ $name ][ $mode ] ) ) {
 						$value = $this->default_values[ $name ][ $mode ];
@@ -469,10 +459,8 @@ class ET_Builder_Module_Helper_MultiViewOptions {
 
 		if ( is_null( $value_compare ) ) {
 			$match = is_string( $value ) || is_numeric( $value ) ? strlen( $value ) : ! empty( $value );
-		} elseif ( is_array( $value_compare ) ) {
-			$match = in_array( $value, $value_compare, true );
-		} elseif ( is_callable( $value_compare ) ) {
-			$match = call_user_func( $value_compare, $value );
+		} elseif ( is_bool( $value_compare ) ) {
+			$match = $value_compare === $value;
 		} elseif ( is_array( $value_compare ) ) {
 			$match = in_array( $value, $value_compare, true );
 		} elseif ( '__empty' === $value_compare ) {
@@ -648,32 +636,6 @@ class ET_Builder_Module_Helper_MultiViewOptions {
 
 		if ( property_exists( $module, 'slug' ) ) {
 			$this->slug = $module->slug;
-		}
-
-		if ( property_exists( $module, 'props' ) && $module->props && is_array( $module->props ) ) {
-			$props = $module->props;
-
-			if ( empty( $props['content'] ) && property_exists( $module, 'content' ) ) {
-				$props['content'] = $module->content;
-			}
-
-			if ( in_array( $module->slug, array( 'et_pb_code', 'et_pb_fullwidth_code' ), true ) ) {
-				if ( isset( $props['content'] ) ) {
-					$props['raw_content'] = $props['content'];
-				}
-
-				if ( isset( $props[ 'content' . self::$hover_enabled_suffix ] ) ) {
-					$props[ 'raw_content' . self::$hover_enabled_suffix ] = $props[ 'content' . self::$hover_enabled_suffix ];
-				}
-
-				if ( isset( $props[ 'content' . self::$responsive_enabled_suffix ] ) ) {
-					$props[ 'raw_content' . self::$responsive_enabled_suffix ] = $props[ 'content' . self::$responsive_enabled_suffix ];
-				}
-			}
-
-			foreach ( $props as $key => $value ) {
-				$this->set_props( $key, $value );
-			}
 		}
 
 		$this->set_inherited_props();
@@ -903,7 +865,7 @@ class ET_Builder_Module_Helper_MultiViewOptions {
 	 *      $multi_view->render_element( array(
 	 *          'tag'     => 'div',
 	 *          'content' => 'Lorem Ipsum',
-	 *          'attrs'   => array(
+	 *          'styles'  => array(
 	 *              'background-image' => 'url({{image_url}})', // Assume image_url props value is test.jpg
 	 *              'font-size'        => '{{title_font_size}}px', // Assume title_font_size props value is 20
 	 *          ),
@@ -945,22 +907,21 @@ class ET_Builder_Module_Helper_MultiViewOptions {
 	 *
 	 *     @type string          $tag                HTML element tag name. Example: div, img, p. Default is span.
 	 *
-	 *     @type string|callable $content            Param that will be used to populate the content data.
-	 *                                               Callable function as value is allowed and excuted. Example: 'get_the_title' function.
-	 *                                               Use props name wrapped with 2 curly brakets within the value for find & replace wilcard: {{props_name}}
+	 *     @type string          $content            Param that will be used to populate the content data.
+	 *                                               Use props name wrapped with 2 curly brackets within the value for find & replace wildcard: {{props_name}}
 	 *
 	 *     @type array           $attrs              Param that will be used to populate the attributes data.
 	 *                                               Associative array key used as attribute name and the value will be used as attribute value.
-	 *                                               Special case for 'class' and 'style' atribute name will only generating output for desktop mode.
+	 *                                               Special case for 'class' and 'style' attribute name will only generating output for desktop mode.
 	 *                                               Use 'styles' or 'classes' context for multi modes usage.
-	 *                                               Use props name wrapped with 2 curly brakets within the value for find & replace wilcard: {{props_name}}
+	 *                                               Use props name wrapped with 2 curly brackets within the value for find & replace wildcard: {{props_name}}
 	 *
 	 *     @type array           $styles             Param that will be used to populate the inline style attributes data.
 	 *                                               Associative array key used as style property name and the value will be used as inline style property value.
-	 *                                               Use props name wrapped with 2 curly brakets within the value for find & replace wilcard: {{props_name}}
+	 *                                               Use props name wrapped with 2 curly brackets within the value for find & replace wildcard: {{props_name}}
 	 *
 	 *     @type array           $classes            Param that will be used to populate the class data.
-	 *                                               Associative array key used as class name and the value is assciative array as the conditional check compared with prop value.
+	 *                                               Associative array key used as class name and the value is associative array as the conditional check compared with prop value.
 	 *                                               The conditional check array key used as the prop name and the value used as the conditional check compared with prop value.
 	 *                                               The class will be added if all conditional check is true and will be removed if any of conditional check is false.
 	 *
@@ -969,10 +930,10 @@ class ET_Builder_Module_Helper_MultiViewOptions {
 	 *                                               The element will visible if all conditional check is true and will be hidden if any of conditional check is false.
 	 *
 	 *     @type string          $target             HTML element selector target which the element will be modified. Default is empty string.
-	 *                                               Dynamic module order class wilcard string is accepted: %%order_class%%
+	 *                                               Dynamic module order class wildcard string is accepted: %%order_class%%
 	 *
 	 *     @type string          $hover_selector     HTML element selector which trigger the hover event. Default is empty string.
-	 *                                               Dynamic module order class wilcard string is accepted: %%order_class%%
+	 *                                               Dynamic module order class wildcard string is accepted: %%order_class%%
 	 *
 	 *     @type string          $render_slug        Render slug that will be used to calculate the module order class. Default is current module slug.
 	 *
@@ -980,10 +941,14 @@ class ET_Builder_Module_Helper_MultiViewOptions {
 	 *
 	 *     @type array           $conditional_values Defined data sources for data toggle.
 	 *
-	 *     @type array           $required           List of requireds props key to render the element.
-	 *                                               Will returning empty string if any required props is empty.
+	 *     @type array           $required           List of required props key to render the element.
+	 *                                               Will render the element if all of the props required keys is fulfilled.
 	 *                                               Default is empty array it will try to gather any props name set in the 'content' context.
-	 *                                               Set to false to diable conditional check.
+	 *                                               Set to false to disable conditional check.
+	 *
+	 *     @type array           $required_some      List of props key need to be fulfilled to render the element.
+	 *                                               Will render the element if any one of the required props keys is fulfilled.
+	 *                                               When defined, $required_some parameter will be prioritized over $required parameter.
 	 * }
 	 * @param boolean $echo Whether to print the output instead returning it.
 	 *
@@ -994,17 +959,17 @@ class ET_Builder_Module_Helper_MultiViewOptions {
 	public function render_element( $contexts = array(), $echo = false ) {
 		// Define the array of defaults.
 		$defaults = array(
-			'tag'                => 'span',
-			'content'            => '',
-			'attrs'              => array(),
-			'styles'             => array(),
-			'classes'            => array(),
-			'visibility'         => array(),
-			'target'             => '',
-			'hover_selector'     => '',
-			'render_slug'        => '',
-			'custom_props'       => array(),
-			'required'           => array(),
+			'tag'            => 'span',
+			'content'        => '',
+			'attrs'          => array(),
+			'styles'         => array(),
+			'classes'        => array(),
+			'visibility'     => array(),
+			'target'         => '',
+			'hover_selector' => '',
+			'render_slug'    => '',
+			'custom_props'   => array(),
+			'required'       => array(),
 		);
 
 		// Parse incoming $args into an array and merge it with $defaults.
@@ -1163,25 +1128,24 @@ class ET_Builder_Module_Helper_MultiViewOptions {
 	/**
 	 * Get or render the multi content attribute.
 	 *
-	 * @param array   $contexts {
-	 *       Data contexts.
+	 * @param array $contexts {
+	 *     Data contexts.
 	 *
-	 *     @type string|callable $content            Param that will be used to populate the content data.
-	 *                                               Callable function as value is allowed and excuted. Example: 'get_the_title' function.
-	 *                                               Use props name wrapped with 2 curly brakets within the value for find & replace wilcard: {{props_name}}
+	 *     @type string          $content            Param that will be used to populate the content data.
+	 *                                               Use props name wrapped with 2 curly brackets within the value for find & replace wildcard: {{props_name}}
 	 *
 	 *     @type array           $attrs              Param that will be used to populate the attributes data.
 	 *                                               Associative array key used as attribute name and the value will be used as attribute value.
-	 *                                               Special case for 'class' and 'style' atribute name will only generating output for desktop mode.
+	 *                                               Special case for 'class' and 'style' attribute name will only generating output for desktop mode.
 	 *                                               Use 'styles' or 'classes' context for multi modes usage.
-	 *                                               Use props name wrapped with 2 curly brakets within the value for find & replace wilcard: {{props_name}}
+	 *                                               Use props name wrapped with 2 curly brackets within the value for find & replace wildcard: {{props_name}}
 	 *
 	 *     @type array           $styles             Param that will be used to populate the inline style attributes data.
 	 *                                               Associative array key used as style property name and the value will be used as inline style property value.
-	 *                                               Use props name wrapped with 2 curly brakets within the value for find & replace wilcard: {{props_name}}
+	 *                                               Use props name wrapped with 2 curly brackets within the value for find & replace wildcard: {{props_name}}
 	 *
 	 *     @type array           $classes            Param that will be used to populate the class data.
-	 *                                               Associative array key used as class name and the value is assciative array as the conditional check compared with prop value.
+	 *                                               Associative array key used as class name and the value is associative array as the conditional check compared with prop value.
 	 *                                               The conditional check array key used as the prop name and the value used as the conditional check compared with prop value.
 	 *                                               The class will be added if all conditional check is true and will be removed if any of conditional check is false.
 	 *
@@ -1190,10 +1154,10 @@ class ET_Builder_Module_Helper_MultiViewOptions {
 	 *                                               The element will visible if all conditional check is true and will be hidden if any of conditional check is false.
 	 *
 	 *     @type string          $target             HTML element selector target which the element will be modified. Default is empty string.
-	 *                                               Dynamic module order class wilcard string is accepted: %%order_class%%
+	 *                                               Dynamic module order class wildcard string is accepted: %%order_class%%
 	 *
 	 *     @type string          $hover_selector     HTML element selector which trigger the hover event. Default is empty string.
-	 *                                               Dynamic module order class wilcard string is accepted: %%order_class%%
+	 *                                               Dynamic module order class wildcard string is accepted: %%order_class%%
 	 *
 	 *     @type string          $render_slug        Render slug that will be used to calculate the module order class. Default is current module slug.
 	 *
@@ -1201,10 +1165,10 @@ class ET_Builder_Module_Helper_MultiViewOptions {
 	 *
 	 *     @type array           $conditional_values Defined data sources for data toggle.
 	 *
-	 *     @type array           $required           List of requireds props key to render the element.
+	 *     @type array           $required           List of required props key to render the element.
 	 *                                               Will returning empty string if any required props is empty.
 	 *                                               Default is empty array it will try to gather any props name set in the 'content' context.
-	 *                                               Set to false to diable conditional check.
+	 *                                               Set to false to disable conditional check.
 	 * }
 	 * @param bool  $echo Whether to print the output instead returning it.
 	 * @param array $populated_data Pre populated data in case just need to format the attributes output.
@@ -1217,15 +1181,15 @@ class ET_Builder_Module_Helper_MultiViewOptions {
 	public function render_attrs( $contexts = array(), $echo = false, $populated_data = null, $as_array = false ) {
 		// Define the array of defaults.
 		$defaults = array(
-			'content'            => '',
-			'attrs'              => array(),
-			'styles'             => array(),
-			'classes'            => array(),
-			'visibility'         => array(),
-			'target'             => '',
-			'hover_selector'     => '',
-			'render_slug'        => '',
-			'custom_props'       => array(),
+			'content'        => '',
+			'attrs'          => array(),
+			'styles'         => array(),
+			'classes'        => array(),
+			'visibility'     => array(),
+			'target'         => '',
+			'hover_selector' => '',
+			'render_slug'    => '',
+			'custom_props'   => array(),
 		);
 
 		// Parse incoming $args into an array and merge it with $defaults.
@@ -1269,11 +1233,31 @@ class ET_Builder_Module_Helper_MultiViewOptions {
 				}
 			}
 
-			$has_content_tablet = isset( $data['content']['tablet'] );
-			$has_content_phone  = isset( $data['content']['phone'] );
+			$content_desktop = et_()->array_get( $data, 'content.desktop', null );
+			$content_tablet  = et_()->array_get( $data, 'content.tablet', null );
+			$content_phone   = et_()->array_get( $data, 'content.phone', null );
 
-			$has_visibility_tablet = isset( $data['visibility']['tablet'] );
-			$has_visibility_phone  = isset( $data['visibility']['phone'] );
+			$visibility_desktop = et_()->array_get( $data, 'visibility.desktop', null );
+			$visibility_tablet  = et_()->array_get( $data, 'visibility.tablet', null );
+			$visibility_phone   = et_()->array_get( $data, 'visibility.phone', null );
+
+			$is_hidden_on_load_tablet = false;
+			if ( ! is_null( $content_tablet ) && $content_desktop !== $content_tablet ) {
+				$is_hidden_on_load_tablet = true;
+			}
+
+			if ( ! is_null( $visibility_tablet ) && $visibility_desktop !== $visibility_tablet ) {
+				$is_hidden_on_load_tablet = true;
+			}
+
+			$is_hidden_on_load_phone = false;
+			if ( ! is_null( $content_phone ) && $content_desktop !== $content_phone ) {
+				$is_hidden_on_load_phone = true;
+			}
+
+			if ( ! is_null( $visibility_phone ) && $visibility_desktop !== $visibility_phone ) {
+				$is_hidden_on_load_phone = true;
+			}
 
 			$data = array(
 				'schema' => $data,
@@ -1313,22 +1297,22 @@ class ET_Builder_Module_Helper_MultiViewOptions {
 
 				$output[ $data_attr_key ] = esc_attr( wp_json_encode( $data ) );
 
-				if ( $has_content_tablet || $has_visibility_tablet ) {
-					$output[ $data_attr_key. '-load-tablet-hidden'] = 'true';
+				if ( $is_hidden_on_load_tablet ) {
+					$output[ $data_attr_key . '-load-tablet-hidden' ] = 'true';
 				}
 
-				if ( $has_content_phone || $has_visibility_phone ) {
-					$output[ $data_attr_key. '-load-phone-hidden'] = 'true';
+				if ( $is_hidden_on_load_phone ) {
+					$output[ $data_attr_key . '-load-phone-hidden' ] = 'true';
 				}
 			} else {
 				// Format the html data attribute output.
 				$output = sprintf( ' %1$s="%2$s"', $data_attr_key, esc_attr( wp_json_encode( $data ) ) );
-	
-				if ( $has_content_tablet || $has_visibility_tablet ) {
+
+				if ( $is_hidden_on_load_tablet ) {
 					$output .= sprintf( ' %1$s="%2$s"', $data_attr_key . '-load-tablet-hidden', 'true' );
 				}
-	
-				if ( $has_content_phone || $has_visibility_phone ) {
+
+				if ( $is_hidden_on_load_phone ) {
 					$output .= sprintf( ' %1$s="%2$s"', $data_attr_key . '-load-phone-hidden', 'true' );
 				}
 			}
@@ -1347,22 +1331,21 @@ class ET_Builder_Module_Helper_MultiViewOptions {
 	 * @param array $contexts {
 	 *     Data contexts.
 	 *
-	 *     @type string|callable $content            Param that will be used to populate the content data.
-	 *                                               Callable function as value is allowed and excuted. Example: 'get_the_title' function.
-	 *                                               Use props name wrapped with 2 curly brakets within the value for find & replace wilcard: {{props_name}}
+	 *     @type string          $content            Param that will be used to populate the content data.
+	 *                                               Use props name wrapped with 2 curly brackets within the value for find & replace wildcard: {{props_name}}
 	 *
 	 *     @type array           $attrs              Param that will be used to populate the attributes data.
 	 *                                               Associative array key used as attribute name and the value will be used as attribute value.
-	 *                                               Special case for 'class' and 'style' atribute name will only generating output for desktop mode.
+	 *                                               Special case for 'class' and 'style' attribute name will only generating output for desktop mode.
 	 *                                               Use 'styles' or 'classes' context for multi modes usage.
-	 *                                               Use props name wrapped with 2 curly brakets within the value for find & replace wilcard: {{props_name}}
+	 *                                               Use props name wrapped with 2 curly brackets within the value for find & replace wildcard: {{props_name}}
 	 *
 	 *     @type array           $styles             Param that will be used to populate the inline style attributes data.
 	 *                                               Associative array key used as style property name and the value will be used as inline style property value.
-	 *                                               Use props name wrapped with 2 curly brakets within the value for find & replace wilcard: {{props_name}}
+	 *                                               Use props name wrapped with 2 curly brackets within the value for find & replace wildcard: {{props_name}}
 	 *
 	 *     @type array           $classes            Param that will be used to populate the class data.
-	 *                                               Associative array key used as class name and the value is assciative array as the conditional check compared with prop value.
+	 *                                               Associative array key used as class name and the value is associative array as the conditional check compared with prop value.
 	 *                                               The conditional check array key used as the prop name and the value used as the conditional check compared with prop value.
 	 *                                               The class will be added if all conditional check is true and will be removed if any of conditional check is false.
 	 *
@@ -1403,6 +1386,7 @@ class ET_Builder_Module_Helper_MultiViewOptions {
 				continue;
 			}
 
+			// @phpcs:ignore Generic.PHP.ForbiddenFunctions.Found
 			$context_data = call_user_func( $callback, $context_args );
 
 			// Skip if the context data is empty or WP_Error object.
@@ -1424,7 +1408,7 @@ class ET_Builder_Module_Helper_MultiViewOptions {
 	 *
 	 * @since 3.27.1
 	 *
-	 * @param string|callable $content Data contexts.
+	 * @param string $content Data contexts.
 	 *
 	 * @return array
 	 */
@@ -1479,10 +1463,6 @@ class ET_Builder_Module_Helper_MultiViewOptions {
 				}
 			}
 		} else {
-			if ( is_callable( $content ) ) {
-				$content = call_user_func( $content );
-			}
-
 			// Manipulate the value if needed.
 			$value = $this->filter_value(
 				$content,
@@ -1767,7 +1747,7 @@ class ET_Builder_Module_Helper_MultiViewOptions {
 	 *     @type string $name         Module options props name.
 	 *     @type string $mode         Current data mode: desktop, hover, tablet, phone.
 	 *     @type string $attr_key     Attribute key for attrs context data. Example: src, class, etc.
-	 *     @type string $attr_sub_key Attribute sub key that availabe when passing attrs value as array such as styes. Example: padding-top, margin-botton, etc.
+	 *     @type string $attr_sub_key Attribute sub key that available when passing attrs value as array such as styes. Example: padding-top, margin-bottom, etc.
 	 * }
 	 *
 	 * @return mixed|WP_Error return WP_Error to skip the data.
@@ -1787,15 +1767,16 @@ class ET_Builder_Module_Helper_MultiViewOptions {
 			 *     @type string $name         Module options props name.
 			 *     @type string $mode         Current data mode: desktop, hover, tablet, phone.
 			 *     @type string $attr_key     Attribute key for attrs context data. Example: src, class, etc.
-			 *     @type string $attr_sub_key Attribute sub key that availabe when passing attrs value as array such as styes. Example: padding-top, margin-botton, etc.
+			 *     @type string $attr_sub_key Attribute sub key that available when passing attrs value as array such as styes. Example: padding-top, margin-bottom, etc.
 			 * }
 			 * @param ET_Builder_Module_Helper_MultiViewOptions $multi_view Current instance.
 			 *
 			 * @return mixed
 			 */
+			// @phpcs:ignore Generic.PHP.ForbiddenFunctions.Found
 			$raw_value = call_user_func( array( $this->module, 'multi_view_filter_value' ), $raw_value, $args, $this );
 
-			// Bail eraly if the $raw_value is WP_error object.
+			// Bail early if the $raw_value is WP_error object.
 			if ( is_wp_error( $raw_value ) ) {
 				return $raw_value;
 			}
@@ -1861,22 +1842,14 @@ class ET_Builder_Module_Helper_MultiViewOptions {
 					continue;
 				}
 
-				$attachment_srcset_sizes = et_get_image_srcset_sizes( $attrs['src'] );
+				$srcset_sizes = et_get_image_srcset_sizes( $attrs['src'] );
 
-				if ( isset( $attachment_srcset_sizes['srcset'] ) ) {
-					$data['attrs'][ $mode ]['srcset'] = $attachment_srcset_sizes['srcset'];
-				}
-
-				if ( isset( $attachment_srcset_sizes['sizes'] ) ) {
-					$data['attrs'][ $mode ]['sizes'] = $attachment_srcset_sizes['sizes'];
-				}
-
-				if ( ! isset( $data['attrs'][ $mode ]['srcset'] ) || ! $data['attrs'][ $mode ]['srcset'] ) {
-					$data['attrs'][ $mode ]['srcset'] = '';
-				}
-
-				if ( ! isset( $data['attrs'][ $mode ]['sizes'] ) || ! $data['attrs'][ $mode ]['sizes'] ) {
-					$data['attrs'][ $mode ]['sizes'] = '';
+				if ( isset( $srcset_sizes['srcset'], $srcset_sizes['sizes'] ) && $srcset_sizes['srcset'] && $srcset_sizes['sizes'] ) {
+					$data['attrs'][ $mode ]['srcset'] = $srcset_sizes['srcset'];
+					$data['attrs'][ $mode ]['sizes']  = $srcset_sizes['sizes'];
+				} else {
+					unset( $data['attrs'][ $mode ]['srcset'] );
+					unset( $data['attrs'][ $mode ]['sizes'] );
 				}
 			}
 		}
@@ -1892,6 +1865,7 @@ class ET_Builder_Module_Helper_MultiViewOptions {
 			 *
 			 * @return mixed
 			 */
+			// @phpcs:ignore Generic.PHP.ForbiddenFunctions.Found
 			$data = call_user_func( array( $this->module, 'multi_view_filter_data' ), $data, $this );
 		}
 
@@ -1956,6 +1930,15 @@ class ET_Builder_Module_Helper_MultiViewOptions {
 		$temp_values = array();
 
 		foreach ( $values as $mode => $value ) {
+			// Decode HTML special characters such as "&amp;" to "&"
+			// to make the value consistence and the comparison is accurate.
+			// $temp_values variable is not used anywhere except to compare
+			// the values of each view mode. It will not printed anywhere.
+			// So we won't need to sanitize it.
+			if ( is_string( $value ) ) {
+				$value = htmlspecialchars_decode( $value );
+			}
+
 			// Stringify the value so can be easily compared.
 			$temp_values[ $mode ] = wp_json_encode( $value );
 		}
@@ -2037,29 +2020,69 @@ class ET_Builder_Module_Helper_MultiViewOptions {
 	 * @return bool
 	 */
 	protected function is_required_props_fulfilled( $contexts ) {
-		if ( false === $contexts['required'] ) {
+		$required_some_keys = et_()->array_get( $contexts, 'required_some', false );
+
+		if ( $required_some_keys ) {
+			if ( ! is_array( $required_some_keys ) ) {
+				$required_some_keys = explode( ',', $required_some_keys );
+			}
+
+			$fulfilled = false;
+
+			foreach ( $required_some_keys as $required_key => $required_value_compare ) {
+				// Handle zero indexed data.
+				if ( is_numeric( $required_key ) ) {
+					$fulfilled = $this->has_value( $required_value_compare );
+				} else {
+					$fulfilled = $this->has_value( $required_key, $required_value_compare );
+				}
+
+				// Break the loop once any of required props key is fulfilled.
+				if ( $fulfilled ) {
+					break;
+				}
+			}
+
+			// Bail early if required_some param is defined, no need to process further.
+			// The required_some param is prioritized over required param.
+			return $fulfilled;
+		}
+
+		$required_keys = et_()->array_get( $contexts, 'required', array() );
+
+		// Bail early when the required parameter defined as false.
+		if ( false === $required_keys ) {
 			return true;
 		}
 
-		$requireds = ! empty( $contexts['required'] ) ? $contexts['required'] : array();
-
-		if ( $requireds && ! is_array( $requireds ) ) {
-			$requireds = array( $requireds );
+		if ( $required_keys && ! is_array( $required_keys ) ) {
+			$required_keys = explode( ',', $required_keys );
 		}
 
-		if ( ! empty( $contexts['content'] ) && preg_match_all( $this->pattern, $contexts['content'], $matches, PREG_SET_ORDER, 0 ) ) {
-			foreach ( $matches as $match ) {
-				if ( ! isset( $match[1] ) ) {
-					continue;
-				}
+		// Populate the required keys from the content if it is empty.
+		if ( ! $required_keys ) {
+			$content = et_()->array_get( $contexts, 'content', '' );
 
-				$requireds[] = $match[1];
+			if ( ! empty( $content ) && preg_match_all( $this->pattern, $content, $matches, PREG_SET_ORDER, 0 ) ) {
+				// Populate the required keys from the content.
+				foreach ( $matches as $match ) {
+					if ( ! isset( $match[1] ) ) {
+						continue;
+					}
+
+					$required_keys[] = $match[1];
+				}
 			}
+		}
+
+		// Bail early when the required keys is empty.
+		if ( ! $required_keys ) {
+			return true;
 		}
 
 		$fulfilled = true;
 
-		foreach ( $requireds as $required_key => $required_value_compare ) {
+		foreach ( $required_keys as $required_key => $required_value_compare ) {
 			if ( ( ! $required_value_compare && is_numeric( $required_key ) ) || ( ! $required_key && ! is_numeric( $required_key ) ) ) {
 				$fulfilled = false;
 				break;
@@ -2072,7 +2095,7 @@ class ET_Builder_Module_Helper_MultiViewOptions {
 				$fulfilled = $this->has_value( $required_key, $required_value_compare );
 			}
 
-			// Bail early if required props is not fulfilled.
+			// Break the loop once any of required props key is not fulfilled.
 			if ( ! $fulfilled ) {
 				break;
 			}
@@ -2103,6 +2126,56 @@ class ET_Builder_Module_Helper_MultiViewOptions {
 	}
 
 	/**
+	 * Gets a prop from Module.
+	 *
+	 * @since 4.10.0
+	 *
+	 * @param string $name    Prop name.
+	 * @param string $default Default value. Defaults to ''.
+	 *
+	 * @return string
+	 */
+	public function get_prop( $name, $default = '' ) {
+		$props = $this->get_prepped_props();
+		return isset( $props[ $name ] ) ? $props[ $name ] : '';
+	}
+
+	/**
+	 * Prepares the modules props to be consumed by this helper.
+	 *
+	 * @since 4.10.0
+	 *
+	 * @return array
+	 */
+	public function get_prepped_props() {
+		$props = [];
+
+		if ( property_exists( $this->module, 'props' ) && $this->module->props && is_array( $this->module->props ) ) {
+			$props = $this->module->props;
+
+			if ( empty( $props['content'] ) && property_exists( $this->module, 'content' ) ) {
+				$props['content'] = $this->module->content;
+			}
+
+			if ( in_array( $this->module->slug, array( 'et_pb_code', 'et_pb_fullwidth_code' ), true ) ) {
+				if ( isset( $props['content'] ) ) {
+					$props['raw_content'] = $props['content'];
+				}
+
+				if ( isset( $props[ 'content' . self::$hover_enabled_suffix ] ) ) {
+					$props[ 'raw_content' . self::$hover_enabled_suffix ] = $props[ 'content' . self::$hover_enabled_suffix ];
+				}
+
+				if ( isset( $props[ 'content' . self::$responsive_enabled_suffix ] ) ) {
+					$props[ 'raw_content' . self::$responsive_enabled_suffix ] = $props[ 'content' . self::$responsive_enabled_suffix ];
+				}
+			}
+		}
+
+		return $props;
+	}
+
+	/**
 	 * Gets the Module props.
 	 *
 	 * The Module is restricted in scope. Hence we use this getter.
@@ -2114,26 +2187,6 @@ class ET_Builder_Module_Helper_MultiViewOptions {
 	 * @return array
 	 */
 	public function get_module_props() {
-		if ( ! isset( $this->props ) ) {
-			return array();
-		}
-
-		return $this->props;
+		return $this->get_prepped_props();
 	}
-}
-
-/**
- * Class ET_Builder_Module_Helper_MultiViewOptions wrapper
- *
- * @since 3.27.1
- *
- * @param ET_Builder_Element $module             Module object.
- * @param array              $custom_props       Defined custom props data.
- * @param array              $conditional_values Defined options conditional values.
- * @param array              $default_values     Defined options default values.
- *
- * @return ET_Builder_Module_Helper_MultiViewOptions
- */
-function et_pb_multi_view_options( $module = false, $custom_props = array(), $conditional_values = array(), $default_values = array() ) {
-	return new ET_Builder_Module_Helper_MultiViewOptions( $module, $custom_props, $conditional_values, $default_values );
 }

@@ -5,6 +5,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 /**
  * Plugin compatibility for WooCommerce
+ *
  * @since 3.0.65 (builder version)
  * @link https://wordpress.org/plugins/woocommerce/
  */
@@ -20,6 +21,7 @@ class ET_Builder_Plugin_Compat_WooCommerce extends ET_Builder_Plugin_Compat_Base
 	/**
 	 * Hook methods to WordPress
 	 * Latest plugin version: 3.1.1
+	 *
 	 * @return void
 	 */
 	function init_hooks() {
@@ -68,6 +70,7 @@ class ET_Builder_Plugin_Compat_WooCommerce extends ET_Builder_Plugin_Compat_Base
 
 		// Theme Builder.
 		add_filter( 'et_theme_builder_template_settings_options', array( $this, 'maybe_filter_theme_builder_template_settings_options' ) );
+		add_action( 'et_theme_builder_after_layout_opening_wrappers', array( $this, 'maybe_trigger_woo_hooks_in_theme_builder_body' ) );
 	}
 
 	/**
@@ -75,12 +78,12 @@ class ET_Builder_Plugin_Compat_WooCommerce extends ET_Builder_Plugin_Compat_Base
 	 * the 'Your order was cancelled.' notice from being shown multiple times.
 	 * Since grab_image renders shortcodes twice, it must be disabled in the cart page or else the notice
 	 * will not be shown at all.
-	 * My Account Page is also affected by the same issue.
+	 * My Account Page and Checkout Page is also affected by the same issue.
 	 *
 	 * @return bool
 	 */
 	function disable_et_grab_image_setting( $settings ) {
-		return ( is_cart() || is_account_page() ) ? false : $settings;
+		return ( is_cart() || is_checkout() || is_account_page() ) ? false : $settings;
 	}
 
 	/**
@@ -107,21 +110,24 @@ class ET_Builder_Plugin_Compat_WooCommerce extends ET_Builder_Plugin_Compat_Base
 	}
 
 	/**
-	 * Whitelist hidden WooCommerce meta keys for dynamic content.
+	 * Allowlist hidden WooCommerce meta keys for dynamic content.
 	 *
 	 * @since 3.17.2
 	 *
 	 * @param string[] $meta_keys
-	 * @param integer $post_id
+	 * @param integer  $post_id
 	 *
 	 * @return string[]
 	 */
 	public function filter_dynamic_content_display_hidden_meta_keys( $meta_keys, $post_id ) {
-		return array_merge( $meta_keys, array(
-			'_stock_status',
-			'_regular_price',
-			'_sale_price',
-		) );
+		return array_merge(
+			$meta_keys,
+			array(
+				'_stock_status',
+				'_regular_price',
+				'_sale_price',
+			)
+		);
 	}
 
 	/**
@@ -154,8 +160,8 @@ class ET_Builder_Plugin_Compat_WooCommerce extends ET_Builder_Plugin_Compat_Base
 	 *
 	 * @since 3.17.2
 	 *
-	 * @param string $meta_value
-	 * @param string $meta_key
+	 * @param string  $meta_value
+	 * @param string  $meta_key
 	 * @param integer $post_id
 	 *
 	 * @return string
@@ -191,29 +197,33 @@ class ET_Builder_Plugin_Compat_WooCommerce extends ET_Builder_Plugin_Compat_Base
 	public function maybe_filter_theme_builder_template_settings_options( $options ) {
 		$woocommerce_options = array(
 			'woocommerce' => array(
-				'label' => esc_html__( 'WooCommerce Pages', 'et_builder' ),
+				'label'    => esc_html__( 'WooCommerce Pages', 'et_builder' ),
 				'settings' => array(
 					array(
 						'id'       => 'woocommerce:shop',
 						'label'    => esc_html__( 'Shop', 'et_builder' ),
+						'title'    => trim( str_replace( home_url(), '', get_post_type_archive_link( 'product' ) ), '/' ),
 						'priority' => 120,
 						'validate' => array( $this, 'theme_builder_validate_woocommerce_shop' ),
 					),
 					array(
 						'id'       => 'woocommerce:cart',
 						'label'    => esc_html__( 'Cart', 'et_builder' ),
+						'title'    => get_post_field( 'post_name', wc_get_page_id( 'cart' ) ),
 						'priority' => 120,
 						'validate' => array( $this, 'theme_builder_validate_woocommerce_cart' ),
 					),
 					array(
 						'id'       => 'woocommerce:checkout',
 						'label'    => esc_html__( 'Checkout', 'et_builder' ),
+						'title'    => get_post_field( 'post_name', wc_get_page_id( 'checkout' ) ),
 						'priority' => 120,
 						'validate' => array( $this, 'theme_builder_validate_woocommerce_checkout' ),
 					),
 					array(
 						'id'       => 'woocommerce:my_account',
 						'label'    => esc_html__( 'My Account', 'et_builder' ),
+						'title'    => get_post_field( 'post_name', wc_get_page_id( 'myaccount' ) ),
 						'priority' => 130,
 						'validate' => array( $this, 'theme_builder_validate_woocommerce_my_account' ),
 					),
@@ -242,9 +252,9 @@ class ET_Builder_Plugin_Compat_WooCommerce extends ET_Builder_Plugin_Compat_Base
 	 *
 	 * @since 4.0
 	 *
-	 * @param string $type
-	 * @param string $subtype
-	 * @param integer $id
+	 * @param string   $type
+	 * @param string   $subtype
+	 * @param integer  $id
 	 * @param string[] $setting
 	 *
 	 * @return bool
@@ -262,9 +272,9 @@ class ET_Builder_Plugin_Compat_WooCommerce extends ET_Builder_Plugin_Compat_Base
 	 *
 	 * @since 4.0
 	 *
-	 * @param string $type
-	 * @param string $subtype
-	 * @param integer $id
+	 * @param string   $type
+	 * @param string   $subtype
+	 * @param integer  $id
 	 * @param string[] $setting
 	 *
 	 * @return bool
@@ -278,9 +288,9 @@ class ET_Builder_Plugin_Compat_WooCommerce extends ET_Builder_Plugin_Compat_Base
 	 *
 	 * @since 4.0
 	 *
-	 * @param string $type
-	 * @param string $subtype
-	 * @param integer $id
+	 * @param string   $type
+	 * @param string   $subtype
+	 * @param integer  $id
 	 * @param string[] $setting
 	 *
 	 * @return bool
@@ -294,9 +304,9 @@ class ET_Builder_Plugin_Compat_WooCommerce extends ET_Builder_Plugin_Compat_Base
 	 *
 	 * @since 4.0
 	 *
-	 * @param string $type
-	 * @param string $subtype
-	 * @param integer $id
+	 * @param string   $type
+	 * @param string   $subtype
+	 * @param integer  $id
 	 * @param string[] $setting
 	 *
 	 * @return bool
@@ -304,5 +314,46 @@ class ET_Builder_Plugin_Compat_WooCommerce extends ET_Builder_Plugin_Compat_Base
 	public function theme_builder_validate_woocommerce_my_account( $type, $subtype, $id, $setting ) {
 		return ET_Theme_Builder_Request::TYPE_SINGULAR === $type && $id === wc_get_page_id( 'myaccount' );
 	}
+
+	/**
+	 * Trigger Woo hooks before a Theme Builder body layout is rendered
+	 * so stuff like structured data is output.
+	 *
+	 * @since 4.0.10
+	 *
+	 * @param string $layout_type
+	 */
+	public function maybe_trigger_woo_hooks_in_theme_builder_body( $layout_type ) {
+		global $product;
+
+		if ( ET_THEME_BUILDER_BODY_LAYOUT_POST_TYPE !== $layout_type || ! is_singular( 'product' ) ) {
+			return;
+		}
+
+		if ( $product && ! is_a( $product, 'WC_Product' ) ) {
+			// Required for Woo to setup its $product global.
+			the_post();
+		}
+
+		// Make sure builder and non-builder products do not render
+		// anything as this will be taken care of by the
+		// Post Content module in TB, if used.
+		et_builder_wc_disable_default_layout();
+		remove_action(
+			'woocommerce_after_single_product_summary',
+			'et_builder_wc_product_render_layout',
+			5
+		);
+
+		// Trigger the usual Woo hooks so functionality like structured data works.
+		do_action( 'woocommerce_before_single_product' );
+
+		if ( ! post_password_required() ) {
+			do_action( 'woocommerce_before_single_product_summary' );
+			do_action( 'woocommerce_single_product_summary' );
+			do_action( 'woocommerce_after_single_product_summary' );
+			do_action( 'woocommerce_after_single_product' );
+		}
+	}
 }
-new ET_Builder_Plugin_Compat_WooCommerce;
+new ET_Builder_Plugin_Compat_WooCommerce();

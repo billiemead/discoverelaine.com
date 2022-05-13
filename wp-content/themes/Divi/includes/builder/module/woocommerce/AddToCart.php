@@ -10,6 +10,8 @@
  * @since   3.29
  */
 
+defined( 'ABSPATH' ) || exit;
+
 /**
  * Class representing WooCommerce Add to cart component.
  */
@@ -18,25 +20,25 @@ class ET_Builder_Module_Woocommerce_Add_To_Cart extends ET_Builder_Module {
 	 * Initialize.
 	 */
 	public function init() {
-		$this->name       = esc_html__( 'Woo Add To Cart', 'et_builder' );
-		$this->plural     = esc_html__( 'Woo Add To Cart', 'et_builder' );
-		$this->slug       = 'et_pb_wc_add_to_cart';
-		$this->vb_support = 'on';
+		$this->name        = esc_html__( 'Woo Product Add To Cart', 'et_builder' );
+		$this->plural      = esc_html__( 'Woo Product Add To Cart', 'et_builder' );
+		$this->slug        = 'et_pb_wc_add_to_cart';
+		$this->vb_support  = 'on';
+		$this->folder_name = 'et_pb_woo_modules';
 
 		$this->settings_modal_toggles = array(
 			'general'  => array(
 				'toggles' => array(
-					'main_content' => esc_html__( 'Content', 'et_builder' ),
-					'elements'     => esc_html__( 'Elements', 'et_builder' ),
+					'main_content' => et_builder_i18n( 'Content' ),
+					'elements'     => et_builder_i18n( 'Elements' ),
 				),
 			),
 			'advanced' => array(
 				'toggles' => array(
-					'text'   => array(
-						'title'    => esc_html__( 'Text', 'et_builder' ),
-						'priority' => 45,
+					'field_label' => array(
+						'title' => esc_html__( 'Field Labels', 'et_builder' ),
 					),
-					'header' => array(
+					'header'      => array(
 						'title'             => esc_html__( 'Heading Text', 'et_builder' ),
 						'priority'          => 49,
 						'tabbed_subtoggles' => true,
@@ -67,8 +69,8 @@ class ET_Builder_Module_Woocommerce_Add_To_Cart extends ET_Builder_Module {
 							),
 						),
 					),
-					'width'  => array(
-						'title'    => esc_html__( 'Sizing', 'et_builder' ),
+					'width'       => array(
+						'title'    => et_builder_i18n( 'Sizing' ),
 						'priority' => 80,
 					),
 				),
@@ -77,23 +79,23 @@ class ET_Builder_Module_Woocommerce_Add_To_Cart extends ET_Builder_Module {
 
 		$this->advanced_fields = array(
 			'fonts'          => array(
-				'body' => array(
-					'label'           => esc_html__( 'Text', 'et_builder' ),
-					'css'             => array(
-						'main'      => '%%order_class%%, %%order_class%% a, %%order_class%% label, %%order_class%%.et_pb_module .et_pb_module_inner .stock',
-						'important' => 'all',
+				'field_label' => array(
+					'label'       => esc_html__( 'Field Labels', 'et_builder' ),
+					'css'         => array(
+						'main' => implode(
+							',',
+							array(
+								'%%order_class%% label',
+							)
+						),
 					),
-					'font_size'       => array(
-						'default' => '14px',
-					),
-					'line_height'     => array(
-						'default' => '1.3em',
-					),
-					'hide_text_align' => true,
-					'toggle_slug'     => 'text',
-					'font'            => array(
+					'font'        => array(
 						'default' => '|700|||||||',
 					),
+					'font_size'   => array(
+						'default' => '14px',
+					),
+					'toggle_slug' => 'field_label',
 				),
 			),
 			'background'     => array(
@@ -107,28 +109,26 @@ class ET_Builder_Module_Woocommerce_Add_To_Cart extends ET_Builder_Module {
 				),
 			),
 			'text'           => array(
-				'use_background_layout' => true,
+				'use_background_layout' => false,
+				'css'                   => array(
+					'main'        => '%%order_class%% td.label',
+					'text_shadow' => '%%order_class%% td.label',
+				),
 				'options'               => array(
-					'text_orientation'  => array(
+					'text_orientation' => array(
 						'default' => 'left',
-					),
-					'background_layout' => array(
-						'default' => 'light',
-						'hover'   => 'tabs',
 					),
 				),
 			),
-			'text_shadow'    => array(
-				// Don't add text-shadow fields since they already are via font-options.
-				'default' => false,
-			),
 			'button'         => array(
 				'button' => array(
-					'label'          => esc_html__( 'Button', 'et_builder' ),
+					'label'          => et_builder_i18n( 'Button' ),
 					'css'            => array(
 						'main'         => '%%order_class%% .button',
 						'limited_main' => '%%order_class%% .button',
 						'alignment'    => '%%order_class%% .et_pb_module_inner > form',
+						// Setting to TRUE since it only checks for the value's existence.
+						'important'    => 'all',
 					),
 
 					/*
@@ -139,7 +139,8 @@ class ET_Builder_Module_Woocommerce_Add_To_Cart extends ET_Builder_Module {
 					'use_alignment'  => false,
 					'box_shadow'     => array(
 						'css' => array(
-							'main' => '%%order_class%% .button',
+							'main'      => '%%order_class%% .button',
+							'important' => true,
 						),
 					),
 					'use_icon'       => false,
@@ -240,8 +241,7 @@ class ET_Builder_Module_Woocommerce_Add_To_Cart extends ET_Builder_Module {
 					),
 					'margin_padding'  => array(
 						'css' => array(
-							'main'      => '%%order_class%% input',
-							'padding'   => '%%order_class%% input, %%order_class%% select',
+							'main'      => '%%order_class%%.et_pb_module .et_pb_module_inner form.cart .variations tr',
 							'important' => array( 'custom_padding' ),
 						),
 					),
@@ -285,6 +285,7 @@ class ET_Builder_Module_Woocommerce_Add_To_Cart extends ET_Builder_Module {
 							'css'          => array(
 								'main'      => array(
 									'border_styles' => '%%order_class%%.et_pb_module .et_pb_module_inner form.cart .variations td select',
+									'border_radii'  => '%%order_class%%.et_pb_module .et_pb_module_inner form.cart .variations td select',
 								),
 								'important' => 'all',
 							),
@@ -329,7 +330,7 @@ class ET_Builder_Module_Woocommerce_Add_To_Cart extends ET_Builder_Module {
 
 		$this->help_videos = array(
 			array(
-				'id'   => esc_html( '7X03vBPYJ1o' ),
+				'id'   => '7X03vBPYJ1o',
 				'name' => esc_html__( 'Divi WooCommerce Modules', 'et_builder' ),
 			),
 		);
@@ -340,7 +341,7 @@ class ET_Builder_Module_Woocommerce_Add_To_Cart extends ET_Builder_Module {
 	 */
 	public function get_fields() {
 		$fields = array(
-			'product'        => ET_Builder_Module_Helper_Woocommerce_Modules::get_field(
+			'product'              => ET_Builder_Module_Helper_Woocommerce_Modules::get_field(
 				'product',
 				array(
 					'default'          => ET_Builder_Module_Helper_Woocommerce_Modules::get_product_default(),
@@ -349,7 +350,7 @@ class ET_Builder_Module_Woocommerce_Add_To_Cart extends ET_Builder_Module {
 					),
 				)
 			),
-			'product_filter' => ET_Builder_Module_Helper_Woocommerce_Modules::get_field(
+			'product_filter'       => ET_Builder_Module_Helper_Woocommerce_Modules::get_field(
 				'product_filter',
 				array(
 					'computed_affects' => array(
@@ -357,13 +358,13 @@ class ET_Builder_Module_Woocommerce_Add_To_Cart extends ET_Builder_Module {
 					),
 				)
 			),
-			'show_quantity'  => array(
+			'show_quantity'        => array(
 				'label'           => esc_html__( 'Show Quantity Field', 'et_builder' ),
 				'type'            => 'yes_no_button',
 				'option_category' => 'configuration',
 				'options'         => array(
-					'on'  => esc_html__( 'On', 'et_builder' ),
-					'off' => esc_html__( 'Off', 'et_builder' ),
+					'on'  => et_builder_i18n( 'On' ),
+					'off' => et_builder_i18n( 'Off' ),
 				),
 				'default'         => 'on',
 				'toggle_slug'     => 'elements',
@@ -371,13 +372,13 @@ class ET_Builder_Module_Woocommerce_Add_To_Cart extends ET_Builder_Module {
 				'mobile_options'  => true,
 				'hover'           => 'tabs',
 			),
-			'show_stock'     => array(
+			'show_stock'           => array(
 				'label'           => esc_html__( 'Show Stock', 'et_builder' ),
 				'type'            => 'yes_no_button',
 				'option_category' => 'configuration',
 				'options'         => array(
-					'on'  => esc_html__( 'On', 'et_builder' ),
-					'off' => esc_html__( 'Off', 'et_builder' ),
+					'on'  => et_builder_i18n( 'On' ),
+					'off' => et_builder_i18n( 'Off' ),
 				),
 				'default'         => 'on',
 				'toggle_slug'     => 'elements',
@@ -385,7 +386,22 @@ class ET_Builder_Module_Woocommerce_Add_To_Cart extends ET_Builder_Module {
 				'mobile_options'  => true,
 				'hover'           => 'tabs',
 			),
-			'__add_to_cart'  => array(
+			'field_label_position' => array(
+				'label'           => esc_html__( 'Fields Label Position', 'et_builder' ),
+				'description'     => esc_html__( 'Set the position of the field labels.', 'et_builder' ),
+				'type'            => 'select',
+				'option_category' => 'configuration',
+				'options'         => array(
+					'inline'  => __( 'Inline', 'et_builder' ),
+					'stacked' => __( 'Stacked', 'et_builder' ),
+				),
+				'default'         => 'default',
+				'tab_slug'        => 'advanced',
+				'toggle_slug'     => 'field_label',
+				'mobile_options'  => true,
+				'priority'        => 15,
+			),
+			'__add_to_cart'        => array(
 				'type'                => 'computed',
 				'computed_callback'   => array(
 					'ET_Builder_Module_Woocommerce_Add_To_Cart',
@@ -405,14 +421,74 @@ class ET_Builder_Module_Woocommerce_Add_To_Cart extends ET_Builder_Module {
 	}
 
 	/**
-	 * Get add to cart markup as string
+	 * Replaces the Add to Cart form's action.
 	 *
-	 * @param array $args Additional arguments.
+	 * @since 4.14.0
+	 *
+	 * @param string $permalink Permalink.
 	 *
 	 * @return string
 	 */
-	public static function get_add_to_cart( $args = array() ) {
-		return et_builder_wc_render_module_template( 'woocommerce_template_single_add_to_cart', $args );
+	public static function replace_add_to_cart_form_action( $permalink ) {
+		$the_id = et_core_page_resource_get_the_ID();
+		if ( 0 === absint( et_core_page_resource_get_the_ID() ) ) {
+			return $permalink;
+		}
+
+		$link = get_permalink( $the_id );
+
+		// Validate if Post exists.
+		return $link ? $link : $permalink;
+	}
+
+	/**
+	 * Get add to cart markup as string
+	 *
+	 * @since 4.14.0 Update Add to Cart Form action {@see https://github.com/elegantthemes/Divi/issues/16682}
+	 *
+	 * @since 4.4.0 Fixed compatibility w/ WooCommerce Product Add-ons
+	 * @see   https://github.com/elegantthemes/Divi/issues/19116
+	 *
+	 * @param array $args             Arguments from Computed Prop AJAX call.
+	 * @param array $conditional_tags Conditional Tags.
+	 *
+	 * @return string
+	 */
+	public static function get_add_to_cart( $args = array(), $conditional_tags = array() ) {
+		$is_tb            = 'true' === et_()->array_get( $conditional_tags, 'is_tb', 'false' );
+		$is_bfb           = 'true' === et_()->array_get( $conditional_tags, 'is_bfb', 'false' );
+		$is_bfb_activated = 'true' === et_()->array_get( $conditional_tags, 'is_bfb_activated', 'false' );
+		$is_builder       = $is_tb || $is_bfb || $is_bfb_activated || is_et_pb_preview();
+
+		if ( ! $is_builder ) {
+			add_filter(
+				'woocommerce_add_to_cart_form_action',
+				array(
+					'ET_Builder_Module_Woocommerce_Add_To_Cart',
+					// phpcs:ignore WordPress.Arrays.CommaAfterArrayItem.NoComma -- This is a function call.
+					'replace_add_to_cart_form_action'
+				)
+			);
+		}
+
+		$output = et_builder_wc_render_module_template(
+			'woocommerce_template_single_add_to_cart',
+			$args,
+			array( 'product', 'post' )
+		);
+
+		if ( ! $is_builder ) {
+			remove_filter(
+				'woocommerce_add_to_cart_form_action',
+				array(
+					'ET_Builder_Module_Woocommerce_Add_To_Cart',
+					// phpcs:ignore WordPress.Arrays.CommaAfterArrayItem.NoComma -- This is a function call.
+					'replace_add_to_cart_form_action'
+				)
+			);
+		}
+
+		return $output;
 	}
 
 	/**
@@ -439,22 +515,97 @@ class ET_Builder_Module_Woocommerce_Add_To_Cart extends ET_Builder_Module {
 	public function add_multi_view_attrs( $outer_wrapper_attrs ) {
 		$multi_view = et_pb_multi_view_options( $this );
 
-		$multi_view_attrs = $multi_view->render_attrs( array(
-			'classes' => array(
-				'et_pb_hide_input_quantity' => array(
-					'show_quantity' => 'off',
-				),
-				'et_pb_hide_stock'          => array(
-					'show_stock' => 'off',
+		$multi_view_attrs = $multi_view->render_attrs(
+			array(
+				'classes' => array(
+					'et_pb_hide_input_quantity'           => array(
+						'show_quantity' => 'off',
+					),
+					'et_pb_hide_stock'                    => array(
+						'show_stock' => 'off',
+					),
+					'et_pb_fields_label_position_inline'  => array(
+						'field_label_position' => 'inline',
+					),
+					'et_pb_fields_label_position_stacked' => array(
+						'field_label_position' => 'stacked',
+					),
 				),
 			),
-		), false, null, true );
+			false,
+			null,
+			true
+		);
 
 		if ( $multi_view_attrs && is_array( $multi_view_attrs ) ) {
 			$outer_wrapper_attrs = array_merge( $outer_wrapper_attrs, $multi_view_attrs );
 		}
 
 		return $outer_wrapper_attrs;
+	}
+
+	/**
+	 * Calculates any required additional CSS.
+	 *
+	 * Dropdown menu's Bottom & Left margin affects the Dropdown arrow placement.
+	 * This is handled using additional CSS.
+	 *
+	 * @param array  $attrs
+	 * @param string $render_slug
+	 *
+	 * @since 4.3.4
+	 */
+	public function add_additional_css( $attrs, $render_slug ) {
+		if ( ! is_array( $attrs ) || empty( $attrs ) ) {
+			return;
+		}
+
+		$prop = 'dropdown_menus_custom_margin';
+
+		$values           = et_pb_responsive_options()->get_property_values( $attrs, $prop );
+		$hover_value      = et_pb_hover_options()->get_value( $prop, $attrs, '' );
+		$processed_values = array();
+
+		foreach ( $values as $device => $value ) {
+			if ( empty( $value ) ) {
+				continue;
+			}
+
+			$processed_values[ $device ] = $this->calculate_dropdown_arrow_margin( $value );
+		}
+
+		// Generate style for desktop, tablet, and phone.
+		et_pb_responsive_options()->declare_responsive_css(
+			$processed_values,
+			'%%order_class%% form.cart .variations td.value span:after',
+			$render_slug
+		);
+	}
+
+	/**
+	 * Calculates Dropdown's arrow margin values.
+	 *
+	 * The Dropdown's arrow margin values depend on the actual
+	 * Dropdown margin values.
+	 *
+	 * @since 4.3.4
+	 *
+	 * @param $value
+	 *
+	 * @return string
+	 */
+	public function calculate_dropdown_arrow_margin( $value ) {
+		$dropdown_margin        = explode( '|', $value );
+		$dropdown_bottom_margin = empty( $dropdown_margin[2] ) ? '0px' : $dropdown_margin[2];
+		$dropdown_left_margin   = empty( $dropdown_margin[3] ) ? '0px' : $dropdown_margin[3];
+
+		$declarations = array(
+			sprintf( 'margin-top: calc( 3px - %s )', $dropdown_bottom_margin ),
+			sprintf( 'right: calc( 10px - %s )', $dropdown_left_margin ),
+		);
+
+		// The last declaration wouldn't have the `;`. So appending manually.
+		return implode( ';', $declarations ) . ';';
 	}
 
 	/**
@@ -466,8 +617,8 @@ class ET_Builder_Module_Woocommerce_Add_To_Cart extends ET_Builder_Module {
 	 *
 	 * @return string
 	 */
-	public function render( $attrs, $content = null, $render_slug ) {
-		$multi_view = et_pb_multi_view_options( $this );
+	public function render( $attrs, $content, $render_slug ) {
+		$multi_view             = et_pb_multi_view_options( $this );
 		$use_focus_border_color = $this->props['use_focus_border_color'];
 
 		// Module classnames.
@@ -483,15 +634,17 @@ class ET_Builder_Module_Woocommerce_Add_To_Cart extends ET_Builder_Module {
 			$this->add_classname( 'et_pb_with_focus_border' );
 		}
 
+		$fields_label_position = et_()->array_get( $this->props, 'field_label_position', 'inline' );
+		$this->add_classname( "et_pb_fields_label_position_{$fields_label_position}" );
+
 		ET_Builder_Module_Helper_Woocommerce_Modules::process_background_layout_data( $render_slug, $this );
 		ET_Builder_Module_Helper_Woocommerce_Modules::process_custom_button_icons( $render_slug, $this );
 
 		$this->add_classname( $this->get_text_orientation_classname() );
 
-		add_filter( "et_builder_module_{$render_slug}_outer_wrapper_attrs", array(
-			$this,
-			'add_multi_view_attrs',
-		) );
+		$this->add_additional_css( $this->props, $render_slug );
+
+		add_filter( "et_builder_module_{$render_slug}_outer_wrapper_attrs", array( $this, 'add_multi_view_attrs' ) );
 
 		$output = self::get_add_to_cart( $this->props );
 

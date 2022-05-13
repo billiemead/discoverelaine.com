@@ -10,6 +10,8 @@
  * @since   3.29
  */
 
+defined( 'ABSPATH' ) || exit;
+
 /**
  * Class representing WooCommerce Related Products component.
  *
@@ -27,30 +29,43 @@ class ET_Builder_Module_Woocommerce_Related_Products extends ET_Builder_Module {
 	public static $static_props;
 
 	/**
+	 * Number of products to be offset.
+	 *
+	 * @var int Default 0.
+	 */
+	public static $offset = 0;
+
+	/**
 	 * Initialize.
+	 *
+	 * @since 4.0.7 Introduced Product title toggle slug to allow Copy/Paste
+	 *           @see   {https://github.com/elegantthemes/Divi/issues/17436}
 	 */
 	public function init() {
-		$this->name   = esc_html__( 'Woo Related Product', 'et_builder' );
+		$this->name   = esc_html__( 'Woo Related Products', 'et_builder' );
 		$this->plural = esc_html__( 'Woo Related Products', 'et_builder' );
 
 		// Use `et_pb_wc_{module}` for all WooCommerce modules.
-		$this->slug       = 'et_pb_wc_related_products';
-		$this->vb_support = 'on';
+		$this->slug        = 'et_pb_wc_related_products';
+		$this->vb_support  = 'on';
+		$this->folder_name = 'et_pb_woo_modules';
 
 		$this->main_css_element = '%%order_class%%';
 
 		$this->settings_modal_toggles = array(
 			'general'  => array(
 				'toggles' => array(
-					'main_content' => esc_html__( 'Content', 'et_builder' ),
+					'main_content' => et_builder_i18n( 'Content' ),
+					'elements'     => et_builder_i18n( 'Elements' ),
 				),
 			),
 			'advanced' => array(
 				'toggles' => array(
-					'overlay' => esc_html__( 'Overlay', 'et_builder' ),
-					'image'   => esc_html__( 'Image', 'et_builder' ),
+					'overlay'    => et_builder_i18n( 'Overlay' ),
+					'image'      => et_builder_i18n( 'Image' ),
 					// Avoid Text suffix by manually defining the `star` toggle slug.
-					'star'    => esc_html__( 'Star Rating', 'et_builder' ),
+					'star'       => esc_html__( 'Star Rating', 'et_builder' ),
+					'sale_badge' => esc_html__( 'Sale Badge Text', 'et_builder' ),
 				),
 			),
 		);
@@ -58,7 +73,7 @@ class ET_Builder_Module_Woocommerce_Related_Products extends ET_Builder_Module {
 		$this->advanced_fields = array(
 			'fonts'          => array(
 				'title'         => array(
-					'label'       => esc_html__( 'Title', 'et_builder' ),
+					'label'       => et_builder_i18n( 'Title' ),
 					'css'         => array(
 						'main'      => '%%order_class%% section.products > h1, %%order_class%% section.products > h2, %%order_class%% section.products > h3, %%order_class%% section.products > h4, %%order_class%% section.products > h5, %%order_class%% section.products > h6',
 						'important' => 'all',
@@ -84,6 +99,15 @@ class ET_Builder_Module_Woocommerce_Related_Products extends ET_Builder_Module {
 					'hide_line_height'   => true,
 					'hide_text_shadow'   => true,
 					'use_original_label' => true,
+					'text_align'         => array(
+						'label' => esc_html__( 'Star Rating Alignment', 'et_builder' ),
+					),
+					'font_size'          => array(
+						'label' => esc_html__( 'Star Rating Size', 'et_builder' ),
+					),
+					'text_color'         => array(
+						'label' => esc_html__( 'Star Rating Color', 'et_builder' ),
+					),
 					'toggle_slug'        => 'star',
 				),
 				'product_title' => array(
@@ -156,7 +180,7 @@ class ET_Builder_Module_Woocommerce_Related_Products extends ET_Builder_Module {
 				),
 			),
 			'borders'        => array(
-				'default' => array(
+				'default'    => array(
 					'css' => array(
 						'main' => array(
 							'border_radii'  => '%%order_class%%.et_pb_wc_related_products .product',
@@ -164,26 +188,41 @@ class ET_Builder_Module_Woocommerce_Related_Products extends ET_Builder_Module {
 						),
 					),
 				),
-				'image'   => array(
+				'image'      => array(
 					'css'          => array(
-						'main' => array(
+						'main'      => array(
 							'border_radii'  => '%%order_class%%.et_pb_module .et_shop_image',
 							'border_styles' => '%%order_class%%.et_pb_module .et_shop_image',
 						),
 						'important' => 'all',
 					),
-					'label_prefix' => esc_html__( 'Image', 'et_builder' ),
+					'label_prefix' => et_builder_i18n( 'Image' ),
 					'tab_slug'     => 'advanced',
 					'toggle_slug'  => 'image',
 				),
+				'sale_badge' => array(
+					'css'          => array(
+						'main'      => array(
+							'border_radii'  => '%%order_class%% span.onsale',
+							'border_styles' => '%%order_class%% span.onsale',
+						),
+						'important' => true,
+					),
+					'defaults'     => array(
+						'border_radii' => 'on|3px|3px|3px|3px',
+					),
+					'label_prefix' => esc_html__( 'Sale Badge', 'et_builder' ),
+					'tab_slug'     => 'advanced',
+					'toggle_slug'  => 'sale_badge',
+				),
 			),
 			'box_shadow'     => array(
-				'default' => array(
+				'default'    => array(
 					'css' => array(
 						'main' => '%%order_class%% .product',
 					),
 				),
-				'image'   => array(
+				'image'      => array(
 					'label'             => esc_html__( 'Image Box Shadow', 'et_builder' ),
 					'option_category'   => 'layout',
 					'tab_slug'          => 'advanced',
@@ -195,6 +234,17 @@ class ET_Builder_Module_Woocommerce_Related_Products extends ET_Builder_Module {
 					'default_on_fronts' => array(
 						'color'    => '',
 						'position' => '',
+					),
+				),
+				'sale_badge' => array(
+					'label'           => esc_html__( 'Sale Badge Box Shadow', 'et_builder' ),
+					'option_category' => 'layout',
+					'tab_slug'        => 'advanced',
+					'toggle_slug'     => 'sale_badge',
+					'css'             => array(
+						'main'      => '%%order_class%% span.onsale',
+						'overlay'   => 'inset',
+						'important' => true,
 					),
 				),
 			),
@@ -238,6 +288,31 @@ class ET_Builder_Module_Woocommerce_Related_Products extends ET_Builder_Module {
 				),
 			),
 			'button'         => false,
+			'form_field'     => array(
+				'sale_badge' => array(
+					'label'                  => esc_html__( 'Sale Badge', 'et_builder' ),
+					'background_color'       => false,
+					'text_color'             => false,
+					'focus_background_color' => false,
+					'focus_text_color'       => false,
+					'font_field'             => false,
+					'margin_padding'         => array(
+						'css'            => array(
+							'main'      => '%%order_class%% ul.products li.product span.onsale',
+							'important' => array( 'custom_margin', 'custom_padding' ),
+						),
+						'custom_margin'  => array(
+							'default' => '0px|0px|0px|0px|false|false',
+						),
+						'custom_padding' => array(
+							'default' => '6px|18px|6px|18px|false|false',
+						),
+						'toggle_slug'    => 'sale_badge',
+					),
+					'border_styles'          => false,
+					'box_shadow'             => false,
+				),
+			),
 		);
 
 		$this->custom_css_fields = array(
@@ -250,15 +325,15 @@ class ET_Builder_Module_Woocommerce_Related_Products extends ET_Builder_Module {
 				'selector' => 'li.product .onsale',
 			),
 			'image'     => array(
-				'label'    => esc_html__( 'Image', 'et_builder' ),
+				'label'    => et_builder_i18n( 'Image' ),
 				'selector' => '.et_shop_image',
 			),
 			'overlay'   => array(
-				'label'    => esc_html__( 'Overlay', 'et_builder' ),
+				'label'    => et_builder_i18n( 'Overlay' ),
 				'selector' => '.et_overlay',
 			),
 			'title'     => array(
-				'label'    => esc_html__( 'Title', 'et_builder' ),
+				'label'    => et_builder_i18n( 'Title' ),
 				'selector' => ET_Builder_Module_Helper_Woocommerce_Modules::get_title_selector(),
 			),
 			'rating'    => array(
@@ -277,7 +352,7 @@ class ET_Builder_Module_Woocommerce_Related_Products extends ET_Builder_Module {
 
 		$this->help_videos = array(
 			array(
-				'id'   => esc_html( '7X03vBPYJ1o' ),
+				'id'   => '7X03vBPYJ1o',
 				'name' => esc_html__( 'Divi WooCommerce Modules', 'et_builder' ),
 			),
 		);
@@ -287,7 +362,7 @@ class ET_Builder_Module_Woocommerce_Related_Products extends ET_Builder_Module {
 	 * {@inheritdoc}
 	 */
 	public function get_fields() {
-		$fields  = array(
+		$fields = array(
 			'product'             => ET_Builder_Module_Helper_Woocommerce_Modules::get_field(
 				'product',
 				array(
@@ -340,7 +415,25 @@ class ET_Builder_Module_Woocommerce_Related_Products extends ET_Builder_Module {
 					),
 				)
 			),
-			'sale_badge_color' => array(
+			'include_categories'  => array(
+				'label'            => esc_html__( 'Included Categories', 'et_builder' ),
+				'type'             => 'categories',
+				'meta_categories'  => array(
+					'all'     => esc_html__( 'All Categories', 'et_builder' ),
+					'current' => esc_html__( 'Current Category', 'et_builder' ),
+				),
+				'renderer_options' => array(
+					'use_terms' => true,
+					'term_name' => 'product_cat',
+				),
+				'description'      => esc_html__( 'Choose which categories you would like to include.', 'et_builder' ),
+				'taxonomy_name'    => 'product_cat',
+				'toggle_slug'      => 'main_content',
+				'computed_affects' => array(
+					'__related_products',
+				),
+			),
+			'sale_badge_color'    => array(
 				'label'          => esc_html__( 'Sale Badge Color', 'et_builder' ),
 				'description'    => esc_html__( 'Pick a color to use for the sales bade that appears on products that are on sale.', 'et_builder' ),
 				'type'           => 'color-alpha',
@@ -349,6 +442,7 @@ class ET_Builder_Module_Woocommerce_Related_Products extends ET_Builder_Module {
 				'toggle_slug'    => 'sale_badge',
 				'hover'          => 'tabs',
 				'mobile_options' => true,
+				'sticky'         => true,
 			),
 			'icon_hover_color'    => array(
 				'label'          => esc_html__( 'Overlay Icon Color', 'et_builder' ),
@@ -358,6 +452,7 @@ class ET_Builder_Module_Woocommerce_Related_Products extends ET_Builder_Module {
 				'tab_slug'       => 'advanced',
 				'toggle_slug'    => 'overlay',
 				'mobile_options' => true,
+				'sticky'         => true,
 			),
 			'hover_overlay_color' => array(
 				'label'          => esc_html__( 'Overlay Background Color', 'et_builder' ),
@@ -367,6 +462,7 @@ class ET_Builder_Module_Woocommerce_Related_Products extends ET_Builder_Module {
 				'tab_slug'       => 'advanced',
 				'toggle_slug'    => 'overlay',
 				'mobile_options' => true,
+				'sticky'         => true,
 			),
 			'hover_icon'          => array(
 				'label'           => esc_html__( 'Overlay Icon', 'et_builder' ),
@@ -377,6 +473,85 @@ class ET_Builder_Module_Woocommerce_Related_Products extends ET_Builder_Module {
 				'tab_slug'        => 'advanced',
 				'toggle_slug'     => 'overlay',
 				'mobile_options'  => true,
+				'sticky'          => true,
+			),
+			'show_name'           => array(
+				'label'            => esc_html__( 'Show Name', 'et_builder' ),
+				'type'             => 'yes_no_button',
+				'option_category'  => 'configuration',
+				'options'          => array(
+					'on'  => esc_html__( 'Yes', 'et_builder' ),
+					'off' => esc_html__( 'No', 'et_builder' ),
+				),
+				'default_on_front' => 'on',
+				'toggle_slug'      => 'elements',
+				'description'      => esc_html__( 'Turn name on or off.', 'et_builder' ),
+				'mobile_options'   => true,
+				'hover'            => 'tabs',
+			),
+			'show_image'          => array(
+				'label'            => esc_html__( 'Show Image', 'et_builder' ),
+				'type'             => 'yes_no_button',
+				'option_category'  => 'configuration',
+				'options'          => array(
+					'on'  => esc_html__( 'Yes', 'et_builder' ),
+					'off' => esc_html__( 'No', 'et_builder' ),
+				),
+				'default_on_front' => 'on',
+				'toggle_slug'      => 'elements',
+				'description'      => esc_html__( 'Turn image on or off.', 'et_builder' ),
+				'mobile_options'   => true,
+				'hover'            => 'tabs',
+			),
+			'show_price'          => array(
+				'label'            => esc_html__( 'Show Price', 'et_builder' ),
+				'type'             => 'yes_no_button',
+				'option_category'  => 'configuration',
+				'options'          => array(
+					'on'  => esc_html__( 'Yes', 'et_builder' ),
+					'off' => esc_html__( 'No', 'et_builder' ),
+				),
+				'default_on_front' => 'on',
+				'toggle_slug'      => 'elements',
+				'description'      => esc_html__( 'Turn price on or off.', 'et_builder' ),
+				'mobile_options'   => true,
+				'hover'            => 'tabs',
+			),
+			'show_rating'         => array(
+				'label'            => esc_html__( 'Show Rating', 'et_builder' ),
+				'type'             => 'yes_no_button',
+				'option_category'  => 'configuration',
+				'options'          => array(
+					'on'  => esc_html__( 'Yes', 'et_builder' ),
+					'off' => esc_html__( 'No', 'et_builder' ),
+				),
+				'default_on_front' => 'on',
+				'toggle_slug'      => 'elements',
+				'description'      => esc_html__( 'Turn rating on or off.', 'et_builder' ),
+				'mobile_options'   => true,
+				'hover'            => 'tabs',
+			),
+			'show_sale_badge'     => array(
+				'label'            => esc_html__( 'Show Sale Badge', 'et_builder' ),
+				'type'             => 'yes_no_button',
+				'option_category'  => 'configuration',
+				'options'          => array(
+					'on'  => esc_html__( 'Yes', 'et_builder' ),
+					'off' => esc_html__( 'No', 'et_builder' ),
+				),
+				'default_on_front' => 'on',
+				'toggle_slug'      => 'elements',
+				'description'      => esc_html__( 'Turn sale badge on or off.', 'et_builder' ),
+				'mobile_options'   => true,
+				'hover'            => 'tabs',
+			),
+			'offset_number'       => ET_Builder_Module_Helper_Woocommerce_Modules::get_field(
+				'offset_number',
+				array(
+					'computed_affects' => array(
+						'__related_products',
+					),
+				)
 			),
 			'__related_products'  => array(
 				'type'                => 'computed',
@@ -390,6 +565,8 @@ class ET_Builder_Module_Woocommerce_Related_Products extends ET_Builder_Module {
 					'posts_number',
 					'columns_number',
 					'orderby',
+					'offset_number',
+					'include_categories',
 				),
 				'computed_minimum'    => array(
 					'product',
@@ -398,6 +575,50 @@ class ET_Builder_Module_Woocommerce_Related_Products extends ET_Builder_Module {
 		);
 
 		return $fields;
+	}
+
+	/**
+	 * Filters the related product category Ids.
+	 *
+	 * @since 4.14.0
+	 *
+	 * @param array $term_ids Term IDs.
+	 *
+	 * @return array
+	 */
+	public static function set_related_products_categories( $term_ids ) {
+		$include_cats = et_()->array_get( self::$static_props, 'include_categories', '' );
+		$meta_cats    = array( 'all', 'current' );
+
+		// WooCommerce by default handles All & Current based on the global $product.
+		// So return the filtered $term_ids to let WooCommerce take control.
+		if ( in_array( $include_cats, $meta_cats, true ) || empty( $include_cats ) ) {
+			return $term_ids;
+		}
+
+		// Return user selected categories if they exist.
+		$include_cats = explode( ',', $include_cats );
+
+		return $include_cats;
+	}
+
+	/**
+	 * Appends offset to the WP_Query that retrieves Products.
+	 *
+	 * @since 4.14.0
+	 *
+	 * @param array $query_args Query args.
+	 *
+	 * @return array
+	 */
+	public static function append_offset( $query_args ) {
+		if ( ! is_array( $query_args ) ) {
+			return $query_args;
+		}
+
+		$query_args['offset'] = self::$offset;
+
+		return $query_args;
 	}
 
 	/**
@@ -434,14 +655,63 @@ class ET_Builder_Module_Woocommerce_Related_Products extends ET_Builder_Module {
 		 * we pass them via a static variable.
 		 */
 		self::$static_props = $args;
+		$offset_number      = et_()->array_get( $args, 'offset_number', 0 );
+		$include_cats       = et_()->array_get( $args, 'include_categories', '' );
+		$show_price         = et_()->array_get( $args, 'show_price', 'on' );
+		$include_cats       = ! empty( $include_cats ) ? explode( ',', $include_cats ) : array();
+		$is_include_cats    = is_array( $include_cats ) && count( $include_cats ) > 0;
+
+		// Force set product's class to ET_Theme_Builder_Woocommerce_Product_Variable_Placeholder
+		// in TB so related product can outputs visible content based on pre-filled value in TB
+		if ( 'true' === et_()->array_get( $conditional_tags, 'is_tb', false ) || is_et_pb_preview() ) {
+			add_filter( 'woocommerce_product_class', 'et_theme_builder_wc_product_class' );
+		}
+
+		$is_offset_valid = absint( $offset_number ) > 0;
+		if ( $is_offset_valid ) {
+			self::$offset = $offset_number;
+
+			add_filter(
+				'woocommerce_shortcode_products_query',
+				array(
+					'ET_Builder_Module_Woocommerce_Related_Products',
+					'append_offset',
+				)
+			);
+		}
+
+		if ( $is_include_cats ) {
+			$product_id = et_builder_wc_get_product_id( $args );
+			// To include only selected categories the cached transient should be flushed,
+			// so WooCommerce can compute the categories and cache it again.
+			delete_transient( 'wc_related_' . $product_id );
+
+			add_filter(
+				'woocommerce_get_related_product_cat_terms',
+				array(
+					'ET_Builder_Module_Woocommerce_Related_Products',
+					// phpcs:ignore WordPress.Arrays.CommaAfterArrayItem.NoComma -- Call to a function.
+					'set_related_products_categories'
+				)
+			);
+
+			// Also disable related Products by tag
+			// so Products from other categories are not included.
+			add_filter( 'woocommerce_product_related_posts_relate_by_tag', '__return_false' );
+		}
 
 		add_filter(
 			'woocommerce_output_related_products_args',
 			array(
 				'ET_Builder_Module_Woocommerce_Related_Products',
-				'set_related_products_args',
+				// phpcs:ignore WordPress.Arrays.CommaAfterArrayItem.NoComma -- Call to a function.
+				'set_related_products_args'
 			)
 		);
+
+		if ( 'off' === $show_price ) {
+			remove_action( 'woocommerce_after_shop_loop_item_title', 'woocommerce_template_loop_price' );
+		}
 
 		$output = et_builder_wc_render_module_template( 'woocommerce_output_related_products', $args );
 
@@ -449,9 +719,40 @@ class ET_Builder_Module_Woocommerce_Related_Products extends ET_Builder_Module {
 			'woocommerce_output_related_products_args',
 			array(
 				'ET_Builder_Module_Woocommerce_Related_Products',
-				'set_related_products_args',
+				// phpcs:ignore WordPress.Arrays.CommaAfterArrayItem.NoComma -- Call to a function.
+				'set_related_products_args'
 			)
 		);
+
+		if ( $is_include_cats ) {
+			remove_filter(
+				'woocommerce_get_related_product_cat_terms',
+				array(
+					'ET_Builder_Module_Woocommerce_Related_Products',
+					// phpcs:ignore WordPress.Arrays.CommaAfterArrayItem.NoComma -- Call to a function.
+					'set_related_products_categories'
+				)
+			);
+
+			remove_filter( 'woocommerce_product_related_posts_relate_by_tag', '__return_false' );
+		}
+
+		if ( $is_offset_valid ) {
+			remove_filter(
+				'woocommerce_shortcode_products_query',
+				array(
+					'ET_Builder_Module_Woocommerce_Related_Products',
+					// phpcs:ignore WordPress.Arrays.CommaAfterArrayItem.NoComma -- Call to a function.
+					'append_offset'
+				)
+			);
+
+			self::$offset = 0;
+		}
+
+		if ( 'off' === $show_price ) {
+			add_action( 'woocommerce_after_shop_loop_item_title', 'woocommerce_template_loop_price' );
+		}
 
 		return $output;
 	}
@@ -532,7 +833,57 @@ class ET_Builder_Module_Woocommerce_Related_Products extends ET_Builder_Module {
 	}
 
 	/**
+	 * Adds Multi view attributes to the Outer wrapper.
+	 *
+	 * Since we do not have control over the WooCommerce Related Products markup, we inject Multi
+	 * view attributes on to the Outer wrapper.
+	 *
+	 * @param array $outer_wrapper_attrs Outer wrapper attributes.
+	 *
+	 * @return array
+	 */
+	public function add_multi_view_attrs( $outer_wrapper_attrs ) {
+		$multi_view = et_pb_multi_view_options( $this );
+
+		// phpcs:disable WordPress.Arrays.MultipleStatementAlignment.DoubleArrowNotAligned -- Invalid warning.
+		$multi_view_attrs = $multi_view->render_attrs(
+			array(
+				'classes' => array(
+					'et_pb_wc_related_products_no_name'       => array(
+						'show_name' => 'off',
+					),
+					'et_pb_wc_related_products_no_image'      => array(
+						'show_image' => 'off',
+					),
+					'et_pb_wc_related_products_no_price'      => array(
+						'show_price' => 'off',
+					),
+					'et_pb_wc_related_products_no_rating'     => array(
+						'show_rating' => 'off',
+					),
+					'et_pb_wc_related_products_no_sale_badge' => array(
+						'show_sale_badge' => 'off',
+					),
+
+				),
+			),
+			false,
+			null,
+			true
+		);
+		// phpcs:enable WordPress.Arrays.MultipleStatementAlignment.DoubleArrowNotAligned
+
+		if ( $multi_view_attrs && is_array( $multi_view_attrs ) ) {
+			$outer_wrapper_attrs = array_merge( $outer_wrapper_attrs, $multi_view_attrs );
+		}
+
+		return $outer_wrapper_attrs;
+	}
+
+	/**
 	 * Renders the module output.
+	 *
+	 * @since 4.1.0 Show only Products irrespective of Customizer Product Catalog setting on Shop page.
 	 *
 	 * @param  array  $attrs       List of attributes.
 	 * @param  string $content     Content being processed.
@@ -540,7 +891,7 @@ class ET_Builder_Module_Woocommerce_Related_Products extends ET_Builder_Module {
 	 *
 	 * @return string
 	 */
-	public function render( $attrs, $content = null, $render_slug ) {
+	public function render( $attrs, $content, $render_slug ) {
 		ET_Builder_Module_Helper_Woocommerce_Modules::process_background_layout_data( $render_slug, $this );
 		ET_Builder_Module_Helper_Woocommerce_Modules::add_star_rating_style(
 			$render_slug,
@@ -549,41 +900,58 @@ class ET_Builder_Module_Woocommerce_Related_Products extends ET_Builder_Module {
 			'%%order_class%% ul.products li.product:hover .star-rating'
 		);
 
-		$sale_badge_color_hover    = $this->get_hover_value( 'sale_badge_color' );
-		$sale_badge_color_values   = et_pb_responsive_options()->get_property_values( $this->props, 'sale_badge_color' );
-		$icon_hover_color_values   = et_pb_responsive_options()->get_property_values( $this->props, 'icon_hover_color' );
-		$hover_overlay_color_value = et_pb_responsive_options()->get_property_values( $this->props, 'hover_overlay_color' );
-
 		// Sale Badge Color.
-		et_pb_responsive_options()->generate_responsive_css( $sale_badge_color_values, '%%order_class%% span.onsale', 'background-color', $render_slug, ' !important;', 'color' );
-
-		if ( et_builder_is_hover_enabled( 'sale_badge_color', $this->props ) ) {
-			ET_Builder_Element::set_style(
-				$render_slug,
-				array(
-					'selector'    => '%%order_class%%:hover span.onsale',
-					'declaration' => sprintf(
-						'background-color: %1$s !important;',
-						esc_html( $sale_badge_color_hover )
-					),
-				)
-			);
-		}
+		$this->generate_styles(
+			array(
+				'base_attr_name' => 'sale_badge_color',
+				'selector'       => '%%order_class%% span.onsale',
+				'css_property'   => 'background-color',
+				'important'      => true,
+				'render_slug'    => $render_slug,
+				'type'           => 'color',
+			)
+		);
 
 		// Icon Hover Color.
-		et_pb_responsive_options()->generate_responsive_css( $icon_hover_color_values, '%%order_class%% .et_overlay:before, %%order_class%% .et_pb_extra_overlay:before', 'color', $render_slug, ' !important;', 'color' );
+		$this->generate_styles(
+			array(
+				'hover'          => false,
+				'base_attr_name' => 'icon_hover_color',
+				'selector'       => '%%order_class%% .et_overlay:before, %%order_class%% .et_pb_extra_overlay:before',
+				'css_property'   => 'color',
+				'important'      => true,
+				'render_slug'    => $render_slug,
+				'type'           => 'color',
+			)
+		);
 
 		// Hover Overlay Color.
-		et_pb_responsive_options()->generate_responsive_css(
-			$hover_overlay_color_value,
-			'%%order_class%% .et_overlay, %%order_class%% .et_pb_extra_overlay',
+		$this->generate_styles(
 			array(
-				'background-color',
-				'border-color',
-			),
-			$render_slug,
-			' !important;',
-			'color'
+				'hover'          => false,
+				'base_attr_name' => 'hover_overlay_color',
+				'selector'       => '%%order_class%% .et_overlay, %%order_class%% .et_pb_extra_overlay',
+				'css_property'   => array( 'background-color', 'border-color' ),
+				'important'      => true,
+				'render_slug'    => $render_slug,
+				'type'           => 'color',
+			)
+		);
+
+		// Overlay Icon Styles.
+		$this->generate_styles(
+			array(
+				'hover'          => false,
+				'utility_arg'    => 'icon_font_family',
+				'render_slug'    => $render_slug,
+				'base_attr_name' => 'hover_icon',
+				'important'      => true,
+				'selector'       => '%%order_class%% .et_overlay:before',
+				'processor'      => array(
+					'ET_Builder_Module_Helper_Style_Processor',
+					'process_extended_icon',
+				),
+			)
 		);
 
 		// Images: Add CSS Filters and Mix Blend Mode rules (if set).
@@ -599,7 +967,36 @@ class ET_Builder_Module_Woocommerce_Related_Products extends ET_Builder_Module {
 
 		$this->add_classname( $this->get_text_orientation_classname() );
 
+		$is_shop                        = function_exists( 'is_shop' ) && is_shop();
+		$is_wc_loop_prop_get_set_exists = function_exists( 'wc_get_loop_prop' ) && function_exists( 'wc_set_loop_prop' );
+		$is_product_category            = function_exists( 'is_product_category' ) && is_product_category();
+
+		if ( $is_shop ) {
+			$display_type = ET_Builder_Module_Helper_Woocommerce_Modules::set_display_type_to_render_only_products( 'woocommerce_shop_page_display' );
+		} elseif ( $is_product_category ) {
+			$display_type = ET_Builder_Module_Helper_Woocommerce_Modules::set_display_type_to_render_only_products( 'woocommerce_category_archive_display' );
+		}
+
+		// Required to handle Customizer preview pane.
+		// Refer: https://github.com/elegantthemes/Divi/issues/17998#issuecomment-565955422
+		if ( $is_wc_loop_prop_get_set_exists && is_customize_preview() ) {
+			$is_filtered = wc_get_loop_prop( 'is_filtered' );
+			wc_set_loop_prop( 'is_filtered', true );
+		}
+
 		$output = self::get_related_products( $this->props );
+
+		// Required to handle Customizer preview pane.
+		// Refer: https://github.com/elegantthemes/Divi/issues/17998#issuecomment-565955422
+		if ( $is_wc_loop_prop_get_set_exists && is_customize_preview() && isset( $is_filtered ) ) {
+			wc_set_loop_prop( 'is_filtered', $is_filtered );
+		}
+
+		if ( $is_shop && isset( $display_type ) ) {
+			ET_Builder_Module_Helper_Woocommerce_Modules::reset_display_type( 'woocommerce_shop_page_display', $display_type );
+		} elseif ( $is_product_category && isset( $display_type ) ) {
+			ET_Builder_Module_Helper_Woocommerce_Modules::reset_display_type( 'woocommerce_category_archive_display', $display_type );
+		}
 
 		// Render empty string if no output is generated to avoid unwanted vertical space.
 		if ( '' === $output ) {
@@ -610,10 +1007,20 @@ class ET_Builder_Module_Woocommerce_Related_Products extends ET_Builder_Module {
 			"et_builder_module_{$render_slug}_outer_wrapper_attrs",
 			array(
 				'ET_Builder_Module_Helper_Woocommerce_Modules',
-				'output_data_icon_attrs',
+				// phpcs:ignore WordPress.Arrays.CommaAfterArrayItem.NoComma -- Call to a function.
+				'output_data_icon_attrs'
 			),
 			10,
 			2
+		);
+
+		add_filter(
+			"et_builder_module_{$render_slug}_outer_wrapper_attrs",
+			array(
+				$this,
+				// phpcs:ignore WordPress.Arrays.CommaAfterArrayItem.NoComma -- Call to a function.
+				'add_multi_view_attrs',
+			)
 		);
 
 		$output = $this->_render_module_wrapper( $output, $render_slug );
@@ -622,7 +1029,8 @@ class ET_Builder_Module_Woocommerce_Related_Products extends ET_Builder_Module {
 			"et_builder_module_{$render_slug}_outer_wrapper_attrs",
 			array(
 				'ET_Builder_Module_Helper_Woocommerce_Modules',
-				'output_data_icon_attrs',
+				// phpcs:ignore WordPress.Arrays.CommaAfterArrayItem.NoComma -- Call to a function.
+				'output_data_icon_attrs'
 			),
 			10
 		);

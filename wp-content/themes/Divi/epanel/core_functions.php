@@ -50,6 +50,21 @@ if ( ! function_exists( 'et_epanel_admin_js' ) ) {
 }
 /* --------------------------------------------- */
 
+/* Enabling CSSlint for codemirror */
+if ( ! function_exists( 'et_epanel_enable_css_lint' ) ) {
+	function et_epanel_enable_css_lint( $settings ){
+		$modes = array( 'text/css', 'css', 'text/x-scss', 'text/x-less', 'text/x-sass' );
+
+		if ( in_array( $settings['codemirror']['mode'], $modes, true ) ) {
+			$settings['codemirror']['lint'] = true;
+			$settings['codemirror']['gutters'] = array( 'CodeMirror-lint-markers' );
+		}
+
+		return $settings;
+	}
+	add_filter( 'wp_code_editor_settings', 'et_epanel_enable_css_lint' );
+}
+
 /* Adds additional ePanel css */
 if ( ! function_exists( 'et_epanel_css_admin' ) ) {
 
@@ -241,6 +256,7 @@ if ( ! function_exists( 'et_build_epanel' ) ) {
 										: 'et_core_portability_link';
 
 									echo et_core_esc_previously(
+										// @phpcs:ignore Generic.PHP.ForbiddenFunctions.Found
 										call_user_func(
 											$portability_link,
 											'epanel',
@@ -271,6 +287,7 @@ if ( ! function_exists( 'et_build_epanel' ) ) {
 
 									if ( ! empty( $value[ 'depends_on' ] ) ) {
 										// function defined in 'depends on' key returns false, if a setting shouldn't be displayed
+										// @phpcs:ignore Generic.PHP.ForbiddenFunctions.Found
 										if ( ! call_user_func( $value[ 'depends_on' ] ) ) {
 											continue;
 										}
@@ -380,7 +397,7 @@ if ( ! function_exists( 'et_build_epanel' ) ) {
 														$et_upload_button_data = isset( $value['button_text'] ) ? sprintf( ' data-button_text="%1$s"', esc_attr( $value['button_text'] ) ) : '';
 													?>
 
-														<input id="<?php echo esc_attr( $value['id'] ); ?>" class="et-upload-field" type="text" size="90" name="<?php echo esc_attr( $value['id'] ); ?>" value="<?php echo esc_url( et_get_option( $value['id'], '', '', false, $is_new_global_setting, $global_setting_main_name, $global_setting_sub_name ) ); ?>" />
+														<input id="<?php echo esc_attr( $value['id'] ); ?>" class="et-upload-field" type="text" size="90" name="<?php echo esc_attr( $value['id'] ); ?>" value="<?php echo esc_url( strval( et_get_option( $value['id'], '', '', false, $is_new_global_setting, $global_setting_main_name, $global_setting_sub_name ) ) ); ?>" />
 														<div class="et-upload-buttons">
 															<span class="et-upload-image-reset"><?php esc_html_e( 'Reset', $themename ); ?></span>
 															<input class="et-upload-image-button" type="button"<?php echo et_core_esc_previously( $et_upload_button_data ); ?> value="<?php esc_attr_e( 'Upload', $themename ); ?>" />
@@ -397,7 +414,7 @@ if ( ! function_exists( 'et_build_epanel' ) ) {
 																	$et_use_option_values = ( isset( $value['et_array_for'] ) && in_array( $value['et_array_for'], array( 'pages', 'categories' ) ) ) ||
 																	( isset( $value['et_save_values'] ) && $value['et_save_values'] ) ? true : false;
 
-																	$et_option_db_value = et_get_option( $value['id'] );
+																	$et_option_db_value = strval( et_get_option( $value['id'] ) );
 
 																	if ( ( $et_use_option_values && ( $et_option_db_value === $option_key ) ) || ( stripslashes( $et_option_db_value ) === trim( stripslashes( $option ) ) ) || ( ! $et_option_db_value && isset( $value['std'] ) && stripslashes( $option ) === stripslashes( $value['std'] ) ) )
 																		$et_select_active = ' selected="selected"';
@@ -421,7 +438,7 @@ if ( ! function_exists( 'et_build_epanel' ) ) {
 																$class_name_last = 0 === $i % 3 ? ' last' : '';
 
 																if ( et_get_option( $value['id'] ) ) {
-																	if ( in_array( $option, et_get_option( $value['id'] ) ) ) {
+																	if ( in_array( $option, (array) et_get_option( $value['id'] ), true ) ) {
 																		$checked = "checked=\"checked\"";
 																	}
 																}
@@ -457,7 +474,9 @@ if ( ! function_exists( 'et_build_epanel' ) ) {
 														foreach ( $value['options'] as $option ) {
 															$checked = '';
 															if ( et_get_option( $value['id'] ) !== false ) {
-																if ( in_array( $option, et_get_option( $value['id'] ) ) ) $checked = "checked=\"checked\"";
+																if ( in_array( $option, (array) et_get_option( $value['id'] ), true ) ) {
+																	$checked = 'checked="checked"';
+																}
 															} elseif ( isset( $value['std'] ) ) {
 																if ( in_array( $option, $value['std'] ) ) {
 																	$checked = "checked=\"checked\"";
@@ -472,13 +491,14 @@ if ( ! function_exists( 'et_build_epanel' ) ) {
 
 													<?php } elseif ( 'callback_function' === $value['type'] ) {
 
+														// @phpcs:ignore Generic.PHP.ForbiddenFunctions.Found
 														call_user_func( $value['function_name'] ); ?>
 
 													<?php } elseif ( 'et_color_palette' === $value['type'] ) {
-															$items_amount = isset( $value['items_amount'] ) ? $value['items_amount'] : 1;
-															$et_input_value = et_get_option( $value['id'], '', '', false, $is_new_global_setting, $global_setting_main_name, $global_setting_sub_name );
+															$items_amount             = isset( $value['items_amount'] ) ? $value['items_amount'] : 1;
+															$et_input_value           = strval( et_get_option( $value['id'], '', '', false, $is_new_global_setting, $global_setting_main_name, $global_setting_sub_name ) );
 															$et_input_value_processed = str_replace( '|', '', $et_input_value );
-															$et_input_value = ! empty( $et_input_value_processed ) ? $et_input_value : $value['std'];
+															$et_input_value           = ! empty( $et_input_value_processed ) ? $et_input_value : $value['std'];
 														?>
 															<div class="et_pb_colorpalette_overview">
 														<?php
@@ -583,6 +603,7 @@ if ( ! function_exists( 'et_build_epanel' ) ) {
 														$stored_values = et_get_option( $value['id'], array() );
 														$value_options = $value['options'];
 														if ( is_callable( $value_options ) ) {
+															// @phpcs:ignore Generic.PHP.ForbiddenFunctions.Found
 															$value_options = call_user_func( $value_options );
 														}
 
@@ -895,6 +916,7 @@ if ( ! function_exists( 'epanel_save_data' ) ) {
 								$checkbox_options    = $value['options'];
 
 								if ( is_callable( $checkbox_options ) ) {
+									// @phpcs:ignore Generic.PHP.ForbiddenFunctions.Found
 									$checkbox_options = call_user_func( $checkbox_options );
 								}
 
@@ -1050,3 +1072,24 @@ function et_epanel_register_portability() {
 	) );
 }
 add_action( 'admin_init', 'et_epanel_register_portability' );
+
+/**
+ * Flush rewrite rules when a change in CPTs with builder enabled is detected.
+ *
+ * @since ??
+ *
+ * @param string $et_option_name
+ * @param mixed $et_option_new_value
+ */
+function et_epanel_flush_rewrite_rules_on_post_type_integration( $et_option_name, $et_option_new_value ) {
+    if ( 'et_pb_post_type_integration' !== $et_option_name ) {
+        return;
+    }
+
+    $old = et_get_option( $et_option_name, array() );
+
+    if ( $et_option_new_value !== $old ) {
+        flush_rewrite_rules();
+    }
+}
+add_action( 'et_epanel_update_option', 'et_epanel_flush_rewrite_rules_on_post_type_integration', 10, 2 );
