@@ -1,0 +1,124 @@
+/*We want to import them in the following order to maintain good scope and avoid conflicts during compilation*/
+/*
+@import 'abstracts/variables';
+@import 'abstracts/functions';
+@import 'abstracts/mixins';
+
+@import 'base/normalize';
+
+@import 'layout/navigation';
+@import 'layout/header';
+@import 'layout/footer';
+@import 'layout/sidebar';
+@import 'layout/forms';
+
+@import 'components/buttons';
+@import 'components/hero';
+@import 'components/pull-quote';
+
+@import 'pages/home';
+@import 'pages/contact';
+*/
+
+@import 'font';
+@import "colors";
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 16px;
+}
+
+body {
+  @include regular($arimo, 1);
+  color: $es-gray;
+}
+
+h1 {
+  @include demi-bold($arimo, 1.875);
+}
+
+h2 {
+  @include demi-bold($arimo, 1.75);
+}
+h3 {
+  @include demi-bold($arimo, 1.5);
+}
+h4 {
+  @include demi-bold($arimo, 1.3125);
+}
+h5 {
+  @include demi-bold($arimo, 1.125);
+}
+
+p {
+  @include regular($arimo, 1);
+}
+
+.post-content a:link,
+.post-content a:visited {
+  color: $ts_orange;
+}
+
+/*Main top Menu*/
+#et-top-navigation {
+  nav {
+    a {
+      &:link {
+        @include demi-bold($arimo, 0.675);
+      }
+
+      &:visited {
+        @include demi-bold($arimo, 0.675);
+      }
+    }
+  }
+}
+/* END Main top Menu*/
+
+/*** Responsive Styles Standard Desktop Only ***/
+@media all and (min-width: 1100px) {
+  h1 {
+    @include demi-bold($arimo, 2.5);
+  }
+  h2 {
+    @include demi-bold($arimo, 2);
+    line-height: 2.4rem !important;
+  }
+  h3 {
+    @include demi-bold($arimo, 1.875);
+  }
+  h4 {
+    @include demi-bold($arimo, 1.75);
+  }
+  h5 {
+    @include demi-bold($arimo, 1.312);
+  }
+  p {
+    @include regular($arimo, 1.125);
+  }
+}
+
+/*** Responsive Styles Tablet And Below ***/
+@media all and (max-width: 980px) {
+
+}
+
+/*** Responsive Styles Tablet Only ***/
+@media all and (min-width: 768px) and (max-width: 980px) {
+
+}
+
+/*** Responsive Styles Smartphone Only ***/
+@media all and (max-width: 767px) {
+
+}
+
+/*** Responsive Styles Smartphone Portrait ***/
+@media all and (max-width: 479px) {
+
+}
