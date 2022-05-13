@@ -10,6 +10,8 @@
  * @since   3.29
  */
 
+defined( 'ABSPATH' ) || exit;
+
 /**
  * Class representing WooCommerce Rating component.
  */
@@ -20,24 +22,25 @@ class ET_Builder_Module_Woocommerce_Rating extends ET_Builder_Module {
 	 * @since 3.29.2 Added custom margin default.
 	 */
 	public function init() {
-		$this->name       = esc_html__( 'Woo Rating', 'et_builder' );
-		$this->plural     = esc_html__( 'Woo Ratings', 'et_builder' );
-		$this->slug       = 'et_pb_wc_rating';
-		$this->vb_support = 'on';
+		$this->name        = esc_html__( 'Woo Product Rating', 'et_builder' );
+		$this->plural      = esc_html__( 'Woo Product Rating', 'et_builder' );
+		$this->slug        = 'et_pb_wc_rating';
+		$this->vb_support  = 'on';
+		$this->folder_name = 'et_pb_woo_modules';
 
 		$this->settings_modal_toggles = array(
 			'general'  => array(
 				'toggles' => array(
-					'main_content' => esc_html__( 'Content', 'et_builder' ),
-					'elements'     => esc_html__( 'Elements', 'et_builder' ),
+					'main_content' => et_builder_i18n( 'Content' ),
+					'elements'     => et_builder_i18n( 'Elements' ),
 				),
 			),
 			'advanced' => array(
 				'toggles' => array(
-					'layout' => esc_html__( 'Layout', 'et_builder' ),
+					'layout' => et_builder_i18n( 'Layout' ),
 					// Avoid Text suffix by manually defining the `text` toggle slug.
 					'text'   => array(
-						'title'    => esc_html__( 'Text', 'et_builder' ),
+						'title'    => et_builder_i18n( 'Text' ),
 						'priority' => 45,
 					),
 					// Avoid Text suffix by manually defining the `star` toggle slug.
@@ -61,17 +64,26 @@ class ET_Builder_Module_Woocommerce_Rating extends ET_Builder_Module {
 					'hide_font'        => true,
 					'hide_line_height' => true,
 					'hide_text_shadow' => true,
+					'text_align'       => array(
+						'label' => esc_html__( 'Star Rating Alignment', 'et_builder' ),
+					),
+					'font_size'        => array(
+						'label' => esc_html__( 'Star Rating Size', 'et_builder' ),
+					),
+					'text_color'       => array(
+						'label' => esc_html__( 'Star Rating Color', 'et_builder' ),
+					),
 					'toggle_slug'      => 'star',
 				),
 				'body'   => array(
-					'label'           => esc_html__( 'Text', 'et_builder' ),
+					'label'           => et_builder_i18n( 'Text' ),
 					'css'             => array(
 						'main' => '%%order_class%% a.woocommerce-review-link',
 					),
-					'font_size'        => array(
+					'font_size'       => array(
 						'default' => '14px',
 					),
-					'line_height'        => array(
+					'line_height'     => array(
 						'default' => '1.7em',
 					),
 					'hide_text_align' => true,
@@ -89,7 +101,7 @@ class ET_Builder_Module_Woocommerce_Rating extends ET_Builder_Module {
 				),
 			),
 			'margin_padding' => array(
-				'css' => array(
+				'css'           => array(
 					'important' => 'all',
 				),
 				'custom_margin' => array(
@@ -106,7 +118,7 @@ class ET_Builder_Module_Woocommerce_Rating extends ET_Builder_Module {
 
 		$this->custom_css_fields = array(
 			'text'             => array(
-				'label'    => esc_html__( 'Text', 'et_builder' ),
+				'label'    => et_builder_i18n( 'Text' ),
 				'selector' => 'a.woocommerce-review-link',
 			),
 			'star_rating_text' => array(
@@ -117,7 +129,7 @@ class ET_Builder_Module_Woocommerce_Rating extends ET_Builder_Module {
 
 		$this->help_videos = array(
 			array(
-				'id'   => esc_html( '7X03vBPYJ1o' ),
+				'id'   => '7X03vBPYJ1o',
 				'name' => esc_html__( 'Divi WooCommerce Modules', 'et_builder' ),
 			),
 		);
@@ -150,8 +162,8 @@ class ET_Builder_Module_Woocommerce_Rating extends ET_Builder_Module {
 				'type'             => 'yes_no_button',
 				'option_category'  => 'configuration',
 				'options'          => array(
-					'on'  => esc_html__( 'On', 'et_builder' ),
-					'off' => esc_html__( 'Off', 'et_builder' ),
+					'on'  => et_builder_i18n( 'On' ),
+					'off' => et_builder_i18n( 'Off' ),
 				),
 				'default_on_front' => 'on',
 				'toggle_slug'      => 'elements',
@@ -164,8 +176,8 @@ class ET_Builder_Module_Woocommerce_Rating extends ET_Builder_Module {
 				'type'             => 'yes_no_button',
 				'option_category'  => 'configuration',
 				'options'          => array(
-					'on'  => esc_html__( 'On', 'et_builder' ),
-					'off' => esc_html__( 'Off', 'et_builder' ),
+					'on'  => et_builder_i18n( 'On' ),
+					'off' => et_builder_i18n( 'Off' ),
 				),
 				'default_on_front' => 'on',
 				'toggle_slug'      => 'elements',
@@ -237,7 +249,7 @@ class ET_Builder_Module_Woocommerce_Rating extends ET_Builder_Module {
 			add_filter( 'comments_open', '__return_true' );
 		}
 
-		$rating   = et_builder_wc_render_module_template(
+		$rating = et_builder_wc_render_module_template(
 			'woocommerce_template_single_rating',
 			$args,
 			array( 'product', 'wp_query' )
@@ -264,16 +276,21 @@ class ET_Builder_Module_Woocommerce_Rating extends ET_Builder_Module {
 	public function add_multi_view_attrs( $outer_wrapper_attrs ) {
 		$multi_view = et_pb_multi_view_options( $this );
 
-		$multi_view_attrs = $multi_view->render_attrs( array(
-			'classes' => array(
-				'et_pb_wc_rating_no_rating'  => array(
-					'show_rating' => 'off',
-				),
-				'et_pb_wc_rating_no_reviews' => array(
-					'show_reviews_link' => 'off',
+		$multi_view_attrs = $multi_view->render_attrs(
+			array(
+				'classes' => array(
+					'et_pb_wc_rating_no_rating'  => array(
+						'show_rating' => 'off',
+					),
+					'et_pb_wc_rating_no_reviews' => array(
+						'show_reviews_link' => 'off',
+					),
 				),
 			),
-		), false, null, true );
+			false,
+			null,
+			true
+		);
 
 		if ( $multi_view_attrs && is_array( $multi_view_attrs ) ) {
 			$outer_wrapper_attrs = array_merge( $outer_wrapper_attrs, $multi_view_attrs );
@@ -291,7 +308,7 @@ class ET_Builder_Module_Woocommerce_Rating extends ET_Builder_Module {
 	 *
 	 * @return string
 	 */
-	public function render( $attrs, $content = null, $render_slug ) {
+	public function render( $attrs, $content, $render_slug ) {
 		ET_Builder_Module_Helper_Woocommerce_Modules::process_background_layout_data( $render_slug, $this );
 		ET_Builder_Module_Helper_Woocommerce_Modules::add_star_rating_style(
 			$render_slug,
@@ -316,10 +333,7 @@ class ET_Builder_Module_Woocommerce_Rating extends ET_Builder_Module {
 			$this->add_classname( "et_pb_wc_rating_layout_{$this->props['layout']}" );
 		}
 
-		add_filter( "et_builder_module_{$render_slug}_outer_wrapper_attrs", array(
-			$this,
-			'add_multi_view_attrs',
-		) );
+		add_filter( "et_builder_module_{$render_slug}_outer_wrapper_attrs", array( $this, 'add_multi_view_attrs' ) );
 
 		$output = self::get_rating( $this->props );
 

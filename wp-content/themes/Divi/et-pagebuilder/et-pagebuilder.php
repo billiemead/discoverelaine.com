@@ -89,6 +89,20 @@ if ( ! function_exists( 'et_divi_maybe_adjust_section_advanced_options_config' )
 function et_divi_maybe_adjust_section_advanced_options_config( $advanced_options ) {
 	$is_post_type = is_singular( 'post' ) || ( 'et_fb_update_builder_assets' === et_()->array_get( $_POST, 'action' ) && 'post' === et_()->array_get( $_POST, 'et_post_type' ) );
 
+	if ( ! $is_post_type ) {
+		$is_tax          = is_tag() || is_category() || is_tax();
+		$is_saving_cache = function_exists( 'et_core_is_saving_builder_modules_cache' ) && et_core_is_saving_builder_modules_cache();
+
+		if ( $is_tax && $is_saving_cache ) {
+			// If this is a taxonomy request and builder modules cache is being generated, we have to consider
+			// `is_post_type` true because the same cached data will be also used for regular posts.
+			// This already happens when generating definitions via the AJAX request (see the `et_fb_update_builder_assets`
+			// check in the first conditional) and the reason why, before this patch, VB would always reload
+			// when loaded for a taxonomy after clearing the cache.
+			$is_post_type = true;
+		}
+	}
+
 	et_()->array_set( $advanced_options, 'max_width.extra.inner.options.max_width.default', et_divi_get_content_width() . 'px' );
 
 	if ( et_divi_is_boxed_layout() ) {
@@ -119,6 +133,44 @@ function et_divi_maybe_adjust_section_advanced_options_config( $advanced_options
 }
 add_filter( 'et_pb_section_advanced_fields', 'et_divi_maybe_adjust_section_advanced_options_config' );
 endif;
+
+/**
+ * Modify blog module's advanced options configuration
+ *
+ * @since ??
+ *
+ * @param array $advanced_options
+ *
+ * @return array
+ */
+function et_divi_maybe_adjust_blog_advanced_options_config( $advanced_options ) {
+	// Adding more specific selector for post meta
+	$meta_selectors = et_()->array_get( $advanced_options, 'fonts.meta.css' );
+
+	// Main post meta selector
+	if ( isset( $meta_selectors['main'] ) ) {
+		$main_selectors = explode( ', ', $meta_selectors['main'] );
+
+		$main_selectors[] = '#left-area %%order_class%% .et_pb_post .post-meta';
+		$main_selectors[] = '#left-area %%order_class%% .et_pb_post .post-meta a';
+
+		et_()->array_set( $advanced_options, 'fonts.meta.css.main', implode( ', ', $main_selectors ) );
+	}
+
+	// Hover post meta selector
+	if ( isset( $meta_selectors['hover'] ) ) {
+		$hover_selectors = explode( ', ', $meta_selectors['hover'] );
+
+		$hover_selectors[] = '#left-area %%order_class%% .et_pb_post .post-meta:hover';
+		$hover_selectors[] = '#left-area %%order_class%% .et_pb_post .post-meta:hover a';
+		$hover_selectors[] = '#left-area %%order_class%% .et_pb_post .post-meta:hover span';
+
+		et_()->array_set( $advanced_options, 'fonts.meta.css.hover', implode( ', ', $hover_selectors ) );
+	}
+
+	return $advanced_options;
+}
+add_filter( 'et_pb_blog_advanced_fields', 'et_divi_maybe_adjust_blog_advanced_options_config' );
 
 /**
  * Added custom data attribute to builder's section

@@ -10,6 +10,8 @@
  * @since   3.29
  */
 
+defined( 'ABSPATH' ) || exit;
+
 /**
  * Class representing WooCommerce Stock component.
  */
@@ -18,15 +20,16 @@ class ET_Builder_Module_Woocommerce_Stock extends ET_Builder_Module {
 	 * Initialize.
 	 */
 	public function init() {
-		$this->name       = esc_html__( 'Woo Stock', 'et_builder' );
-		$this->plural     = esc_html__( 'Woo Stock', 'et_builder' );
-		$this->slug       = 'et_pb_wc_stock';
-		$this->vb_support = 'on';
+		$this->name        = esc_html__( 'Woo Product Stock', 'et_builder' );
+		$this->plural      = esc_html__( 'Woo Product Stock', 'et_builder' );
+		$this->slug        = 'et_pb_wc_stock';
+		$this->vb_support  = 'on';
+		$this->folder_name = 'et_pb_woo_modules';
 
 		$this->settings_modal_toggles = array(
 			'general' => array(
 				'toggles' => array(
-					'main_content' => esc_html__( 'Content', 'et_builder' ),
+					'main_content' => et_builder_i18n( 'Content' ),
 				),
 			),
 		);
@@ -108,7 +111,7 @@ class ET_Builder_Module_Woocommerce_Stock extends ET_Builder_Module {
 
 		$this->help_videos = array(
 			array(
-				'id'   => esc_html( '7X03vBPYJ1o' ),
+				'id'   => '7X03vBPYJ1o',
 				'name' => esc_html__( 'Divi WooCommerce Modules', 'et_builder' ),
 			),
 		);
@@ -186,7 +189,7 @@ class ET_Builder_Module_Woocommerce_Stock extends ET_Builder_Module {
 	 *
 	 * @return string
 	 */
-	public function render( $attrs, $content = null, $render_slug ) {
+	public function render( $attrs, $content, $render_slug ) {
 		ET_Builder_Module_Helper_Woocommerce_Modules::process_background_layout_data( $render_slug, $this );
 
 		$this->add_classname( $this->get_text_orientation_classname() );

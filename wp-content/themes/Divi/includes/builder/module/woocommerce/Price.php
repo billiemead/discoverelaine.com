@@ -10,6 +10,8 @@
  * @since   3.29
  */
 
+defined( 'ABSPATH' ) || exit;
+
 /**
  * Class representing WooCommerce Price component.
  */
@@ -18,17 +20,18 @@ class ET_Builder_Module_Woocommerce_Price extends ET_Builder_Module {
 	 * Initialize.
 	 */
 	public function init() {
-		$this->name   = esc_html__( 'Woo Price', 'et_builder' );
-		$this->plural = esc_html__( 'Woo Prices', 'et_builder' );
+		$this->name   = esc_html__( 'Woo Product Price', 'et_builder' );
+		$this->plural = esc_html__( 'Woo Product Price', 'et_builder' );
 
 		// Use `et_pb_wc_{module}` for all WooCommerce modules.
-		$this->slug       = 'et_pb_wc_price';
-		$this->vb_support = 'on';
+		$this->slug        = 'et_pb_wc_price';
+		$this->vb_support  = 'on';
+		$this->folder_name = 'et_pb_woo_modules';
 
 		$this->settings_modal_toggles = array(
 			'general'  => array(
 				'toggles' => array(
-					'main_content' => esc_html__( 'Content', 'et_builder' ),
+					'main_content' => et_builder_i18n( 'Content' ),
 				),
 			),
 			'advanced' => array(
@@ -110,10 +113,10 @@ class ET_Builder_Module_Woocommerce_Price extends ET_Builder_Module {
 				),
 			),
 			'text'           => array(
-				'css'     => array(
+				'css'         => array(
 					'text_shadow' => '%%order_class%%',
 				),
-				'options' => array(
+				'options'     => array(
 					'background_layout' => array(
 						'default' => 'light',
 						'hover'   => 'tabs',
@@ -147,12 +150,10 @@ class ET_Builder_Module_Woocommerce_Price extends ET_Builder_Module {
 
 		$this->help_videos = array(
 			array(
-				'id'   => esc_html( '7X03vBPYJ1o' ),
+				'id'   => '7X03vBPYJ1o',
 				'name' => esc_html__( 'Divi WooCommerce Modules', 'et_builder' ),
 			),
 		);
-
-		add_filter( 'woocommerce_variation_prices', array( 'ET_Builder_Module_Woocommerce_Price', 'theme_builder_placeholder' ), 10, 3 );
 	}
 
 	/**
@@ -212,24 +213,6 @@ class ET_Builder_Module_Woocommerce_Price extends ET_Builder_Module {
 	}
 
 	/**
-	 * Modify cached price for theme builder placeholder. Theme builder generates faux variable
-	 * product data on the fly; since no actual product data is saved and variable needs children
-	 * product to estimate min - max value, filtering cached price output is more efficient
-	 *
-	 * @since 4.0.1
-	 *
-	 * @return array
-	 */
-	public static function theme_builder_placeholder( $cached_price, $product, $for_display ) {
-		if ( et_builder_tb_enabled() ) {
-			// Variable product assumes there are multiple children product, hence the array
-			$cached_price['price'] = array( 89 );
-		}
-
-		return $cached_price;
-	}
-
-	/**
 	 * Renders the module output.
 	 *
 	 * @param  array  $attrs       List of attributes.
@@ -238,7 +221,7 @@ class ET_Builder_Module_Woocommerce_Price extends ET_Builder_Module {
 	 *
 	 * @return string
 	 */
-	public function render( $attrs, $content = null, $render_slug ) {
+	public function render( $attrs, $content, $render_slug ) {
 		$this->add_classname( $this->get_text_orientation_classname() );
 
 		$output = self::get_price( $this->props );

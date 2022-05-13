@@ -10,6 +10,8 @@
  * @since   3.29
  */
 
+defined( 'ABSPATH' ) || exit;
+
 /**
  * Class representing WooCommerce Title component.
  */
@@ -18,25 +20,26 @@ class ET_Builder_Module_Woocommerce_Title extends ET_Builder_Module {
 	 * Initialize.
 	 */
 	public function init() {
-		$this->name       = esc_html__( 'Woo Title', 'et_builder' );
-		$this->plural     = esc_html__( 'Woo Titles', 'et_builder' );
-		$this->slug       = 'et_pb_wc_title';
-		$this->vb_support = 'on';
+		$this->name        = esc_html__( 'Woo Product Title', 'et_builder' );
+		$this->plural      = esc_html__( 'Woo Product Title', 'et_builder' );
+		$this->slug        = 'et_pb_wc_title';
+		$this->vb_support  = 'on';
+		$this->folder_name = 'et_pb_woo_modules';
 
 		$this->settings_modal_toggles = array(
 			'general'  => array(
 				'toggles' => array(
-					'main_content' => esc_html__( 'Content', 'et_builder' ),
+					'main_content' => et_builder_i18n( 'Content' ),
 				),
 			),
 			'advanced' => array(
 				'toggles' => array(
-					'text'  => array(
+					'header' => array(
 						'title'    => esc_html__( 'Title Text', 'et_builder' ),
 						'priority' => 49,
 					),
-					'width' => array(
-						'title'    => esc_html__( 'Sizing', 'et_builder' ),
+					'width'  => array(
+						'title'    => et_builder_i18n( 'Sizing' ),
 						'priority' => 65,
 					),
 				),
@@ -46,7 +49,7 @@ class ET_Builder_Module_Woocommerce_Title extends ET_Builder_Module {
 		$this->advanced_fields = array(
 			'fonts'          => array(
 				'header' => array(
-					'label'        => esc_html__( 'Title', 'et_builder' ),
+					'label'        => et_builder_i18n( 'Title' ),
 					'css'          => array(
 						'main' => '%%order_class%% h1, %%order_class%% h2, %%order_class%% h3, %%order_class%% h4, %%order_class%% h5, %%order_class%% h6',
 					),
@@ -54,7 +57,7 @@ class ET_Builder_Module_Woocommerce_Title extends ET_Builder_Module {
 						'default' => 'h1',
 					),
 					'tab_slug'     => 'advanced',
-					'toggle_slug'  => 'text',
+					'toggle_slug'  => 'header',
 				),
 			),
 			'background'     => array(
@@ -79,6 +82,7 @@ class ET_Builder_Module_Woocommerce_Title extends ET_Builder_Module {
 						'hover'            => 'tabs',
 					),
 				),
+				'toggle_slug'           => 'header',
 			),
 			'text_shadow'    => array(
 				// Don't add text-shadow fields since they already are via font-options.
@@ -90,13 +94,13 @@ class ET_Builder_Module_Woocommerce_Title extends ET_Builder_Module {
 		$this->custom_css_fields = array(
 			'title_text' => array(
 				'label'    => esc_html__( 'Title Text', 'et_builder' ),
-				'selector' => 'h1, h2, h3, h4, h5, h6',
+				'selector' => '%%order_class%% h1, %%order_class%% h2, %%order_class%% h3, %%order_class%% h4, %%order_class%% h5, %%order_class%% h6',
 			),
 		);
 
 		$this->help_videos = array(
 			array(
-				'id'   => esc_html( '7X03vBPYJ1o' ),
+				'id'   => '7X03vBPYJ1o',
 				'name' => esc_html__( 'Divi WooCommerce Modules', 'et_builder' ),
 			),
 		);
@@ -194,7 +198,7 @@ class ET_Builder_Module_Woocommerce_Title extends ET_Builder_Module {
 	 *
 	 * @return string
 	 */
-	public function render( $attrs, $content = null, $render_slug ) {
+	public function render( $attrs, $content, $render_slug ) {
 		ET_Builder_Module_Helper_Woocommerce_Modules::process_background_layout_data( $render_slug, $this );
 
 		$this->add_classname( $this->get_text_orientation_classname() );

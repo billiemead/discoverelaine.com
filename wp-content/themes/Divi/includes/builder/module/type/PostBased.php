@@ -10,13 +10,17 @@ abstract class ET_Builder_Module_Type_PostBased extends ET_Builder_Module {
 	 *
 	 * @since 3.0.77
 	 *
+	 * @param string $heading_tag
+	 *
 	 * @return string
 	 */
-	public static function get_no_results_template() {
+	public static function get_no_results_template( $heading_tag = 'h1' ) {
+		global $et_no_results_heading_tag;
+		$et_no_results_heading_tag = $heading_tag;
 		ob_start();
 
 		if ( et_is_builder_plugin_active() ) {
-			include( ET_BUILDER_PLUGIN_DIR . 'includes/no-results.php' );
+			include ET_BUILDER_PLUGIN_DIR . 'includes/no-results.php';
 		} else {
 			get_template_part( 'includes/no-results', 'index' );
 		}
@@ -30,7 +34,7 @@ abstract class ET_Builder_Module_Type_PostBased extends ET_Builder_Module {
 	 * @since 3.0.106
 	 *
 	 * @param integer[] $term_ids
-	 * @param string $taxonomy
+	 * @param string    $taxonomy
 	 *
 	 * @return integer[]
 	 */
@@ -39,7 +43,7 @@ abstract class ET_Builder_Module_Type_PostBased extends ET_Builder_Module {
 
 		foreach ( $term_ids as $term_id ) {
 			$term_id = intval( $term_id );
-			$term = term_exists( $term_id, $taxonomy );
+			$term    = term_exists( $term_id, $taxonomy );
 			if ( ! empty( $term ) ) {
 				$valid_term_ids[] = $term_id;
 			}
@@ -54,8 +58,8 @@ abstract class ET_Builder_Module_Type_PostBased extends ET_Builder_Module {
 	 * @since 3.17.2
 	 *
 	 * @param string|array $terms Comma-separated list of term ids and special keywords.
-	 * @param integer $post_id Optional post id to resolve "current" categories.
-	 * @param string $taxonomy
+	 * @param integer      $post_id Optional post id to resolve "current" categories.
+	 * @param string       $taxonomy
 	 *
 	 * @return integer[]
 	 */
@@ -106,8 +110,8 @@ abstract class ET_Builder_Module_Type_PostBased extends ET_Builder_Module {
 	 * @since 4.0
 	 *
 	 * @param string|array $include_categories Comma-separated list of term ids and special keywords.
-	 * @param integer $post_id
-	 * @param string $taxonomy
+	 * @param integer      $post_id
+	 * @param string       $taxonomy
 	 *
 	 * @return array
 	 */

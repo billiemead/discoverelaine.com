@@ -10,6 +10,8 @@
  * @since   3.29
  */
 
+defined( 'ABSPATH' ) || exit;
+
 /**
  * Class representing WooCommerce Description component.
  */
@@ -17,24 +19,25 @@ class ET_Builder_Module_Woocommerce_Description extends ET_Builder_Module {
 	/**
 	 * Initialize.
 	 *
-	 * @since ?? Updated `toggle_slug` to avoid empty Tabs in Text OG.
+	 * @since 4.0.6 Updated `toggle_slug` to avoid empty Tabs in Text OG.
 	 */
 	public function init() {
-		$this->name       = esc_html__( 'Woo Description', 'et_builder' );
-		$this->plural     = esc_html__( 'Woo Descriptions', 'et_builder' );
-		$this->slug       = 'et_pb_wc_description';
-		$this->vb_support = 'on';
+		$this->name        = esc_html__( 'Woo Product Description', 'et_builder' );
+		$this->plural      = esc_html__( 'Woo Product Description', 'et_builder' );
+		$this->slug        = 'et_pb_wc_description';
+		$this->vb_support  = 'on';
+		$this->folder_name = 'et_pb_woo_modules';
 
 		$this->settings_modal_toggles = array(
 			'general'  => array(
 				'toggles' => array(
-					'main_content' => esc_html__( 'Content', 'et_builder' ),
+					'main_content' => et_builder_i18n( 'Content' ),
 				),
 			),
 			'advanced' => array(
 				'toggles' => array(
 					'body'   => array(
-						'title'             => esc_html__( 'Text', 'et_builder' ),
+						'title'             => et_builder_i18n( 'Text' ),
 						'priority'          => 45,
 						'tabbed_subtoggles' => true,
 						'bb_icons_support'  => true,
@@ -93,7 +96,7 @@ class ET_Builder_Module_Woocommerce_Description extends ET_Builder_Module {
 						),
 					),
 					'width'  => array(
-						'title'    => esc_html__( 'Sizing', 'et_builder' ),
+						'title'    => et_builder_i18n( 'Sizing' ),
 						'priority' => 65,
 					),
 				),
@@ -103,7 +106,7 @@ class ET_Builder_Module_Woocommerce_Description extends ET_Builder_Module {
 		$this->advanced_fields = array(
 			'fonts'          => array(
 				'body'     => array(
-					'label'           => esc_html__( 'Text', 'et_builder' ),
+					'label'           => et_builder_i18n( 'Text' ),
 					'css'             => array(
 						'line_height' => '%%order_class%% p',
 						'color'       => '%%order_class%%.et_pb_wc_description',
@@ -119,7 +122,7 @@ class ET_Builder_Module_Woocommerce_Description extends ET_Builder_Module {
 					'hide_text_align' => true,
 				),
 				'link'     => array(
-					'label'           => esc_html__( 'Link', 'et_builder' ),
+					'label'           => et_builder_i18n( 'Link' ),
 					'css'             => array(
 						'main'  => '%%order_class%% a',
 						'color' => '%%order_class%%.et_pb_wc_description a',
@@ -299,7 +302,7 @@ class ET_Builder_Module_Woocommerce_Description extends ET_Builder_Module {
 
 		$this->help_videos = array(
 			array(
-				'id'   => esc_html( '7X03vBPYJ1o' ),
+				'id'   => '7X03vBPYJ1o',
 				'name' => esc_html__( 'Divi WooCommerce Modules', 'et_builder' ),
 			),
 		);
@@ -338,8 +341,8 @@ class ET_Builder_Module_Woocommerce_Description extends ET_Builder_Module {
 				'toggle_slug'      => 'main_content',
 				'description'      => esc_html__( 'Here you can choose between Description and short description to display.', 'et_builder' ),
 				'default_on_front' => 'short_description',
-				'mobile_options'  => true,
-				'hover'           => 'tabs',
+				'mobile_options'   => true,
+				'hover'            => 'tabs',
 				'computed_affects' => array(
 					'__description',
 				),
@@ -374,15 +377,15 @@ class ET_Builder_Module_Woocommerce_Description extends ET_Builder_Module {
 	 * @return string
 	 */
 	public static function get_description( $args = array(), $conditional_tags = array(), $current_page = array() ) {
-		$defaults    = array(
+		$defaults = array(
 			'product'          => 'current',
 			'description_type' => 'short_description',
 		);
-		$args        = wp_parse_args( $args, $defaults );
+		$args     = wp_parse_args( $args, $defaults );
 
 		// Theme builder's description placeholder; short-circuit is cleaner and more efficient than
 		// global object element being modified. NOTE: $conditional_tags element value is string
-		if ( et_builder_tb_enabled() || 'true' === et_()->array_get( $conditional_tags, 'is_tb', false ) ) {
+		if ( et_builder_tb_enabled() || 'true' === et_()->array_get( $conditional_tags, 'is_tb', false ) || is_et_pb_preview() ) {
 			$placeholders = et_theme_builder_wc_placeholders();
 
 			$description = 'short_description' === $args['description_type'] ?
@@ -393,8 +396,8 @@ class ET_Builder_Module_Woocommerce_Description extends ET_Builder_Module {
 			return et_core_intentionally_unescaped( $description, 'html' );
 		}
 
-		$post_id     = ET_Builder_Module_Helper_Woocommerce_Modules::get_product_id( $args['product'] );
-		$post        = get_post( $post_id );
+		$post_id = ET_Builder_Module_Helper_Woocommerce_Modules::get_product_id( $args['product'] );
+		$post    = get_post( $post_id );
 
 		if ( ! ( $post instanceof WP_Post ) ) {
 			return '';
@@ -403,10 +406,17 @@ class ET_Builder_Module_Woocommerce_Description extends ET_Builder_Module {
 		if ( 'description' === $args['description_type'] ) {
 			// If builder is not used on given post, display post content.
 			if ( ! et_pb_is_pagebuilder_used( $post_id ) ) {
+				/** This filter is documented in wp-includes/post-template.php */
 				$description = apply_filters( 'the_content', $post->post_content );
 			} else {
 				$description = get_post_meta( $post->ID, ET_BUILDER_WC_PRODUCT_LONG_DESC_META_KEY, true );
-				$description = wpautop( $description );
+
+				// Cannot use `the_content` filter since it adds content wrapper.
+				// Content wrapper added at
+				// `includes/builder/core.php`::et_builder_add_builder_content_wrapper()
+				// This filter is documented at
+				// includes/builder/feature/woocommerce-modules.php
+				$description = apply_filters( 'et_builder_wc_description', $description );
 			}
 		} else {
 			$description = apply_filters( 'woocommerce_short_description', $post->post_excerpt );
@@ -422,7 +432,7 @@ class ET_Builder_Module_Woocommerce_Description extends ET_Builder_Module {
 	 * Since we do not have control over the WooCommerce Breadcrumb markup, we inject Multi view
 	 * attributes on to the Outer wrapper.
 	 *
-	 * @param array                                    $outer_wrapper_attrs
+	 * @param array                                     $outer_wrapper_attrs
 	 * @param ET_Builder_Module_Woocommerce_Description $this_class
 	 *
 	 * @return array
@@ -430,10 +440,12 @@ class ET_Builder_Module_Woocommerce_Description extends ET_Builder_Module {
 	public function add_multi_view_attrs( $outer_wrapper_attrs, $this_class ) {
 		$multi_view = et_pb_multi_view_options( $this_class );
 
-		$multi_view_attrs = $multi_view->render_attrs( array(
+		$contexts = array(
 			'content' => '{{description_type}}',
 			'target'  => '%%order_class%% .et_pb_module_inner',
-		), false, null, true );
+		);
+
+		$multi_view_attrs = $multi_view->render_attrs( $contexts, false, null, true );
 
 		if ( $multi_view_attrs && is_array( $multi_view_attrs ) ) {
 			$outer_wrapper_attrs = array_merge( $outer_wrapper_attrs, $multi_view_attrs );
@@ -510,7 +522,7 @@ class ET_Builder_Module_Woocommerce_Description extends ET_Builder_Module {
 	 *
 	 * @return string
 	 */
-	public function render( $attrs, $content = null, $render_slug ) {
+	public function render( $attrs, $content, $render_slug ) {
 		ET_Builder_Module_Helper_Woocommerce_Modules::process_background_layout_data( $render_slug, $this );
 
 		$this->add_classname( $this->get_text_orientation_classname() );
