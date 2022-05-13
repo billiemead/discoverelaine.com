@@ -85,3 +85,6 @@ if ( !defined('ABSPATH') )
 
 /** Sets up WordPress vars and included files. */
 require_once(ABSPATH . 'wp-settings.php');
+
+
+define( 'DISABLE_PANTHEON_UPDATE_NOTICES', true );
