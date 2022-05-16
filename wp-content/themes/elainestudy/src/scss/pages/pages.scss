@@ -1,8 +1,15 @@
 @import "../base/colors";
 @import "../base/font";
 
+/*      HOME PAGE       */
+#hp-hero-section {
+  background-image: url(/wp-content/uploads/2022/05/purple-hero-bg.png);
+  background-repeat: no-repeat;
+  background-color: linear-gradient(90deg, rgba(209,219,237,1) 0%, rgba(246,248,252,1) 100%);
 
+}
 
+/*    END  HOME PAGE       */
 
 /*** Responsive Styles Standard Desktop Only ***/
 @media all and (min-width: 1100px) {
