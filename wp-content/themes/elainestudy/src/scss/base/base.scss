@@ -86,11 +86,11 @@ p {
     @include demi-bold($arimo, 3);
   }
   h2 {
-    @include demi-bold($arimo, 2.5);
+    @include demi-bold($arimo, 2.1);
     line-height: 2.4rem !important;
   }
   h3 {
-    @include demi-bold($arimo, 2);
+    @include demi-bold($arimo, 1.8);
   }
   h4 {
     @include demi-bold($arimo, 1.75);
