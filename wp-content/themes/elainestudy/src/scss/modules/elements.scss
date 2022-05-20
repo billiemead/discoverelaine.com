@@ -1,11 +1,60 @@
 @import "../base/colors";
 @import "../base/font";
 
+/*BASE THREE COLUMNS ROW STYLES*/
+@media all and (min-width: 981px) {
+
+  .base-3-colm {
+    .et_pb_column:first-child,
+    .et_pb_column:last-child {
+      width: 14%;
+    }
+    .et_pb_column:nth-child(2) {
+      width: 70%;
+    }
+    .et_pb_column:first-child,
+    .et_pb_column:nth-child(2) {
+      margin-right: 20px;
+    }
+  }
+
+}
+
+/* END BASE THREE COLUMNS ROW STYLES*/
 
 
+//                      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/*      BASE THREE COLUMNS TITLE ROW     */
+
+
+/*      END BASE THREE COLUMNS TITLE ROW     */
+
+
+//                      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/*      BASE THREE COLUMNS COPY ROW     */
+
+
+
+/*      END BASE THREE COLUMNS COPY ROW     */
+
+
+//                      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/*      BASE THREE COLUMNS with 2 ELEMENTS ROW     */
+
+
+
+/*    END  BASE THREE COLUMNS with 2 ELEMENTS ROW     */
+
+
+//                      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/*      BASE THREE COLUMNS 5 ICONS ROW     */
+
+
+
+/*      END BASE THREE COLUMNS 5 ICONS ROW     */
 
 /*** Responsive Styles Standard Desktop Only ***/
-@media all and (min-width: 1100px) {
+@media all and (min-width: 981px) {
 
 }
 

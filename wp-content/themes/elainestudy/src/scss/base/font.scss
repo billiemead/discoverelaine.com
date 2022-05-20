@@ -6,7 +6,7 @@ $roboto: 'Roboto', sans-serif;
 @mixin demi-bold($fontf, $size) {
   font-family: $fontf;
   font-size: $size + rem !important;
-  font-weight: 600 !important;
+  font-weight: 700 !important;
 }
 
 @mixin bold($fontf, $size) {
