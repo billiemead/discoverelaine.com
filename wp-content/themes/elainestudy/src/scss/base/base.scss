@@ -83,14 +83,14 @@ p {
 /*** Responsive Styles Standard Desktop Only ***/
 @media all and (min-width: 1100px) {
   h1 {
-    @include demi-bold($arimo, 2.5);
+    @include demi-bold($arimo, 3);
   }
   h2 {
-    @include demi-bold($arimo, 2);
+    @include demi-bold($arimo, 2.5);
     line-height: 2.4rem !important;
   }
   h3 {
-    @include demi-bold($arimo, 1.875);
+    @include demi-bold($arimo, 2);
   }
   h4 {
     @include demi-bold($arimo, 1.75);
