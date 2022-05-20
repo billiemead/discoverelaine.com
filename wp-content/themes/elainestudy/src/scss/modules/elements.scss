@@ -60,8 +60,17 @@
 
 //                      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 /*      BASE THREE COLUMNS with 2 ELEMENTS ROW     */
-
-
+@media all and (min-width: 981px) {
+  .base-3-colm.two-elems-middle {
+    .et_pb_column:nth-child(2) {
+      display: flex;
+      justify-content: space-between;
+      .et_pb_module {
+        width: 48%;
+      }
+    }
+  }
+}
 
 /*    END  BASE THREE COLUMNS with 2 ELEMENTS ROW     */
 
