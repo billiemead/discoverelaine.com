@@ -39,15 +39,21 @@
 
 //                      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 /*      BASE THREE COLUMNS TITLE ROW     */
-
-
+.base-3-colm.title-row {
+  .base-row-middle-colm {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+}
 /*      END BASE THREE COLUMNS TITLE ROW     */
 
 
 //                      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 /*      BASE THREE COLUMNS COPY ROW     */
+.base-3-colm.two-elems-middle {
 
-
+}
 
 /*      END BASE THREE COLUMNS COPY ROW     */
 
