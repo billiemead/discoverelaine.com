@@ -110,7 +110,7 @@
 @media all and (min-width: 768px) and (max-width: 980px) {
   .base-3-colm.five-icons-middle {
     .base-row-middle-colm {
-
+      flex-wrap: wrap;
       .et_pb_module {
         width: 32% !important;
       }
