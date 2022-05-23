@@ -89,13 +89,14 @@
   .base-row-middle-colm {
     margin-right: 0 !important;
     padding: 0 !important;
+    display: flex;
   }
 }
 
 @media all and (min-width: 981px) {
   .base-3-colm.five-icons-middle {
     .base-row-middle-colm {
-      display: flex;
+      justify-content: space-between;
 
       .et_pb_module {
         width: 15%;
@@ -109,10 +110,9 @@
 @media all and (min-width: 768px) and (max-width: 980px) {
   .base-3-colm.five-icons-middle {
     .base-row-middle-colm {
-      display: flex;
 
       .et_pb_module {
-        width: 32%;
+        width: 32% !important;
       }
     }
   }
