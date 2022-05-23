@@ -98,12 +98,27 @@
       display: flex;
 
       .et_pb_module {
-        width: 18%;
+        width: 15%;
       }
     }
   }
 
 }
+
+/*** Responsive Styles Tablet Only ***/
+@media all and (min-width: 768px) and (max-width: 980px) {
+  .base-3-colm.five-icons-middle {
+    .base-row-middle-colm {
+      display: flex;
+
+      .et_pb_module {
+        width: 32%;
+      }
+    }
+  }
+
+}
+
 
 
 /*      END BASE THREE COLUMNS 5 ICONS ROW     */
