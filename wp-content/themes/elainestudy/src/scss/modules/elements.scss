@@ -119,6 +119,19 @@
 
 }
 
+/*** Responsive Styles Smartphone Only ***/
+@media all and (max-width: 767px) {
+  .base-3-colm.five-icons-middle {
+    .base-row-middle-colm {
+      flex-direction: column;
+      .et_pb_module {
+        width: 100% !important;
+      }
+    }
+  }
+
+}
+
 
 
 /*      END BASE THREE COLUMNS 5 ICONS ROW     */
