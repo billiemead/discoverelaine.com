@@ -9,14 +9,11 @@
 .es-three-studies {
    .three-studies-link {
      a {
-       &:link,
-       &:visited {
          display: block;
          width: 100%;
          height: 100%;
          color: #fff;
          background: $es-blue;
-       }
        &:hover,
        &:focus {
          color: $es-blue;
