@@ -7,20 +7,26 @@
 
 /*      ELAINE STUDIES PAGE     */
 .es-three-studies {
-   .three-studies-link {
-     a {
-         display: block;
-         width: 100%;
-         height: 100%;
-         color: #fff;
-         background: $es-blue;
-       &:hover,
-       &:focus {
-         color: $es-blue;
-         background: #fff;
-       }
-     }
-   }
+  .three-studies-link {
+    a {
+      display: block;
+      width: 100%;
+      height: 100%;
+      padding: 10px;
+      color: #fff;
+      background: $es-blue;
+      border: 2px solid $es-blue;
+
+      &:hover,
+      &:focus {
+        color: $es-blue;
+        background: #fff;
+      }
+      &.is-closed {
+        font-size: 0.7rem;
+      }
+    }
+  }
 }
 /*      END ELAINE STUDIES PAGE     */
 
