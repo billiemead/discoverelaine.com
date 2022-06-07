@@ -28,6 +28,24 @@
     }
   }
 }
+
+/*** Responsive Styles Tablet And Above ***/
+@media all and (min-width: 981px) {
+  .three-studies-column:not(:last-child) {
+    &:after {
+      content: '';
+      display: block;
+      position: absolute;
+      right: 20px;
+      top: 10%;
+      width: 1px;
+      height: 90%;
+      background: $es-gray;
+    }
+  }
+
+}
+
 /*      END ELAINE STUDIES PAGE     */
 
 /*** Responsive Styles Standard Desktop Only ***/
