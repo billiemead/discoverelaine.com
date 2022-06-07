@@ -8,19 +8,20 @@
 /*      ELAINE STUDIES PAGE     */
 .es-three-studies {
    .three-studies-link {
-     background: $es-purple;
-     a:link,
-     a:visited {
-       display: block;
-       width: 100%;
-       height: 100%;
-       color: #fff;
-       background: $es-blue;
-     }
-     a:hover,
-     a:focus {
-       color: $es-blue;
-       background: #fff;
+     a {
+       &:link,
+       &:visited {
+         display: block;
+         width: 100%;
+         height: 100%;
+         color: #fff;
+         background: $es-blue;
+       }
+       &:hover,
+       &:focus {
+         color: $es-blue;
+         background: #fff;
+       }
      }
    }
 }
