@@ -44,6 +44,20 @@
     }
   }
 
+  .about-es-one_two {
+    .et_pb_column:first-of-type {
+      &:after {
+        content: '';
+        position: absolute;
+        right: -30px;
+        top: 10%;
+        width: 1px;
+        height: 90%;
+        background: $es-gray;
+      }
+    }
+  }
+
 }
 
 /*      END ELAINE STUDIES PAGE     */
