@@ -136,10 +136,23 @@
   }
 
 }
-
-
-
 /*      END BASE THREE COLUMNS 5 ICONS ROW     */
+
+//                      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/*      TWO COLUMNS VIDEO ROW       */
+.es-video-row {
+  padding: 0;
+  /* offset-x | offset-y | blur-radius | spread-radius | color */
+  box-shadow: 5px 3px 20px -1px #ddd;
+  .et_pb_column:last-child {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+}
+
+/*    END  TWO COLUMNS VIDEO ROW       */
 
 /*** Responsive Styles Standard Desktop Only ***/
 @media all and (min-width: 981px) {
