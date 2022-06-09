@@ -141,6 +141,7 @@
 //                      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 /*      TWO COLUMNS VIDEO ROW       */
 .es-video-row {
+  width: 65%;
   padding: 0 !important;
   margin: 40px auto 0;
   /* offset-x | offset-y | blur-radius | spread-radius | color */
@@ -150,6 +151,12 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
+  }
+}
+/*** Responsive Styles Smartphone Only ***/
+@media all and (max-width: 767px) {
+  .es-video-row {
+    width: 100%;
   }
 }
 
