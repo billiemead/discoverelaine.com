@@ -151,6 +151,9 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
+    h3, h4 {
+      color: $es-dark-blue;
+    }
   }
 }
 /*** Responsive Styles Smartphone Only ***/
