@@ -47,6 +47,29 @@
   }
 
 }
+
+/*** Responsive Styles Smartphone Only ***/
+@media all and (max-width: 767px) {
+  .base-3-colm {
+    .et_pb_column:first-child,
+    .et_pb_column:last-child {
+
+    }
+    .et_pb_column:nth-child(2) {
+      h2 {
+        text-align: center;
+      }
+      h5 {
+
+      }
+      .sub-sub-title {
+
+      }
+    }
+  }
+
+}
+
 /* END BASE THREE COLUMNS ROW STYLES*/
 
 
