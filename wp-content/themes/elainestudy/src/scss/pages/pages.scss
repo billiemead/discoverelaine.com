@@ -64,7 +64,13 @@
 
 /*        RESOURCES PAGE      */
 .es-glossary-content-row {
-
+  h4 {
+    color: $es-dark-blue;
+  }
+  h5 {
+    color: $es-blue;
+    margin: 30px 0 0;
+  }
 }
 
 /*     END    RESOURCES PAGE      */
