@@ -54,6 +54,46 @@
   }
 }
 
+/*** Responsive Styles Tablet Only ***/
+@media all and (min-width: 768px) and (max-width: 980px) {
+  #footer-container {
+
+    .footer-left {
+      width: 85%;
+      .es-logo {
+        width: 150px;
+      }
+      .es-links {
+        width: 60%;
+        margin: 0;
+        div {
+          height: 28px;
+          text-align: center;
+        }
+      }
+      .contact-link {
+        span:last-child {
+          margin: 0;
+        }
+      }
+    }
+
+    .footer-right {
+      width: 100%;
+      justify-content: center;
+
+      .es-so-link {
+        margin: 0 20px 0 0;
+      }
+      .es-so-link:last-child {
+        margin: 0;
+      }
+    }
+  }
+
+}
+
+
 /*** Responsive Styles Smartphone Only ***/
 @media all and (max-width: 767px) {
   #es-footer {
