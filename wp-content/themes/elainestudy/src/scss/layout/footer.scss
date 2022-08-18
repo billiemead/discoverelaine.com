@@ -1,6 +1,20 @@
 @import "../base/colors";
 
-
+#footer-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  .footer-left {
+    display: flex;
+    width: 45%;
+    justify-content: space-between;
+  }
+  .footer-right {
+    display: flex;
+    width: 25%;
+    justify-content: space-between;
+  }
+}
 
 /*** Responsive Styles Standard Desktop Only ***/
 @media all and (min-width: 1100px) {
