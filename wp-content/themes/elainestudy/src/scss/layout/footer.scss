@@ -57,12 +57,14 @@
 /*** Responsive Styles Tablet Only ***/
 @media all and (min-width: 768px) and (max-width: 980px) {
   #footer-container {
-
+flex-direction: column;
     .footer-left {
-      width: 85%;
+      width: 100%;
+      /*
       .es-logo {
         width: 150px;
       }
+      */
       .es-links {
         width: 60%;
         margin: 0;
