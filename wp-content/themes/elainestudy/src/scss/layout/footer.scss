@@ -10,10 +10,14 @@
     width: 65%;
     justify-content: space-between;
     align-items: center;
+    .es-links {
+      width: 60%;
+    }
     .contact-link {
-      display: flex;
-      justify-content: space-between;
       width: 100%;
+      span:last-child {
+        margin: 0 0 0 20px;
+      }
       a {
         color: $es-gray;
         text-decoration: underline;
