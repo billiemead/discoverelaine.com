@@ -12,13 +12,19 @@
     align-items: center;
     .es-links {
       width: 60%;
+      margin: -10px 0 0;
+      div {
+        height: 21px;
+      }
     }
     .contact-link {
       width: 100%;
+      span:nth-of-type(2),
       span:last-child {
         margin: 0 0 0 20px;
       }
       a {
+        font-weight: 600;
         color: $es-gray;
         text-decoration: underline;
       }
