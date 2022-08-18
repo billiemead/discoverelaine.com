@@ -7,9 +7,18 @@
 
   .footer-left {
     display: flex;
-    width: 55%;
+    width: 65%;
     justify-content: space-between;
     align-items: center;
+    .contact-link {
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
+      a {
+        color: $es-gray;
+        text-decoration: underline;
+      }
+    }
   }
 
   .footer-right {
