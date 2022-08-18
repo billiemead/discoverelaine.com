@@ -1,5 +1,9 @@
 @import "../base/colors";
 
+#es-footer {
+  height: 172px;
+}
+
 #footer-container {
   display: flex;
   justify-content: space-between;
@@ -24,6 +28,7 @@
         margin: 0 0 0 20px;
       }
       a {
+        display: block;
         font-weight: 600;
         color: $es-gray;
         text-decoration: underline;
@@ -51,6 +56,42 @@
 
 /*** Responsive Styles Smartphone Only ***/
 @media all and (max-width: 767px) {
+  #es-footer {
+    height: 460px;
+  }
+
+  #footer-container {
+    flex-direction: column;
+    height: 310px;
+
+    .footer-left {
+      width: 100%;
+      flex-direction: column;
+      .es-links {
+        width: 100%;
+        margin: 0;
+        div {
+          height: 28px;
+          flex-direction: column;
+        }
+      }
+      .contact-link {
+        width: 100%;
+        span:nth-of-type(2) {
+          margin: 0 0 0 10px;
+        }
+      }
+    }
+
+    .footer-right {
+      width: 100%;
+      justify-content: center;
+
+      .es-so-link:not(:last-child) {
+        margin: 0 20px 0 0;
+      }
+    }
+  }
 
 }
 
