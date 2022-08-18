@@ -56,8 +56,13 @@
 
 /*** Responsive Styles Tablet Only ***/
 @media all and (min-width: 768px) and (max-width: 980px) {
+  #es-footer {
+    height: 272px;
+  }
   #footer-container {
-flex-direction: column;
+    flex-direction: column;
+    height: 190px;
+
     .footer-left {
       width: 100%;
       /*
@@ -68,11 +73,13 @@ flex-direction: column;
       .es-links {
         width: 60%;
         margin: 0;
+
         div {
           height: 28px;
-          text-align: center;
+          text-align: left;
         }
       }
+
       .contact-link {
         span:last-child {
           margin: 0;
@@ -87,6 +94,7 @@ flex-direction: column;
       .es-so-link {
         margin: 0 20px 0 0;
       }
+
       .es-so-link:last-child {
         margin: 0;
       }
