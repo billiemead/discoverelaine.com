@@ -188,6 +188,34 @@
 
 /*    END  TWO COLUMNS VIDEO ROW       */
 
+
+/*      WP FORM 7 SECTION     */
+.form-container {
+  .fields-holder {
+    display: flex;
+    justify-content: space-between;
+    .form-field {
+      width: 48%;
+      .input-fld {
+        .wpcf7-form-control {
+          width: 100%;
+        }
+      }
+      .input-check {
+        .wpcf7-checkbox {
+          input {
+            color: #fff;
+            width: 32px;
+            height: 32px;
+          }
+        }
+      }
+    }
+  }
+}
+
+/*    END  WP FORM 7 SECTION     */
+
 /*** Responsive Styles Standard Desktop Only ***/
 @media all and (min-width: 981px) {
 
