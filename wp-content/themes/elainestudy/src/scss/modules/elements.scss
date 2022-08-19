@@ -194,19 +194,32 @@
   .fields-holder {
     display: flex;
     justify-content: space-between;
+
     .form-field {
       width: 48%;
+
       .input-fld {
         .wpcf7-form-control {
           width: 100%;
         }
       }
+
       .input-check {
         .wpcf7-checkbox {
-          input {
-            color: #fff;
-            width: 32px;
-            height: 32px;
+          margin: 0;
+
+          .wpcf7-list-item {
+            display: flex;
+
+            input {
+              width: 32px;
+              height: 32px;
+            }
+
+            .wpcf7-list-item-label {
+              display: flex;
+              color: #fff;
+            }
           }
         }
       }
