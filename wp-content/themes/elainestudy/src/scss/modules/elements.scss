@@ -214,6 +214,10 @@
         margin: 20px 0 0;
 
         .wpcf7-checkbox {
+          /*  MAKE CUSTOM CHECKBOX STYLES !
+          https://stackoverflow.com/questions/69958117/how-to-change-checkbox-background-color-in-simple-html
+          */
+          display: block;
           margin: 0 0 0 10px;
 
           .wpcf7-list-item {
@@ -224,11 +228,12 @@
             input {
               width: 32px;
               height: 32px;
-              -webkit-transform: scale(3, 3);
+              /*
               &:enabled:checked {
                 background-color: #fff !important;
                 color: $es-gray;
               }
+              */
             }
 
             .wpcf7-list-item-label {
