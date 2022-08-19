@@ -201,15 +201,20 @@
       .input-fld {
         .wpcf7-form-control {
           width: 100%;
+          height: 50px;
+          color: #707070;
         }
       }
 
       .input-check {
+        display: flex;
+        margin: 20px 0 0;
         .wpcf7-checkbox {
           margin: 0;
 
           .wpcf7-list-item {
             display: flex;
+            margin: 0;
 
             input {
               width: 32px;
@@ -219,6 +224,7 @@
             .wpcf7-list-item-label {
               display: flex;
               color: #fff;
+              margin: 0 0 0 10px;
             }
           }
         }
