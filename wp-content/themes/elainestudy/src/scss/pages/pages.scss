@@ -12,15 +12,33 @@
     align-items: center;
     color: $es-purple;
     h2, h3 {
-      font-size: 70px;
+      font-size: 50px !important;
       color: $es-purple;
       padding: 0;
       margin: 0 20px 0 0;
     }
     div {
-      font-weight: 600;
+      font-weight: 900;
     }
   }
+}
+#at-glance-row {
+
+  #at-a-glance {
+    .block-ttl {
+      margin: 0 0 10px;
+    }
+    .cols-holder {
+      display: flex;
+      .col {
+        padding: 15px;
+      }
+      .col:not(:last-child) {
+        border-right: 1px solid $es-gray;
+      }
+    }
+  }
+
 }
 
 /*** Responsive Styles Smartphone Only ***/
