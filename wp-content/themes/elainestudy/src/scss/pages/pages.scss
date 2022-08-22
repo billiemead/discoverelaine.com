@@ -1,37 +1,25 @@
 @import "../base/colors";
 @import "../base/font";
 
-/*      HOME PAGE       */
+/*      ABOUT PAGE       */
 
-#hero-elaine-pic {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: start;
-  -ms-flex-pack: start;
-  justify-content: flex-start;
-  -webkit-box-align: end;
-  -ms-flex-align: end;
-  align-items: flex-end;
-  h2 {
-    color: #fff;
+.sub-header {
+display: flex;
+  color: $es-purple;
+  h3, h4 {
+    color: $es-purple;
+    font-weight: 600;
   }
 }
-#hp-hero-section {
-  .title-column {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-    -ms-flex-direction: column;
+
+/*** Responsive Styles Smartphone Only ***/
+@media all and (max-width: 767px) {
+  .sub-header {
     flex-direction: column;
-    -webkit-box-pack: center;
-    -ms-flex-pack: center;
-    justify-content: center;
   }
 }
-/*    END  HOME PAGE       */
+
+/*    END  ABOUT PAGE       */
 
 /*      ELAINE STUDIES PAGE     */
 .es-three-studies {
