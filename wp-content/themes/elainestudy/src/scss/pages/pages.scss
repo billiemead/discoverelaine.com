@@ -4,19 +4,27 @@
 /*      ABOUT PAGE       */
 
 .sub-header {
-display: flex;
-  color: $es-purple;
-  h3, h4 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  .sub-container {
+    display: flex;
     color: $es-purple;
-    padding: 0;
-    margin: 0 20px 0 0;
+    h3, h4 {
+      color: $es-purple;
+      padding: 0;
+      margin: 0 20px 0 0;
+    }
+
   }
 }
 
 /*** Responsive Styles Smartphone Only ***/
 @media all and (max-width: 767px) {
   .sub-header {
-    flex-direction: column;
+    .sub-container {
+      flex-direction: column;
+    }
   }
 }
 
