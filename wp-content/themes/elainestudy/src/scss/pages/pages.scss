@@ -3,11 +3,12 @@
 
 /*      ABOUT PAGE       */
 
-.sub-header {
+
+.sub-container {
   display: flex;
   justify-content: center;
   align-items: center;
-  .sub-container {
+  .sub-header{
     display: flex;
     color: $es-purple;
     h3, h4 {
@@ -21,8 +22,8 @@
 
 /*** Responsive Styles Smartphone Only ***/
 @media all and (max-width: 767px) {
-  .sub-header {
-    .sub-container {
+  .sub-container {
+    .sub-header {
       flex-direction: column;
     }
   }
