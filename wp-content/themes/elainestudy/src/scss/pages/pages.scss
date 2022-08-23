@@ -68,6 +68,9 @@
   }
 
   #at-glance-row {
+    .base-row-middle-colm {
+      margin-bottom: 0;
+    }
 
     #at-a-glance {
 
@@ -85,7 +88,8 @@
             background: #4d596a;
             height: 1px;
             position: absolute;
-            bottom: 0%;
+            bottom: 0;
+            top: inherit;
             right: 20%;
           }
         }
