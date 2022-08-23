@@ -245,6 +245,21 @@
       }
     }
   }
+  .submit-btn {
+    margin: 40px 0 0;
+    text-align: center;
+    input[type='submit'] {
+      width: 258px;
+      height: 60px;
+      background: $es-blue;
+      border: 2px solid $es-light-gray;
+      color: #fff;
+      &:hover  {
+        background: #fff;
+        color: $es-blue;
+      }
+    }
+  }
 }
 
 /*    END  WP FORM 7 SECTION     */
