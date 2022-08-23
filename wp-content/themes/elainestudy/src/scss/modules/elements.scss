@@ -300,6 +300,20 @@
 }
 /*    END  WP FORM 7 SECTION     */
 
+
+/*      CTA BUTTON      */
+
+/*** Responsive Styles Smartphone Only ***/
+@media all and (max-width: 767px) {
+  .et_pb_button_module_wrapper {
+    .cta_btn {
+      text-align: center;
+    }
+  }
+}
+
+/*   END   CTA BUTTON      */
+
 /*** Responsive Styles Standard Desktop Only ***/
 @media all and (min-width: 981px) {
 

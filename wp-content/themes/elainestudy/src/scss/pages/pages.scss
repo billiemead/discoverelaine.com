@@ -104,6 +104,12 @@
 /*    END  ABOUT PAGE       */
 
 /*      ELAINE STUDIES PAGE     */
+
+//HERO SECTION
+#ES_hero_section {
+
+}
+
 .es-three-studies {
   .three-studies-link {
     a {
@@ -129,6 +135,12 @@
 
 /*** Responsive Styles Tablet And Above ***/
 @media all and (min-width: 981px) {
+
+  //HERO SECTION
+  #ES_hero_section {
+
+  }
+
   .three-studies-column:not(:last-child) {
     &:after {
       content: '';
@@ -141,7 +153,6 @@
       background: $es-gray;
     }
   }
-
   .about-es-one_two {
     .et_pb_column:first-of-type {
       &:after {
@@ -155,7 +166,6 @@
       }
     }
   }
-
 }
 
 /*      END ELAINE STUDIES PAGE     */
