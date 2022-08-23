@@ -263,6 +263,41 @@
   }
 }
 
+
+/*** Responsive Styles Smartphone Only ***/
+@media all and (max-width: 767px) {
+  .form-container {
+    .fields-holder {
+      flex-direction: column;
+
+      .form-field {
+        width: 100%;
+        margin: 0 0 40px;
+
+        .input-fld {
+          .wpcf7-form-control {
+            width: 100%;
+            height: 50px;
+            color: #707070;
+            border: none;
+            font-size: 1.4rem;
+            padding: 0 0 0 20px;
+          }
+        }
+      }
+    }
+
+    .submit-btn {
+      margin: 40px 0 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+
+  }
+
+}
 /*    END  WP FORM 7 SECTION     */
 
 /*** Responsive Styles Standard Desktop Only ***/
