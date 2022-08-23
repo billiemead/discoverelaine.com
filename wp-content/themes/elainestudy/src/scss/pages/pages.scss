@@ -22,29 +22,36 @@
     }
   }
 }
+
 #at-glance-row {
+  background: $es-light-gray;
+  padding: 40px;
+  border-radius: 20px;
 
   #at-a-glance {
     .block-ttl {
       margin: 0 0 30px;
     }
+
     .cols-holder {
       display: flex;
+
       .col {
         width: 32%;
         padding: 15px;
         text-align: center;
         position: relative;
       }
+
       .col:not(:last-child) {
         &:after {
-          content: '';
+          content: "";
           width: 1px;
-          background: $es-gray;
-          height: 60%;
+          background: #4d596a;
+          height: 80%;
           position: absolute;
-          top: 20%;
-          right: 20px;
+          top: 10%;
+          right: -10px;
         }
       }
     }
@@ -59,6 +66,34 @@
       flex-direction: column;
     }
   }
+
+  #at-glance-row {
+
+    #at-a-glance {
+
+      .cols-holder {
+        flex-direction: column;
+
+        .col {
+          width: 100%;
+        }
+
+        .col:not(:last-child) {
+          &:after {
+            content: "";
+            width: 60%;
+            background: #4d596a;
+            height: 1px;
+            position: absolute;
+            bottom: 0%;
+            right: 20%;
+          }
+        }
+      }
+    }
+
+  }
+
 }
 
 /*    END  ABOUT PAGE       */
