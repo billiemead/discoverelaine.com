@@ -125,6 +125,7 @@
       &:focus {
         color: $es-blue;
         background: #fff;
+        border: 2px solid $es-blue;
       }
       .is-closed {
         font-size: 0.7rem;
