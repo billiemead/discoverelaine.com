@@ -112,7 +112,8 @@
 
 .es-three-studies {
   .studies-link {
-    font-size: 14px;
+    a {
+      font-size: 14px;
       display: block;
       width: 100%;
       height: 100%;
@@ -130,6 +131,8 @@
       .is-closed {
         font-size: 0.7rem;
       }
+
+    }
   }
 }
 
