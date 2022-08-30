@@ -107,7 +107,9 @@
 
 //HERO SECTION
 #ES_hero_section {
-
+  h1 {
+    text-shadow: 1px 3px 10px $es-purple;
+  }
 }
 
 .es-three-studies {
@@ -144,7 +146,6 @@
 
   //HERO SECTION
   #ES_hero_section {
-
   }
 
   .three-studies-column:not(:last-child) {
