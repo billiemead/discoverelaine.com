@@ -117,7 +117,21 @@
   #ES_hero_section_custom {
     height: 177px;
     .banner-container {
-
+display: flex;
+      .left-side {
+        width: 70%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+      }
+      .right-side {
+        width: 30%;
+        height: 100%;
+        background-image: url(/wp-content/uploads/2022/08/MicrosoftTeams-image.png);
+        background-repeat: no-repeat;
+        background-size: cover;
+      }
     }
   }
 
