@@ -108,8 +108,19 @@
 //HERO SECTION
 #ES_hero_section {
   h1 {
-    text-shadow: 1px 3px 10px $es-purple;
+    text-shadow: 0 0 25px $es-purple;
   }
+}
+
+/*** Responsive Styles Tablet And Below ***/
+@media all and (min-width: 980px) {
+  #ES_hero_section_custom {
+    height: 177px;
+    .banner-container {
+
+    }
+  }
+
 }
 
 .es-three-studies {
