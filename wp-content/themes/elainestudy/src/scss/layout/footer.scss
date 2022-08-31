@@ -100,10 +100,6 @@
       .es-so-link {
         margin: 0 20px 0 0;
       }
-      
-      .es-so-link:first-child {
-        margin: -15px 20px 0 0 !important;
-      }
 
       .es-so-link:last-child {
         margin: 0;
@@ -127,17 +123,21 @@
     .footer-left {
       width: 100%;
       flex-direction: column;
+
       .es-links {
         width: 100%;
         margin: 0;
+
         div {
           height: 28px;
           text-align: center;
         }
       }
+
       .contact-link {
         width: 100%;
-        span{
+
+        span {
           margin: 0 0 0 10px;
         }
         span:last-child {
@@ -153,12 +153,16 @@
       .es-so-link {
         margin: 0 20px 0 0;
       }
+
+      .es-so-link:first-child {
+        margin: -15px 20px 0 0 !important;
+      }
+
       .es-so-link:last-child {
         margin: 0;
       }
     }
   }
-
 }
 
 
