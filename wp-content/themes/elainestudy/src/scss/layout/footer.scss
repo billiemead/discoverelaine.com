@@ -99,6 +99,9 @@
       .es-so-link {
         margin: 0 20px 0 0;
       }
+      .es-so-link:first-child {
+        margin: -15px 20px 0 0;
+      }
 
       .es-so-link:last-child {
         margin: 0;
