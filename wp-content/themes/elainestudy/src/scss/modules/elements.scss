@@ -6,10 +6,10 @@
 /*** Responsive Styles Smartphone Only ***/
 @media all and (max-width: 767px) {
   .et_fixed_nav.et_show_nav #page-container {
-    padding-top: 0 !important;
+    /*padding-top: 0 !important;*/
     margin-top: 0 !important;
     .et_fixed_nav #main-header {
-      position: sticky !important;
+      position: fixed !important;
     }
   }
 
