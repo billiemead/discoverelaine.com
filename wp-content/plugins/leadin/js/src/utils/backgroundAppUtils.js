@@ -1,7 +1,6 @@
 import Raven from '../lib/Raven';
 import { createBackgroundIframe } from '../iframe/iframe';
 import { initApp } from './appUtils';
-import { monitorFormPreviewRender } from '../api/hubspotPluginApi';
 
 export function initBackgroundApp(initFn) {
   function main() {
@@ -30,7 +29,6 @@ export function initMonitorGutenberBlockPreview() {
       }
       if (event.data.eventName === 'onFormReady') {
         clearTimeout(formsPreviewTimeouts[formId]);
-        monitorFormPreviewRender();
       }
     }
   });

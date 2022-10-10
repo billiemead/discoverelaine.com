@@ -233,7 +233,9 @@ class Links {
 		$sub_routes = join( '/', $sub_routes_array );
 		$sub_routes = empty( $sub_routes ) ? $sub_routes : "/$sub_routes";
 		// Query string separator "?" may have been added to the URL already.
-		$add_separator = strpos( $sub_routes, '?' ) ? '&' : '?';
-		return LeadinFilters::get_leadin_base_url() . "$route$sub_routes" . $add_separator . self::get_query_params() . $browser_search_string;
+		$add_separator           = strpos( $sub_routes, '?' ) ? '&' : '?';
+		$additional_query_params = apply_filters( 'leadin_query_params', '' );
+
+		return LeadinFilters::get_leadin_base_url() . "$route$sub_routes" . $add_separator . self::get_query_params() . $browser_search_string . $additional_query_params;
 	}
 }

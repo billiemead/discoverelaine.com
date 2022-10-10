@@ -1,19 +1,24 @@
+/* eslint-disable no-undef */
+
 const path = require('path');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 module.exports = {
   entry: {
-    leadin: './src/entries/app.js',
-    menu: './src/entries/menu.js',
-    gutenberg: './src/entries/gutenberg.js',
-    feedback: './src/entries/feedback.js',
-    reviewBanner: './src/entries/reviewBanner.js',
+    elementor: path.join(__dirname, 'src', 'entries', 'elementor.js'),
+    gutenberg: path.join(__dirname, 'src', 'entries', 'gutenberg.js'),
+    leadin: path.join(__dirname, 'src', 'entries', 'app.js'),
+    menu: path.join(__dirname, 'src', 'entries', 'menu.js'),
+    feedback: path.join(__dirname, 'src', 'entries', 'feedback.js'),
+    reviewBanner: path.join(__dirname, 'src', 'entries', 'reviewBanner.js'),
   },
   output: {
+    path: path.join(__dirname, 'dist'),
     filename: '[name].js',
-    path: path.resolve(__dirname, 'dist'),
-    library: ['wp', '[name]'],
     libraryTarget: 'window',
+    library: ['wp', '[name]'],
   },
+  mode: process.env.NODE_ENV || 'development',
   externals: [
     {
       jquery: 'jQuery',
@@ -30,18 +35,31 @@ module.exports = {
       return callback();
     },
   ],
+  resolve: { modules: [path.resolve(__dirname, 'src'), 'node_modules'] },
+  devServer: { static: { directory: path.join(__dirname, 'src') } },
   module: {
     rules: [
       {
         test: /\.js$/,
-        loader: 'babel-loader',
-        exclude: /node_modules/,
-        query: {
-          presets: ['@babel/preset-env'],
-          plugins: ['transform-class-properties', 'transform-react-jsx'],
-        },
+        use: [
+          { loader: 'babel-loader' },
+          {
+            loader: '@linaria/webpack-loader',
+            options: {
+              sourceMap: process.env.NODE_ENV !== 'production',
+            },
+          },
+        ],
+      },
+      {
+        test: /\.css$/i,
+        use: [MiniCssExtractPlugin.loader, 'css-loader'],
+      },
+      {
+        test: /\.(jpg|jpeg|png|gif|mp3|svg)$/,
+        use: ['file-loader'],
       },
     ],
   },
-  devtool: 'source-map',
+  plugins: [new MiniCssExtractPlugin({ filename: '[name].css' })],
 };

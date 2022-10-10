@@ -87,9 +87,17 @@ class PageHooks {
 		if ( empty( $portal_id ) ) {
 			echo '<!-- HubSpot WordPress Plugin v' . esc_html( LEADIN_PLUGIN_VERSION ) . ': embed JS disabled as a portalId has not yet been configured -->';
 		} else {
-			$id           = get_the_ID();
-			$post_meta    = get_post_meta( $id );
-			$content_type = isset( $post_meta['content-type'][0] ) && '' !== $post_meta['content-type'][0] ? $post_meta['content-type'][0] : LeadinFilters::get_page_content_type();
+			$content_type = LeadinFilters::get_page_content_type();
+			$page_id      = get_the_ID();
+			$post_meta    = get_post_meta( $page_id );
+			if ( isset( $post_meta['content-type'][0] ) && '' !== $post_meta['content-type'][0] ) {
+				$content_type = $post_meta['content-type'][0];
+			} elseif ( is_plugin_active( 'elementor/elementor.php' ) ) {
+				$page_settings_manager = \Elementor\Core\Settings\Manager::get_settings_managers( 'page' );
+				$page_settings_model   = $page_settings_manager->get_model( $page_id );
+				$content_type          = $page_settings_model->get_settings( 'content_type' );
+			}
+
 			?>
 			<!-- DO NOT COPY THIS SNIPPET! Start of Page Analytics Tracking for HubSpot WordPress plugin v<?php echo esc_html( LEADIN_PLUGIN_VERSION ); ?>-->
 			<script type="text/javascript" class="hsq-set-content-id" data-content-id="<?php echo esc_html( $content_type ); ?>">

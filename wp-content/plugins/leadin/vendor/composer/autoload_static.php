@@ -4,7 +4,7 @@
 
 namespace Composer\Autoload;
 
-class ComposerStaticInita4cb893b79bf7bd260dad7d4e03f9665
+class ComposerStaticInitee2b3c154badd0f8b479e839361a8b52
 {
     public static $classMap = array (
         'Composer\\InstalledVersions' => __DIR__ . '/..' . '/composer/InstalledVersions.php',
@@ -38,6 +38,10 @@ class ComposerStaticInita4cb893b79bf7bd260dad7d4e03f9665
         'Leadin\\admin\\api\\TrackConsentApi' => __DIR__ . '/../..' . '/src/admin/api/class-trackconsentapi.php',
         'Leadin\\admin\\api\\UpdateHubletApi' => __DIR__ . '/../..' . '/src/admin/api/class-updatehubletapi.php',
         'Leadin\\admin\\utils\\DeviceId' => __DIR__ . '/../..' . '/src/admin/utils/class-deviceid.php',
+        'Leadin\\admin\\widgets\\ElementorForm' => __DIR__ . '/../..' . '/src/admin/widgets/class-elementorform.php',
+        'Leadin\\admin\\widgets\\ElementorFormSelect' => __DIR__ . '/../..' . '/src/admin/widgets/class-elementorformselect.php',
+        'Leadin\\admin\\widgets\\ElementorMeeting' => __DIR__ . '/../..' . '/src/admin/widgets/class-elementormeeting.php',
+        'Leadin\\admin\\widgets\\ElementorMeetingSelect' => __DIR__ . '/../..' . '/src/admin/widgets/class-elementormeetingselect.php',
         'Leadin\\auth\\OAuth' => __DIR__ . '/../..' . '/src/auth/class-oauth.php',
         'Leadin\\auth\\OAuthCrypto' => __DIR__ . '/../..' . '/src/auth/class-oauthcrypto.php',
         'Leadin\\options\\AccountOptions' => __DIR__ . '/../..' . '/src/options/class-accountoptions.php',
@@ -59,7 +63,7 @@ class ComposerStaticInita4cb893b79bf7bd260dad7d4e03f9665
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
-            $loader->classMap = ComposerStaticInita4cb893b79bf7bd260dad7d4e03f9665::$classMap;
+            $loader->classMap = ComposerStaticInitee2b3c154badd0f8b479e839361a8b52::$classMap;
 
         }, null, ClassLoader::class);
     }

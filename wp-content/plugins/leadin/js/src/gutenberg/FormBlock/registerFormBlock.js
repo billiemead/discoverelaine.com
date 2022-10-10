@@ -1,11 +1,11 @@
 import React from 'react';
 import { registerBlockType } from '@wordpress/blocks';
 import SprocketIcon from '../Common/SprocketIcon';
-import FormBlockEdit from './FormBlockEdit';
 import FormBlockSave from './FormBlockSave';
 import { connectionStatus, i18n } from '../../constants/leadinConfig';
-import FormGutenbergPreview from './FormBlockEdit/FormGutenbergPreview';
-import ErrorHandler from '../Common/ErrorHandler';
+import FormGutenbergPreview from './FormGutenbergPreview';
+import ErrorHandler from '../../shared/Common/ErrorHandler';
+import FormEdit from '../../shared/Form/FormEdit';
 
 const ConnectionStatus = {
   Connected: 'Connected',
@@ -17,7 +17,7 @@ export default function registerFormBlock() {
     if (props.attributes.preview) {
       return <FormGutenbergPreview />;
     } else if (connectionStatus === ConnectionStatus.Connected) {
-      return <FormBlockEdit {...props} />;
+      return <FormEdit {...props} />;
     } else {
       return <ErrorHandler status={401} />;
     }

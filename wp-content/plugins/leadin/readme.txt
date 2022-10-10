@@ -6,7 +6,7 @@ Tags: CRM, Email Marketing, Live Chat, Marketing, Analytics, form, popups, newsl
 Requires at least: 4.0
 Tested up to: 6.0
 Requires PHP: 5.6
-Stable tag: 8.16.28
+Stable tag: 9.0.123
 
 Capture, organize and engage web visitors with free live chat, forms, CRM (contact management), email marketing, and analytics. Easy to use, no coding.
 
@@ -380,12 +380,12 @@ Please visit the <a href="https://community.hubspot.com/?utm_source=wordpress-pl
 == Changelog ==
 
 <a href="http://plugins.svn.wordpress.org/leadin/trunk/changelog.txt" target="_blank">Full changelog here</a>
-- Current version: 8.16.28
-- Version release date: 2022-08-19
+- Current version: 9.0.123
+- Version release date: 2022-09-15
 
-= 8.16.25 (2022-08-19) =
-* Fixes the headers missing issue by tying the script with a hook
+= 9.0.108 (2022-09-14) =
+* Enqueue Meetings script
 
-= 8.16.6 (2022-08-17) =
-* Revert changes for open upgrade link in new tab
+= 9.0.91 (2022-09-13) =
+* Changed the placeholder text for form blocks
 

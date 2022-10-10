@@ -24,6 +24,7 @@ class AssetsManager {
 	const LEADIN_CONFIG      = 'leadinConfig';
 	const LEADIN_I18N        = 'leadinI18n';
 	const REVIEW_BANNER      = 'leadin-review-banner';
+	const ELEMENTOR          = 'leadin-elementor';
 
 	/**
 	 * Register and localize all assets.
@@ -109,6 +110,8 @@ class AssetsManager {
 	 * Register and localize the Gutenberg scripts.
 	 */
 	public static function localize_gutenberg() {
+		wp_register_style( self::ELEMENTOR, LEADIN_JS_BASE_PATH . '/gutenberg.css', array(), LEADIN_PLUGIN_VERSION );
+		wp_enqueue_style( self::ELEMENTOR );
 		wp_register_script( self::GUTENBERG, LEADIN_JS_BASE_PATH . '/gutenberg.js', array( 'wp-blocks', 'wp-element' ), LEADIN_PLUGIN_VERSION, true );
 		wp_localize_script( self::GUTENBERG, self::LEADIN_CONFIG, AdminConstants::get_background_leadin_config() );
 		wp_localize_script( self::GUTENBERG, self::LEADIN_I18N, AdminConstants::get_leadin_i18n() );
@@ -131,4 +134,17 @@ class AssetsManager {
 		wp_localize_script( self::REVIEW_BANNER, self::LEADIN_CONFIG, AdminConstants::get_background_leadin_config() );
 		wp_enqueue_script( self::REVIEW_BANNER );
 	}
+
+	/**
+	 * Register and enqueue a new script/style for elementor.
+	 */
+	public static function enqueue_elementor_script() {
+		wp_register_style( self::ELEMENTOR, LEADIN_JS_BASE_PATH . '/elementor.css', array(), LEADIN_PLUGIN_VERSION );
+		wp_enqueue_style( self::ELEMENTOR );
+		wp_register_script( self::ELEMENTOR, LEADIN_JS_BASE_PATH . '/elementor.js', array(), LEADIN_PLUGIN_VERSION, true );
+		wp_localize_script( self::ELEMENTOR, self::LEADIN_CONFIG, AdminConstants::get_background_leadin_config() );
+		wp_localize_script( self::ELEMENTOR, self::LEADIN_I18N, AdminConstants::get_leadin_i18n() );
+		wp_enqueue_script( self::ELEMENTOR );
+	}
+
 }

@@ -138,6 +138,11 @@ class ShortcodeRenderUtils {
 
 		return '
 		<div class="meetings-iframe-container" data-src="' . $url . '?embed=true"></div>
+		<script>
+			if(window.hbspt && window.hbspt.meetings){
+				window.hbspt.meetings.create(".meetings-iframe-container");
+			}
+			</script>
 		';
 	}
 

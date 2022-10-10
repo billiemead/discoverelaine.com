@@ -31,20 +31,20 @@ export function getForm(formId) {
   return callInterframeMethod('leadinGetForm', formId);
 }
 
-export function monitorFormPreviewRender() {
-  return callInterframeMethod('monitorFormPreviewRender');
+export function monitorFormPreviewRender(origin = 'gutenberg') {
+  return callInterframeMethod('monitorFormPreviewRender', origin);
 }
 
-export function monitorFormCreatedFromTemplate(type) {
-  return callInterframeMethod('monitorFormCreatedFromTemplate', type);
+export function monitorFormCreatedFromTemplate(type, origin = 'gutenberg') {
+  return callInterframeMethod('monitorFormCreatedFromTemplate', type, origin);
 }
 
-export function monitorFormCreationFailed(error) {
-  return callInterframeMethod('monitorFormCreationFailed', error);
+export function monitorFormCreationFailed(error, origin = 'gutenberg') {
+  return callInterframeMethod('monitorFormCreationFailed', error, origin);
 }
 
-export function monitorMeetingPreviewRender() {
-  return callInterframeMethod('monitorMeetingPreviewRender');
+export function monitorMeetingPreviewRender(origin = 'gutenberg') {
+  return callInterframeMethod('monitorMeetingPreviewRender', origin);
 }
 
 export function monitorSidebarMetaChange(metaKey) {

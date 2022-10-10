@@ -26,6 +26,8 @@ use Leadin\admin\utils\Background;
 use Leadin\utils\QueryParameters;
 use Leadin\utils\Versions;
 use Leadin\includes\utils as utils;
+use Leadin\admin\widgets\ElementorFormSelect;
+use Leadin\admin\widgets\ElementorMeetingSelect;
 
 /**
  * Class responsible for initializing the admin side of the plugin.
@@ -65,6 +67,57 @@ class LeadinAdmin {
 		new NoticeManager();
 		new AdminFilters();
 		new Gutenberg();
+		add_action( 'elementor/controls/register', array( $this, 'register_hsselectors_control' ) );
+		add_action( 'elementor/documents/register_controls', array( $this, 'register_document_controls' ) );
+	}
+
+	/**
+	 * Register additional document controls.
+	 *
+	 * @param \Elementor\Core\DocumentTypes\PageBase $document The PageBase document instance.
+	 */
+	public function register_document_controls( $document ) {
+		if ( ! $document instanceof \Elementor\Core\DocumentTypes\PageBase || ! $document::get_property( 'has_elements' ) ) {
+			return;
+		}
+
+		$document->start_controls_section(
+			'hubspot',
+			array(
+				'label' => esc_html__( 'Hubspot', 'leadin' ),
+				'tab'   => \Elementor\Controls_Manager::TAB_SETTINGS,
+			)
+		);
+
+		$document->add_control(
+			'content_type',
+			array(
+				'label'       => esc_html__( 'Select the content type HubSpot Analytics uses to track this page.', 'leadin' ),
+				'label_block' => true,
+				'type'        => \Elementor\Controls_Manager::SELECT,
+				'options'     => array(
+					''                  => esc_html__( 'Detect Automatically', 'leadin' ),
+					'blog-post'         => esc_html__( 'Blog Post', 'leadin' ),
+					'knowledge-article' => esc_html__( 'Knowledge Article', 'leadin' ),
+					'landing-page'      => esc_html__( 'Landing Page', 'leadin' ),
+					'listing-page'      => esc_html__( 'Listing Page', 'leadin' ),
+					'standard-page'     => esc_html__( 'Standard Page', 'leadin' ),
+				),
+				'default'     => '',
+			)
+		);
+
+		$document->end_controls_section();
+	}
+
+	/**
+	 * Register controls for elementor widget
+	 *
+	 * @param object $controls_manager elementor controls manager.
+	 */
+	public function register_hsselectors_control( $controls_manager ) {
+			$controls_manager->register( new ElementorFormSelect() );
+			$controls_manager->register( new ElementorMeetingSelect() );
 	}
 
 	/**
@@ -137,7 +190,7 @@ class LeadinAdmin {
 		if ( Connection::is_connected() && Routing::has_review_request() ) {
 			AdminUserMetaData::set_skip_review( time() );
 			if ( Routing::is_review_request() ) {
-				header( 'Location: https://wordpress.org/support/plugin/leadin/reviews/?filter=5#new-post' );
+				header( 'Location: https://survey.hsforms.com/1-f65QV05Q22xBpAqtraKWg1h' );
 				exit();
 			}
 		}

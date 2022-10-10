@@ -28,9 +28,10 @@ class ReviewBanner {
 			__( 'Hey %1$s,', 'leadin' ),
 			User::get_metadata( 'first_name' ) ? User::get_metadata( 'first_name' ) : User::get_metadata( 'nickname' )
 		);
-		$notice_text         = __( 'Congratulations, new contacts were added to your HubSpot CRM this week! Enjoying the plugin?', 'leadin' );
-		$leave_review_text   = __( 'Leave us a review', 'leadin' );
+		$notice_text         = __( 'Have you got 2 minutes to complete %1$sthis survey%2$s about the HubSpot for WordPress plugin?', 'leadin' );
+		$feedback_text       = __( 'We read every response. Your feedback helps our team make the improvements that you need the most.', 'leadin' );
 		$from_hubspot_text   = __( 'HubSpot for WordPress Team', 'leadin' );
+		$thanks_message      = __( 'Thanks,', 'leadin' );
 		?>
 			<div id="leadin-review-banner" class="leadin-banner leadin-review-banner notice notice-warning">
 
@@ -49,18 +50,25 @@ class ReviewBanner {
 					</p>
 
 					<div class="leadin-review-banner__content-body">
+
 						<p class="leadin-review-banner__text">
-							<?php	echo esc_html( $notice_text ); ?>
-							<a
-								class="leadin-banner__link"
-								id="leave-review-button" target="_blank"
-								href="?leadin_review=true&_wpnonce=<?php echo esc_html( $nonce ); ?>"
-								aria-label="<?php echo esc_html( __( 'Leave us a review | link opens in a new tab', 'leadin' ) ); ?>"
-							>
-								<?php	echo esc_html( $leave_review_text ); ?>
-							</a>
+							<?php
+							echo sprintf(
+								esc_html( $notice_text ),
+								'<a class="leadin-banner__link" id="leave-review-button" target="_blank" href="?leadin_review=true&_wpnonce=' . esc_html( $nonce ) . '" aria-label="' . esc_html( __( 'Leave us a review | link opens in a new tab', 'leadin' ) ) . '" >',
+								'</a>'
+							);
+							?>
+						</p>
+						<p class="leadin-review-banner__text">
+							<?php	echo esc_html( $feedback_text ); ?>
 						</p>
 					</div>
+					<div class="leadin-review-banner__content-body">
+					<p class="leadin-review-banner__text">
+						<?php	echo esc_html( $thanks_message ); ?>
+					</p>
+						</div>
 				</div>
 
 				<div class="leadin-review-banner__author">

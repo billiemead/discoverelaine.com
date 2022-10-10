@@ -234,3 +234,31 @@
   left: 0;
   background: white;
 }
+
+.elementor-element-editable .hubspot-form-edit-mode + .hubspot-widget-empty,
+.elementor-element-editable .hubspot-meeting-edit-mode + .hubspot-widget-empty {
+  display: none;
+}
+
+.hubspot-form-edit-mode ~ .hbspt-form,
+.hubspot-meeting-edit-mode ~ .meetings-iframe-container{
+  pointer-events: none;
+}
+
+.hubspot-widget-empty {
+  background-image: url('../images/hubspot.svg');
+  background-color: #f5f8fa;
+  background-repeat: no-repeat;
+  background-position: center 25px;
+  background-size: 120px;
+  color: #33475b;
+  font-family: Avenir Next,Helvetica,Arial,sans-serif;
+  font-size: 14px;
+  padding: 90px 20% 25px;
+}
+
+.hubspot-widget-empty p{
+  font-size: inherit !important;
+  line-height: 24px;
+  margin: 4px 0;
+}

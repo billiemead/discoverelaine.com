@@ -1,3 +1,24 @@
+= 9.0.108 (2022-09-14) =
+* Enqueue Meetings script
+
+= 9.0.91 (2022-09-13) =
+* Changed the placeholder text for form blocks
+
+= 9.0.77 (2022-09-12) =
+* Change review link to external survey
+
+= 9.0.74 (2022-09-09) =
+* Add filter to pass additional query parameters to iframe
+
+= 9.0.72 (2022-09-09) =
+* Prevent sidebar from rendering when not post or page
+
+= 9.0.20 (2022-08-30) =
+* Remove tests folder and composer.phar file
+
+= 9.0.0 (2022-08-29) =
+* Added HusbSpot Elementor widgets
+
 = 8.16.25 (2022-08-19) =
 * Fixes the headers missing issue by tying the script with a hook
 
@@ -300,30 +321,4 @@
 = 7.39.5 (2020-08-10) =
 * Add a script that fetches contact properties from HubSpot
 * Renamed "Dashboard" to "Setup Guide"
-
-= 7.38.1 (2020-08-03) =
-* Embed Live Chat inside the plugin
-* Saving the Gutenberg block as a shortcode to fix an error with parsing a previously saved block
-
-= 7.37.2 (2020-07-26) =
-* Embed the email app now as part of the plugin
-* Rename "Advanced Features" menu item to "Upgrade"
-
-= 7.36.3 (2020-07-19) =
-* Fixed syncing of the URL between the iframe and WordPress
-
-= 7.36.1 (2020-07-12) =
-* Add Tracking consent banner and the logic to communicate the consent to the embedded signup
-* Prevent the integer value passed to rand to overflow and being stored as float when the site runs on a 32 bit system
-
-= 7.35.4 (2020-07-02) =
-* Pass a div ID to the form create function where the form will be appended
-
-= 7.35.2 (2020-07-01) =
-* Update text on the plugin listing page
-* Make the forms creation code independent of the order which the files are parsed
-
-= 7.35.1 (2020-06-28) =
-* Allow users to try the plugin before signup
-* Enable an API which will allow pre-signup demo eperience
 

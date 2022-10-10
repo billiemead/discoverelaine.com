@@ -4,8 +4,8 @@ import CalendarIcon from '../Common/CalendarIcon';
 import { connectionStatus, i18n } from '../../constants/leadinConfig';
 import MeetingGutenbergPreview from './MeetingGutenbergPreview';
 import MeetingSaveBlock from './MeetingSaveBlock';
-import MeetingBlockEdit from './MeetingBlockEdit/MeetingBlockEdit';
-import ErrorHandler from '../Common/ErrorHandler';
+import MeetingEdit from '../../shared/Meeting/MeetingEdit';
+import ErrorHandler from '../../shared/Common/ErrorHandler';
 
 const ConnectionStatus = {
   Connected: 'Connected',
@@ -17,7 +17,7 @@ export default function registerMeetingBlock() {
     if (props.attributes.preview) {
       return <MeetingGutenbergPreview />;
     } else if (connectionStatus === ConnectionStatus.Connected) {
-      return <MeetingBlockEdit {...props} />;
+      return <MeetingEdit {...props} />;
     } else {
       return <ErrorHandler status={401} />;
     }

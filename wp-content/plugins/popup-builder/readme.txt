@@ -8,7 +8,7 @@ Tags: popup, pop up, wordpress popup, popup maker, exit popup, popup builder, wo
 Requires at least: 4.2
 Tested up to: 6.0
 Requires PHP: 5.3.3
-Stable tag: 4.1.13
+Stable tag: 4.1.14
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -145,6 +145,13 @@ Go to the Popup Builder settings and set your desired options.
 14. Registration popup
 
 == Changelog ==
+
+= Version 4.1.14 =
+* Bug fixed related to popup order's tooltip
+* Bug fixed related to popup's closing animation's preview
+* Improvement of design in image popup's "Image settings". Size of image frame was decreased
+* Improvement of "Statistics" page. "Reset" button's size was decreased for better UI
+* Improvement of "Live preview" in subscription popup
 
 = Version 4.1.13 =
 * Bug fixed related to tags in Display rules
@@ -563,4 +570,4 @@ Leave us a good review :)
 
 == Upgrade Notice ==
 
-Current Version of Popup Builder is 4.1.13
+Current Version of Popup Builder is 4.1.14

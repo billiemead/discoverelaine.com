@@ -233,7 +233,7 @@ class AdminConstants {
 			'unauthorizedMessage'         => __( 'Reauthorize your plugin to access your free HubSpot tools.', 'leadin' ),
 			'formApiErrorHeader'          => __( 'There was a problem retrieving your forms', 'leadin' ),
 			'formApiError'                => __( 'Please refresh your forms or try again in a few minutes.', 'leadin' ),
-			'selectForm'                  => __( 'Select a form', 'leadin' ),
+			'searchForForm'               => __( 'Search for a form', 'leadin' ),
 			'formBlockTitle'              => __( 'HubSpot Form', 'leadin' ),
 			'formBlockDescription'        => __( 'Select and embed a HubSpot form', 'leadin' ),
 			'registrationForm'            => __( 'Registration Form', 'leadin' ),
@@ -249,7 +249,7 @@ class AdminConstants {
 			'defaultMeeting'              => __( 'Default', 'leadin' ),
 			'meetingName'                 => __( 'Meeting name', 'leadin' ),
 			'ownCalendarNotConnected'     => __( 'Your calendar is not connected.', 'leadin' ),
-			'ownCalendarNotConnectedDesc' => __( 'Please connect your calendar to activate your scheuling pages.', 'leadin' ),
+			'ownCalendarNotConnectedDesc' => __( 'Please connect your calendar to activate your scheduling pages.', 'leadin' ),
 			'connectCalendar'             => __( 'Connect calendar', 'leadin' ),
 			'refreshMeetings'             => __( 'Refresh meetings', 'leadin' ),
 			'meetingsApiErrorHeader'      => __( 'There was a problem retrieving your meetings', 'leadin' ),
@@ -266,6 +266,11 @@ class AdminConstants {
 			'hubspotAnalytics'            => __( 'HubSpot Analytics', 'leadin' ),
 			'detectAutomatically'         => __( 'Detect Automatically', 'leadin' ),
 			'contentTypeSelectLabel'      => __( 'Select the content type HubSpot Analytics uses to track this page.', 'leadin' ),
+			'connectHubLink'              => sprintf(
+				esc_html( __( 'The HubSpot plugin isn’t connected right now. To use HubSpot tools on your WordPress site, %1$sconnect the plugin now%2$s.', 'leadin' ) ),
+				'<a class="leadin-banner__link" href="admin.php?page=leadin&bannerClick=true">',
+				'</a>'
+			),
 		);
 	}
 }
