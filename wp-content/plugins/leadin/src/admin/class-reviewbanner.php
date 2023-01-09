@@ -2,7 +2,7 @@
 
 namespace Leadin\admin;
 
-use Leadin\wp\User;
+use Leadin\data\User_Metadata;
 use Leadin\admin\AdminConstants;
 use Leadin\AssetsManager;
 
@@ -26,7 +26,7 @@ class ReviewBanner {
 		$dismiss_notice_text = __( 'Dismiss this notice.', 'leadin' );
 		$hello_text          = sprintf(
 			__( 'Hey %1$s,', 'leadin' ),
-			User::get_metadata( 'first_name' ) ? User::get_metadata( 'first_name' ) : User::get_metadata( 'nickname' )
+			User_Metadata::get_first_name() ? User_Metadata::get_first_name() : User_Metadata::get_nickname()
 		);
 		$notice_text         = __( 'Have you got 2 minutes to complete %1$sthis survey%2$s about the HubSpot for WordPress plugin?', 'leadin' );
 		$feedback_text       = __( 'We read every response. Your feedback helps our team make the improvements that you need the most.', 'leadin' );

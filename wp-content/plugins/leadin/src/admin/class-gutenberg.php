@@ -48,7 +48,6 @@ class Gutenberg {
 	 */
 	public function register_gutenberg_block() {
 		AssetsManager::localize_gutenberg();
-		AssetsManager::localize_meetings_gutenberg();
 		register_block_type(
 			'leadin/hubspot-blocks',
 			array(

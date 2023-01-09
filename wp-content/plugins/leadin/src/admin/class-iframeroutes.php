@@ -4,7 +4,7 @@ namespace Leadin\admin;
 
 use Leadin\admin\Connection;
 use Leadin\admin\MenuConstants;
-use Leadin\options\AccountOptions;
+use Leadin\data\Portal_Options;
 
 /**
  * Class for building iframe routes
@@ -32,7 +32,7 @@ class IframeRoutes {
 	 * Get the base path for the iframe when plugin is connected
 	 */
 	private static function get_base_connected_path() {
-		$portal_id = AccountOptions::get_portal_id();
+		$portal_id = Portal_Options::get_portal_id();
 		return "/wordpress-plugin-ui/$portal_id";
 	}
 

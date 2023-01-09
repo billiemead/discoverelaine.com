@@ -1,3 +1,42 @@
+= 9.2.26 (2022-12-08) =
+* Update feedback survey link
+
+= 9.2.0 (2022-12-01) =
+* Add support for Business Units
+
+= 9.1.0 (2022-11-30) =
+* Make list link external
+
+= 9.0.499 (2022-11-25) =
+* Fix custom post type validation for sidebar
+
+= 9.0.497 (2022-11-24) =
+* Added fallback page if iframe is blocked
+
+= 9.0.469 (2022-11-21) =
+* Replace null parameter for http_build_query method
+
+= 9.0.432 (2022-11-17) =
+* Migrate to TypeScript
+
+= 9.0.405 (2022-11-14) =
+* Add validation to metadata access
+
+= 9.0.387 (2022-11-01) =
+* Use WP set script translations
+
+= 9.0.365 (2022-10-28) =
+* Move ajax to rest endpoints
+
+= 9.0.320 (2022-10-24) =
+* Make report link external
+
+= 9.0.311 (2022-10-21) =
+* Fix for form select sometimes not working in form Gutenberg block
+
+= 9.0.272 (2022-10-12) =
+* Fix for Penpal to connect to correct child when Impact Link is present
+
 = 9.0.108 (2022-09-14) =
 * Enqueue Meetings script
 
@@ -269,56 +308,4 @@
 
 = 7.47.5 (2020-11-18) =
 * Do not fail connection for an invalid domain
-
-= 7.47.4 (2020-11-17) =
-* Do not redefine the create property for hbspt.forms if it has been set already
-
-= 7.47.3 (2020-11-09) =
-* Fix deprecation warning caused by calling a non-static method statically
-* Fix forms script hidden in some websites
-* Define filters to set the values of the capabilities to connect the plugin and view the plugin menu
-
-= 7.47.0 (2020-11-02) =
-* Include the forms loader script only once in the page when a form is added.
-
-= 7.46.2 (2020-10-27) =
-* Released the updated user guide
-* Fix forms rendering on IE11
-
-= 7.45.6 (2020-10-19) =
-* Use https instead of relative-protocol URLs for HubSpot scripts
-* Define custom filters instead of constants for HubSpot properties
-
-= 7.45.4 (2020-10-11) =
-* Fix iframe communication for IE11
-* Fix for JS error when it is re-executed by jQuery and attempting to modify an immutable object
-
-= 7.44.6 (2020-09-29) =
-* Added a demo of the tools for new users
-* Redesigned the intro page
-
-= 7.43.4 (2020-09-13) =
-* Fix login flow from the gutenberg block
-* Log error when requests are blocked by a browser extension
-
-= 7.42.3 (2020-09-06) =
-* Bump the latest WordPress version where the plugin has been tested
-* Create a new WordPress specific report page
-* Add a monitor to the Hubspot gutenberg block preview render
-
-= 7.41.1 (2020-08-31) =
-* Generate a reporting dashboard if none exists
-
-= 7.41.0 (2020-08-24) =
-* Hide menu items when unauthenticated
-
-= 7.40.0 (2020-08-16) =
-* Update the latest version the plugin has been tested on
-* Redesign the Getting Started experience
-* Fix the signup progression bar on the intro page
-* Add the correct highlighting of sidebar menu items when redirected from inside the plugin
-
-= 7.39.5 (2020-08-10) =
-* Add a script that fetches contact properties from HubSpot
-* Renamed "Dashboard" to "Setup Guide"
 

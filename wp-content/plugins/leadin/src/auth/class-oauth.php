@@ -2,9 +2,9 @@
 
 namespace Leadin\auth;
 
-use Leadin\wp\User;
-use Leadin\options\LeadinOptions;
-use Leadin\rest\HubSpotApiClient;
+use Leadin\data\User;
+use Leadin\data\Portal_Options;
+use Leadin\client\Access_Token_Api_Client;
 use Leadin\auth\OAuthCrypto;
 use Leadin\admin\Routing;
 use Leadin\admin\MenuConstants;
@@ -20,7 +20,7 @@ class OAuth {
 	 * @return bool True if the OAuth version of the plugin is enabled or not.
 	 */
 	public static function is_enabled() {
-		return ! empty( LeadinOptions::get( 'access_token' ) );
+		return ! empty( Portal_Options::get_access_token() );
 	}
 
 	/**
@@ -32,18 +32,18 @@ class OAuth {
 	 */
 	public static function authorize( $access_token, $refresh_token, $expires_in ) {
 		$encrypted_refresh_token = OAuthCrypto::encrypt( $refresh_token );
-		LeadinOptions::update( 'access_token', $access_token );
-		LeadinOptions::update( 'refresh_token', $encrypted_refresh_token );
-		LeadinOptions::update( 'expiry_time', time() + $expires_in );
+		Portal_Options::set_access_token( $access_token );
+		Portal_Options::set_refresh_token( $encrypted_refresh_token );
+		Portal_Options::set_expiry_time( time() + $expires_in );
 	}
 
 	/**
 	 * Deauthorizes the plugin by deleting OAuth credentials from the options DB.
 	 */
 	public static function deauthorize() {
-		LeadinOptions::delete( 'access_token' );
-		LeadinOptions::delete( 'refresh_token' );
-		LeadinOptions::delete( 'expiry_time' );
+		Portal_Options::delete_access_token();
+		Portal_Options::delete_refresh_token();
+		Portal_Options::delete_expiry_time();
 	}
 
 	/**
@@ -59,7 +59,7 @@ class OAuth {
 			self::refresh_access_token();
 		}
 
-		return LeadinOptions::get( 'access_token' );
+		return Portal_Options::get_access_token();
 	}
 
 	/**
@@ -70,7 +70,7 @@ class OAuth {
 	 * @throws \Exception If no refresh token is available.
 	 */
 	private static function get_refresh_token() {
-		$encrypted_refresh_token = LeadinOptions::get( 'refresh_token' );
+		$encrypted_refresh_token = Portal_Options::get_refresh_token();
 
 		if ( '' === $encrypted_refresh_token ) {
 			throw new \Exception( 'Refresh token is empty' );
@@ -85,7 +85,7 @@ class OAuth {
 	 * @return string time in unix seconds when refresh token will expire.
 	 */
 	private static function get_expiry_time() {
-		return LeadinOptions::get( 'expiry_time' );
+		return Portal_Options::get_expiry_time();
 	}
 
 	/**
@@ -107,7 +107,8 @@ class OAuth {
 	 */
 	public static function refresh_access_token() {
 		try {
-			$refreshed_credentials = HubSpotApiClient::refresh_access_token( self::get_refresh_token() );
+			$client                = new Access_Token_Api_Client();
+			$refreshed_credentials = $client->refresh_access_token( self::get_refresh_token() );
 			self::authorize(
 				$refreshed_credentials->access_token,
 				$refreshed_credentials->refresh_token,

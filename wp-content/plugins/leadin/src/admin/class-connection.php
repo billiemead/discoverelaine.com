@@ -2,8 +2,8 @@
 
 namespace Leadin\admin;
 
-use Leadin\options\AccountOptions;
-use Leadin\wp\User;
+use Leadin\data\Portal_Options;
+use Leadin\data\User;
 use Leadin\utils\QueryParameters;
 use Leadin\auth\OAuth;
 
@@ -29,7 +29,7 @@ class Connection {
 	 * Returns true if a portal has been connected to the plugin
 	 */
 	public static function is_connected() {
-		return ! empty( AccountOptions::get_portal_id() );
+		return ! empty( Portal_Options::get_portal_id() );
 	}
 
 	/**
@@ -38,7 +38,7 @@ class Connection {
 	public static function is_same_portal() {
 		$connect_params = QueryParameters::get_parameters( self::CONNECT_KEYS, 'hubspot-nonce', self::CONNECT_NONCE_ARG );
 		$portal_id      = $connect_params['portal_id'];
-		return AccountOptions::get_portal_id() === $portal_id;
+		return Portal_Options::get_portal_id() === $portal_id;
 	}
 
 	/**
@@ -150,21 +150,22 @@ class Connection {
 	 * @param String $hublet Hublet for the connecting portal.
 	 */
 	public static function store_portal_info( $portal_id, $portal_name, $portal_domain, $hublet ) {
-		AccountOptions::add_portal_id( $portal_id );
-		AccountOptions::add_account_name( $portal_name );
-		AccountOptions::add_portal_domain( $portal_domain );
-		AccountOptions::add_hublet( $hublet );
-		AccountOptions::add_disable_internal_tracking();
+		Portal_Options::set_portal_id( $portal_id );
+		Portal_Options::set_account_name( $portal_name );
+		Portal_Options::set_portal_domain( $portal_domain );
+		Portal_Options::set_hublet( $hublet );
+		Portal_Options::set_disable_internal_tracking();
 	}
 
 	/**
 	 * Delete stored portal metadata for disconnecting the plugin from the options table
 	 */
 	private static function delete_portal_info() {
-		AccountOptions::delete_portal_id();
-		AccountOptions::delete_account_name();
-		AccountOptions::delete_portal_domain();
-		AccountOptions::delete_hublet();
-		AccountOptions::delete_disable_internal_tracking();
+		Portal_Options::delete_portal_id();
+		Portal_Options::delete_account_name();
+		Portal_Options::delete_portal_domain();
+		Portal_Options::delete_hublet();
+		Portal_Options::delete_disable_internal_tracking();
+		Portal_Options::delete_business_unit_id();
 	}
 }

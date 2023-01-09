@@ -213,16 +213,51 @@
 
 #toplevel_page_leadin a[href*='leadin_settings'],
 #toplevel_page_leadin a[href*='leadin_user_guide'],
+#toplevel_page_leadin a.leadin_lists_link,
+#toplevel_page_leadin a.leadin_reporting_link,
 #toplevel_page_leadin a.leadin_pricing_link {
   display: inherit;
 }
 
-#toplevel_page_leadin a.leadin_pricing_link {
+#toplevel_page_leadin a[href*='leadin_lists'],
+#toplevel_page_leadin a[href*='leadin_reporting'],
+#toplevel_page_leadin a[href*='leadin_pricing'] {
+  display: none !important;
+}
+
+#toplevel_page_leadin a[href*='leadin_pricing'] + .external_link{
   color: #ff7a59 !important;
 }
 
-#toplevel_page_leadin a.leadin_pricing_link:hover {
+
+#toplevel_page_leadin a[href*='leadin_pricing'] + .external_link:hover {
   color: #ffbcac !important;
+}
+
+#toplevel_page_leadin a[href*='leadin_pricing'] + .external_link::after{
+  background-color: #ff7a59;
+}
+
+#toplevel_page_leadin a[href*='leadin_pricing'] + .external_link:hover::after {
+  background-color: #ffbcac;
+}
+
+#toplevel_page_leadin .external_link:hover::after {
+  background-color: #72aee6;
+}
+
+#toplevel_page_leadin .external_link::after{
+  content: '';
+  -webkit-mask: url('../images/external_link.svg') no-repeat 50% 50%;
+  mask: url('../images/external_link.svg') no-repeat 50% 50%;
+  -webkit-mask-size: cover;
+  mask-size: cover;
+  position: absolute;
+  height: 12px;
+  width: 12px;
+  background-size: contain;
+  margin: 4px 2px;
+  background-color: rgba(240,246,252,.7);
 }
 
 /* Needed to prevent the notice banners being shown briefly under the iframe */
@@ -262,3 +297,4 @@
   line-height: 24px;
   margin: 4px 0;
 }
+

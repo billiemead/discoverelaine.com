@@ -2,7 +2,7 @@
 
 namespace Leadin\utils;
 
-use Leadin\LeadinFilters;
+use Leadin\data\Filters;
 use Leadin\AssetsManager;
 
 /**
@@ -56,7 +56,7 @@ class ShortcodeRenderUtils {
 		}
 
 		$form_div_uuid = self::generate_div_uuid();
-		$hublet        = LeadinFilters::get_leadin_hublet();
+		$hublet        = Filters::apply_hublet_filters();
 		AssetsManager::enqueue_forms_script();
 		return '
 					<script>
@@ -67,7 +67,7 @@ class ShortcodeRenderUtils {
 								formId: "' . $id . '",
 								target: "#hbspt-form-' . $form_div_uuid . '",
 								region: "' . $hublet . '",
-								' . LeadinFilters::get_leadin_forms_payload() . '
+								' . Filters::apply_forms_payload_filters() . '
 						})});
 					</script>
 					<div class="hbspt-form" id="hbspt-form-' . $form_div_uuid . '"></div>';

@@ -2,7 +2,7 @@
 
 namespace Leadin\admin;
 
-use Leadin\options\AccountOptions;
+use Leadin\data\Portal_Options;
 use \Leadin\includes\utils as utils;
 
 /**
@@ -46,6 +46,7 @@ class DeactivationForm {
 								"The plugin isn't working",
 								"The plugin isn't useful",
 								'Temporarily disabling or troubleshooting',
+								'Other',
 							);
 
 							$radio_button_translations = array(
@@ -54,6 +55,7 @@ class DeactivationForm {
 								__( "The plugin isn't working", 'leadin' ),
 								__( "The plugin isn't useful", 'leadin' ),
 								__( 'Temporarily disabling or troubleshooting', 'leadin' ),
+								__( 'Other', 'leadin' ),
 							);
 
 							$buttons_count = count( $radio_buttons );
@@ -75,21 +77,8 @@ class DeactivationForm {
 								<?php
 							}
 							?>
-							<div class="leadin-radio-input-container">
-								<input type="radio" id="leadinFeedbackOther" name="feedback" value="Other" class="leadin-feedback-radio">
-								<label for="leadinFeedbackOther"><?php echo esc_html( __( 'Other', 'leadin' ) ); ?></label>
-							</div>
 							<textarea name="details" class="leadin-feedback-text-area leadin-feedback-text-control" placeholder="<?php echo esc_html( __( 'Feedback...', 'leadin' ) ); ?>"></textarea>
-							<input type="hidden" name="portal_id" value="<?php echo esc_html( AccountOptions::get_portal_id() ); ?>">
-
-							<div>
-								<strong>
-									<?php echo esc_html( __( "Thank you for your feedback. If you would like to tell us more please add your email and we'll get in touch.", 'leadin' ) ); ?>
-								</strong>
-							</div>
-
-							<input name="email" type="email" class="leadin-input" placeholder="<?php echo esc_attr( __( 'Email', 'leadin' ) ); ?>">
-
+							<input type="hidden" name="portal_id" value="<?php echo esc_html( Portal_Options::get_portal_id() ); ?>">
 							<div class="leadin-button-container">
 								<button type="submit" id="leadin-feedback-submit" class="leadin-button leadin-primary-button leadin-loader-button">
 									<div class="leadin-loader-button-content">

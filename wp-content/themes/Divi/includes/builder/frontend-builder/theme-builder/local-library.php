@@ -6,36 +6,6 @@
  */
 
 /**
- * Insert terms from comma seperated string.
- *
- * @since ??
- * @param string $terms_str Comma seperated list of new terms.
- * @param string $tax Taxonomy name.
- *
- * @return (void|array)
- */
-function et_theme_builder_insert_terms_from_str( $terms_str, $tax ) {
-	// Insert categories.
-	if ( '' === $terms_str ) {
-		return;
-	}
-
-	// Multiple terms could be provided.
-	$term_names   = explode( ',', $terms_str );
-	$new_term_ids = array();
-
-	foreach ( $term_names as $term_name ) {
-		$new_term = wp_insert_term( $term_name, $tax );
-
-		if ( ! is_wp_error( $new_term ) && isset( $new_term['term_id'] ) ) {
-			$new_term_ids[] = (int) $new_term['term_id'];
-		}
-	}
-
-	return $new_term_ids;
-}
-
-/**
  * Gets the Library Item name.
  *
  * @param array  $preferences Preferences set in the Save Builder Preset/Template modals.
@@ -69,77 +39,6 @@ function et_theme_builder_local_library_get_item_name( $preferences, $item_type 
 	return $item_name;
 }
 
-/**
- * Sets the taxomomy for Template & Preset.
- *
- * @param int   $post_id Post ID.
- * @param array $preferences Preferences set in the Save Builder Preset/Template modals.
- */
-function et_theme_builder_local_library_set_item_taxonomy( $post_id, $preferences ) {
-	$_         = et_();
-	$tax_input = [];
-
-	$item_type = $_->array_get( $preferences, 'item_type' );
-
-	// Taxonomy: TB item type and selected category and tags.
-	if ( ! empty( $item_type ) ) {
-		$tax_input = array_merge( et_theme_builder_local_library_get_selected_taxonomy( $preferences ), [ 'et_tb_item_type' => $item_type ] );
-	}
-
-	// Insert new category and tags.
-	$new_taxs = et_theme_builder_local_library_get_new_taxonomy( $preferences );
-
-	foreach ( $new_taxs as $tax => $new_terms ) {
-		if ( '' !== $new_terms ) {
-			$inserted_terms_ids = et_theme_builder_insert_terms_from_str( $new_terms, $tax );
-			if ( ! empty( $inserted_terms_ids ) ) {
-				$tax_input[ $tax ] = array_merge( $tax_input[ $tax ], $inserted_terms_ids );
-			}
-		}
-	}
-
-	// Set category and tags for the template saved into local library.
-	if ( ! empty( $tax_input ) ) {
-		foreach ( $tax_input as $taxonomy => $terms ) {
-			wp_set_post_terms( $post_id, $terms, $taxonomy );
-		}
-	}
-}
-
-/**
- * Gets the newly added taxonomies set in the Preset/Template modals.
- *
- * @param array $preferences Preferences set in the Save Builder Preset/Template modals.
- *
- * @return array
- */
-function et_theme_builder_local_library_get_new_taxonomy( $preferences ) {
-	$_ = et_();
-
-	return [
-		'layout_category' => $_->array_get( $preferences, 'new_category_name', '' ),
-		'layout_tag'      => $_->array_get( $preferences, 'new_tag_name', '' ),
-	];
-}
-
-/**
- * Gets the selected taxonomies from Preset/Template modals.
- *
- * @param array $preferences Preferences set in the Save Builder Preset/Template modals.
- *
- * @return array
- */
-function et_theme_builder_local_library_get_selected_taxonomy( $preferences ) {
-	$_ = et_();
-
-	$selected_cats = $_->array_get( $preferences, 'selected_cats', array() );
-	$selected_tags = $_->array_get( $preferences, 'selected_tags', array() );
-
-	return [
-		'layout_category' => array_map( 'intval', $selected_cats ),
-		'layout_tag'      => array_map( 'intval', $selected_tags ),
-	];
-}
 
 /**
  * Gets the layouts(shortcodes from header/body/footer area) information.
@@ -170,13 +69,17 @@ function et_theme_builder_local_library_get_layouts( $template ) {
 /**
  * Save a Theme Builder template to the local library.
  *
- * @since ??
+ * @since 4.18.0
  * @param array $template Template.
  * @param array $preferences Preferences for the save template.
  *
  * @return (integer|false) Return false on failure.
  */
 function et_theme_builder_save_template_to_library( $template, $preferences = array() ) {
+	if ( ! current_user_can( 'edit_others_posts' ) ) {
+		wp_die();
+	}
+
 	$_               = et_();
 	$is_set_template = false;
 
@@ -276,7 +179,7 @@ function et_theme_builder_save_template_to_library( $template, $preferences = ar
 
 	// Taxonomy: TB item type and selected category and tags.
 	if ( ET_THEME_BUILDER_ITEM_TEMPLATE === $item_type ) {
-		et_theme_builder_local_library_set_item_taxonomy( $post_id, $preferences );
+		et_local_library_set_item_taxonomy( $post_id, $preferences );
 	} elseif ( ET_THEME_BUILDER_ITEM_SET === $item_type ) {
 		$template_preferences = [
 			'item_type' => ET_THEME_BUILDER_ITEM_TEMPLATE,
@@ -288,7 +191,7 @@ function et_theme_builder_save_template_to_library( $template, $preferences = ar
 			update_post_meta( $preset_id, '_et_has_default_template', '1' );
 		}
 
-		et_theme_builder_local_library_set_item_taxonomy( $post_id, $template_preferences );
+		et_local_library_set_item_taxonomy( $post_id, $template_preferences );
 	}
 
 	// Template meta.
@@ -350,13 +253,17 @@ function et_theme_builder_save_template_to_library( $template, $preferences = ar
 /**
  * Save a Theme Builder preset to the local library.
  *
- * @since ??
+ * @since 4.18.0
  * @param array $templates List of templates.
  * @param array $preferences Preset preferences.
  *
  * @return (integer|false) Returns Post ID on success and FALSE on failure.
  */
 function et_theme_builder_save_preset_to_library( $templates, $preferences ) {
+	if ( ! current_user_can( 'edit_others_posts' ) ) {
+		wp_die();
+	}
+
 	if ( ! is_array( $templates ) ) {
 		return false;
 	}
@@ -412,7 +319,7 @@ function et_theme_builder_save_preset_to_library( $templates, $preferences ) {
 	}
 
 	// Taxonomy: TB item type and selected category and tags.
-	et_theme_builder_local_library_set_item_taxonomy( $post_id, $preferences );
+	et_local_library_set_item_taxonomy( $post_id, $preferences );
 	et_theme_builder_add_template_to_preset( $post_id, $template_post_ids );
 
 	return $post_id;
@@ -424,7 +331,7 @@ function et_theme_builder_save_preset_to_library( $templates, $preferences ) {
  * @param int   $preset_id The preset id.
  * @param array $template_post_ids List of the template post ids.
  *
- * @since ??
+ * @since 4.18.0
  */
 function et_theme_builder_add_template_to_preset( $preset_id, $template_post_ids ) {
 	foreach ( $template_post_ids as $template_post_id ) {
@@ -474,7 +381,7 @@ function et_theme_builder_get_terms( $tax_name ) {
 /**
  * Retrieves the library item type attached with library item.
  *
- * @since ??
+ * @since 4.18.0
  *
  * @param int|WP_Post $item Library item post ID or object.
  * @return string|WP_Error The library item type. WP_Error on failure.
@@ -500,7 +407,7 @@ function et_theme_builder_get_library_item_type( $item ) {
 /**
  * Retrieves library item post given a library post ID or post object.
  *
- * @since ??
+ * @since 4.18.0
  *
  * @param int|WP_Post $item Library item's post ID or WP_Post object.
  * @return WP_Post|WP_Error The library item post object. WP_Error on failure.
@@ -525,11 +432,15 @@ function et_theme_builder_get_library_item_post( $item ) {
 /**
  * Create interim theme builder post for the local library editor.
  *
- * @since ??
+ * @since 4.18.0
  *
  * @return int|bool The post ID on success. The value false on failure.
  */
 function et_theme_builder_insert_library_theme_builder() {
+	if ( ! current_user_can( 'edit_others_posts' ) ) {
+		wp_die();
+	}
+
 	$post_id = wp_insert_post(
 		array(
 			'post_type'   => ET_THEME_BUILDER_THEME_BUILDER_POST_TYPE,
@@ -552,7 +463,7 @@ function et_theme_builder_insert_library_theme_builder() {
 /**
  * Create a theme builder layouts from the template saved in the local library.
  *
- * @since ??
+ * @since 4.18.0
  *
  * @param WP_Post $template_post The template post.
  * @param array   $global_layouts Optional. Array containing the necessary params.
@@ -625,13 +536,17 @@ function et_theme_builder_create_layouts_from_library_template( $template_post, 
 /**
  * Create template from the library item post.
  *
- * @since ??
+ * @since 4.18.0
  *
  * @param WP_Post $item_post The library item post object.
  * @param array   $global_layouts Array of global layouts.
  * @return int|bool The template id on success. false on failure.
  */
 function et_theme_builder_create_template_from_library_template( $item_post, $global_layouts = array() ) {
+	if ( ! current_user_can( 'edit_others_posts' ) ) {
+		wp_die();
+	}
+
 	// Insert template.
 	$template_id = wp_insert_post(
 		array(
@@ -679,7 +594,7 @@ function et_theme_builder_create_template_from_library_template( $item_post, $gl
 /**
  * Retrive template settings.
  *
- * @since ??
+ * @since 4.18.0
  *
  * @param int  $item_id The library item post ID.
  * @param bool $formatted Whether to remove "_et" prefix from setting keys.
@@ -732,7 +647,7 @@ add_action( 'admin_init', 'et_theme_builder_init_library_item_editor', 10 );
 /**
  * Return custom style from the passed layout meta.
  *
- * @since ??
+ * @since 4.18.0
  *
  * @param array  $layout_meta All layout meta saved in the local library.
  * @param string $layout_type The layout type i.e body, header, footer.
@@ -827,7 +742,7 @@ function et_theme_builder_get_preview_custom_css( $layout_meta, $layout_type ) {
 	/**
 	 * Filters page custom css.
 	 *
-	 * @since ??
+	 * @since 4.18.0
 	 *
 	 * @param string $output
 	 */
@@ -837,7 +752,7 @@ function et_theme_builder_get_preview_custom_css( $layout_meta, $layout_type ) {
 /**
  * Render the saved template.
  *
- * @since ??
+ * @since 4.18.0
  *
  * @param int $item_id The saved library item id.
  * @retun void
@@ -974,7 +889,7 @@ function et_theme_builder_get_global_layouts_by_incoming_layout_duplicate_decisi
 /**
  * Retrieve the item id from query parameters.
  *
- * @since ??
+ * @since 4.18.0
  *
  * @return int The template id or preset id.
  */
@@ -994,7 +909,7 @@ function et_theme_builder_get_item_id() {
 /**
  * Update library items.
  *
- * @since ??
+ * @since 4.18.0
  *
  * @param int   $item_id The item id.
  * @param array $templates List of template ids.
@@ -1035,7 +950,9 @@ function et_theme_builder_update_library_item( $item_id, $templates ) {
 		$removed_template_ids = array_diff( $old_template_ids, $template_post_ids );
 		if ( ! empty( $removed_template_ids ) ) {
 			foreach ( $removed_template_ids as $removed_template_id ) {
-				wp_trash_post( $removed_template_id );
+				if ( current_user_can( 'delete_post', $removed_template_id ) && ET_TB_ITEM_POST_TYPE === get_post_type( $removed_template_id ) ) {
+					wp_trash_post( $removed_template_id );
+				}
 			}
 		}
 

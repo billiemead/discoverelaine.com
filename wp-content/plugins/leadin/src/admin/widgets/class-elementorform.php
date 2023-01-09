@@ -1,7 +1,7 @@
 <?php
 namespace Leadin\admin\widgets;
 
-use Leadin\LeadinFilters;
+use Leadin\data\Filters;
 use Elementor\Plugin;
 use Elementor\Widget_Base;
 
@@ -67,7 +67,7 @@ class ElementorForm extends Widget_Base {
 	public function get_script_depends() {
 		wp_register_script(
 			'leadin-forms-v2',
-			LeadinFilters::get_leadin_forms_script_url(),
+			Filters::apply_forms_script_url_filters(),
 			array(),
 			LEADIN_PLUGIN_VERSION,
 			true

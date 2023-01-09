@@ -2,9 +2,10 @@
 
 namespace Leadin\admin;
 
-use Leadin\rest\HubSpotApiClient;
-use Leadin\options\LeadinOptions;
-use Leadin\admin\AdminUserMetaData;
+use Leadin\data\Portal_Options;
+use Leadin\data\User_Metadata;
+use Leadin\admin\client\Contacts_Api_Client;
+
 
 /**
  * Class responsible for controlling if review banner should show.
@@ -25,10 +26,11 @@ class ReviewController {
 			return false;
 		}
 		try {
-			AdminUserMetaData::set_review_banner_last_call( time() );
-			$contacts         = HubSpotApiClient::get_contacts_from_timestamp( LeadinOptions::get( 'activation_time' ) );
+			User_Metadata::set_review_banner_last_call( time() );
+			$client           = new Contacts_Api_Client();
+			$contacts         = $client->get_contacts_from_timestamp( Portal_Options::get_activation_time() );
 			$has_min_contacts = count( $contacts->results ) >= self::CONTACTS_CREATED_SINCE_ACTIVATION;
-			AdminUserMetaData::set_has_min_contacts( $has_min_contacts );
+			User_Metadata::set_has_min_contacts( $has_min_contacts );
 			return $has_min_contacts;
 		} catch ( \Exception $e ) {
 			return false;
@@ -40,7 +42,7 @@ class ReviewController {
 	 */
 	public static function is_after_introductary_period() {
 		$activation_time = new \DateTime();
-		$activation_time->setTimestamp( LeadinOptions::get( 'activation_time' ) );
+		$activation_time->setTimestamp( Portal_Options::get_activation_time() );
 		$diff = $activation_time->diff( new \DateTime() );
 		return $diff->days >= self::REVIEW_BANNER_INTRO_PERIOD;
 	}
@@ -49,14 +51,14 @@ class ReviewController {
 	 * Check SKIP_REVIEW meta data for a user.
 	 */
 	public static function is_reviewed_or_skipped() {
-		return ! empty( AdminUserMetaData::get_skip_review() );
+		return ! empty( User_Metadata::get_skip_review() );
 	}
 
 	/**
 	 * Check if contacts have been fetched at the current day.
 	 */
 	public static function should_fetch_contacts() {
-		$last_call_ts = AdminUserMetaData::get_review_banner_last_call();
+		$last_call_ts = User_Metadata::get_review_banner_last_call();
 		if ( ! empty( $last_call_ts ) ) {
 			return true;
 		}
@@ -70,7 +72,7 @@ class ReviewController {
 	 * Check if contacts minimun have already been fulfilled .
 	 */
 	public static function has_min_contacts() {
-		return AdminUserMetaData::get_has_min_contacts();
+		return User_Metadata::get_has_min_contacts();
 	}
 
 }

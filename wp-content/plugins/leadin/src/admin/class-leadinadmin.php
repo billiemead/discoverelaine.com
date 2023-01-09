@@ -3,10 +3,9 @@
 namespace Leadin\admin;
 
 use Leadin\AssetsManager;
-use Leadin\wp\User;
+use Leadin\data\User;
 use Leadin\admin\Connection;
-use Leadin\admin\AdminFilters;
-use Leadin\admin\AdminUserMetaData;
+use Leadin\data\User_Metadata;
 use Leadin\admin\MenuConstants;
 use Leadin\admin\Gutenberg;
 use Leadin\admin\NoticeManager;
@@ -14,20 +13,13 @@ use Leadin\admin\PluginActionsManager;
 use Leadin\admin\DeactivationForm;
 use Leadin\admin\Links;
 use Leadin\auth\OAuth;
-use Leadin\admin\api\RegistrationApi;
-use Leadin\admin\api\DisconnectApi;
-use Leadin\admin\api\SkipReviewApi;
-use Leadin\admin\api\UpdateHubletApi;
-use Leadin\admin\api\GetPortalHubletApi;
-use Leadin\admin\api\TrackConsentApi;
-use Leadin\admin\api\SearchHubSpotFormsApi;
-use Leadin\admin\api\DisableInternalTrackingApi;
 use Leadin\admin\utils\Background;
 use Leadin\utils\QueryParameters;
 use Leadin\utils\Versions;
 use Leadin\includes\utils as utils;
-use Leadin\admin\widgets\ElementorFormSelect;
-use Leadin\admin\widgets\ElementorMeetingSelect;
+
+use Leadin\data\Portal_Options;
+use Leadin\data\Filters;
 
 /**
  * Class responsible for initializing the admin side of the plugin.
@@ -46,7 +38,6 @@ class LeadinAdmin {
 		add_action( 'admin_init', array( $this, 'check_review_requested' ) );
 		add_action( 'admin_menu', array( $this, 'build_menu' ) );
 		add_action( 'admin_enqueue_scripts', array( $this, 'enqueue_scripts' ) );
-		add_action( 'wp_after_admin_bar_render', array( $this, 'change_upgrade_link_target' ) );
 		register_activation_hook( LEADIN_BASE_PATH, array( $this, 'do_activate_action' ) );
 
 		/**
@@ -55,19 +46,10 @@ class LeadinAdmin {
 		add_action( 'leadin_redirect', array( $this, 'set_redirect_transient' ) );
 		add_action( 'leadin_activate', array( $this, 'do_redirect_action' ), 100 );
 
-		new RegistrationApi();
-		new DisconnectApi();
-		new SkipReviewApi();
-		new UpdateHubletApi();
-		new GetPortalHubletApi();
-		new TrackConsentApi();
-		new DisableInternalTrackingApi();
 		new PluginActionsManager();
 		new DeactivationForm();
 		new NoticeManager();
-		new AdminFilters();
 		new Gutenberg();
-		add_action( 'elementor/controls/register', array( $this, 'register_hsselectors_control' ) );
 		add_action( 'elementor/documents/register_controls', array( $this, 'register_document_controls' ) );
 	}
 
@@ -110,15 +92,7 @@ class LeadinAdmin {
 		$document->end_controls_section();
 	}
 
-	/**
-	 * Register controls for elementor widget
-	 *
-	 * @param object $controls_manager elementor controls manager.
-	 */
-	public function register_hsselectors_control( $controls_manager ) {
-			$controls_manager->register( new ElementorFormSelect() );
-			$controls_manager->register( new ElementorMeetingSelect() );
-	}
+
 
 	/**
 	 * Load the .mo language files.
@@ -188,9 +162,9 @@ class LeadinAdmin {
 	 */
 	public function check_review_requested() {
 		if ( Connection::is_connected() && Routing::has_review_request() ) {
-			AdminUserMetaData::set_skip_review( time() );
+			User_Metadata::set_skip_review( time() );
 			if ( Routing::is_review_request() ) {
-				header( 'Location: https://survey.hsforms.com/1-f65QV05Q22xBpAqtraKWg1h' );
+				header( 'Location: https://survey.hsforms.com/16PVNb9nvT3SjO5uYt956lg1h' );
 				exit();
 			}
 		}
@@ -200,8 +174,8 @@ class LeadinAdmin {
 	 * Store activation time in a WP option.
 	 */
 	public function store_activation_time() {
-		if ( empty( get_option( 'leadin_activation_time' ) ) ) {
-			update_option( 'leadin_activation_time', time() );
+		if ( empty( Portal_Options::get_activation_time() ) ) {
+			Portal_Options::set_activation_time();
 		}
 	}
 
@@ -217,46 +191,38 @@ class LeadinAdmin {
 	}
 
 	/**
-	 * Changes the sidebar upgrade link target from iframe rendering to new tab
-	 */
-	public function change_upgrade_link_target() {
-		?>
-		<script>
-			document.addEventListener("DOMContentLoaded", function() {
-				const upgrade_link_element = document.querySelector("a[href='admin.php?page=<?php echo esc_html( MenuConstants::PRICING ); ?>']")
-				if(upgrade_link_element){
-					upgrade_link_element.setAttribute('href', '<?php echo esc_html( Links::get_iframe_src( MenuConstants::PRICING ) ); ?>');
-					upgrade_link_element.setAttribute('target', '_blank');
-					upgrade_link_element.setAttribute('class', 'leadin_pricing_link');
-					upgrade_link_element.onclick = (e) => {
-						e.target.blur();
-					}
-				}
-			});
-		</script>
-		<?php
-	}
-
-	/**
 	 * Adds Leadin menu to admin sidebar
 	 */
 	public function build_menu() {
 		if ( Connection::is_connected() ) {
-				add_menu_page( __( 'HubSpot', 'leadin' ), __( 'HubSpot', 'leadin' ), AdminFilters::apply_view_plugin_menu_capability(), MenuConstants::ROOT, array( $this, 'build_app' ), 'dashicons-sprocket', '25.100713' );
-				add_submenu_page( MenuConstants::ROOT, __( 'User Guide', 'leadin' ), __( 'User Guide', 'leadin' ), AdminFilters::apply_view_plugin_menu_capability(), MenuConstants::USER_GUIDE, array( $this, 'build_app' ) );
-				add_submenu_page( MenuConstants::ROOT, __( 'Reporting', 'leadin' ), __( 'Reporting', 'leadin' ), AdminFilters::apply_view_plugin_menu_capability(), MenuConstants::REPORTING, array( $this, 'build_app' ) );
-				add_submenu_page( MenuConstants::ROOT, __( 'Contacts', 'leadin' ), __( 'Contacts', 'leadin' ), AdminFilters::apply_view_plugin_menu_capability(), MenuConstants::CONTACTS, array( $this, 'build_app' ) );
-				add_submenu_page( MenuConstants::ROOT, __( 'Lists', 'leadin' ), __( 'Lists', 'leadin' ), AdminFilters::apply_view_plugin_menu_capability(), MenuConstants::LISTS, array( $this, 'build_app' ) );
-				add_submenu_page( MenuConstants::ROOT, __( 'Forms', 'leadin' ), __( 'Forms', 'leadin' ), AdminFilters::apply_view_plugin_menu_capability(), MenuConstants::FORMS, array( $this, 'build_app' ) );
-				add_submenu_page( MenuConstants::ROOT, __( 'Live Chat', 'leadin' ), __( 'Live Chat', 'leadin' ), AdminFilters::apply_view_plugin_menu_capability(), MenuConstants::CHATFLOWS, array( $this, 'build_app' ) );
-				add_submenu_page( MenuConstants::ROOT, __( 'Email', 'leadin' ), __( 'Email', 'leadin' ), AdminFilters::apply_view_plugin_menu_capability(), MenuConstants::EMAIL, array( $this, 'build_app' ) );
-				add_submenu_page( MenuConstants::ROOT, __( 'Settings', 'leadin' ), __( 'Settings', 'leadin' ), AdminFilters::apply_view_plugin_menu_capability(), MenuConstants::SETTINGS, array( $this, 'build_app' ) );
-				add_submenu_page( MenuConstants::ROOT, __( 'Upgrade', 'leadin' ), __( 'Upgrade', 'leadin' ), AdminFilters::apply_view_plugin_menu_capability(), MenuConstants::PRICING, array( $this, 'build_app' ) );
+				add_menu_page( __( 'HubSpot', 'leadin' ), __( 'HubSpot', 'leadin' ), Filters::apply_view_plugin_menu_capability_filters(), MenuConstants::ROOT, array( $this, 'build_app' ), 'dashicons-sprocket', '25.100713' );
+				add_submenu_page( MenuConstants::ROOT, __( 'User Guide', 'leadin' ), __( 'User Guide', 'leadin' ), Filters::apply_view_plugin_menu_capability_filters(), MenuConstants::USER_GUIDE, array( $this, 'build_app' ) );
+				add_submenu_page( MenuConstants::ROOT, __( 'Contacts', 'leadin' ), __( 'Contacts', 'leadin' ), Filters::apply_view_plugin_menu_capability_filters(), MenuConstants::CONTACTS, array( $this, 'build_app' ) );
+
+				add_submenu_page( MenuConstants::ROOT, __( 'Forms', 'leadin' ), __( 'Forms', 'leadin' ), Filters::apply_view_plugin_menu_capability_filters(), MenuConstants::FORMS, array( $this, 'build_app' ) );
+				add_submenu_page( MenuConstants::ROOT, __( 'Live Chat', 'leadin' ), __( 'Live Chat', 'leadin' ), Filters::apply_view_plugin_menu_capability_filters(), MenuConstants::CHATFLOWS, array( $this, 'build_app' ) );
+				add_submenu_page( MenuConstants::ROOT, __( 'Email', 'leadin' ), __( 'Email', 'leadin' ), Filters::apply_view_plugin_menu_capability_filters(), MenuConstants::EMAIL, array( $this, 'build_app' ) );
+				add_submenu_page( MenuConstants::ROOT, __( 'Settings', 'leadin' ), __( 'Settings', 'leadin' ), Filters::apply_view_plugin_menu_capability_filters(), MenuConstants::SETTINGS, array( $this, 'build_app' ) );
+				add_submenu_page( MenuConstants::ROOT, __( 'Lists', 'leadin' ), self::make_external_link( Links::get_iframe_src( MenuConstants::LISTS ), __( 'Lists', 'leadin' ), 'leadin_lists_link' ), Filters::apply_view_plugin_menu_capability_filters(), MenuConstants::LISTS, array( $this, 'build_app' ) );
+				add_submenu_page( MenuConstants::ROOT, __( 'Reporting', 'leadin' ), self::make_external_link( Links::get_iframe_src( MenuConstants::REPORTING ), __( 'Reporting', 'leadin' ), 'leadin_reporting_link' ), Filters::apply_view_plugin_menu_capability_filters(), MenuConstants::REPORTING, array( $this, 'build_app' ) );
+				add_submenu_page( MenuConstants::ROOT, __( 'Upgrade', 'leadin' ), self::make_external_link( Links::get_iframe_src( MenuConstants::PRICING ), __( 'Upgrade', 'leadin' ), 'leadin_pricing_link' ), Filters::apply_view_plugin_menu_capability_filters(), MenuConstants::PRICING, array( $this, 'build_app' ) );
 				remove_submenu_page( MenuConstants::ROOT, MenuConstants::ROOT );
 		} else {
 			$notification_icon = ' <span class="update-plugins count-1"><span class="plugin-count">!</span></span>';
-			add_menu_page( __( 'HubSpot', 'leadin' ), __( 'HubSpot', 'leadin' ) . $notification_icon, AdminFilters::apply_connect_plugin_capability(), MenuConstants::ROOT, array( $this, 'build_app' ), 'dashicons-sprocket', '25.100713' );
+			add_menu_page( __( 'HubSpot', 'leadin' ), __( 'HubSpot', 'leadin' ) . $notification_icon, Filters::apply_connect_plugin_capability_filters(), MenuConstants::ROOT, array( $this, 'build_app' ), 'dashicons-sprocket', '25.100713' );
 		}
+	}
+
+
+	/**
+	 * Wraps external link.
+	 *
+	 * @param String $href link destination.
+	 * @param String $content link content.
+	 * @param String $class class for ATs.
+	 */
+	public function make_external_link( $href, $content, $class ) {
+		return "<a href=\"$href\" class=\"external_link $class\" target=\"_blank\" onclick=\"blur()\">$content</a>";
 	}
 
 	/**

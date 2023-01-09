@@ -2,11 +2,11 @@
 
 namespace Leadin\admin;
 
-use Leadin\LeadinFilters;
-use Leadin\options\AccountOptions;
+use Leadin\data\Filters;
+use Leadin\data\Portal_Options;
 use Leadin\admin\MenuConstants;
 use Leadin\admin\utils\Background;
-use Leadin\wp\User;
+use Leadin\data\User;
 use Leadin\utils\QueryParameters;
 use Leadin\utils\Versions;
 use Leadin\auth\OAuth;
@@ -28,8 +28,8 @@ class Links {
 	 * - url is either a string or another map <route, string_url>, both strings
 	 */
 	public static function get_routes_mapping() {
-		$portal_id      = AccountOptions::get_portal_id();
-		$reporting_page = "/wordpress-plugin-ui/$portal_id/reporting";
+		$portal_id      = Portal_Options::get_portal_id();
+		$reporting_page = "/reports-dashboard/$portal_id";
 		$user_guide     = "/wordpress-plugin-ui/$portal_id/onboarding/start";
 
 		return array(
@@ -92,7 +92,7 @@ class Links {
 		if ( ! is_array( $arr ) ) {
 			return '';
 		}
-		return http_build_query( $arr, null, ini_get( 'arg_separator.output' ), PHP_QUERY_RFC3986 );
+		return http_build_query( $arr, '', ini_get( 'arg_separator.output' ), PHP_QUERY_RFC3986 );
 	}
 
 	/**
@@ -119,7 +119,7 @@ class Links {
 	 * Get background iframe src.
 	 */
 	public static function get_background_iframe_src() {
-		$portal_id     = AccountOptions::get_portal_id();
+		$portal_id     = Portal_Options::get_portal_id();
 		$portal_id_url = '';
 
 		if ( Connection::is_connected() ) {
@@ -128,15 +128,15 @@ class Links {
 
 		$query = '';
 
-		return LeadinFilters::get_leadin_base_url() . "/wordpress-plugin-ui$portal_id_url/background?$query" . self::get_query_params();
+		return Filters::apply_base_url_filters() . "/wordpress-plugin-ui$portal_id_url/background?$query" . self::get_query_params();
 	}
 
 	/**
 	 * Return login link to redirect to when the user isn't authenticated in HubSpot
 	 */
 	public static function get_login_url() {
-		$portal_id = AccountOptions::get_portal_id();
-		return LeadinFilters::get_leadin_base_url() . "/wordpress-plugin-ui/$portal_id/login?" . self::get_query_params();
+		$portal_id = Portal_Options::get_portal_id();
+		return Filters::apply_base_url_filters() . "/wordpress-plugin-ui/$portal_id/login?" . self::get_query_params();
 	}
 
 	/**
@@ -144,8 +144,8 @@ class Links {
 	 */
 	private static function get_connection_src() {
 		// phpcs:ignore WordPress.Security.NonceVerification.Recommended
-		$portal_id = Connection::is_connected() ? AccountOptions::get_portal_id() : ( isset( $_GET['leadin_connect'] ) ? filter_var( wp_unslash( $_GET['leadin_connect'] ), FILTER_VALIDATE_INT ) : 0 );
-		return LeadinFilters::get_leadin_base_url() . "/wordpress-plugin-ui/onboarding/connect?portalId=$portal_id&" . self::get_query_params();
+		$portal_id = Connection::is_connected() ? Portal_Options::get_portal_id() : ( isset( $_GET['leadin_connect'] ) ? filter_var( wp_unslash( $_GET['leadin_connect'] ), FILTER_VALIDATE_INT ) : 0 );
+		return Filters::apply_base_url_filters() . "/wordpress-plugin-ui/onboarding/connect?portalId=$portal_id&" . self::get_query_params();
 	}
 
 	/**
@@ -199,7 +199,7 @@ class Links {
 		$inframe_search_string = self::get_iframe_search_string();
 		$browser_search_string = $browser_search_string . $inframe_search_string;
 
-		if ( empty( AccountOptions::get_portal_id() ) ) {
+		if ( empty( Portal_Options::get_portal_id() ) ) {
 			$wp_user    = wp_get_current_user();
 			$wp_user_id = $wp_user->ID;
 			set_transient( $leadin_onboarding, 'true' );
@@ -211,7 +211,9 @@ class Links {
 
 			$routes = self::get_routes_mapping();
 
-			$route = IframeRoutes::get_oauth_path( MenuConstants::PRICING === $page_id );
+			$is_external = MenuConstants::PRICING === $page_id || MenuConstants::REPORTING === $page_id || MenuConstants::LISTS === $page_id;
+
+			$route = IframeRoutes::get_oauth_path( $is_external );
 			if ( empty( $route ) && isset( $routes[ $page_id ] ) ) {
 				$route = $routes[ $page_id ];
 
@@ -234,8 +236,8 @@ class Links {
 		$sub_routes = empty( $sub_routes ) ? $sub_routes : "/$sub_routes";
 		// Query string separator "?" may have been added to the URL already.
 		$add_separator           = strpos( $sub_routes, '?' ) ? '&' : '?';
-		$additional_query_params = apply_filters( 'leadin_query_params', '' );
+		$additional_query_params = Filters::apply_query_params_filters();
 
-		return LeadinFilters::get_leadin_base_url() . "$route$sub_routes" . $add_separator . self::get_query_params() . $browser_search_string . $additional_query_params;
+		return Filters::apply_base_url_filters() . "$route$sub_routes" . $add_separator . self::get_query_params() . $browser_search_string . $additional_query_params;
 	}
 }

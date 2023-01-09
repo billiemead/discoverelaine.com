@@ -4,17 +4,14 @@
 
 namespace Composer\Autoload;
 
-class ComposerStaticInitee2b3c154badd0f8b479e839361a8b52
+class ComposerStaticInite47513b308a722064253f0d867913b72
 {
     public static $classMap = array (
         'Composer\\InstalledVersions' => __DIR__ . '/..' . '/composer/InstalledVersions.php',
         'Leadin\\AssetsManager' => __DIR__ . '/../..' . '/src/class-assetsmanager.php',
         'Leadin\\Leadin' => __DIR__ . '/../..' . '/src/class-leadin.php',
-        'Leadin\\LeadinFilters' => __DIR__ . '/../..' . '/src/class-leadinfilters.php',
         'Leadin\\PageHooks' => __DIR__ . '/../..' . '/src/class-pagehooks.php',
         'Leadin\\admin\\AdminConstants' => __DIR__ . '/../..' . '/src/admin/class-adminconstants.php',
-        'Leadin\\admin\\AdminFilters' => __DIR__ . '/../..' . '/src/admin/class-adminfilters.php',
-        'Leadin\\admin\\AdminUserMetaData' => __DIR__ . '/../..' . '/src/admin/class-adminusermetadata.php',
         'Leadin\\admin\\Connection' => __DIR__ . '/../..' . '/src/admin/class-connection.php',
         'Leadin\\admin\\DeactivationForm' => __DIR__ . '/../..' . '/src/admin/class-deactivationform.php',
         'Leadin\\admin\\Gutenberg' => __DIR__ . '/../..' . '/src/admin/class-gutenberg.php',
@@ -28,42 +25,40 @@ class ComposerStaticInitee2b3c154badd0f8b479e839361a8b52
         'Leadin\\admin\\ReviewBanner' => __DIR__ . '/../..' . '/src/admin/class-reviewbanner.php',
         'Leadin\\admin\\ReviewController' => __DIR__ . '/../..' . '/src/admin/class-reviewcontroller.php',
         'Leadin\\admin\\Routing' => __DIR__ . '/../..' . '/src/admin/class-routing.php',
-        'Leadin\\admin\\api\\ApiGenerator' => __DIR__ . '/../..' . '/src/admin/api/class-apigenerator.php',
-        'Leadin\\admin\\api\\ApiMiddlewares' => __DIR__ . '/../..' . '/src/admin/api/class-apimiddlewares.php',
-        'Leadin\\admin\\api\\DisableInternalTrackingApi' => __DIR__ . '/../..' . '/src/admin/api/class-disableinternaltrackingapi.php',
-        'Leadin\\admin\\api\\DisconnectApi' => __DIR__ . '/../..' . '/src/admin/api/class-disconnectapi.php',
-        'Leadin\\admin\\api\\GetPortalHubletApi' => __DIR__ . '/../..' . '/src/admin/api/class-getportalhubletapi.php',
-        'Leadin\\admin\\api\\RegistrationApi' => __DIR__ . '/../..' . '/src/admin/api/class-registrationapi.php',
-        'Leadin\\admin\\api\\SkipReviewApi' => __DIR__ . '/../..' . '/src/admin/api/class-skipreviewapi.php',
-        'Leadin\\admin\\api\\TrackConsentApi' => __DIR__ . '/../..' . '/src/admin/api/class-trackconsentapi.php',
-        'Leadin\\admin\\api\\UpdateHubletApi' => __DIR__ . '/../..' . '/src/admin/api/class-updatehubletapi.php',
-        'Leadin\\admin\\utils\\DeviceId' => __DIR__ . '/../..' . '/src/admin/utils/class-deviceid.php',
+        'Leadin\\admin\\api\\Hublet_Api_Controller' => __DIR__ . '/../..' . '/src/admin/modules/api/class-hublet-api-controller.php',
+        'Leadin\\admin\\api\\Internal_Tracking_Api_Controller' => __DIR__ . '/../..' . '/src/admin/modules/api/class-internal-tracking-api-controller.php',
+        'Leadin\\admin\\api\\Portal_Api_Controller' => __DIR__ . '/../..' . '/src/admin/modules/api/class-portal-api-controller.php',
+        'Leadin\\admin\\api\\User_Meta_Api_Controller' => __DIR__ . '/../..' . '/src/admin/modules/api/class-user-meta-api-controller.php',
+        'Leadin\\admin\\client\\Contacts_Api_Client' => __DIR__ . '/../..' . '/src/admin/modules/client/class-contacts-api-client.php',
+        'Leadin\\admin\\client\\Portal_Api_Client' => __DIR__ . '/../..' . '/src/admin/modules/client/class-portal-api-client.php',
         'Leadin\\admin\\widgets\\ElementorForm' => __DIR__ . '/../..' . '/src/admin/widgets/class-elementorform.php',
         'Leadin\\admin\\widgets\\ElementorFormSelect' => __DIR__ . '/../..' . '/src/admin/widgets/class-elementorformselect.php',
         'Leadin\\admin\\widgets\\ElementorMeeting' => __DIR__ . '/../..' . '/src/admin/widgets/class-elementormeeting.php',
         'Leadin\\admin\\widgets\\ElementorMeetingSelect' => __DIR__ . '/../..' . '/src/admin/widgets/class-elementormeetingselect.php',
+        'Leadin\\api\\Base_Api_Controller' => __DIR__ . '/../..' . '/src/modules/api/class-base-api-controller.php',
+        'Leadin\\api\\Healthcheck_Api_Controller' => __DIR__ . '/../..' . '/src/modules/api/class-healthcheck-api-controller.php',
+        'Leadin\\api\\OAuth_Api_Controller' => __DIR__ . '/../..' . '/src/modules/api/class-oauth-api-controller.php',
+        'Leadin\\api\\Proxy_Api_Controller' => __DIR__ . '/../..' . '/src/modules/api/class-proxy-api-controller.php',
         'Leadin\\auth\\OAuth' => __DIR__ . '/../..' . '/src/auth/class-oauth.php',
         'Leadin\\auth\\OAuthCrypto' => __DIR__ . '/../..' . '/src/auth/class-oauthcrypto.php',
-        'Leadin\\options\\AccountOptions' => __DIR__ . '/../..' . '/src/options/class-accountoptions.php',
-        'Leadin\\options\\HubspotOptions' => __DIR__ . '/../..' . '/src/options/class-hubspotoptions.php',
-        'Leadin\\options\\LeadinOptions' => __DIR__ . '/../..' . '/src/options/class-leadinoptions.php',
-        'Leadin\\rest\\HubSpotApiClient' => __DIR__ . '/../..' . '/src/rest/class-hubspotapiclient.php',
-        'Leadin\\rest\\LeadinRestApi' => __DIR__ . '/../..' . '/src/rest/class-leadinrestapi.php',
+        'Leadin\\client\\Access_Token_Api_Client' => __DIR__ . '/../..' . '/src/modules/client/class-access-token-api-client.php',
+        'Leadin\\client\\HubSpot_Base_Api_Client' => __DIR__ . '/../..' . '/src/modules/client/class-hubspot-base-api-client.php',
+        'Leadin\\data\\Filters' => __DIR__ . '/../..' . '/src/data/class-filters.php',
+        'Leadin\\data\\Portal_Options' => __DIR__ . '/../..' . '/src/data/class-portal-options.php',
+        'Leadin\\data\\User' => __DIR__ . '/../..' . '/src/data/class-user.php',
+        'Leadin\\data\\User_Metadata' => __DIR__ . '/../..' . '/src/data/class-user-metadata.php',
         'Leadin\\utils\\QueryParameters' => __DIR__ . '/../..' . '/src/utils/class-queryparameters.php',
         'Leadin\\utils\\RequestUtils' => __DIR__ . '/../..' . '/src/utils/class-requestutils.php',
         'Leadin\\utils\\ShortcodeRenderUtils' => __DIR__ . '/../..' . '/src/utils/class-shortcoderenderutils.php',
         'Leadin\\utils\\Versions' => __DIR__ . '/../..' . '/src/utils/class-versions.php',
         'Leadin\\wp\\FileSystem' => __DIR__ . '/../..' . '/src/wp/class-filesystem.php',
-        'Leadin\\wp\\Options' => __DIR__ . '/../..' . '/src/wp/class-options.php',
         'Leadin\\wp\\Page' => __DIR__ . '/../..' . '/src/wp/class-page.php',
-        'Leadin\\wp\\User' => __DIR__ . '/../..' . '/src/wp/class-user.php',
-        'Leadin\\wp\\Website' => __DIR__ . '/../..' . '/src/wp/class-website.php',
     );
 
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
-            $loader->classMap = ComposerStaticInitee2b3c154badd0f8b479e839361a8b52::$classMap;
+            $loader->classMap = ComposerStaticInite47513b308a722064253f0d867913b72::$classMap;
 
         }, null, ClassLoader::class);
     }

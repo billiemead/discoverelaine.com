@@ -2,7 +2,7 @@
 
 namespace Leadin\admin;
 
-use Leadin\wp\User;
+use Leadin\data\User;
 use Leadin\admin\Connection;
 use Leadin\admin\ReviewController;
 use Leadin\admin\AdminConstants;

@@ -2,9 +2,9 @@
 
 namespace Leadin;
 
-use Leadin\LeadinFilters;
+use Leadin\data\Filters;
 use Leadin\admin\AdminConstants;
-use Leadin\options\AccountOptions;
+use Leadin\data\Portal_Options;
 
 /**
  * Class responsible of managing all the plugin assets.
@@ -34,7 +34,6 @@ class AssetsManager {
 		wp_register_script( self::ADMIN_JS, LEADIN_JS_BASE_PATH . '/leadin.js', array( 'jquery' ), LEADIN_PLUGIN_VERSION, true );
 		wp_register_script( self::MENU_JS, LEADIN_JS_BASE_PATH . '/menu.js', array( 'jquery' ), LEADIN_PLUGIN_VERSION, true );
 		wp_localize_script( self::ADMIN_JS, self::LEADIN_CONFIG, AdminConstants::get_leadin_config() );
-		wp_localize_script( self::ADMIN_JS, self::LEADIN_I18N, AdminConstants::get_leadin_i18n() );
 		wp_register_script( self::FEEDBACK_JS, LEADIN_JS_BASE_PATH . '/feedback.js', array( 'jquery', 'thickbox' ), LEADIN_PLUGIN_VERSION, true );
 		wp_localize_script( self::FEEDBACK_JS, self::LEADIN_CONFIG, AdminConstants::get_background_leadin_config() );
 		wp_register_style( self::FEEDBACK_CSS, LEADIN_PATH . '/assets/style/leadin-feedback.css', array(), LEADIN_PLUGIN_VERSION );
@@ -72,9 +71,15 @@ class AssetsManager {
 	 * @param Object $leadin_wordpress_info Object used to pass to the script loader.
 	 */
 	public static function enqueue_script_loader( $leadin_wordpress_info ) {
-		$embed_domain = LeadinFilters::get_leadin_script_loader_domain();
-		$portal_id    = AccountOptions::get_portal_id();
-		$embed_url    = "https://$embed_domain/$portal_id.js?integration=WordPress";
+		$embed_domain     = Filters::apply_script_loader_domain_filters();
+		$portal_id        = Portal_Options::get_portal_id();
+		$business_unit_id = Portal_Options::get_business_unit_id();
+		$embed_url        = "https://$embed_domain/$portal_id.js?integration=WordPress";
+
+		if ( $business_unit_id && '' !== $business_unit_id ) {
+			$embed_url = $embed_url . "&businessUnitId=$business_unit_id";
+		}
+
 		wp_register_script( self::TRACKING_CODE, $embed_url, array( 'jquery' ), LEADIN_PLUGIN_VERSION, true );
 		wp_localize_script( self::TRACKING_CODE, 'leadin_wordpress', $leadin_wordpress_info );
 		wp_enqueue_script( self::TRACKING_CODE );
@@ -86,7 +91,7 @@ class AssetsManager {
 	public static function enqueue_forms_script() {
 		wp_enqueue_script(
 			self::FORMS_SCRIPT,
-			LeadinFilters::get_leadin_forms_script_url(),
+			Filters::apply_forms_script_url_filters(),
 			array(),
 			LEADIN_PLUGIN_VERSION,
 			true
@@ -112,18 +117,9 @@ class AssetsManager {
 	public static function localize_gutenberg() {
 		wp_register_style( self::ELEMENTOR, LEADIN_JS_BASE_PATH . '/gutenberg.css', array(), LEADIN_PLUGIN_VERSION );
 		wp_enqueue_style( self::ELEMENTOR );
-		wp_register_script( self::GUTENBERG, LEADIN_JS_BASE_PATH . '/gutenberg.js', array( 'wp-blocks', 'wp-element' ), LEADIN_PLUGIN_VERSION, true );
+		wp_register_script( self::GUTENBERG, LEADIN_JS_BASE_PATH . '/gutenberg.js', array( 'wp-blocks', 'wp-element', 'wp-i18n' ), LEADIN_PLUGIN_VERSION, true );
 		wp_localize_script( self::GUTENBERG, self::LEADIN_CONFIG, AdminConstants::get_background_leadin_config() );
-		wp_localize_script( self::GUTENBERG, self::LEADIN_I18N, AdminConstants::get_leadin_i18n() );
-	}
-
-	/**
-	 * Register and localize the Meetings Gutenberg scripts.
-	 */
-	public static function localize_meetings_gutenberg() {
-		wp_register_script( self::MEETINGS_GUTENBERG, LEADIN_JS_BASE_PATH . '/meetings.js', array( 'wp-blocks', 'wp-element' ), LEADIN_PLUGIN_VERSION, true );
-		wp_localize_script( self::MEETINGS_GUTENBERG, self::LEADIN_CONFIG, AdminConstants::get_background_leadin_config() );
-		wp_localize_script( self::MEETINGS_GUTENBERG, self::LEADIN_I18N, AdminConstants::get_leadin_i18n() );
+		wp_set_script_translations( self::GUTENBERG, 'leadin', __DIR__ . '/../languages' );
 	}
 
 	/**
@@ -143,8 +139,8 @@ class AssetsManager {
 		wp_enqueue_style( self::ELEMENTOR );
 		wp_register_script( self::ELEMENTOR, LEADIN_JS_BASE_PATH . '/elementor.js', array(), LEADIN_PLUGIN_VERSION, true );
 		wp_localize_script( self::ELEMENTOR, self::LEADIN_CONFIG, AdminConstants::get_background_leadin_config() );
-		wp_localize_script( self::ELEMENTOR, self::LEADIN_I18N, AdminConstants::get_leadin_i18n() );
 		wp_enqueue_script( self::ELEMENTOR );
+		wp_set_script_translations( self::ELEMENTOR, 'leadin', __DIR__ . '/../languages' );
 	}
 
 }

@@ -2,10 +2,10 @@
 
 namespace Leadin\admin;
 
-use Leadin\LeadinFilters;
+use Leadin\data\Filters;
 use Leadin\admin\Links;
 use Leadin\admin\Connection;
-use Leadin\options\AccountOptions;
+use Leadin\data\Portal_Options;
 
 /**
  * Class responsible for the custom functionalities inside the plugins.php page.
@@ -45,8 +45,8 @@ class PluginActionsManager {
 	 */
 	public function leadin_plugin_advanced_features_link( $links ) {
 		if ( Connection::is_connected() ) {
-			$portal_id              = AccountOptions::get_portal_id();
-			$url                    = LeadinFilters::get_leadin_base_url() . '/pricing/' . $portal_id . '/marketing?' . Links::get_query_params();
+			$portal_id              = Portal_Options::get_portal_id();
+			$url                    = Filters::apply_base_url_filters() . '/pricing/' . $portal_id . '/marketing?' . Links::get_query_params();
 			$advanced_features_link = '<a class="hubspot-menu-pricing" target="_blank" rel="noopener" href="' . esc_attr( $url ) . '">' . esc_html( __( 'Upgrade', 'leadin' ) ) . '</a>';
 			array_push( $links, $advanced_features_link );
 		}

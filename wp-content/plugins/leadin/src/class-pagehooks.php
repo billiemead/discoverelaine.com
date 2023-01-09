@@ -2,13 +2,12 @@
 
 namespace Leadin;
 
-use Leadin\LeadinFilters;
+use Leadin\data\Filters;
 use Leadin\AssetsManager;
-use Leadin\wp\User;
+use Leadin\data\User;
 use Leadin\auth\OAuth;
 use Leadin\admin\Connection;
-use Leadin\options\AccountOptions;
-use Leadin\options\LeadinOptions;
+use Leadin\data\Portal_Options;
 use Leadin\utils\ShortcodeRenderUtils;
 
 /**
@@ -53,7 +52,7 @@ class PageHooks {
 	 * Adds the script loader to the page.
 	 */
 	public function add_frontend_scripts() {
-		if ( LeadinOptions::get( 'disable_internal_tracking' ) && ( is_user_logged_in() || current_user_can( 'install_plugins' ) ) ) {
+		if ( Portal_Options::get_disable_internal_tracking() && ( is_user_logged_in() || current_user_can( 'install_plugins' ) ) ) {
 			return;
 		}
 
@@ -82,12 +81,12 @@ class PageHooks {
 	 * Adds the script containing the information needed by the script loader.
 	 */
 	public function add_page_analytics() {
-		$portal_id = AccountOptions::get_portal_id();
+		$portal_id = Portal_Options::get_portal_id();
 
 		if ( empty( $portal_id ) ) {
 			echo '<!-- HubSpot WordPress Plugin v' . esc_html( LEADIN_PLUGIN_VERSION ) . ': embed JS disabled as a portalId has not yet been configured -->';
 		} else {
-			$content_type = LeadinFilters::get_page_content_type();
+			$content_type = Filters::apply_page_content_type_filters();
 			$page_id      = get_the_ID();
 			$post_meta    = get_post_meta( $page_id );
 			if ( isset( $post_meta['content-type'][0] ) && '' !== $post_meta['content-type'][0] ) {

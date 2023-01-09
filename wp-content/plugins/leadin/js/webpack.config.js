@@ -5,12 +5,12 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 module.exports = {
   entry: {
-    elementor: path.join(__dirname, 'src', 'entries', 'elementor.js'),
-    gutenberg: path.join(__dirname, 'src', 'entries', 'gutenberg.js'),
-    leadin: path.join(__dirname, 'src', 'entries', 'app.js'),
-    menu: path.join(__dirname, 'src', 'entries', 'menu.js'),
-    feedback: path.join(__dirname, 'src', 'entries', 'feedback.js'),
-    reviewBanner: path.join(__dirname, 'src', 'entries', 'reviewBanner.js'),
+    elementor: path.join(__dirname, 'src', 'entries', 'elementor.ts'),
+    gutenberg: path.join(__dirname, 'src', 'entries', 'gutenberg.ts'),
+    leadin: path.join(__dirname, 'src', 'entries', 'app.ts'),
+    menu: path.join(__dirname, 'src', 'entries', 'menu.ts'),
+    feedback: path.join(__dirname, 'src', 'entries', 'feedback.ts'),
+    reviewBanner: path.join(__dirname, 'src', 'entries', 'reviewBanner.ts'),
   },
   output: {
     path: path.join(__dirname, 'dist'),
@@ -29,18 +29,22 @@ module.exports = {
     function wp(context, request, callback) {
       if (/^@wordpress\//.test(request)) {
         const arr = request.split('/');
+        arr[1] = arr[1].replace(/-[a-z]/g, x => x[1].toUpperCase());
         arr[0] = 'wp';
         return callback(null, `var ${arr.join('.')}`);
       }
       return callback();
     },
   ],
-  resolve: { modules: [path.resolve(__dirname, 'src'), 'node_modules'] },
+  resolve: {
+    modules: [path.resolve(__dirname, 'src'), 'node_modules'],
+    extensions: ['.ts', '.tsx', '.js', '.json'],
+  },
   devServer: { static: { directory: path.join(__dirname, 'src') } },
   module: {
     rules: [
       {
-        test: /\.js$/,
+        test: /\.(t|j)sx?$/,
         use: [
           { loader: 'babel-loader' },
           {
