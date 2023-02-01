@@ -1,3 +1,15 @@
+= 10.0.18 (2023-01-20) =
+* Add business unit proxy
+
+= 10.0.17 (2023-01-19) =
+* Add loader animation to prevent blank screen
+
+= 10.0.7 (2023-01-10) =
+* Remove getHublet endpoint
+
+= 10.0.0 (2023-01-06) =
+* Plugin restructure to use WordPress env and scripts
+
 = 9.2.26 (2022-12-08) =
 * Update feedback survey link
 
@@ -296,16 +308,4 @@
 
 = 7.48.63 (2020-12-15) =
 * Fix the search method in the HubSpot Gutenberg block
-
-= 7.48.45 (2020-12-09) =
-* Check that function which doesn't exist before WP 4.2 exists
-
-= 7.48.19 (2020-12-02) =
-* Fix typo that caused forms not to show on IE11
-
-= 7.48.0 (2020-11-26) =
-* Automated plugin versioning and changelog generation
-
-= 7.47.5 (2020-11-18) =
-* Do not fail connection for an invalid domain
 

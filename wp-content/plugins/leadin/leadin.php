@@ -6,7 +6,7 @@ namespace Leadin;
  * Plugin Name: HubSpot All-In-One Marketing - Forms, Popups, Live Chat
  * Plugin URI: http://www.hubspot.com/integrations/wordpress
  * Description: HubSpot’s official WordPress plugin allows you to add forms, popups, and live chat to your website and integrate with the best WordPress CRM.
- * Version: 9.2.81
+ * Version: 10.0.19
  * Author: HubSpot
  * Author URI: http://hubspot.com/products/wordpress
  * License: GPL v3
@@ -38,25 +38,30 @@ if ( ! defined( 'LEADIN_PATH' ) ) {
 	define( 'LEADIN_PATH', untrailingslashit( plugins_url( '', LEADIN_BASE_PATH ) ) );
 }
 
+if ( ! defined( 'LEADIN_ASSETS_PATH' ) ) {
+	define( 'LEADIN_ASSETS_PATH', untrailingslashit( plugins_url( '', LEADIN_BASE_PATH ) . '/public/assets' ) );
+}
+
+if ( ! defined( 'LEADIN_JS_BASE_PATH' ) ) {
+	define( 'LEADIN_JS_BASE_PATH', untrailingslashit( plugins_url( '', LEADIN_BASE_PATH ) . '/build' ) );
+}
+
 if ( ! defined( 'LEADIN_PLUGIN_DIR' ) ) {
 	define( 'LEADIN_PLUGIN_DIR', untrailingslashit( dirname( LEADIN_BASE_PATH ) ) );
 }
 
 if ( ! defined( 'LEADIN_REQUIRED_WP_VERSION' ) ) {
-	define( 'LEADIN_REQUIRED_WP_VERSION', '4.0' );
+	define( 'LEADIN_REQUIRED_WP_VERSION', '5.4' );
 }
 
 if ( ! defined( 'LEADIN_REQUIRED_PHP_VERSION' ) ) {
-	define( 'LEADIN_REQUIRED_PHP_VERSION', '5.6' );
+	define( 'LEADIN_REQUIRED_PHP_VERSION', '7.2' );
 }
 
 if ( ! defined( 'LEADIN_PLUGIN_VERSION' ) ) {
-	define( 'LEADIN_PLUGIN_VERSION', '9.2.81' );
+	define( 'LEADIN_PLUGIN_VERSION', '10.0.19' );
 }
 
-if ( ! defined( 'LEADIN_JS_BASE_PATH' ) ) {
-	define( 'LEADIN_JS_BASE_PATH', LEADIN_PATH . '/js/dist' );
-}
 
 if ( ! defined( 'LEADIN_PREFIX' ) ) {
 	define( 'LEADIN_PREFIX', 'leadin' );
