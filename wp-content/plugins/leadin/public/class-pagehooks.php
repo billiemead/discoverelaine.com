@@ -92,9 +92,12 @@ class PageHooks {
 			if ( isset( $post_meta['content-type'][0] ) && '' !== $post_meta['content-type'][0] ) {
 				$content_type = $post_meta['content-type'][0];
 			} elseif ( is_plugin_active( 'elementor/elementor.php' ) ) {
-				$page_settings_manager = \Elementor\Core\Settings\Manager::get_settings_managers( 'page' );
-				$page_settings_model   = $page_settings_manager->get_model( $page_id );
-				$content_type          = $page_settings_model->get_settings( 'content_type' );
+				$page_settings_manager  = \Elementor\Core\Settings\Manager::get_settings_managers( 'page' );
+				$page_settings_model    = $page_settings_manager->get_model( $page_id );
+				$elementor_content_type = $page_settings_model->get_settings( 'content_type' );
+				if ( ! empty( $elementor_content_type ) ) {
+					$content_type = $elementor_content_type;
+				}
 			}
 
 			?>

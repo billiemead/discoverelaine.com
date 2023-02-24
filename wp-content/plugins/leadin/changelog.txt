@@ -1,3 +1,6 @@
+= 10.0.21 (2023-02-20) =
+* Content type default selection for elementor
+
 = 10.0.18 (2023-01-20) =
 * Add business unit proxy
 
@@ -305,7 +308,4 @@
 = 7.48.69 (2020-12-17) =
 * Remove legacy code
 * Limit the error logging
-
-= 7.48.63 (2020-12-15) =
-* Fix the search method in the HubSpot Gutenberg block
 
