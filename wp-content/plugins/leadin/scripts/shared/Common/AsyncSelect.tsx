@@ -10,7 +10,7 @@ import UISpinner from '../UIComponents/UISpinner';
 
 const Container = styled.div`
   color: ${OBSIDIAN};
-  font-family: Avenir Next, Helvetica, Arial, sans-serif;
+  font-family: 'Lexend Deca', Helvetica, Arial, sans-serif;
   font-size: 14px;
   position: relative;
 `;

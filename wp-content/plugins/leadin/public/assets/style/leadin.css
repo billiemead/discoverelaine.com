@@ -1,14 +1,20 @@
 @charset "UTF-8";
 
+/* For sprocket icon on WordPress admin menu */
 @font-face {
   font-family: 'hs-font';
-  src: url('fonts/hs-font.eot');
-  src: url('fonts/hs-font.eot?#iefix') format('embedded-opentype'),
-    url('fonts/hs-font.woff') format('woff'),
-    url('fonts/hs-font.ttf') format('truetype'),
+  src: url('fonts/hs-font.woff') format('woff'),
     url('fonts/hs-font.svg#hs-font') format('svg');
   font-weight: normal;
   font-style: normal;
+}
+
+@font-face {
+  font-family: 'Lexend Deca';
+  src: url('fonts/LexendDeca-Light.woff2') format('woff2'),
+    url('fonts/LexendDeca-Medium.woff2') format('woff2'),
+    url('fonts/LexendDeca-SemiBold.woff2') format('woff2'),
+    url('fonts/LexendDeca-Bold.woff2') format('woff2');
 }
 
 #wp-admin-bar-leadin-admin-menu .ab-icon:before,
@@ -296,7 +302,7 @@
   background-position: center 25px;
   background-size: 120px;
   color: #33475b;
-  font-family: Avenir Next, Helvetica, Arial, sans-serif;
+  font-family: 'Lexend Deca', Helvetica, Arial, sans-serif;
   font-size: 14px;
   padding: 90px 20% 25px;
 }

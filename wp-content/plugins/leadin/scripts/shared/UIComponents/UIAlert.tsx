@@ -23,7 +23,7 @@ const AlertContainer = styled.div`
 `;
 
 const Title = styled.p`
-  font-family: 'Avenir Next';
+  font-family: 'Lexend Deca';
   font-style: normal;
   font-weight: 700;
   font-size: 16px;
@@ -34,7 +34,7 @@ const Title = styled.p`
 `;
 
 const Message = styled.p`
-  font-family: 'Avenir Next';
+  font-family: 'Lexend Deca';
   font-style: normal;
   font-weight: 400;
   font-size: 14px;

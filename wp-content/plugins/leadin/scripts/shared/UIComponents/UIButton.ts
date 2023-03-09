@@ -13,7 +13,7 @@ export default styled.button<IButtonProps>`
   font-size: 14px;
   line-height: 14px;
   padding: 12px 24px;
-  font-family: Avenir Next W02, Helvetica, Arial, sans-serif;
+  font-family: 'Lexend Deca', Helvetica, Arial, sans-serif;
   font-weight: 500;
   white-space: nowrap;
 `;

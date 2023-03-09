@@ -8,7 +8,7 @@ const IframeErrorContainer = styled.div`
   align-items: center;
   justify-content: center;
   margin-top: 120px;
-  font-family: 'Avenir Next W02', Helvetica, Arial, sans-serif;
+  font-family: 'Lexend Deca', Helvetica, Arial, sans-serif;
   font-weight: 400;
   font-size: 14px;
   font-size: 0.875rem;
