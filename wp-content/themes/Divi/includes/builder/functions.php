@@ -8,7 +8,7 @@
 
 if ( ! defined( 'ET_BUILDER_PRODUCT_VERSION' ) ) {
 	// Note, this will be updated automatically during grunt release task.
-	define( 'ET_BUILDER_PRODUCT_VERSION', '4.20.2' );
+	define( 'ET_BUILDER_PRODUCT_VERSION', '4.21.0' );
 }
 
 if ( ! defined( 'ET_BUILDER_VERSION' ) ) {
@@ -13307,6 +13307,32 @@ function et_builder_get_global_color_info( $color_id ) {
 	}
 
 	return $colors[ $color_id ];
+}
+
+/**
+ * Check if given value is a Global Color Id.
+ *
+ * @since ??
+ *
+ * @param string $attr_value Color value.
+ * @return bool
+ */
+function et_builder_is_global_color( $attr_value ) {
+	return 0 === strpos( $attr_value, 'gcid-' );
+}
+
+/**
+ * Get Global Color by Color Id.
+ *
+ * @since ??
+ *
+ * @param string $color_id Color ID.
+ * @return string
+ */
+function et_builder_get_global_color( $color_id ) {
+	$color_info = et_builder_get_global_color_info( $color_id );
+
+	return isset( $color_info['color'] ) ? $color_info['color'] : $color_id;
 }
 
 /**

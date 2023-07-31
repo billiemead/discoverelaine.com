@@ -4,7 +4,9 @@ import {
   impactLink,
   iframeUrl,
   pluginPath,
+  hubspotBaseUrl,
 } from '../constants/leadinConfig';
+import urlsMap from '../constants/urlsMap';
 
 function getIframeHeight() {
   const adminMenuWrap = document.getElementById('adminmenuwrap');
@@ -89,9 +91,35 @@ function withLoadingSpinner(iframe: HTMLIFrameElement) {
 }
 
 export function createIframe() {
+  const { page, ...query } = Object.fromEntries(
+    new URLSearchParams(window.location.search)
+  );
+  let iframeSrcUrl = iframeUrl;
+  const tourId = query['leadin_tour_id'];
+  const justConnected = query['leadin_just_connected'];
+  const routeKey = `${page}${Object.entries(query).reduce(
+    (agg, [key, value]) => {
+      if (key.includes('leadin_route')) {
+        return `${agg}${value}`;
+      }
+      return agg;
+    },
+    ''
+  )}`;
+  const routeValue = urlsMap[routeKey];
+
+  if (routeValue && !justConnected) {
+    const urlObject = new URL(iframeSrcUrl);
+    urlObject.pathname = routeValue;
+    if (tourId) {
+      urlObject.searchParams.append('tourId', tourId);
+    }
+    iframeSrcUrl = urlObject.toString();
+  }
+
   const link = impactLink
-    ? `${impactLink}?u=${encodeURIComponent(`${iframeUrl}`)}&trackConsent=0`
-    : iframeUrl;
+    ? `${impactLink}?u=${encodeURIComponent(`${iframeSrcUrl}`)}&trackConsent=0`
+    : iframeSrcUrl;
   const iframe = createIframeElement(link);
   initInterframe(iframe);
   return withLoadingSpinner(iframe);

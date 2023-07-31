@@ -4,9 +4,11 @@ License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl.html
 Tags: CRM, Email Marketing, Live Chat, Marketing, Analytics, form, popups, newsletter, contact management, chat, contact form, marketing automation
 Requires at least: 5.4
-Tested up to: 6.1.1
+Tested up to: 6.2
 Requires PHP: 7.2
-Stable tag: 10.0.25
+Stable tag: 10.1.30
+
+The CRM, Sales, and Marketing WordPress plugin to grow your business better.
 
 Capture, organize and engage web visitors with free live chat, forms, CRM (contact management), email marketing, and analytics. Easy to use, no coding.
 
@@ -22,29 +24,31 @@ Use HubSpot to:
 - 📋 Capture leads with ease — build custom forms or link existing forms from your website in minutes.
 - 📧 Nurture your leads by sending newsletters & automating email marketing campaigns.
 - 📈 Track the health of your business with easy-to-understand analytics dashboards.
-- 🚀 See a unified timeline of a contact’s page views, past conversations, and more in a WordPress CRM.
+- 🚀 See a unified timeline of a contact’s page views, past conversations, and more in the smart WordPress CRM plugin.
 
 Ready to get started? Click download in the top right corner of the page.
 
 ### CRM & Contact Management Platform
 Your CRM in the HubSpot WordPress plugin is your company's command center. It's the place where you can track every single customer interaction and get a 360-degree view of your customers. You can even use it to manage or automate marketing, sales, and service processes.
 
-[youtube https://www.youtube.com/watch?v=rbg0NHvu_dk]
+[youtube https://www.youtube.com/watch?v=GjZ97U4O9nM]
 
-With HubSpot, you don't need to jump from tool to tool to keep track of everything. Instead, you can store all of your data in one place.
+With HubSpot CRM, you don't need to jump from tool to tool to keep track of everything. Instead, you can store all of your data in one place.
 
-HubSpot’s CRM gives you ultimate visibility into customer interactions across every team in your organization. That means that everyone will be on the same page—from marketing to sales to customer service—and able to help your customers more effectively.
+HubSpot’s free WordPress CRM gives you ultimate visibility into customer interactions across every team in your organization. That means that everyone will be on the same page—from marketing to sales to customer service—and able to help your customers more effectively.
 
 Best of all, if you’re planning on growing your business (or you already are), HubSpot has the tools to grow with you.
 
-Features you'll love suited specifically for your business needs:
+Features of our top WordPress CRM that you'll love, suited specifically for your business needs:
 
-✅ Lead generation & lead management
+✅ Lead generation & lead management on your WordPress website
 ✅ Pipeline management
 ✅ Email marketing
-✅ Reporting dashboard
+✅ Reporting dashboard on WordPress
 ✅ Contact management
 ✅ Prospect tracking
+
+Streamline your entire business with the free CRM solution that has something for everyone. Try the HubSpot CRM plugin today.
 
 ### [Email Newsletter & Marketing Automation Software](https://www.hubspot.com/products/wordpress/email-marketing)
 Would you like to enhance your email marketing campaigns? 🤔
@@ -66,6 +70,29 @@ Customers love our email marketing software tool for features like:
 > Send emails anytime someone fills out a form or engages with your live chat & chatbots. You can send messages immediately or use email scheduling to send messages later.
 
 Email is one of the most effective ways to stay connected to your audience. With email tracking, all of your emails are logged in your database. You can measure each email’s engagement with reports for open rate and click rate — and use that information to improve campaigns.
+
+### [Live Chat & Chatbots](https://www.hubspot.com/products/wordpress/live-chat)
+Make your website a 24-hour marketing machine on autopilot with the HubSpot WordPress live chat plugin.
+
+Live website chat inside the HubSpot WordPress plugin streamlines the customer experience, making it easier than ever for you to engage with website visitors, convert them into customers, and provide them with the support they need.
+
+HubSpot’s free WordPress live chat solution offers:
+
+😀 Custom styling to match your website
+🤖 A variety of chatbot options including:
+
+- ✅ Concierge chatbot
+- ✅ Qualify leads chatbot
+- ✅ Meetings chatbot
+- ✅ Tickets chatbot
+- ✅ Knowledge base & support chatbot
+- ✅ Offline chatbot
+
+📲 Real-time live messaging on the go via HubSpot’s mobile app
+👨‍💻 A Slack integration to receive and respond to live chat notifications
+🕐 24/7 live chat support on autopilot
+
+Our free live chat plugin helps you turn website visitors into customers by providing insightful, real-time support.
 
 ### [Forms & Popups](https://www.hubspot.com/products/wordpress/forms)
 Want to know the easiest way to learn more about your visitors?
@@ -96,29 +123,6 @@ Then, when you're ready to go, pick a custom template:
 Choose from a variety of settings, color schemes, and fonts — or start from scratch. HubSpot comes with an intuitive form and popup builder that simplifies the process, no matter what type of form you have in mind.
 
 Rather stick with your existing forms and popup plugin? That’s fine too! HubSpot integrates with most WordPress form builders, form creators, and popup builders out-of-the-box so you don’t have to worry about a thing.
-
-### [Live Chat & Chatbots](https://www.hubspot.com/products/wordpress/live-chat)
-Make your website a 24-hour marketing machine on autopilot.
-
-Live web chat inside the HubSpot WordPress plugin streamlines the customer experience, making it easier than ever for you to engage with leads, convert them into customers, and provide them with the support they need.
-
-HubSpot’s WordPress live chat software offers:
-
-😀 Custom styling to match your website
-🤖 A variety of bot options including:
-
-- ✅ Concierge bot
-- ✅ Qualify leads bot
-- ✅ Meetings bot
-- ✅ Tickets bot
-- ✅ Knowledge base & support bot
-- ✅ Offline bot
-
-📲 Real-time messaging on the go via HubSpot’s mobile app
-👨‍💻 A Slack integration to receive and respond to chat notifications
-🕐 24/7 live support on autopilot
-
-Our free live chat feature helps you turn website visitors into customers by providing insightful, real-time support.
 
 ### [Analytics](https://www.hubspot.com/products/wordpress/analytics)
 
@@ -282,7 +286,7 @@ Not at all! HubSpot’s WordPress plugin is easy to download and starts working 
 
 = What is available for free with HubSpot? =
 
-HubSpot’s WordPress plugin is free to use with forms, contact management, email marketing, and more.
+With HubSpot's WordPress plugin, you can use the free CRM software for email marketing, contact management, live chat, customer service, content creation, content management, and more. HubSpot's full suite of free tools is perfect for small businesses looking to grow and streamline their tech stack.
 
 HubSpot also has paid tiers available for those who want more advanced functionality like blogging, landing pages, search engine optimization (SEO), team email, retargeting, lead scoring, bots, email scheduling, NPS surveys, calls-to-action (CTAs), knowledge base, and more. If you'd like a complete view of the features offered in HubSpot's free and paid tiers, view our <a href="https://hubspot.com/pricing?utm_source=wordpress-plugin-listing&utm_campaign=wordpress&utm_medium=marketplaces" target="_blank">pricing page</a>.
 
@@ -312,6 +316,7 @@ Here are some examples of the types of forms and popups you can create with HubS
 - custom form
 - custom forms
 - custom popup
+- custom popups
 - donation form
 - email form
 - email forms
@@ -380,12 +385,12 @@ Please visit the <a href="https://community.hubspot.com/?utm_source=wordpress-pl
 == Changelog ==
 
 <a href="http://plugins.svn.wordpress.org/leadin/trunk/changelog.txt" target="_blank">Full changelog here</a>
-- Current version: 10.0.25
-- Version release date: 2023-03-08
+- Current version: 10.1.30
+- Version release date: 2023-07-24
 
-= 10.0.24 (2023-03-07) =
-* Change font type
+= 10.1.30 (2023-07-24) =
+* Updated readme
 
-= 10.0.21 (2023-02-20) =
-* Content type default selection for elementor
+= 10.1.28 (2023-07-11) =
+* Removes unused jQuery dependency
 

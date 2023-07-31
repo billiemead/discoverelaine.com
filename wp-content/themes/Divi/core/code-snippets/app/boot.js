@@ -1,6 +1,6 @@
 // External Dependencies
 import React from 'react';
-import { render } from 'react-dom';
+import { render, unmountComponentAtNode } from 'react-dom';
 import $ from 'jquery';
 import App from 'cerebral';
 import Devtools from 'cerebral/devtools';
@@ -65,6 +65,13 @@ $(window).on('et_code_snippets_container_ready', (event, preferences, container 
 
   const containerId = preferences.containerId;
 
+  const domNode = container.getElementById(containerId);
+  if ('' === modalType) {
+    unmountComponentAtNode(domNode);
+
+    return;
+  }
+
   render(
     <Container app={app}>
       <CodeSnippetsApp
@@ -74,18 +81,21 @@ $(window).on('et_code_snippets_container_ready', (event, preferences, container 
         container={container}
       />
     </Container>,
-    container.getElementById(containerId)
+    domNode
   );
 
   // Disable main body scrolling.
   $(container).find('body.et-admin-page').addClass('et-code-snippets-open');
-});
 
-$(window).on('et_code_snippets_library_close', () => {
-  // In EPanel, the DOMNode is available w/ the `window`.
-  $('#et-code-snippets-container').remove();
-  $('body.et-admin-page').removeClass('et-code-snippets-open');
+  // Properly unmount app on close.
+  $(window).on('et_code_snippets_library_close', () => {
+    const appContainer = container.getElementById(containerId);
 
-  // In VB, the DOMNode is available w/ the IFrame's parent window.
-  window.parent.jQuery('#et-code-snippets-container').remove();
+    if (appContainer) {
+      unmountComponentAtNode(appContainer);
+      appContainer.remove();
+    }
+
+    $('body.et-admin-page').removeClass('et-code-snippets-open');
+  });
 });

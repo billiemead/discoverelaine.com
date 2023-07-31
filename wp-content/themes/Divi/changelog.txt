@@ -1,3 +1,120 @@
+version 4.21.1 ( updated 06-27-2023 )
+- Fixed an issue where the Scroll Effects scroll steps were incorrectly calculated.
+- Fixed issues affecting saving in Theme Builder in some cases.
+- Fixed an issue with the Slider module where the animations would stop working.
+- Fixed Global color not working when set via the Page settings bar.
+- Fixed the issue when Existing Pages were not loaded in some cases.
+- Added a new et_core_static_resources_removed hook that triggers when the static resources are removed.
+- Add the option to export layouts to Divi Cloud directly from Divi Layouts admin page.
+- Fixed WordPress deprecated warnings related to deprecated HTTP class file and Requests library upgrade.
+- Fixed PHP notice related to undefined index lists in Sendinblue email provider class.
+	* common/admin.php
+	* common/i18n/library.php
+	* common/init.php
+	* core/admin/css/core.css
+	* core/admin/js/portability.js
+	* core/code-snippets/app/boot.js
+	* core/code-snippets/code-snippets-app.php
+	* core/components/PageResource.php
+	* core/components/Portability.php
+	* core/components/api/email/SendinBlue.php
+	* core/components/lib/WPHttp.php
+	* core/functions.php
+	* core/i18n/library.php
+	* includes/builder/class-et-builder-element.php
+	* includes/builder/class-et-builder-settings.php
+	* includes/builder/core.php
+	* includes/builder/feature/SplitLibrary.php
+	* includes/builder/feature/dynamic-assets/assets/js/slider.js
+	* includes/builder/feature/global-presets/Settings.php
+	* includes/builder/frontend-builder/bundle.js
+	* includes/builder/frontend-builder/helpers.php
+	* includes/builder/frontend-builder/theme-builder/api.php
+	* includes/builder/functions.php
+	* includes/builder/scripts/frontend/scripts.js
+
+version 4.21 ( updated 04-21-2023 )
+- Add local and Divi Cloud libraries for Theme Options
+- Fix PHP fatal errors on WP CLI with admin context when checking themes list due to missing builder framework.
+	* cloud/i18n/library.php
+	* common/admin.php
+	* common/i18n/library.php
+	* common/init.php
+	* common/lib/local-library.js
+	* common/library.php
+	* core/admin/css/support-center.css
+	* core/admin/images/blurb-vip.jpg
+	* core/code-snippets/api.php
+	* core/code-snippets/code-snippets-app.php
+	* core/code-snippets/code-snippets-library-local/CodeSnippetsLibraryLocal.php
+	* core/code-snippets/code-snippets-library.php
+	* core/components/PageResource.php
+	* core/components/Portability.php
+	* core/components/SupportCenter.php
+	* core/components/init.php
+	* core/i18n/library.php
+	* core/item-library-local/ItemLibraryLocal.php
+	* epanel/core_functions.php
+	* epanel/css/panel.css
+	* epanel/i18n/epanel.php
+	* epanel/i18n/library.php
+	* epanel/js/functions-init.js
+	* epanel/postcss.config.js
+	* epanel/theme-options-library/ThemeOptionsLibrary.php
+	* epanel/theme-options-library/api.php
+	* epanel/theme-options-library/constants.php
+	* epanel/theme-options-library/post/type/ThemeOptions.php
+	* epanel/theme-options-library/theme-options-library-app.php
+	* epanel/theme-options-library/theme-options-library-local/ThemeOptionsLibraryLocal.php
+	* epanel/theme-options-library/theme-options.php
+	* epanel/webpack.config.js
+	* et-pagebuilder/et-pagebuilder.php
+	* includes/builder/autoload.php
+	* includes/builder/feature/SplitLibrary.php
+	* includes/builder/feature/local-library.php
+	* includes/builder/framework.php
+	* includes/builder/frontend-builder/bundle.js
+	* includes/builder/frontend-builder/helpers.php
+	* includes/builder/frontend-builder/theme-builder/api.php
+	* includes/builder/frontend-builder/theme-builder/theme-builder-library-local/ThemeBuilderLibraryLocal.php
+	* includes/builder/frontend-builder/theme-builder/theme-builder-library.php
+
+version 4.20.4 ( updated 04-03-2023 )
+- Fixed Divi Cloud configuration error.
+	* cloud/cloud-app.php
+
+version 4.20.3 ( updated 04-03-2023 )
+- Fixed progress bar rendering when importing items to the Divi Cloud.
+- Added ability to split library layout into sections, section to rows, and row to modules.
+- Fixed duplicate quantity number in Woo Cart Products module.
+- Fixed a PHP error that occurred in some cases with 3rd-party WooCommerce plugins when the session object does not exist.
+- Added support to import multiple json files in Divi Library.
+- Fixed issues with Theme Builder loading and saving with big amount of templates.
+- Improved local Divi Library performance on websites with big amount of layouts.
+- Fixed security issue on a few legacy shortcodes, some attributes were not properly escaped.
+- Added 'Share With My Team' button to the library modal.
+- Added ability to split library layout into sections, section to rows, and row to modules.
+- Improved shared clouds permission checks.
+	* cloud/cloud-app.php
+	* cloud/i18n/library.php
+	* composer.json
+	* core/admin/js/portability.js
+	* core/code-snippets/code-snippets-library.php
+	* core/ui/components/controls/index.js
+	* epanel/shortcodes/shortcodes.php
+	* includes/builder/core.php
+	* includes/builder/feature/Library.php
+	* includes/builder/feature/SplitLibrary.php
+	* includes/builder/feature/woocommerce-modules.php
+	* includes/builder/feature/woocommerce/templates/global/quantity-input.php
+	* includes/builder/frontend-builder/bundle.js
+	* includes/builder/frontend-builder/helpers.php
+	* includes/builder/frontend-builder/theme-builder/api.php
+	* includes/builder/frontend-builder/theme-builder/theme-builder-library.php
+	* includes/builder/frontend-builder/theme-builder/theme-builder.php
+	* includes/builder/functions.php
+	* includes/builder/scripts/src/builder.js
+
 version 4.20.2 ( updated 03-08-2023 )
 - Adjusted a fix in 4.20.1 that changed section class enumeration. For customers using performance plugins that strip away version parameters from CSS files, this could cause styles to appear jumbled when they did not clear their browser cache.
 	* includes/builder/feature/dynamic-assets/class-dynamic-assets.php

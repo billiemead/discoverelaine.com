@@ -69,7 +69,7 @@ class OAuth {
 	 *
 	 * @throws \Exception If no refresh token is available.
 	 */
-	private static function get_refresh_token() {
+	public static function get_refresh_token() {
 		$encrypted_refresh_token = Portal_Options::get_refresh_token();
 
 		if ( '' === $encrypted_refresh_token ) {

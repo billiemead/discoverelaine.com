@@ -13,7 +13,9 @@ class AssetsManager {
 	const ADMIN_CSS          = 'leadin-css';
 	const BRIDGE_CSS         = 'leadin-bridge-css';
 	const ADMIN_JS           = 'leadin-js';
-	const MENU_JS            = 'menu-js';
+	const FORM_APP_JS        = 'leadin-form-app-js';
+	const FORM_APP_CSS       = 'leadin-form-app-css';
+	const MENU_JS            = 'leadin-menu-js';
 	const FEEDBACK_CSS       = 'leadin-feedback-css';
 	const FEEDBACK_JS        = 'leadin-feedback';
 	const TRACKING_CODE      = 'leadin-script-loader-js';
@@ -26,6 +28,7 @@ class AssetsManager {
 	const REVIEW_BANNER      = 'leadin-review-banner';
 	const ELEMENTOR          = 'leadin-elementor';
 	const APP_ENTRY_CSS      = 'leadin-app-css';
+	const APP_EMBEDDER       = 'leadin-app-embedder';
 
 	/**
 	 * Register and localize all assets.
@@ -33,8 +36,12 @@ class AssetsManager {
 	public static function register_assets() {
 		wp_register_style( self::ADMIN_CSS, LEADIN_ASSETS_PATH . '/style/leadin.css', array(), LEADIN_PLUGIN_VERSION );
 		wp_register_script( self::ADMIN_JS, LEADIN_JS_BASE_PATH . '/leadin.js', array( 'jquery', 'wp-element' ), LEADIN_PLUGIN_VERSION, true );
+		wp_register_script( self::FORM_APP_JS, LEADIN_JS_BASE_PATH . '/formApp.js', array( 'jquery', 'wp-element' ), LEADIN_PLUGIN_VERSION, true );
+
+		wp_register_style( self::FORM_APP_CSS, LEADIN_JS_BASE_PATH . '/formApp.css', array(), LEADIN_PLUGIN_VERSION );
 		wp_register_script( self::MENU_JS, LEADIN_JS_BASE_PATH . '/menu.js', array( 'jquery' ), LEADIN_PLUGIN_VERSION, true );
 		wp_localize_script( self::ADMIN_JS, self::LEADIN_CONFIG, AdminConstants::get_leadin_config() );
+		wp_localize_script( self::FORM_APP_JS, self::LEADIN_CONFIG, AdminConstants::get_leadin_config() );
 		wp_register_script( self::FEEDBACK_JS, LEADIN_JS_BASE_PATH . '/feedback.js', array( 'jquery', 'thickbox' ), LEADIN_PLUGIN_VERSION, true );
 		wp_localize_script( self::FEEDBACK_JS, self::LEADIN_CONFIG, AdminConstants::get_background_leadin_config() );
 		wp_register_style( self::FEEDBACK_CSS, LEADIN_ASSETS_PATH . '/style/leadin-feedback.css', array(), LEADIN_PLUGIN_VERSION );
@@ -68,6 +75,17 @@ class AssetsManager {
 	}
 
 	/**
+	 * Enqueue the assets needed to correctly render the plugin's iframe.
+	 */
+	public static function enqueue_form_app_assets() {
+		$embed_domain = Filters::apply_js_base_url_filters();
+		wp_enqueue_style( self::BRIDGE_CSS );
+		wp_enqueue_script( self::FORM_APP_JS );
+		wp_enqueue_style( self::FORM_APP_CSS );
+		wp_enqueue_script( self::APP_EMBEDDER, "$embed_domain/integrated-app-embedder/v1.js", array(), LEADIN_PLUGIN_VERSION, true );
+	}
+
+	/**
 	 * Register and enqueue the HubSpot's script loader (aka tracking code), used to collect data from your visitors.
 	 * https://knowledge.hubspot.com/account/how-does-hubspot-track-visitors
 	 *
@@ -83,7 +101,7 @@ class AssetsManager {
 			$embed_url = $embed_url . "&businessUnitId=$business_unit_id";
 		}
 
-		wp_register_script( self::TRACKING_CODE, $embed_url, array( 'jquery' ), LEADIN_PLUGIN_VERSION, true );
+		wp_register_script( self::TRACKING_CODE, $embed_url, array(), LEADIN_PLUGIN_VERSION, true );
 		wp_localize_script( self::TRACKING_CODE, 'leadin_wordpress', $leadin_wordpress_info );
 		wp_enqueue_script( self::TRACKING_CODE );
 	}

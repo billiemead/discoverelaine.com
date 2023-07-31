@@ -9,7 +9,7 @@ function makeRequest(
   path: string,
   data: any = {},
   queryParams = {}
-) {
+): Promise<any> {
   // eslint-disable-next-line compat/compat
   const restApiUrl = new URL(`${restUrl}leadin/v1${path}`);
   addQueryObjectToUrl(restApiUrl, queryParams);
@@ -61,6 +61,12 @@ export function makeProxyRequest(
 
 export function fetchOAuthToken() {
   return makeRequest('GET', '/oauth-token').catch(err => {
+    return { status: err.status, message: err.responseText };
+  });
+}
+
+export function fetchRefreshToken() {
+  return makeRequest('GET', '/refresh-token').catch(err => {
     return { status: err.status, message: err.responseText };
   });
 }

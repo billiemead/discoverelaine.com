@@ -199,7 +199,7 @@ class LeadinAdmin {
 				add_submenu_page( MenuConstants::ROOT, __( 'User Guide', 'leadin' ), __( 'User Guide', 'leadin' ), Filters::apply_view_plugin_menu_capability_filters(), MenuConstants::USER_GUIDE, array( $this, 'build_app' ) );
 				add_submenu_page( MenuConstants::ROOT, __( 'Contacts', 'leadin' ), __( 'Contacts', 'leadin' ), Filters::apply_view_plugin_menu_capability_filters(), MenuConstants::CONTACTS, array( $this, 'build_app' ) );
 
-				add_submenu_page( MenuConstants::ROOT, __( 'Forms', 'leadin' ), __( 'Forms', 'leadin' ), Filters::apply_view_plugin_menu_capability_filters(), MenuConstants::FORMS, array( $this, 'build_app' ) );
+				add_submenu_page( MenuConstants::ROOT, __( 'Forms', 'leadin' ), __( 'Forms', 'leadin' ), Filters::apply_view_plugin_menu_capability_filters(), MenuConstants::FORMS, array( $this, 'build_form_app' ) );
 				add_submenu_page( MenuConstants::ROOT, __( 'Live Chat', 'leadin' ), __( 'Live Chat', 'leadin' ), Filters::apply_view_plugin_menu_capability_filters(), MenuConstants::CHATFLOWS, array( $this, 'build_app' ) );
 				add_submenu_page( MenuConstants::ROOT, __( 'Email', 'leadin' ), __( 'Email', 'leadin' ), Filters::apply_view_plugin_menu_capability_filters(), MenuConstants::EMAIL, array( $this, 'build_app' ) );
 				add_submenu_page( MenuConstants::ROOT, __( 'Settings', 'leadin' ), __( 'Settings', 'leadin' ), Filters::apply_view_plugin_menu_capability_filters(), MenuConstants::SETTINGS, array( $this, 'build_app' ) );
@@ -230,16 +230,30 @@ class LeadinAdmin {
 	 */
 	public function build_app() {
 		AssetsManager::enqueue_bridge_assets();
+		self::render_app();
+	}
 
+	/**
+	 * Renders the leadin admin page.
+	 */
+	public function build_form_app() {
+		AssetsManager::enqueue_form_app_assets();
+		self::render_app();
+	}
+
+	/**
+	 * Render app container
+	 */
+	public function render_app() {
 		$error_message = '';
 
-		if ( Versions::is_php_version_supported() ) {
+		if ( Versions::is_php_version_not_supported() ) {
 			$error_message = sprintf(
 				__( 'HubSpot All-In-One Marketing %1$s requires PHP %2$s or higher. Please upgrade WordPress first.', 'leadin' ),
 				LEADIN_PLUGIN_VERSION,
 				LEADIN_REQUIRED_PHP_VERSION
 			);
-		} elseif ( Versions::is_wp_version_supported() ) {
+		} elseif ( Versions::is_wp_version_not_supported() ) {
 			$error_message = sprintf(
 				__( 'HubSpot All-In-One Marketing %1$s requires PHP %2$s or higher. Please upgrade WordPress first.', 'leadin' ),
 				LEADIN_PLUGIN_VERSION,
@@ -262,4 +276,5 @@ class LeadinAdmin {
 			<?php
 		}
 	}
+
 }

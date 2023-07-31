@@ -24,6 +24,7 @@ interface LeadinConfig {
   leadinPluginVersion: string;
   leadinQueryParamsKeys: string[];
   loginUrl: string;
+  locale: string;
   oauth?: 'true';
   phpVersion: string;
   pluginPath: string;
@@ -59,6 +60,7 @@ const {
   impactLink,
   leadinPluginVersion,
   leadinQueryParamsKeys,
+  locale,
   loginUrl,
   oauth,
   phpVersion,
@@ -97,6 +99,7 @@ export {
   leadinPluginVersion,
   leadinQueryParamsKeys,
   loginUrl,
+  locale,
   oauth,
   phpVersion,
   pluginPath,

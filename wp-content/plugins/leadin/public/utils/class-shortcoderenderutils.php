@@ -128,7 +128,7 @@ class ShortcodeRenderUtils {
 			$attrs
 		);
 
-		$url = $parsed_attributes['url'];
+		$url = esc_url_raw( $parsed_attributes['url'] );
 
 		if ( filter_var( $url, FILTER_VALIDATE_URL ) === false ) {
 			return;

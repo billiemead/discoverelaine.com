@@ -36,16 +36,16 @@ class Versions {
 	}
 
 	/**
-	 * Return true if the current PHP version is supported.
+	 * Return true if the current PHP version is not supported.
 	 */
-	public static function is_php_version_supported() {
+	public static function is_php_version_not_supported() {
 		return version_compare( phpversion(), LEADIN_REQUIRED_PHP_VERSION, '<' );
 	}
 
 	/**
-	 * Return true if the current WordPress version is supported.
+	 * Return true if the current WordPress version is not supported.
 	 */
-	public static function is_wp_version_supported() {
+	public static function is_wp_version_not_supported() {
 		global $wp_version;
 		return version_compare( $wp_version, LEADIN_REQUIRED_WP_VERSION, '<' );
 	}

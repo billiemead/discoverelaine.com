@@ -14,6 +14,7 @@ use Leadin\admin\Connection;
 use Leadin\admin\Impact;
 use Leadin\admin\AdminConstants;
 use Leadin\includes\utils as utils;
+use Leadin\auth\OAuthCrypto;
 
 /**
  * Class containing all the functions to generate links to HubSpot.
@@ -38,6 +39,7 @@ class Links {
 			MenuConstants::REPORTING  => $reporting_page,
 			MenuConstants::CHATFLOWS  => array(
 				''         => "/chatflows/$portal_id",
+				'create'   => "/chatflows/$portal_id/create",
 				'settings' => "/live-messages-settings/$portal_id",
 			),
 			MenuConstants::CONTACTS   => "/contacts/$portal_id",
@@ -46,7 +48,6 @@ class Links {
 				'default' => "/contacts/$portal_id/objectLists",
 				'lists'   => "/contacts/$portal_id/lists",
 			),
-			MenuConstants::FORMS      => "/forms/$portal_id",
 			MenuConstants::EMAIL      => array(
 				''    => "/email/$portal_id",
 				'cms' => "/content/$portal_id/create/email",

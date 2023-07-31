@@ -24,6 +24,13 @@ class Filters {
 	}
 
 	/**
+	 * Return the prefix for UI urls.
+	 */
+	public static function apply_js_prefix_filters() {
+		return self::resolve_hublet( apply_filters( LEADIN_PREFIX . '_js_prefix', 'js' ) );
+	}
+
+	/**
 	 * Return the prefix for API urls.
 	 */
 	public static function apply_api_prefix_filters() {
@@ -44,6 +51,15 @@ class Filters {
 		$prefix = self::apply_app_prefix_filters();
 		$domain = self::apply_hubspot_domain_filters();
 		return apply_filters( LEADIN_PREFIX . '_base_url', "https://$prefix.$domain" );
+	}
+
+	/**
+	 * Apply leadin_js_base_url filter.
+	 */
+	public static function apply_js_base_url_filters() {
+		$prefix = self::apply_js_prefix_filters();
+		$domain = self::apply_hubspot_domain_filters();
+		return apply_filters( LEADIN_PREFIX . '_js_base_url', "https://$prefix.$domain" );
 	}
 
 	/**
