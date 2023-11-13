@@ -67,4 +67,4 @@ Thumbs.db
 .idea/*
 
 # node_modules #
-wp-content/themes/**/node_modules/
+# wp-content/themes/**/node_modules/ #
