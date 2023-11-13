@@ -1,4 +1,7 @@
 @import "../base/colors";
+@import "../base/font";
+
+/* ******* DISCOVER-ELAINE 2023 FOOTER START ******* */
 
 #es-footer {
   height: 172px;
@@ -60,7 +63,10 @@
   }
 }
 
-/*** Responsive Styles Tablet Only ***/
+@media all and (max-width: 1024px) {
+}
+@media all and (max-width: 980px) {
+}
 @media all and (min-width: 768px) and (max-width: 980px) {
   #es-footer {
     height: 272px;
@@ -106,37 +112,27 @@
       }
     }
   }
-
 }
-
-
-/*** Responsive Styles Smartphone Only ***/
 @media all and (max-width: 767px) {
   #es-footer {
     height: 400px;
   }
-
   #footer-container {
     flex-direction: column;
     height: 310px;
-
     .footer-left {
       width: 100%;
       flex-direction: column;
-
       .es-links {
         width: 100%;
         margin: 0;
-
         div {
           height: 28px;
           text-align: center;
         }
       }
-
       .contact-link {
         width: 100%;
-
         span {
           margin: 0 0 0 10px;
         }
@@ -164,30 +160,11 @@
     }
   }
 }
-
-
-/*** Responsive Styles Standard Desktop Only ***/
-@media all and (min-width: 1100px) {
-
+@media all and (max-width: 576px) {
+}
+@media all and (max-width: 480px) {
+}
+@media all and (max-width: 320px) {
 }
 
-/*** Responsive Styles Tablet And Below ***/
-@media all and (max-width: 980px) {
-
-}
-
-/*** Responsive Styles Tablet Only ***/
-@media all and (min-width: 768px) and (max-width: 980px) {
-
-}
-
-/*** Responsive Styles Smartphone Only ***/
-@media all and (max-width: 767px) {
-
-}
-
-/*** Responsive Styles Smartphone Portrait ***/
-@media all and (max-width: 479px) {
-
-}
-
+/* ******* DISCOVER-ELAINE 2023 FOOTER END ******* */

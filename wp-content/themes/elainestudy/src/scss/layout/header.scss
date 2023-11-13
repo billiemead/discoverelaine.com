@@ -1,13 +1,9 @@
 @import "../base/colors";
 @import "../base/font";
 
-/* ******* DISCOVER-ELAINE 2023 LAYOUT START ******* */
+/* ******* DISCOVER-ELAINE 2023 HEADER START ******* */
 
-#page-container {
-  #logo {
-    max-height: 85%;
-  }
-}
+
 
 @media all and (max-width: 1024px) {
 }
@@ -21,5 +17,4 @@
 }
 @media all and (max-width: 320px) {
 }
-
-/* ******* DISCOVER-ELAINE 2023 LAYOUT END ******* */
+/* ******* DISCOVER-ELAINE 2023 HEADER END ******* */

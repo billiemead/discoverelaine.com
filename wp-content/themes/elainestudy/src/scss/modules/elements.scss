@@ -1,33 +1,14 @@
 @import "../base/colors";
 @import "../base/font";
 
-
-/*      MAIN NAV MOBILE     */
-/*** Responsive Styles Smartphone Only ***/
-@media all and (max-width: 767px) {
-  .et_fixed_nav.et_show_nav #page-container {
-    /*padding-top: 0 !important;*/
-    margin-top: 0 !important;
-  }
-  .et_fixed_nav #main-header {
-    position: fixed !important;
-  }
-
-}
-
-/*   END   MAIN NAV MOBILE     */
-
+/* ******* DISCOVER-ELAINE 2023 ELEMENTS START ******* */
 
 .supper-script-reference p {
   font-size: 0.8rem !important;
 }
 
-/*BASE THREE COLUMNS ROW STYLES*/
+/* *** BASE THREE COLUMNS ROW STYLES *** */
 .base-3-colm {
-  .et_pb_column:first-child,
-  .et_pb_column:last-child {
-
-  }
   .et_pb_column:nth-child(2) {
     h2, h4, .sub-sub-title {
       color: $es-dark-blue;
@@ -41,56 +22,7 @@
   }
 }
 
-@media all and (min-width: 981px) {
-
-  .base-3-colm {
-    .et_pb_column:first-child,
-    .et_pb_column:last-child {
-      width: 14%;
-    }
-
-    .et_pb_column:nth-child(2) {
-      width: 70%;
-    }
-
-    .et_pb_column:first-child {
-      margin-right: 20px;
-    }
-
-    .et_pb_column:nth-child(2) {
-      margin-right: 0;
-    }
-  }
-
-}
-
-/*** Responsive Styles Smartphone Only ***/
-@media all and (max-width: 767px) {
-  .base-3-colm {
-    .et_pb_column:first-child,
-    .et_pb_column:last-child {
-
-    }
-    .et_pb_column:nth-child(2) {
-      h2 {
-        text-align: center;
-      }
-      h5 {
-
-      }
-      .sub-sub-title {
-
-      }
-    }
-  }
-
-}
-
-/* END BASE THREE COLUMNS ROW STYLES*/
-
-
-//                      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-/*      BASE THREE COLUMNS TITLE ROW     */
+/* *** BASE THREE COLUMNS TITLE ROW *** */
 .base-3-colm.title-row {
   .et_pb_column:nth-child(2) {
     display: flex;
@@ -98,37 +30,8 @@
     justify-content: center;
   }
 }
-/*      END BASE THREE COLUMNS TITLE ROW     */
 
-
-//                      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-/*      BASE THREE COLUMNS COPY ROW     */
-.base-3-colm.copy-row {
-
-}
-
-/*      END BASE THREE COLUMNS COPY ROW     */
-
-
-//                      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-/*      BASE THREE COLUMNS with 2 ELEMENTS ROW     */
-@media all and (min-width: 981px) {
-  .base-3-colm.two-elems-middle {
-    .et_pb_column:nth-child(2) {
-      display: flex;
-      justify-content: space-between;
-      .et_pb_module {
-        width: 48%;
-      }
-    }
-  }
-}
-
-/*    END  BASE THREE COLUMNS with 2 ELEMENTS ROW     */
-
-
-//                      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-/*      BASE THREE COLUMNS 5 ICONS ROW     */
+/* *** BASE THREE COLUMNS 5 ICONS ROW  *** */
 .base-3-colm.five-icons-middle {
   .base-row-middle-colm {
     margin-right: 0 !important;
@@ -137,53 +40,11 @@
   }
 }
 
-@media all and (min-width: 981px) {
-  .base-3-colm.five-icons-middle {
-    .base-row-middle-colm {
-      justify-content: space-between;
-
-      .et_pb_module {
-        width: 15%;
-      }
-    }
-  }
-
-}
-
-/*** Responsive Styles Tablet Only ***/
-@media all and (min-width: 768px) and (max-width: 980px) {
-  .base-3-colm.five-icons-middle {
-    .base-row-middle-colm {
-      flex-wrap: wrap;
-      .et_pb_module {
-        width: 32% !important;
-      }
-    }
-  }
-
-}
-
-/*** Responsive Styles Smartphone Only ***/
-@media all and (max-width: 767px) {
-  .base-3-colm.five-icons-middle {
-    .base-row-middle-colm {
-      flex-direction: column;
-      .et_pb_module {
-        width: 100% !important;
-      }
-    }
-  }
-
-}
-/*      END BASE THREE COLUMNS 5 ICONS ROW     */
-
-//                      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-/*      TWO COLUMNS VIDEO ROW       */
+/* *** TWO COLUMNS VIDEO ROW *** */
 .es-video-row {
   width: 75%;
   padding: 0 !important;
   margin: 40px auto 0;
-  /* offset-x | offset-y | blur-radius | spread-radius | color */
   box-shadow: 5px 3px 20px -1px #ddd;
   .et_pb_column:last-child {
     padding: 20px;
@@ -195,25 +56,14 @@
     }
   }
 }
-/*** Responsive Styles Smartphone Only ***/
-@media all and (max-width: 767px) {
-  .es-video-row {
-    width: 100%;
-  }
-}
 
-/*    END  TWO COLUMNS VIDEO ROW       */
-
-
-/*      WP FORM 7 SECTION     */
+/* *** WP FORM 7 SECTION *** */
 .form-container {
   .fields-holder {
     display: flex;
     justify-content: space-between;
-
     .form-field {
       width: 48%;
-
       .input-fld {
         .wpcf7-form-control {
           width: 100%;
@@ -224,11 +74,9 @@
           padding: 0 0 0 20px;
         }
       }
-
       .input-check {
         display: flex;
         margin: 20px 0 0;
-
         .wpcf7-checkbox {
           /*  MAKE CUSTOM CHECKBOX STYLES !
           https://stackoverflow.com/questions/69958117/how-to-change-checkbox-background-color-in-simple-html
@@ -279,17 +127,87 @@
   }
 }
 
-
-/*** Responsive Styles Smartphone Only ***/
+@media all and (max-width: 1024px) {
+}
+@media all and (min-width: 981px) {
+  .base-3-colm.two-elems-middle {
+    .et_pb_column:nth-child(2) {
+      display: flex;
+      justify-content: space-between;
+      .et_pb_module {
+        width: 48%;
+      }
+    }
+  }
+  .base-3-colm.five-icons-middle {
+    .base-row-middle-colm {
+      justify-content: space-between;
+      .et_pb_module {
+        width: 15%;
+      }
+    }
+  }
+  .base-3-colm {
+    .et_pb_column:first-child,
+    .et_pb_column:last-child {
+      width: 14%;
+    }
+    .et_pb_column:nth-child(2) {
+      width: 70%;
+    }
+    .et_pb_column:first-child {
+      margin-right: 20px;
+    }
+    .et_pb_column:nth-child(2) {
+      margin-right: 0;
+    }
+  }
+}
+@media all and (max-width: 980px) {
+}
+@media all and (min-width: 768px) and (max-width: 980px) {
+  .base-3-colm.five-icons-middle {
+    .base-row-middle-colm {
+      flex-wrap: wrap;
+      .et_pb_module {
+        width: 32% !important;
+      }
+    }
+  }
+}
 @media all and (max-width: 767px) {
+  .et_fixed_nav.et_show_nav #page-container {
+    margin-top: 0 !important;
+  }
+  .et_fixed_nav #main-header {
+    position: fixed !important;
+  }
+  .base-3-colm {
+    .et_pb_column:nth-child(2) {
+      h2 {
+        text-align: center;
+      }
+    }
+  }
+  .base-3-colm.five-icons-middle {
+    .base-row-middle-colm {
+      flex-direction: column;
+      .et_pb_module {
+        width: 100% !important;
+      }
+    }
+  }
+  .et_pb_button_module_wrapper {
+    .cta_btn {
+      text-align: center;
+    }
+  }
   .form-container {
     .fields-holder {
       flex-direction: column;
-
       .form-field {
         width: 100%;
         margin: 0 0 40px;
-
         .input-fld {
           .wpcf7-form-control {
             width: 100%;
@@ -302,7 +220,6 @@
         }
       }
     }
-
     .submit-btn {
       margin: 40px 0 0;
       display: flex;
@@ -310,47 +227,15 @@
       justify-content: center;
       align-items: center;
     }
-
   }
-
-}
-/*    END  WP FORM 7 SECTION     */
-
-
-/*      CTA BUTTON      */
-
-/*** Responsive Styles Smartphone Only ***/
-@media all and (max-width: 767px) {
-  .et_pb_button_module_wrapper {
-    .cta_btn {
-      text-align: center;
-    }
+  .es-video-row {
+    width: 100%;
   }
 }
-
-/*   END   CTA BUTTON      */
-
-/*** Responsive Styles Standard Desktop Only ***/
-@media all and (min-width: 981px) {
-
+@media all and (max-width: 576px) {
 }
-
-/*** Responsive Styles Tablet And Below ***/
-@media all and (max-width: 980px) {
-
+@media all and (max-width: 480px) {
 }
-
-/*** Responsive Styles Tablet Only ***/
-@media all and (min-width: 768px) and (max-width: 980px) {
-
+@media all and (max-width: 320px) {
 }
-
-/*** Responsive Styles Smartphone Only ***/
-@media all and (max-width: 767px) {
-
-}
-
-/*** Responsive Styles Smartphone Portrait ***/
-@media all and (max-width: 479px) {
-
-}
+/* ******* DISCOVER-ELAINE 2023 ELEMENTS END ******* */

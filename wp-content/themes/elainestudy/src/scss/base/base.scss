@@ -1,27 +1,7 @@
-/*We want to import them in the following order to maintain good scope and avoid conflicts during compilation*/
-/*
-@import 'abstracts/variables';
-@import 'abstracts/functions';
-@import 'abstracts/mixins';
-
-@import 'base/normalize';
-
-@import 'layout/navigation';
-@import 'layout/header';
-@import 'layout/footer';
-@import 'layout/sidebar';
-@import 'layout/forms';
-
-@import 'components/buttons';
-@import 'components/hero';
-@import 'components/pull-quote';
-
-@import 'pages/home';
-@import 'pages/contact';
-*/
-
 @import 'font';
 @import "colors";
+
+/* ******* DISCOVER-ELAINE 2023 BASE START ******* */
 
 * {
   margin: 0;
@@ -107,22 +87,17 @@ sup {
   }
 }
 
-/*** Responsive Styles Tablet And Below ***/
+@media all and (max-width: 1024px) {
+}
 @media all and (max-width: 980px) {
-
+}
+@media all and (max-width: 768px) {
+}
+@media all and (max-width: 576px) {
+}
+@media all and (max-width: 480px) {
+}
+@media all and (max-width: 320px) {
 }
 
-/*** Responsive Styles Tablet Only ***/
-@media all and (min-width: 768px) and (max-width: 980px) {
-
-}
-
-/*** Responsive Styles Smartphone Only ***/
-@media all and (max-width: 767px) {
-
-}
-
-/*** Responsive Styles Smartphone Portrait ***/
-@media all and (max-width: 479px) {
-
-}
+/* ******* DISCOVER-ELAINE 2023 BASE START ******* */
