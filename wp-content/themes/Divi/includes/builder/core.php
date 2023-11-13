@@ -164,13 +164,11 @@ if ( ! function_exists( 'et_builder_load_library' ) ) :
 		require_once ET_BUILDER_DIR . 'feature/Library.php';
 		require_once ET_BUILDER_DIR . 'feature/SplitLibrary.php';
 
-		// Initialize Divi Cloud and AI.
+		// Initialize DiviCloud.
 		if ( defined( 'ET_BUILDER_PLUGIN_ACTIVE' ) ) {
 			require_once ET_BUILDER_PLUGIN_DIR . '/cloud/cloud-app.php';
-			require_once ET_BUILDER_PLUGIN_DIR . '/ai-app/ai-app.php';
 		} else {
 			require_once get_template_directory() . '/cloud/cloud-app.php';
-			require_once get_template_directory() . '/ai-app/ai-app.php';
 		}
 	}
 endif;
@@ -2583,7 +2581,6 @@ function et_fb_get_nonces() {
 		'libraryLayoutsData'              => wp_create_nonce( 'et_builder_library_get_layouts_data' ),
 		'libraryGetLayout'                => wp_create_nonce( 'et_builder_library_get_layout' ),
 		'libraryUpdateLayout'             => wp_create_nonce( 'et_builder_library_update_layout' ),
-		'libraryConvertLayout'            => wp_create_nonce( 'et_builder_library_convert_layout' ),
 		'libraryUpdateTerms'              => wp_create_nonce( 'et_builder_library_update_terms' ),
 		'libraryUpdateLocation'           => wp_create_nonce( 'et_builder_library_toggle_item_location' ),
 		'libraryUpdateAccount'            => wp_create_nonce( 'et_builder_library_update_account' ),

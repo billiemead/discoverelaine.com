@@ -11,9 +11,6 @@
 		"id": {
 			"type": "integer"
 		},
-		"hash": {
-			"type": "string"
-		},
 		"title": {
 			"type": "string"
 		},

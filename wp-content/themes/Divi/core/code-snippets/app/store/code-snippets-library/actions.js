@@ -1,6 +1,6 @@
 function insertCodeIntoField({ get, props: { snippet, codeMirrorId, isAppend, skipInsert } }) {
   if (skipInsert) {
-    return Promise.resolve();
+    return;
   }
 
   const codeMirrorInstance = jQuery(`#${codeMirrorId}`).next('.CodeMirror')[0].CodeMirror;
@@ -9,9 +9,9 @@ function insertCodeIntoField({ get, props: { snippet, codeMirrorId, isAppend, sk
   // Append or replace depending on user preferences.
   if (isAppend) {
     snippet = codeMirrorInstance.getValue() ? '\n' + snippet : snippet;
-    return Promise.resolve(codeMirrorInstance.replaceRange(snippet, {line: codeMirrorInstance.lastLine()}));
+    codeMirrorInstance.replaceRange(snippet, {line: codeMirrorInstance.lastLine()});
   } else {
-    return Promise.resolve(codeMirrorInstance.setValue(snippet));
+    codeMirrorInstance.setValue(snippet);
   }
 }
 

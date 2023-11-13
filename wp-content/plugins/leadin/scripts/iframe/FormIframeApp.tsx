@@ -3,11 +3,10 @@ import ReactDOM from 'react-dom';
 import { domElements } from '../constants/selectors';
 import { IframeErrorPage } from './IframeErrorPage';
 import useAppEmbedder from '../utils/useAppEmbedder';
-import { Apps } from './constants';
 
 export const IframePortal = (props: React.PropsWithChildren) => {
   const container = document.getElementById(domElements.leadinIframeContainer);
-  const iframeNotRendered = useAppEmbedder(Apps.Forms, container);
+  const iframeNotRendered = useAppEmbedder('integrated-form-app', container);
 
   if (container && !iframeNotRendered) {
     return ReactDOM.createPortal(props.children, container);

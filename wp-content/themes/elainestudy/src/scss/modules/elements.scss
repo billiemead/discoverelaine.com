@@ -1,22 +1,28 @@
 @import "../base/colors";
 @import "../base/font";
 
-/* ******* MOBILE NAV START ******* */
+
+/*      MAIN NAV MOBILE     */
+/*** Responsive Styles Smartphone Only ***/
 @media all and (max-width: 767px) {
   .et_fixed_nav.et_show_nav #page-container {
+    /*padding-top: 0 !important;*/
     margin-top: 0 !important;
   }
   .et_fixed_nav #main-header {
     position: fixed !important;
   }
+
 }
-/* ******* MOBILE NAV END ******* */
+
+/*   END   MAIN NAV MOBILE     */
+
 
 .supper-script-reference p {
   font-size: 0.8rem !important;
 }
 
-/* ******* THREE COLUMNS ROW STYLES START ******* */
+/*BASE THREE COLUMNS ROW STYLES*/
 .base-3-colm {
   .et_pb_column:first-child,
   .et_pb_column:last-child {
@@ -34,28 +40,36 @@
     }
   }
 }
+
 @media all and (min-width: 981px) {
+
   .base-3-colm {
     .et_pb_column:first-child,
     .et_pb_column:last-child {
       width: 14%;
     }
+
     .et_pb_column:nth-child(2) {
       width: 70%;
     }
+
     .et_pb_column:first-child {
       margin-right: 20px;
     }
+
     .et_pb_column:nth-child(2) {
       margin-right: 0;
     }
   }
 
 }
+
+/*** Responsive Styles Smartphone Only ***/
 @media all and (max-width: 767px) {
   .base-3-colm {
     .et_pb_column:first-child,
     .et_pb_column:last-child {
+
     }
     .et_pb_column:nth-child(2) {
       h2 {
@@ -69,10 +83,14 @@
       }
     }
   }
-}
-/* ******* THREE COLUMNS ROW STYLES END ******* */
 
-/* ******* THREE COLUMNS TITLE ROW START ******* */
+}
+
+/* END BASE THREE COLUMNS ROW STYLES*/
+
+
+//                      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/*      BASE THREE COLUMNS TITLE ROW     */
 .base-3-colm.title-row {
   .et_pb_column:nth-child(2) {
     display: flex;
@@ -80,9 +98,20 @@
     justify-content: center;
   }
 }
-/* ******* THREE COLUMNS TITLE ROW END ******* */
+/*      END BASE THREE COLUMNS TITLE ROW     */
 
-/* ******* THREE COLUMNS WITH 2 ELEMENTS ROW START ******* */
+
+//                      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/*      BASE THREE COLUMNS COPY ROW     */
+.base-3-colm.copy-row {
+
+}
+
+/*      END BASE THREE COLUMNS COPY ROW     */
+
+
+//                      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/*      BASE THREE COLUMNS with 2 ELEMENTS ROW     */
 @media all and (min-width: 981px) {
   .base-3-colm.two-elems-middle {
     .et_pb_column:nth-child(2) {
@@ -94,9 +123,12 @@
     }
   }
 }
-/* ******* THREE COLUMNS WITH 2 ELEMENTS ROW END ******* */
 
-/* ******* THREE COLUMNS 5 ICONS ROW START ******* */
+/*    END  BASE THREE COLUMNS with 2 ELEMENTS ROW     */
+
+
+//                      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/*      BASE THREE COLUMNS 5 ICONS ROW     */
 .base-3-colm.five-icons-middle {
   .base-row-middle-colm {
     margin-right: 0 !important;
@@ -104,6 +136,7 @@
     display: flex;
   }
 }
+
 @media all and (min-width: 981px) {
   .base-3-colm.five-icons-middle {
     .base-row-middle-colm {
@@ -116,6 +149,8 @@
   }
 
 }
+
+/*** Responsive Styles Tablet Only ***/
 @media all and (min-width: 768px) and (max-width: 980px) {
   .base-3-colm.five-icons-middle {
     .base-row-middle-colm {
@@ -127,6 +162,8 @@
   }
 
 }
+
+/*** Responsive Styles Smartphone Only ***/
 @media all and (max-width: 767px) {
   .base-3-colm.five-icons-middle {
     .base-row-middle-colm {
@@ -138,13 +175,15 @@
   }
 
 }
-/* ******* THREE COLUMNS 5 ICONS ROW END ******* */
+/*      END BASE THREE COLUMNS 5 ICONS ROW     */
 
-/* ******* TWO COLUMNS VIDEO ROW START ******* */
+//                      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/*      TWO COLUMNS VIDEO ROW       */
 .es-video-row {
   width: 75%;
   padding: 0 !important;
   margin: 40px auto 0;
+  /* offset-x | offset-y | blur-radius | spread-radius | color */
   box-shadow: 5px 3px 20px -1px #ddd;
   .et_pb_column:last-child {
     padding: 20px;
@@ -156,14 +195,131 @@
     }
   }
 }
+/*** Responsive Styles Smartphone Only ***/
 @media all and (max-width: 767px) {
   .es-video-row {
     width: 100%;
   }
 }
-/* ******* TWO COLUMNS VIDEO ROW END ******* */
 
-/* ******* CTA BUTTON START ******* */
+/*    END  TWO COLUMNS VIDEO ROW       */
+
+
+/*      WP FORM 7 SECTION     */
+.form-container {
+  .fields-holder {
+    display: flex;
+    justify-content: space-between;
+
+    .form-field {
+      width: 48%;
+
+      .input-fld {
+        .wpcf7-form-control {
+          width: 100%;
+          height: 50px;
+          color: #707070;
+          border: none;
+          font-size: 1.4rem;
+          padding: 0 0 0 20px;
+        }
+      }
+
+      .input-check {
+        display: flex;
+        margin: 20px 0 0;
+
+        .wpcf7-checkbox {
+          /*  MAKE CUSTOM CHECKBOX STYLES !
+          https://stackoverflow.com/questions/69958117/how-to-change-checkbox-background-color-in-simple-html
+          */
+          display: block;
+
+          .wpcf7-list-item {
+            display: flex;
+            margin: 0;
+            align-items: center;
+
+            input {
+              width: 32px;
+              height: 32px;
+              /*
+              &:enabled:checked {
+                background-color: #fff !important;
+                color: $es-gray;
+              }
+              */
+            }
+
+            .wpcf7-list-item-label {
+              display: flex;
+              color: #fff;
+              margin: 0 0 0 10px;
+            }
+          }
+        }
+      }
+    }
+  }
+  .submit-btn {
+    margin: 40px 0 0;
+    text-align: center;
+    input[type='submit'] {
+      width: 258px;
+      height: 60px;
+      background: $es-blue;
+      border: 2px solid $es-blue;
+      color: #fff;
+      font-size: 24px;
+      &:hover  {
+        background: #fff;
+        color: $es-blue;
+      }
+    }
+  }
+}
+
+
+/*** Responsive Styles Smartphone Only ***/
+@media all and (max-width: 767px) {
+  .form-container {
+    .fields-holder {
+      flex-direction: column;
+
+      .form-field {
+        width: 100%;
+        margin: 0 0 40px;
+
+        .input-fld {
+          .wpcf7-form-control {
+            width: 100%;
+            height: 50px;
+            color: #707070;
+            border: none;
+            font-size: 1.4rem;
+            padding: 0 0 0 20px;
+          }
+        }
+      }
+    }
+
+    .submit-btn {
+      margin: 40px 0 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+
+  }
+
+}
+/*    END  WP FORM 7 SECTION     */
+
+
+/*      CTA BUTTON      */
+
+/*** Responsive Styles Smartphone Only ***/
 @media all and (max-width: 767px) {
   .et_pb_button_module_wrapper {
     .cta_btn {
@@ -171,4 +327,30 @@
     }
   }
 }
-/* ******* CTA BUTTON END ******* */
+
+/*   END   CTA BUTTON      */
+
+/*** Responsive Styles Standard Desktop Only ***/
+@media all and (min-width: 981px) {
+
+}
+
+/*** Responsive Styles Tablet And Below ***/
+@media all and (max-width: 980px) {
+
+}
+
+/*** Responsive Styles Tablet Only ***/
+@media all and (min-width: 768px) and (max-width: 980px) {
+
+}
+
+/*** Responsive Styles Smartphone Only ***/
+@media all and (max-width: 767px) {
+
+}
+
+/*** Responsive Styles Smartphone Portrait ***/
+@media all and (max-width: 479px) {
+
+}

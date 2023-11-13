@@ -11,7 +11,6 @@ import { leadinGetPortalInfo } from '../utils/portalInfo';
 
 import {
   fetchOAuthToken,
-  fetchRefreshToken,
   makeInterframeProxyRequest,
   disableInternalTracking,
   fetchDisableInternalTracking,
@@ -36,7 +35,6 @@ const methods = {
   setLeadinUnAuthedNavigation,
   makeInterframeProxyRequest,
   fetchOAuthToken,
-  fetchRefreshToken,
   skipReview,
   updateHublet,
   trackConsent,

@@ -37,6 +37,11 @@ class Links {
 			MenuConstants::ROOT       => $user_guide,
 			MenuConstants::USER_GUIDE => $user_guide,
 			MenuConstants::REPORTING  => $reporting_page,
+			MenuConstants::CHATFLOWS  => array(
+				''         => "/chatflows/$portal_id",
+				'create'   => "/chatflows/$portal_id/create",
+				'settings' => "/live-messages-settings/$portal_id",
+			),
 			MenuConstants::CONTACTS   => "/contacts/$portal_id",
 			MenuConstants::LISTS      => array(
 				''        => "/contacts/$portal_id/objectLists/all",

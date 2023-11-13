@@ -175,7 +175,6 @@ require_once ET_BUILDER_DIR . 'feature/background-masks/PatternFields.php';
 require_once ET_BUILDER_DIR . 'feature/background-masks/MaskFields.php';
 require_once ET_BUILDER_DIR . 'feature/gutenberg/BlockTemplates.php';
 require_once ET_BUILDER_DIR . 'feature/local-library.php';
-require_once ET_BUILDER_DIR . 'feature/ai-button.php';
 
 // Conditional Includes.
 if ( et_is_woocommerce_plugin_active() ) {
@@ -241,7 +240,6 @@ if ( wp_doing_ajax() && ! is_customize_preview() ) {
 			'et_builder_library_remove_temp_layout',
 			'et_builder_library_clear_temp_presets',
 			'et_builder_library_update_item',
-			'et_builder_library_convert_item',
 			'et_theme_builder_library_update_item',
 			'et_theme_builder_library_save_temp_layout',
 			'et_theme_builder_library_remove_temp_layout',

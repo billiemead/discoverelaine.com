@@ -253,9 +253,6 @@ class ET_Builder_Module_Shortcode_Manager {
 			'et_pb_icon'                        => [
 				'classname' => 'ET_Builder_Module_Icon',
 			],
-			'et_pb_heading'                     => [
-				'classname' => 'ET_Builder_Module_Heading',
-			],
 		];
 
 		/**
@@ -518,7 +515,6 @@ class ET_Builder_Module_Shortcode_Manager {
 			if ( 'CTA.php' === basename( $module_file ) ) {
 				continue;
 			}
-
 			require_once $module_file;
 		}
 

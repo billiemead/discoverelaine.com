@@ -1,19 +1,5 @@
 <?php
 
-add_filter( 'wpcf7_mail_html_body', 'wpcf7_mail_html_body_autop', 10, 1 );
-
-/**
- * Filter callback that applies auto-p to HTML email message body.
- */
-function wpcf7_mail_html_body_autop( $body ) {
-	if ( wpcf7_autop_or_not() ) {
-		$body = wpcf7_autop( $body );
-	}
-
-	return $body;
-}
-
-
 /**
  * Class that represents an attempt to compose and send email.
  */
@@ -156,19 +142,14 @@ class WPCF7_Mail {
 <title>' . esc_html( $this->get( 'subject', true ) ) . '</title>
 </head>
 <body>
-',
-			$this
-		);
-
-		$body = apply_filters( 'wpcf7_mail_html_body', $body, $this );
+', $this );
 
 		$footer = apply_filters( 'wpcf7_mail_html_footer',
 			'</body>
-</html>',
-			$this
-		);
+</html>', $this );
 
-		return $header . $body . $footer;
+		$html = $header . wpcf7_autop( $body ) . $footer;
+		return $html;
 	}
 
 

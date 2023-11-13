@@ -344,8 +344,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _constants_selectors__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../constants/selectors */ "./scripts/constants/selectors.ts");
 /* harmony import */ var _IframeErrorPage__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./IframeErrorPage */ "./scripts/iframe/IframeErrorPage.tsx");
 /* harmony import */ var _utils_useAppEmbedder__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../utils/useAppEmbedder */ "./scripts/utils/useAppEmbedder.ts");
-/* harmony import */ var _constants__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./constants */ "./scripts/iframe/constants.ts");
-
 
 
 
@@ -354,7 +352,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var IframePortal = function IframePortal(props) {
   var container = document.getElementById(_constants_selectors__WEBPACK_IMPORTED_MODULE_3__.domElements.leadinIframeContainer);
-  var iframeNotRendered = (0,_utils_useAppEmbedder__WEBPACK_IMPORTED_MODULE_5__["default"])(_constants__WEBPACK_IMPORTED_MODULE_6__.Apps.Forms, container);
+  var iframeNotRendered = (0,_utils_useAppEmbedder__WEBPACK_IMPORTED_MODULE_5__["default"])('integrated-form-app', container);
 
   if (container && !iframeNotRendered) {
     return /*#__PURE__*/react_dom__WEBPACK_IMPORTED_MODULE_2___default().createPortal(props.children, container);
@@ -416,24 +414,6 @@ var IframeErrorPage = function IframeErrorPage() {
 };
 
 __webpack_require__(/*! ./IframeErrorPage.linaria.css!=!../../node_modules/@linaria/webpack5-loader/lib/outputCssLoader.js?cacheProvider=!./IframeErrorPage.tsx */ "./scripts/iframe/IframeErrorPage.linaria.css!=!./node_modules/@linaria/webpack5-loader/lib/outputCssLoader.js?cacheProvider=!./scripts/iframe/IframeErrorPage.tsx");
-
-/***/ }),
-
-/***/ "./scripts/iframe/constants.ts":
-/*!*************************************!*\
-  !*** ./scripts/iframe/constants.ts ***!
-  \*************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "Apps": () => (/* binding */ Apps)
-/* harmony export */ });
-var Apps = {
-  Forms: 'integrated-form-app',
-  LiveChat: 'integrated-livechat-app'
-};
 
 /***/ }),
 
@@ -608,7 +588,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _constants_leadinConfig__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../constants/leadinConfig */ "./scripts/constants/leadinConfig.ts");
 /* harmony import */ var _api_wordpressApiClient__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../api/wordpressApiClient */ "./scripts/api/wordpressApiClient.ts");
 /* harmony import */ var _lib_Raven__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../lib/Raven */ "./scripts/lib/Raven.ts");
-/* harmony import */ var _iframe_constants__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../iframe/constants */ "./scripts/iframe/constants.ts");
 function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
 
 function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
@@ -625,48 +604,7 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 
 
-
 var IFRAME_DISPLAY_TIMEOUT = 5000;
-
-var getAppOptions = function getAppOptions(app, refreshToken) {
-  var _window = window,
-      IntegratedAppOptions = _window.IntegratedAppOptions,
-      FormsAppOptions = _window.FormsAppOptions,
-      LiveChatAppOptions = _window.LiveChatAppOptions;
-  var options;
-
-  switch (app) {
-    case _iframe_constants__WEBPACK_IMPORTED_MODULE_4__.Apps.Forms:
-      options = new FormsAppOptions();
-      break;
-
-    case _iframe_constants__WEBPACK_IMPORTED_MODULE_4__.Apps.LiveChat:
-      options = new LiveChatAppOptions();
-      break;
-
-    default:
-      options = new IntegratedAppOptions();
-  }
-
-  options = options.setRefreshToken(refreshToken).setLocale(_constants_leadinConfig__WEBPACK_IMPORTED_MODULE_1__.locale).setDeviceId(_constants_leadinConfig__WEBPACK_IMPORTED_MODULE_1__.deviceId);
-  var queryParams = new URLSearchParams(location.search);
-  var route = queryParams.get('leadin_route[0]');
-
-  if (route && route === 'create') {
-    switch (app) {
-      case _iframe_constants__WEBPACK_IMPORTED_MODULE_4__.Apps.Forms:
-        options = options.setCreateFormAppInit();
-        break;
-
-      case _iframe_constants__WEBPACK_IMPORTED_MODULE_4__.Apps.LiveChat:
-        options = options.setCreateLiveChatAppInit();
-        break;
-    }
-  }
-
-  return options;
-};
-
 function useAppEmbedder(app, container) {
   var _useState = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(false),
       _useState2 = _slicedToArray(_useState, 2),
@@ -693,11 +631,19 @@ function useAppEmbedder(app, container) {
   (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
     (0,_api_wordpressApiClient__WEBPACK_IMPORTED_MODULE_2__.fetchRefreshToken)().then(function (_ref) {
       var refreshToken = _ref.refreshToken;
-      var _window2 = window,
-          IntegratedAppEmbedder = _window2.IntegratedAppEmbedder;
+      var _window = window,
+          IntegratedAppEmbedder = _window.IntegratedAppEmbedder,
+          FormsAppOptions = _window.FormsAppOptions;
 
       if (IntegratedAppEmbedder) {
-        var options = getAppOptions(app, refreshToken);
+        var options = new FormsAppOptions().setRefreshToken(refreshToken).setLocale(_constants_leadinConfig__WEBPACK_IMPORTED_MODULE_1__.locale);
+        var queryParams = new URLSearchParams(location.search);
+        var route = queryParams.get('leadin_route[0]');
+
+        if (route && route === 'create') {
+          options = options.setCreateFormAppInit();
+        }
+
         var embedder = new IntegratedAppEmbedder(app, _constants_leadinConfig__WEBPACK_IMPORTED_MODULE_1__.portalId, _constants_leadinConfig__WEBPACK_IMPORTED_MODULE_1__.hubspotBaseUrl, function () {
           var adminMenuWrap = document.getElementById('adminmenuwrap');
           var sideMenuHeight = adminMenuWrap ? adminMenuWrap.offsetHeight : 0;

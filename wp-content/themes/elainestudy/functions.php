@@ -1,65 +1,32 @@
 <?php
 
-// WordPress Admin CSS
-function admin_style()
-{
-    wp_enqueue_style('admin-styles', get_stylesheet_directory_uri() . '/adminstyles.css');
+add_action( 'wp_enqueue_scripts', 'Divi_child_style' );
+function Divi_child_style() {
+	wp_enqueue_style( 'parent-style', get_template_directory_uri() . '/style.css' );
+	wp_enqueue_style( 'child-style', get_stylesheet_directory_uri() . '/style.css',array('parent-style'));
 }
-add_action('admin_enqueue_scripts', 'admin_style');
 
-add_action('wp_enqueue_scripts', 'Divi_child_style');
-function Divi_child_style()
-{
-    wp_enqueue_style('parent-style', get_template_directory_uri() . '/style.css');
-    wp_enqueue_style('child-style', get_stylesheet_directory_uri() . '/style.css', array('parent-style'));
+/*function dl_custom_footer() {
+	echo do_shortcode('[et_pb_section global_module="1614"][/et_pb_section]');
 }
+add_action('et_after_main_content', 'dl_custom_footer');*/
+
+/*function load_css() {
+	wp_register_style('wpwp', get_theme_file_uri() . '/css/wpwp_custom.css', array(), false, 'all' );
+	wp_enqueue_style('wpwp');
+}
+add_action('wp_enqueue_scripts', 'load_css');*/
+
+/*function load_js() {
+	wp_register_script('wpwp_js', get_theme_file_uri() . '/js/wpwp_custom.js', 'jquery', false, true );
+	wp_enqueue_script('wpwp_js');
+}
+add_action('wp_enqueue_scripts', 'load_js');*/
 
 // smacss
-function es_assets()
-{
-    wp_register_style('es-stylesheet', get_theme_file_uri() . '/dist/css/bundle.css', array(), '1.0.0', 'all');
-    wp_enqueue_style('es-stylesheet');
-    wp_enqueue_script('es_js', get_theme_file_uri() . '/dist/js/bundle.js', array('jquery'), '1.0.0', true);
-    wp_enqueue_script('custom_js', get_stylesheet_directory_uri() . '/elaine-scripts.js', array(), '1.0.0', true);
+function es_assets() {
+	wp_register_style( 'es-stylesheet', get_theme_file_uri() . '/dist/css/bundle.css', array(), '1.0.0', 'all' );
+	wp_enqueue_style('es-stylesheet');
+	wp_enqueue_script('es_js', get_theme_file_uri() . '/dist/js/bundle.js', array('jquery'), '1.0.0', true);
 }
 add_action('wp_enqueue_scripts', 'es_assets');
-
-function marker_io()
-{
-    $current_url = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ?
-        "https" : "http") . "://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
-
-    if ($current_url == 'https://dev-elaine-study.pantheonsite.io' || 'https://elaine-study.localdev/') {
-    ?>
-            <!-- Start of Marker.io Code -->
-            <script>
-                window.markerConfig = {
-                    project: '6551aa81975028154f26042d',
-                    source: 'snippet'
-                };
-
-                ! function(e, r, a) {
-                    if (!e.__Marker) {
-                        e.__Marker = {};
-                        var t = [],
-                            n = {
-                                __cs: t
-                            };
-                        ["show", "hide", "isVisible", "capture", "cancelCapture", "unload", "reload", "isExtensionInstalled", "setReporter", "setCustomData", "on", "off"].forEach(function(e) {
-                            n[e] = function() {
-                                var r = Array.prototype.slice.call(arguments);
-                                r.unshift(e), t.push(r)
-                            }
-                        }), e.Marker = n;
-                        var s = r.createElement("script");
-                        s.async = 1, s.src = "https://edge.marker.io/latest/shim.js";
-                        var i = r.getElementsByTagName("script")[0];
-                        i.parentNode.insertBefore(s, i)
-                    }
-                }(window, document);
-            </script>
-            <!-- End of Marker.io Code -->
-    <?php
-    }
-}
-add_action('wp_head', 'marker_io');

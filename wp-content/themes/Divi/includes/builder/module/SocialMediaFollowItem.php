@@ -221,6 +221,12 @@ class ET_Builder_Module_Social_Media_Follow_Item extends ET_Builder_Module {
 							'color' => '#4285f4',
 						),
 					),
+					'google-plus'   => array(
+						'value' => esc_html__( 'Google+', 'et_builder' ),
+						'data'  => array(
+							'color' => '#dd4b39',
+						),
+					),
 					'houzz'         => array(
 						'value' => esc_html__( 'Houzz', 'et_builder' ),
 						'data'  => array(
@@ -384,9 +390,9 @@ class ET_Builder_Module_Social_Media_Follow_Item extends ET_Builder_Module {
 						),
 					),
 					'twitter'       => array(
-						'value' => esc_html__( 'X', 'et_builder' ),
+						'value' => esc_html__( 'Twitter', 'et_builder' ),
 						'data'  => array(
-							'color' => '#000000',
+							'color' => '#00aced',
 						),
 					),
 					'vimeo'         => array(
