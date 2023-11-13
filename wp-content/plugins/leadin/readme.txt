@@ -2,36 +2,34 @@
 Contributors: HubSpotDev, leadin
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl.html
-Tags: CRM, Email Marketing, Live Chat, Marketing, Analytics, form, popups, newsletter, contact management, chat, contact form, marketing automation
+Tags: CRM, Marketing, Live Chat, Forms, Analytics, popups, newsletter, contact management, chat, contact form, marketing automation
 Requires at least: 5.4
-Tested up to: 6.2
+Tested up to: 6.4.1
 Requires PHP: 7.2
-Stable tag: 10.1.30
+Stable tag: 10.2.13
 
 The CRM, Sales, and Marketing WordPress plugin to grow your business better.
 
-Capture, organize and engage web visitors with free live chat, forms, CRM (contact management), email marketing, and analytics. Easy to use, no coding.
+Capture, organize, and engage web visitors with free live chat, forms, CRM (contact management), email marketing, and analytics. Easy to use, no coding.
 
 == Description ==
 
-*HubSpot is a platform with all the tools and integrations you need for marketing, sales, and customer service. Each product in the platform is powerful alone, but the real magic happens when you use them together. See the magic for yourself in the free HubSpot WordPress plugin.*
+*HubSpot is a CRM platform with all the tools and integrations you need for marketing, sales, and customer service. Each product in the platform is powerful alone, but the real magic happens when you use them together. See for yourself in the free HubSpot WordPress plugin.*
 
-Build a relationship with your audience and grow your business with <a href="https://www.hubspot.com/products/wordpress?utm_source=wordpress-plugin-listing&utm_campaign=wordpress&utm_medium=marketplaces">HubSpot</a>. HubSpot's all-in-one WordPress plugin allows you to manage contacts (CRM), engage visitors with live chat and chatbots, add beautiful forms to pages, create engaging email marketing campaigns, and more.
+Build a relationship with your audience and grow your business with <a href="https://www.hubspot.com/products/wordpress?utm_source=wordpress-plugin-listing&utm_campaign=wordpress&utm_medium=marketplaces">HubSpot</a>. HubSpot's all-in-one WordPress plugin allows you to manage contacts (CRM), create the best email marketing campaigns, engage visitors with live chat and chatbots, add beautiful forms to pages, and more.
 
 Use HubSpot to:
 
-- 💬 Connect 1:1 with visitors on your site in real-time using live chat and chatbots.
+- 💬 Connect with visitors on your site in real-time using live chat and chatbots.
 - 📋 Capture leads with ease — build custom forms or link existing forms from your website in minutes.
 - 📧 Nurture your leads by sending newsletters & automating email marketing campaigns.
 - 📈 Track the health of your business with easy-to-understand analytics dashboards.
-- 🚀 See a unified timeline of a contact’s page views, past conversations, and more in the smart WordPress CRM plugin.
+- 🚀 See a unified timeline of a contact’s page views, past conversations, and more in the smart  WordPress CRM plugin.
 
 Ready to get started? Click download in the top right corner of the page.
 
 ### CRM & Contact Management Platform
-Your CRM in the HubSpot WordPress plugin is your company's command center. It's the place where you can track every single customer interaction and get a 360-degree view of your customers. You can even use it to manage or automate marketing, sales, and service processes.
-
-[youtube https://www.youtube.com/watch?v=GjZ97U4O9nM]
+Your CRM in the HubSpot WordPress plugin is your company's command center. It's the place where you can track every single customer interaction and get a 360-degree view of your customers. You can even use it to manage or automate marketing, sales, and service processes.]
 
 With HubSpot CRM, you don't need to jump from tool to tool to keep track of everything. Instead, you can store all of your data in one place.
 
@@ -43,40 +41,48 @@ Features of our top WordPress CRM that you'll love, suited specifically for your
 
 ✅ Lead generation & lead management on your WordPress website
 ✅ Pipeline management
-✅ Email marketing
-✅ Reporting dashboard on WordPress
+✅ WordPress email marketing
+✅ WordPress reporting dashboard
 ✅ Contact management
 ✅ Prospect tracking
 
 Streamline your entire business with the free CRM solution that has something for everyone. Try the HubSpot CRM plugin today.
 
 ### [Email Newsletter & Marketing Automation Software](https://www.hubspot.com/products/wordpress/email-marketing)
-Would you like to enhance your email marketing campaigns? 🤔
+Would you like to enhance your WordPress email marketing campaigns or build the best email newsletter templates? 🤔
 
 Maybe you'd like to explore different automation features, build professional emails in minutes, and send them to your entire contact database with ease.
 
-Customers love our email marketing software tool for features like:
+Try the HubSpot WordPress email marketing plugin today. Customers love our free email marketing software for features like:
 
-🤩 **20+ pre-designed email templates to match your campaign goals. (Choose from templates such as newsletters, eBooks, welcome emails, and more!)**
+🤩 **20+ pre-designed free email templates to match your campaign goals. (Choose from free newsletter templates, eBooks, welcome emails, and more!)**
 
 > All you have to do is add your content and press send!
 
-⚒️ **Drag and drop email builder.**
+⚒️ **Drag and drop WordPress newsletter builder.**
 
-> If you want more options to choose from, HubSpot makes it easy for you. Adjust typography, designs, colors, and more to create campaigns your subscribers will love!
+> Build beautiful newsletter templates with the HubSpot WordPress plugin. Create custom newsletter templates effortlessly with a drag-and-drop builder.
 
-🤖 **Email automation, tracking, and A/B testing.**
+> Test out newsletters before you send them, schedule publications for the best time to convert, optimize for mobile devices, and save your own email designs to use again later.
 
-> Send emails anytime someone fills out a form or engages with your live chat & chatbots. You can send messages immediately or use email scheduling to send messages later.
+> Send newsletters to targeted contact lists all within the free WordPress newsletter plugin tool..
 
-Email is one of the most effective ways to stay connected to your audience. With email tracking, all of your emails are logged in your database. You can measure each email’s engagement with reports for open rate and click rate — and use that information to improve campaigns.
+> Adjust typography, designs, colors, and more to create email campaigns your subscribers will love!
+
+🤖 **Email automation software, email tracking, and A/B testing tools.**
+
+> Send automated emails anytime someone fills out a form or engages with your live chat & chatbots. You can send messages immediately or use email scheduling to send messages later.
+
+> Setup an A/B test of your newsletter while designing it. Test out different email calls to action and optimize your newsletters with the best performing versions.
+
+Email is one of the most effective ways to stay connected to your audience. With email tracking, all of your emails are logged in your database. You can measure email engagement with reports for delivery rates, open rates, and click-through rates — and use that information to improve campaigns.
 
 ### [Live Chat & Chatbots](https://www.hubspot.com/products/wordpress/live-chat)
 Make your website a 24-hour marketing machine on autopilot with the HubSpot WordPress live chat plugin.
 
-Live website chat inside the HubSpot WordPress plugin streamlines the customer experience, making it easier than ever for you to engage with website visitors, convert them into customers, and provide them with the support they need.
+Live website chat inside the HubSpot WordPress plugin streamlines the customer experience, making it easier than ever for you to engage with website visitors leads, convert them into customers, and provide them with the support they need.
 
-HubSpot’s free WordPress live chat solution offers:
+HubSpot’s free WordPress live chat solution software offers:
 
 😀 Custom styling to match your website
 🤖 A variety of chatbot options including:
@@ -92,7 +98,7 @@ HubSpot’s free WordPress live chat solution offers:
 👨‍💻 A Slack integration to receive and respond to live chat notifications
 🕐 24/7 live chat support on autopilot
 
-Our free live chat plugin helps you turn website visitors into customers by providing insightful, real-time support.
+Our free live chat plugin feature helps you turn website visitors into customers by providing insightful, real-time support.
 
 ### [Forms & Popups](https://www.hubspot.com/products/wordpress/forms)
 Want to know the easiest way to learn more about your visitors?
@@ -124,13 +130,36 @@ Choose from a variety of settings, color schemes, and fonts — or start from sc
 
 Rather stick with your existing forms and popup plugin? That’s fine too! HubSpot integrates with most WordPress form builders, form creators, and popup builders out-of-the-box so you don’t have to worry about a thing.
 
+### [Live Chat & Chatbots](https://www.hubspot.com/products/wordpress/live-chat)
+Make your website a 24-hour marketing machine on autopilot.
+
+Live web chat inside the HubSpot WordPress plugin streamlines the customer experience, making it easier than ever for you to engage with leads, convert them into customers, and provide them with the support they need.
+
+HubSpot’s WordPress live chat software offers:
+
+😀 Custom styling to match your website
+🤖 A variety of bot options including:
+
+- ✅ Concierge bot
+- ✅ Qualify leads bot
+- ✅ Meetings bot
+- ✅ Tickets bot
+- ✅ Knowledge base & support bot
+- ✅ Offline bot
+
+📲 Real-time messaging on the go via HubSpot’s mobile app
+👨‍💻 A Slack integration to receive and respond to chat notifications
+🕐 24/7 live support on autopilot
+
+Our free live chat feature helps you turn website visitors into customers by providing insightful, real-time support.
+
 ### [Analytics](https://www.hubspot.com/products/wordpress/analytics)
 
 Customers are browsing your website, but what are they actually looking at?
 
 The HubSpot WordPress plugin gives you a straightforward, visual answer.
 
-With built-in marketing analytics (email analytics, traffic analytics, WordPress analytics), it's easy to understand which marketing actions are driving the most results… and which ones you need to fix. Quickly see how your forms, popup forms, live chat & chatbots, email marketing, and sales follow-ups are helping grow your business.
+With built-in marketing analytics (email analytics, web traffic analytics, WordPress analytics), it's easy to understand which marketing actions are driving the most results… and which ones you need to fix. Quickly see how your forms, popup forms, live chat & chatbots, email marketing, and sales follow-ups are helping grow your business.
 
 👩‍💻 **Get a complete picture of who's on your site.**
 
@@ -179,6 +208,8 @@ Ready to get started? Now you can easily integrate HubSpot with over <a href="ht
 ✅ Sendinblue
 ✅ WP Fusion
 ✅ Zoho
+✅ Neverbounce
+✅ Email Delivery Optimization by Seventh Sense
 
 💵 **E-commerce (Online Store), Recurring Payment, & Payment Processing Integrations**
 
@@ -220,6 +251,8 @@ Ready to get started? Now you can easily integrate HubSpot with over <a href="ht
 ✅ LiveChat
 ✅ Pure Chat
 ✅ Zendesk
+✅ Sakari SMS
+✅ Treble.ai
 
 🔋 **Productivity & Project Management Software Integrations**
 
@@ -286,7 +319,7 @@ Not at all! HubSpot’s WordPress plugin is easy to download and starts working 
 
 = What is available for free with HubSpot? =
 
-With HubSpot's WordPress plugin, you can use the free CRM software for email marketing, contact management, live chat, customer service, content creation, content management, and more. HubSpot's full suite of free tools is perfect for small businesses looking to grow and streamline their tech stack.
+With HubSpot’s WordPress plugin, you can use the free CRM software for email marketing, contact management, live chat, customer service, content creation, content management, and more. HubSpot’s full suite of free tools is perfect for small businesses looking to grow and streamline their tech stack.  is free to use with forms, contact management, email marketing, and more.
 
 HubSpot also has paid tiers available for those who want more advanced functionality like blogging, landing pages, search engine optimization (SEO), team email, retargeting, lead scoring, bots, email scheduling, NPS surveys, calls-to-action (CTAs), knowledge base, and more. If you'd like a complete view of the features offered in HubSpot's free and paid tiers, view our <a href="https://hubspot.com/pricing?utm_source=wordpress-plugin-listing&utm_campaign=wordpress&utm_medium=marketplaces" target="_blank">pricing page</a>.
 
@@ -385,12 +418,12 @@ Please visit the <a href="https://community.hubspot.com/?utm_source=wordpress-pl
 == Changelog ==
 
 <a href="http://plugins.svn.wordpress.org/leadin/trunk/changelog.txt" target="_blank">Full changelog here</a>
-- Current version: 10.1.30
-- Version release date: 2023-07-24
+- Current version: 10.2.13
+- Version release date: 2023-11-13
 
-= 10.1.30 (2023-07-24) =
-* Updated readme
+= 10.2.13 (2023-11-13) =
+* Bump WP tested version and fix feedback banner show up condition
 
-= 10.1.28 (2023-07-11) =
-* Removes unused jQuery dependency
+= 10.2.3 (2023-08-23) =
+* Sets device id in embedder options
 

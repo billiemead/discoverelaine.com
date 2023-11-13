@@ -200,7 +200,7 @@ class LeadinAdmin {
 				add_submenu_page( MenuConstants::ROOT, __( 'Contacts', 'leadin' ), __( 'Contacts', 'leadin' ), Filters::apply_view_plugin_menu_capability_filters(), MenuConstants::CONTACTS, array( $this, 'build_app' ) );
 
 				add_submenu_page( MenuConstants::ROOT, __( 'Forms', 'leadin' ), __( 'Forms', 'leadin' ), Filters::apply_view_plugin_menu_capability_filters(), MenuConstants::FORMS, array( $this, 'build_form_app' ) );
-				add_submenu_page( MenuConstants::ROOT, __( 'Live Chat', 'leadin' ), __( 'Live Chat', 'leadin' ), Filters::apply_view_plugin_menu_capability_filters(), MenuConstants::CHATFLOWS, array( $this, 'build_app' ) );
+				add_submenu_page( MenuConstants::ROOT, __( 'Live Chat', 'leadin' ), __( 'Live Chat', 'leadin' ), Filters::apply_view_plugin_menu_capability_filters(), MenuConstants::CHATFLOWS, array( $this, 'build_livechat_app' ) );
 				add_submenu_page( MenuConstants::ROOT, __( 'Email', 'leadin' ), __( 'Email', 'leadin' ), Filters::apply_view_plugin_menu_capability_filters(), MenuConstants::EMAIL, array( $this, 'build_app' ) );
 				add_submenu_page( MenuConstants::ROOT, __( 'Settings', 'leadin' ), __( 'Settings', 'leadin' ), Filters::apply_view_plugin_menu_capability_filters(), MenuConstants::SETTINGS, array( $this, 'build_app' ) );
 				add_submenu_page( MenuConstants::ROOT, __( 'Lists', 'leadin' ), self::make_external_link( Links::get_iframe_src( MenuConstants::LISTS ), __( 'Lists', 'leadin' ), 'leadin_lists_link' ), Filters::apply_view_plugin_menu_capability_filters(), MenuConstants::LISTS, array( $this, 'build_app' ) );
@@ -234,10 +234,18 @@ class LeadinAdmin {
 	}
 
 	/**
-	 * Renders the leadin admin page.
+	 * Renders the integrated forms app.
 	 */
 	public function build_form_app() {
 		AssetsManager::enqueue_form_app_assets();
+		self::render_app();
+	}
+
+	/**
+	 * Renders the integrated live chat app.
+	 */
+	public function build_livechat_app() {
+		AssetsManager::enqueue_livechat_app_assets();
 		self::render_app();
 	}
 

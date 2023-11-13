@@ -463,24 +463,29 @@ abstract class SGPopup
 	{
 		$popupData = array();
 		$data = apply_filters('sgpbFilterOptionsBeforeSaving', $data);
-
 		foreach ($data as $key => $value) {
-			if (strpos($key, 'sgpb') === 0) {
+			if ( !is_array( $value ) ) {
+				//Sanitize URL to avoid 404 error
+				if ( strpos( $key, '-url' ) === false )				
+					$value = sanitize_text_field( $value );
+				else
+					$value = wp_sanitize_redirect( $value );	
+			}
+			if (strpos($key, 'sgpb') === 0) {				
 				$popupData[$key] = $value;
 			}
 			if (is_array($value) && isset($value['name']) && strpos($value['name'], 'sgpb') === 0) {
-				$popupData[$value['name']] = $value['value'];
+				$popupData[$value['name']] = sanitize_text_field( $value['value'] );
 			}
 			else if (is_array($value) && isset($value['name']) && strpos($value['name'], 'post_ID') === 0) {
-				$popupData['sgpb-post-id'] = $value['value'];
+				$popupData['sgpb-post-id'] = (int) sanitize_text_field( $value['value'] );
 			}
 		}
-
 		return $popupData;
 	}
 
 	public static function create($data = array(), $saveMode = '', $firstTime = 0)
-	{
+	{		
 		$obj = new static();
 		$obj->setSaveMode($saveMode);
 		$additionalData = $obj->addAdditionalSettings($data, $obj);

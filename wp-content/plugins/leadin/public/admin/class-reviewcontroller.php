@@ -59,11 +59,11 @@ class ReviewController {
 	 */
 	public static function should_fetch_contacts() {
 		$last_call_ts = User_Metadata::get_review_banner_last_call();
-		if ( ! empty( $last_call_ts ) ) {
+		if ( empty( $last_call_ts ) ) {
 			return true;
 		}
 		$last_call_date = new \DateTime();
-		$last_call_date->setTimestamp( strtotime( $last_call_ts ) );
+		$last_call_date->setTimestamp( $last_call_ts );
 		$diff = $last_call_date->diff( new \DateTime() );
 		return $diff->days >= self::DAYS_SINCE_LAST_FETCH;
 	}

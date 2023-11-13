@@ -1,12 +1,57 @@
 import { useEffect, useState } from 'react';
-import { hubspotBaseUrl, portalId, locale } from '../constants/leadinConfig';
+import {
+  hubspotBaseUrl,
+  portalId,
+  locale,
+  deviceId,
+} from '../constants/leadinConfig';
 import { fetchRefreshToken } from '../api/wordpressApiClient';
 import Raven from '../lib/Raven';
+import { Apps, AppType } from '../iframe/constants';
 
 const IFRAME_DISPLAY_TIMEOUT = 5000;
 
+const getAppOptions = (app: AppType, refreshToken: string) => {
+  const {
+    IntegratedAppOptions,
+    FormsAppOptions,
+    LiveChatAppOptions,
+  }: any = window;
+  let options;
+
+  switch (app) {
+    case Apps.Forms:
+      options = new FormsAppOptions();
+      break;
+    case Apps.LiveChat:
+      options = new LiveChatAppOptions();
+      break;
+    default:
+      options = new IntegratedAppOptions();
+  }
+
+  options = options
+    .setRefreshToken(refreshToken)
+    .setLocale(locale)
+    .setDeviceId(deviceId);
+
+  const queryParams = new URLSearchParams(location.search);
+  const route = queryParams.get('leadin_route[0]');
+  if (route && route === 'create') {
+    switch (app) {
+      case Apps.Forms:
+        options = options.setCreateFormAppInit();
+        break;
+      case Apps.LiveChat:
+        options = options.setCreateLiveChatAppInit();
+        break;
+    }
+  }
+  return options;
+};
+
 export default function useAppEmbedder(
-  app: string,
+  app: AppType,
   container: HTMLElement | null
 ) {
   const [iframeNotRendered, setIframeNotRendered] = useState(false);
@@ -30,17 +75,9 @@ export default function useAppEmbedder(
 
   useEffect(() => {
     fetchRefreshToken().then(({ refreshToken }) => {
-      const { IntegratedAppEmbedder, FormsAppOptions }: any = window;
+      const { IntegratedAppEmbedder }: any = window;
       if (IntegratedAppEmbedder) {
-        let options = new FormsAppOptions()
-          .setRefreshToken(refreshToken)
-          .setLocale(locale);
-
-        const queryParams = new URLSearchParams(location.search);
-        const route = queryParams.get('leadin_route[0]');
-        if (route && route === 'create') {
-          options = options.setCreateFormAppInit();
-        }
+        const options = getAppOptions(app, refreshToken);
         const embedder = new IntegratedAppEmbedder(
           app,
           portalId,
