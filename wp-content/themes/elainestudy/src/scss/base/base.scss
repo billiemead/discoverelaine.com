@@ -1,25 +1,3 @@
-/*We want to import them in the following order to maintain good scope and avoid conflicts during compilation*/
-/*
-@import 'abstracts/variables';
-@import 'abstracts/functions';
-@import 'abstracts/mixins';
-
-@import 'base/normalize';
-
-@import 'layout/navigation';
-@import 'layout/header';
-@import 'layout/footer';
-@import 'layout/sidebar';
-@import 'layout/forms';
-
-@import 'components/buttons';
-@import 'components/hero';
-@import 'components/pull-quote';
-
-@import 'pages/home';
-@import 'pages/contact';
-*/
-
 @import 'font';
 @import "colors";
 

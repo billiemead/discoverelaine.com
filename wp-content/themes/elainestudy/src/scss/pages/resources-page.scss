@@ -1,0 +1,26 @@
+@import "../base/colors";
+@import "../base/font";
+
+/* ******* RESOURCES PAGE START ******* */
+
+.es-glossary-content-row {
+  h4 {
+    color: $es-dark-blue;
+  }
+  h5 {
+    color: $es-blue;
+    margin: 30px 0 0;
+  }
+}
+
+@media all and (max-width: 1024px) {
+}
+@media all and (max-width: 768px) {
+}
+@media all and (max-width: 576px) {
+}
+@media all and (max-width: 480px) {
+}
+@media all and (max-width: 320px) {
+}
+/* ******* RESOURCES PAGE END ******* */

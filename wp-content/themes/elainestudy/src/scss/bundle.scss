@@ -1,7 +1,15 @@
-@import url('https://fonts.googleapis.com/css2?family=Arimo:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Roboto:wght@400;500;700&display=swap');
-
 @import "base/base";
+@import "base/colors";
+@import "base/font";
+@import "base/hovers";
 @import "layout/layout";
 @import "layout/footer";
+@import "layout/header";
+@import "modules/buttons";
 @import "modules/elements";
-@import "pages/pages";
+@import "modules/forms";
+@import "pages/about-page";
+@import "pages/elaine-studies-page";
+@import "pages/equals-page";
+@import "pages/resources-page";
+@import "pages/page-common";
