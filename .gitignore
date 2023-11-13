@@ -1,32 +1,27 @@
 # WordPress #
 ############
 wp-config-local.php
-wp-config.php
 wp-cli.local.yml
 wp-content/uploads
 wp-content/blogs.dir/
 wp-content/upgrade/
 wp-content/backup-db/
 wp-content/updraft/
-wp-content/et-cache/
-wp-content/index.php
+wp-content/backupwordpress-*/
 wp-content/managewp/backups/
 wp-content/advanced-cache.php
 wp-content/wp-cache-config.php
 sitemap.xml
 sitemap.xml.gz
 .lando.yml
-.vscode
-
-# mp3, mp4, ogg files
-assets/flipbook/1/mobile/style/raw/flipsound.mp3
-assets/flipbook/1/mobile/style/raw/flipsound.ogg
-assets/*.mp4
-wp-content/themes/twentytwentytwo/assets/videos/birds.mp4
 
 # @TODO writable paths
 wp-content/cache/
 wp-content/backups/
+
+# Avoid accidental modification of pantheon.upstream.yml in sites
+# created from this upstream
+pantheon.upstream.yml
 
 # Packages #
 ############
@@ -62,9 +57,9 @@ Thumbs.db
 ##########
 .sass-cache
 
-# PhpStorm #
+# Phpstorm
 .idea
 .idea/*
 
-# node_modules #
-wp-content/themes/**/node_modules/
+# Divi theme
+et-cache/
