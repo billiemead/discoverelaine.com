@@ -4,13 +4,13 @@
 /* ******* DISCOVER-ELAINE 2023 FOOTER START ******* */
 
 footer {
-    div#es-footer {
+    div#es-footer-section {
         div.et_pb_row {
             padding: 28px 0 !important;
         }
     }
 }
-div#es-footer {
+div#es-footer-section {
   height: 172px;
 }
 div#footer-container {
@@ -46,20 +46,51 @@ div#footer-container {
   div.footer-right {
     display: flex;
     width: 15%;
+    max-width: 225px;
     justify-content: space-between;
-    align-items: center;
+    align-items: flex-end;
+    height: 40px;
     div.es-so-link {
-      width: 45px;
-      height: 32px;
+      height: 100%;
+      display: flex;
+      margin: 0;
+      padding: 0;
+      align-items: flex-end;
       a {
-        display: block;
-        width: 100%;
-        height: 100%;
-        text-align: center;
+        display: flex;
       }
     }
-    div.es-so-link:first-child {
-      margin: -15px 0 0;
+    div#social-icon-fb {
+        a.exitNotifierLink {
+            img {
+                width: 20px;
+                height: 40px;
+            }
+        }
+    }
+    div#social-icon-twitter {
+        a.exitNotifierLink {
+            img {
+                width: 40px;
+                height: 38px;
+            }
+        }
+    }
+    div#social-icon-youtube {
+        a.exitNotifierLink {
+            img {
+                width: 31px;
+                height: 31px;
+            }
+        }
+    }
+    div#social-icon-youtube {
+        a.exitNotifierLink {
+            img {
+                width: 45px;
+                height: 31px;
+            }
+        }
     }
   }
 }
@@ -69,7 +100,7 @@ div#footer-container {
 @media all and (max-width: 980px) {
 }
 @media all and (min-width: 768px) and (max-width: 980px) {
-  div#es-footer {
+  div#es-footer-section {
     height: 272px;
   }
   div#footer-container {
@@ -104,7 +135,7 @@ div#footer-container {
   }
 }
 @media all and (max-width: 767px) {
-  div#es-footer {
+  div#es-footer-section {
     height: 400px;
   }
   div#footer-container {
