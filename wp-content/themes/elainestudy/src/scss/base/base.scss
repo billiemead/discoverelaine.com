@@ -14,29 +14,33 @@ html {
 }
 
 body {
-  @include regular($arimo, 1);
+  @include regular();
+  font-size: 16px;
   color: $es-gray;
 }
-
 h1 {
-  @include demi-bold($arimo, 1.875);
+  @include demi-bold();
+  font-size: 30px;
 }
-
 h2 {
-  @include demi-bold($arimo, 1.75);
+  @include demi-bold();
+  font-size: 28px;
 }
 h3 {
-  @include demi-bold($arimo, 1.5);
+  @include demi-bold();
+  font-size: 24px;
 }
 h4 {
-  @include demi-bold($arimo, 1.3125);
+  @include demi-bold();
+  font-size: 21px;
 }
 h5 {
-  @include demi-bold($arimo, 1.125);
+  @include demi-bold();
+  font-size: 18px;
 }
-
 p {
-  @include regular($arimo, 1);
+  @include regular();
+  font-size: 16px;
 }
 
 .post-content a:link,
@@ -48,42 +52,32 @@ sup {
   font-size: 0.7rem;
 }
 
-/*Main top Menu*/
-#et-top-navigation {
-  nav {
-    a {
-      &:link {
-        @include demi-bold($arimo, 0.675);
-      }
-
-      &:visited {
-        @include demi-bold($arimo, 0.675);
-      }
-    }
-  }
-}
-/* END Main top Menu*/
-
 /*** Responsive Styles Standard Desktop Only ***/
 @media all and (min-width: 1100px) {
   h1 {
-    @include demi-bold($arimo, 3);
+    @include demi-bold();
+    font-size: 48px;
   }
   h2 {
-    @include demi-bold($arimo, 2.1);
+    @include demi-bold();
+    font-size: 33.6px;
     line-height: 2.4rem !important;
   }
   h3 {
-    @include demi-bold($arimo, 1.8);
+    @include demi-bold();
+    font-size:28.8px ;
   }
   h4 {
-    @include demi-bold($arimo, 1.75);
+    @include demi-bold();
+    font-size: 28px;
   }
   h5 {
-    @include demi-bold($arimo, 1.312);
+    @include demi-bold();
+    font-size:20.992px;
   }
   p {
-    @include regular($arimo, 1.125);
+    @include regular();
+    font-size:18px;
   }
 }
 

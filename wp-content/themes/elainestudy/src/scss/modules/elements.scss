@@ -3,6 +3,53 @@
 
 /* ******* DISCOVER-ELAINE 2023 ELEMENTS START ******* */
 
+/* * * * COOKIE BAR * * * */
+div#cookie-law-info-bar {
+    background-color: $es-light-gray !important;
+    div.cli-wrapper {
+        max-width: 1640px;
+        span#wt-cli-cookie-banner {
+            div.cli-bar-container.cli-style-v2 {
+                div.cli-bar-message {
+                    font-size: 20px;
+                    line-height: 24px;
+                    color: $es-gray;
+                    letter-spacing: -0.5px;
+                }
+                div.cli-bar-btn_container {
+                    width: 30%;
+                    display: flex;
+                    justify-content: flex-end;
+                    a#wt-cli-settings-btn {
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        font-size: 20px;
+                        line-height: 23px;
+                        width: 50%;
+                        height: 42px;
+                        text-decoration: underline;
+                    }
+                    a#wt-cli-accept-btn {
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        border-radius: 0 !important;
+                        background-color: $es-blue !important;
+                        text-align: center;
+                        padding: 0 !important;
+                        font-size: 20px;
+                        line-height: 23px;
+                        width: 50%;
+                        height: 42px;
+                    }
+                }
+
+            }
+
+        }
+    }
+}
 .supper-script-reference p {
   font-size: 0.8rem !important;
 }

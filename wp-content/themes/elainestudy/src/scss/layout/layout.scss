@@ -3,10 +3,21 @@
 
 /* ******* DISCOVER-ELAINE 2023 LAYOUT START ******* */
 
-#page-container {
-  #logo {
-    max-height: 85%;
-  }
+div#et-main-area {
+    div#main-content {
+        article.page {
+            div.entry-content {
+                div.et-l {
+                    div.et_builder_inner_content {
+                        div#ES_hero_section {
+                            max-height: 264px;
+                            padding: 62px 0 !important;
+                        }
+                    }
+                }
+            }
+        }
+    }
 }
 
 @media all and (max-width: 1024px) {
