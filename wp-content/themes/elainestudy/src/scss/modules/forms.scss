@@ -27,7 +27,26 @@ div#es-form-section {
         }
     }
 }
+.hs-form-private {
+    background-color: #000;
+    fieldset.form-columns-2 {
 
+    }
+    fieldset.form-columns-1 {
+
+    }
+    div.hs_submit.hs-submit {
+        div.hs-field-desc {
+
+        }
+        div.actions {
+            input.hs-button.primary.large {
+                width: 258px;
+                height: 60px;
+            }
+        }
+    }
+}
 @media all and (max-width: 1024px) {
 }
 @media all and (max-width: 980px) {
