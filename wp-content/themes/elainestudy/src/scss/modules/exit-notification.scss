@@ -2,17 +2,262 @@
 @import "../base/font";
 
 /* ******* DISCOVER-ELAINE 2023 EXIT NOTIFICATION START ******* */
-
-
+.jAlert {
+    border-radius: 40px;
+}
+.ja_default>div {
+    color: $es-gray !important;
+    height: 100%;
+}
+.ja_md {
+    width: 1071px;
+    height: auto;
+    min-height: 767px;
+}
+.ja_noTitle .ja_close_round {
+    right: 28px;
+    top: 28px;
+    background: #fff;
+    color: rgba(0,0,0,.3);
+    opacity: 0.5;
+}
+.ja_noTitle .ja_close_round:hover {
+    background: #fff;
+    color: rgba(0,0,0,.8);
+}
+.ja_close_round, .ja_close_round_white {
+    border-radius: 50%;
+    padding: 0;
+    border: 0;
+    line-height: 0.5em;
+    font-size: 4.5em;
+}
+.ja_noTitle .ja_body {
+    border-radius: 40px;
+    height: 100%;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding: 110px 74px 74px 74px;
+}
+.ja_default {
+    background: $es-white;
+}
+.ja_btn_wrap.optBack {
+    display: flex;
+    background: $es-white;
+    margin: 0;
+    padding: 0;
+    border-radius: 0;
+    width: 570px;
+    justify-content: space-between;
+    margin-top: 30px;
+}
+.ja_btn,
+.ja_btn:active,
+.ja_btn:link,
+.ja_btn:visited {
+    display: flex !important;
+    justify-content: center;
+    align-items: center;
+}
+.ja_btn,
+.ja_btn:active,
+.ja_btn:link,
+.ja_btn:visited {
+    margin-top: 0;
+    padding: 0;
+    display: inline-block;
+    text-decoration: none;
+    border-radius: 0;
+}
+.ja_btn_green,
+.ja_btn_green:link,
+.ja_btn_green:visited {
+    background: $es-blue;
+    color: #fff;
+    width: 269px;
+    height: 71px;
+    @include bold();
+    font-size: 28px;
+    line-height: 32px;
+}
+.ja_btn_red,
+.ja_btn_red:link,
+.ja_btn_red:visited {
+    background: $es-button-grey;
+    color: #fff;
+    width: 269px;
+    height: 71px;
+    @include bold();
+    font-size: 28px;
+    line-height: 32px;
+}
+img.es-exit-icon {
+    margin-bottom: 25px;
+}
+p.es-exit-copy {
+    max-width: 882px;
+    margin: 0 auto;
+    @include regular();
+    font-size: 36px;
+    line-height: 54px;
+    color: $es-gray;
+    padding: 0;
+    a.es-exit-copy-link {
+        @include bold();
+        color: $es-purple;
+        font-size: 36px;
+        line-height: 54px;
+    }
+}
 @media all and (max-width: 1024px) {
+    .ja_md {
+    width: auto;
+    margin: 10%;
+    }
+    img.es-exit-icon {
+        margin-bottom: 35px;
+        width: 110px;
+        height: 110px;
+    }
+    .ja_noTitle .ja_body {
+    padding: 80px 50px 55px 50px;
+    }
+    .ja_btn_green, .ja_btn_green:link, .ja_btn_green:visited {
+        margin-right: 20px;
+    }
+    .ja_btn_green, .ja_btn_green:link, .ja_btn_green:visited,
+    .ja_btn_red, .ja_btn_red:link, .ja_btn_red:visited {
+        width: 100%;
+        height: 70px;
+        font-size: 25px;
+        line-height: 25px;
+    }
+    p.es-exit-copy {
+        max-width: 800px;
+        font-size: 30px;
+        line-height: 40px;
+        a.es-exit-copy-link {
+            font-size: 30px;
+            line-height: 40px;
+        }
+    }
+    p.es-exit-copy:last-of-type {
+        br.line-break {
+            display: none;
+        }
+    }
 }
 @media all and (max-width: 980px) {
 }
 @media all and (max-width: 767px) {
+    .ja_md {
+        min-height: 767px;
+    }
+    .ja_btn_wrap.optBack {
+    width: 100%;
+    }
+    img.es-exit-icon {
+        margin-bottom: 35px;
+        width: 90px;
+        height: 90px;
+    }
 }
 @media all and (max-width: 576px) {
+    .ja_md {
+        min-height: 700px;
+    }
+    .ja_md {
+    width: auto;
+    margin: 10%;
+    }
+    img.es-exit-icon {
+        margin-bottom: 25px;
+        width: 75px;
+        height: 75px;
+    }
+    .ja_noTitle .ja_body {
+    padding: 55px 50px 55px 50px;
+    }
+    .ja_btn_wrap.optBack {
+        width: 100%;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    .ja_btn_green, .ja_btn_green:link, .ja_btn_green:visited {
+        margin-bottom: 18px;
+        margin-right: 0;
+    }
+    .ja_btn_green, .ja_btn_green:link, .ja_btn_green:visited,
+    .ja_btn_red, .ja_btn_red:link, .ja_btn_red:visited {
+        width: 100%;
+        height: 50px;
+        font-size: 23px;
+        line-height: 23px;
+    }
+    p.es-exit-copy {
+        max-width: 400px;
+        font-size: 25px;
+        line-height: 37px;
+        a.es-exit-copy-link {
+            font-size: 25px;
+            line-height: 37px;
+        }
+    }
+    .ja_close_round, .ja_close_round_white {
+        font-size: 4em;
+    }
 }
 @media all and (max-width: 480px) {
+    .ja_md {
+        min-height: 600px;
+    }
+    .ja_md {
+        width: auto;
+        margin: 10%;
+    }
+    .ja_close_round, .ja_close_round_white {
+        font-size: 3.5em;
+    }
+    .ja_noTitle .ja_body {
+    border-radius: 40px;
+    height: 100%;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding: 35px 30px 35px 30px;
+    }
+    .ja_btn_wrap.optBack {
+        width: 100%;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    .ja_btn_green, .ja_btn_green:link, .ja_btn_green:visited {
+        margin-bottom: 18px;
+    }
+    .ja_btn_green, .ja_btn_green:link, .ja_btn_green:visited,
+    .ja_btn_red, .ja_btn_red:link, .ja_btn_red:visited {
+        width: 100%;
+        height: 50px;
+        font-size: 19px;
+        line-height: 22px;
+    }
+    p.es-exit-copy {
+        max-width: 400px;
+        font-size: 20px;
+        line-height: 32px;
+        a.es-exit-copy-link {
+            font-size: 20px;
+            line-height: 32px;
+        }
+    }
 }
 @media all and (max-width: 320px) {
 }
