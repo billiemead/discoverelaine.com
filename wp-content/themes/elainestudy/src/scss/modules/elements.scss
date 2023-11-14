@@ -50,6 +50,18 @@ div#cookie-law-info-bar {
         }
     }
 }
+/* * * * MANAGE CONSENT * * * */
+#cookie-law-info-again {
+    background-color: rgb(77, 89, 106) !important;
+    color: rgb(255, 255, 255) !important;
+    position: fixed;
+    box-shadow: none  !important;
+    font-family: Arimo, sans-serif  !important;
+    padding: 5px 55px 4px  !important;
+    font-size: 14px  !important;
+    text-transform: lowercase  !important;
+}
+
 .supper-script-reference p {
   font-size: 0.8rem !important;
 }
