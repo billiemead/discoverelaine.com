@@ -77,7 +77,8 @@ sup {
   }
   p {
     @include regular();
-    font-size:18px;
+    font-size:24px;
+    line-height: 40px;
   }
 }
 

@@ -3,8 +3,75 @@
 
 /* ******* DISCOVER-ELAINE 2023 LAYOUT START ******* */
 
+/* * * HEROS * * */
+div.hero-section {
+    padding-top: 0px;
+    padding-bottom: 0px;
+    background-color: #6b297d!important;
+    div.es-row {
+        div.es-col.double {
+            h1.hero-h1 {
+
+            }
+            p.hero-copy {
+
+            }
+        }
+        div.es-col.double {
+
+        }
+    }
+}
+a.es-btn {
+    @include regular();
+    font-size: 24px;
+    line-height: 40px;
+    height: 60px;
+    color: $es-white !important;
+    border-color: $es-blue;
+    background-color: $es-blue;
+}
+div.es-row.about {
+    max-width: 1220px;
+}
+div.es-section {
+
+}
+div#section-blue-wave {
+    div#blue-wave-image {
+        img {
+
+        }
+    }
+}
+h1.h1-heading {
+
+}
+h2.h2-heading {
+
+}
+h3.h3-heading {
+
+}
+h4.h4-heading {
+
+}
+h5.h5-heading {
+
+}
+h6.h6-heading {
+
+}
+p.es-p {
+    @include regular();
+    font-size: 24px;
+    line-height: 40px;
+}
+p.es-p.center {
+    text-align: center;
+}
 br.line-break {
-    
+
 }
 div#et-main-area {
     div#main-content {
