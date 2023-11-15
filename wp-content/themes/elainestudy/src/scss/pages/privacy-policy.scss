@@ -1,7 +1,7 @@
 @import "../base/colors";
 @import "../base/font";
 
-/* ******* DISCOVER-ELAINE 2023 RESOURCES PAGE START ******* */
+/* ******* DISCOVER-ELAINE 2023 NOW PRIVACY POLICY PAGE START ******* */
 
 div#et-main-area {
     div#main-content {
@@ -9,7 +9,7 @@ div#et-main-area {
             div.entry-content {
                 div.et-l {
                     div.et_builder_inner_content {
-                        div#resources-hero-section {
+                        div#privacy-hero-section {
                             height: 264px;
                             display: flex;
                             justify-content: flex-start;
@@ -27,31 +27,11 @@ div#et-main-area {
                                 }
                             }
                         }
-                        div#glossary-section {
+                        div#privacy-section {
                             padding: 0;
-                            div.es-glossary-title-row {
-                                div.es-col.one {
-                                    div#glossary-title-icon {
-                                        img {
-
-                                        }
-                                    }
-
-                                }
-                                div.es-col.two {
-                                    div#glossary-title {
-                                        h2.h2-heading {
-
-                                        }
-                                    }
-                                }
-                                div.es-col.three {
-
-                                }
-                            }
                             div.es-glossary-content-row {
                                 div.es-col {
-                                    h5.glossary-h5 {
+                                    h2.h2-heading {
                                         padding-top: 60px;
                                         padding-bottom: 15px;
                                         @include bold();
@@ -64,6 +44,24 @@ div#et-main-area {
                                         font-size: 24px;
                                         line-height: 40px;
                                         color: $es-gray;
+                                        a.privacy-link {
+
+                                        }
+                                    }
+                                    ul.privacy-list {
+                                        margin-left: 1em;
+                                        padding: 0 0 1em 2em;
+                                        @include regular();
+                                        font-size: 24px;
+                                        line-height: 40px;
+                                        color: $es-gray;
+                                        li.privacy-list-item {
+                                            @include regular();
+                                            font-size: 24px;
+                                            line-height: 40px;
+                                            color: $es-gray;
+                                            padding-bottom: 1.125em;
+                                        }
                                     }
                                 }
                             }
@@ -83,7 +81,7 @@ div#et-main-area {
 }
 @media all and (max-width: 980px) {
 }
-@media all and (max-width: 768px) {
+@media all and (max-width: 767px) {
 }
 @media all and (max-width: 576px) {
 }
@@ -92,4 +90,4 @@ div#et-main-area {
 @media all and (max-width: 320px) {
 }
 
-/* ******* DISCOVER-ELAINE 2023 RESOURCES PAGE END ******* */
+/* ******* DISCOVER-ELAINE 2023 NOW PRIVACY POLICY PAGE END ******* */
