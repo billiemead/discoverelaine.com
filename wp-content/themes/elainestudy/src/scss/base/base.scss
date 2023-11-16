@@ -8,7 +8,9 @@
   padding: 0;
   box-sizing: border-box;
 }
-
+h1, h2, h3, h4, h5, h6 {
+    padding-bottom: 0;
+}
 html {
   font-size: 16px;
 }
@@ -18,29 +20,12 @@ body {
   font-size: 16px;
   color: $es-gray;
 }
-h1 {
-  @include demi-bold();
-  font-size: 30px;
-}
-h2 {
-  @include demi-bold();
-  font-size: 28px;
-}
-h3 {
-  @include demi-bold();
-  font-size: 24px;
-}
-h4 {
-  @include demi-bold();
-  font-size: 21px;
-}
-h5 {
-  @include demi-bold();
-  font-size: 18px;
-}
+
 p {
   @include regular();
   font-size: 16px;
+  line-height: 40px;
+  color: $es-gray;
 }
 
 .post-content a:link,
@@ -50,36 +35,6 @@ p {
 
 sup {
   font-size: 0.7rem;
-}
-
-/*** Responsive Styles Standard Desktop Only ***/
-@media all and (min-width: 1100px) {
-  h1 {
-    @include demi-bold();
-    font-size: 48px;
-  }
-  h2 {
-    @include demi-bold();
-    font-size: 33.6px;
-    line-height: 2.4rem !important;
-  }
-  h3 {
-    @include demi-bold();
-    font-size:28.8px ;
-  }
-  h4 {
-    @include demi-bold();
-    font-size: 28px;
-  }
-  h5 {
-    @include demi-bold();
-    font-size:20.992px;
-  }
-  p {
-    @include regular();
-    font-size:24px;
-    line-height: 40px;
-  }
 }
 
 @media all and (max-width: 1024px) {
