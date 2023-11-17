@@ -169,6 +169,33 @@ div#et-main-area {
                             }
                         }
 
+
+                        div#recruiting-previous-section {
+                            h2 {
+                                font-size: 40px;
+                                line-height: 30px;
+                                color: $es-dark-blue;
+                                @include bold();
+                            }
+
+                            p {
+                                font-size: 24px;
+                                line-height: 40px;;
+                                color: $es-gray;
+                            }
+
+                            .about-es-one_two .et_pb_column:first-of-type:after {
+                                content: "";
+                                position: absolute;
+                                right: -30px;
+                                top: 0;
+                                width: 2px;
+                                height: 100%;
+                                background: #4D596A;
+                            }
+                        }
+
+
                     }
                 }
             }
