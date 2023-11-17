@@ -9,164 +9,257 @@ div#et-main-area {
             div.entry-content {
                 div.et-l {
                     div.et_builder_inner_content {
-
-                    }
-                }
-            }
-        }
-    }
-}
-
-div#about-hero-section {
-    background-size: contain;
-    background-position: right -3% center;
-    background-image: url( "/wp-content/themes/elainestudy/images/es-new-hero4-914x467.png" ) !important;
-    height: 467px;
-    div.es-row {
-        div.es-col.double {
-            div#hero-heading {
-            margin: 0;
-                h1.hero-h1 {
-                    @include bold();
-                    font-size: 60px;
-                    line-height: 64px;
-                }
-            }
-            div#hero-copy {
-            margin: 0;
-                p.hero-copy {
-                    @include regular();
-                    font-size: 24px;
-                    line-height: 40px;
-                }
-            }
-        }
-    }
-}
-div#elaine-studies-section {
-    div#elaine-studies-row {
-        div.es-col.left {
-            div.es#purple-image {
-                img {
-
-                }
-            }
-        }
-        div.es-col.right {
-            div#in-context {
-                h2.h2-heading {
-                    text-align: left;
-                }
-
-            }
-            div#in-context-copy {
-                p.es-p {
-                    a.es-paragraph-link {
-
-                    }
-                }
-            }
-        }
-    }
-    div#elaine-studies-row2 {
-
-    }
-    div#elaine-studies-row3 {
-
-    }
-    div#elaine-studies-row4 {
-
-    }
-    div#elaine-studies-row5 {
-
-    }
-    div#elaine-studies-row6 {
-
-    }
-    div#elaine-studies-row7 {
-
-    }
-    div#elaine-studies-row8 {
-
-    }
-}
-div#section-blue-wave {
-
-}
-div#esr1-mutation-section {
-
-}
-div#section-blue-wave {
-
-}
-div#elaine-trials-section {
-
-}
-div#at-a-glance-section {
-    div#at-glance-row {
-        background: $es-white;
-        padding: 40px;
-        padding-left: 225px;
-        margin: 0 auto 40px;
-        border-radius: 20px;
-        border: 2px solid $es-purple;
-        div.es-col {
-            div.et_pb_module {
-                margin-bottom: 0;
-                div.et_pb_text_inner {
-                    h2 {
-                        @include bold();
-                        font-size: 40px;
-                        line-height: 55px !important;
-                        padding: 0 !important;
-                    }
-                }
-            }
-            div#triple-col-copy {
-                div.et_pb_text_inner {
-                    div#at-a-glance {
-                        div.block-ttl {
-                        text-align: left;
-                        margin: 0 0 30px;
-                            strong {
-                                @include bold();
-                                font-size: 24px;
-                                line-height: 30px;
-                            }
-                        }
-                        div.cols-holder {
-                            display: flex;
-                            div.col {
-                                width: 33.33%;
-                                padding: 0px 8px 0 40px;
-                                text-align: left;
-                                position: relative;
-                                span {
-                                    @include regular();
-                                    font-size: 23px;
-                                    line-height: 30px;
+                        div#about-hero-section {
+                            background-size: contain;
+                            background-position: right -3% center;
+                            background-image: url( "/wp-content/themes/elainestudy/images/es-new-hero4-914x467.png" ) !important;
+                            height: 467px;
+                            div.es-row {
+                                div.es-col.left {
+                                    width: 965px;
+                                    div#hero-heading {
+                                    margin: 0;
+                                        h1.hero-h1 {
+                                            @include bold();
+                                            font-size: 60px;
+                                            line-height: 64px;
+                                            margin-top: 20px;
+                                            margin-bottom: 30px;
+                                        }
+                                    }
+                                    div#hero-copy {
+                                    margin: 0;
+                                        p.hero-copy {
+                                            @include regular();
+                                            font-size: 24px;
+                                            line-height: 40px;
+                                            color: $es-white;
+                                        }
+                                    }
                                 }
                             }
-                            div.col:not(:last-child) {
-                                &:after {
-                                content: "";
-                                width: 4px;
-                                background: $es-button-grey;
-                                height: 95%;
-                                position: absolute;
-                                top: 0;
-                                right: -8px;
-                                opacity: 0.25;
+                        }
+                        div#elaine-studies-section {
+                            div#elaine-studies-row {
+
+                                div.es-col.left {
+                                    width: 314px;
+                                    margin-right: 0;
+                                    div#es-purple-image {
+                                        span {
+                                            img {
+                                                width: 260px;
+                                            }
+                                        }
+                                    }
+                                }
+                                div.es-col.right {
+                                    width: 904px;
+                                    div#in-context {
+                                        h2.h2-heading {
+                                            text-align: left;
+                                            $es-blue: #2493D1;
+                                            @include bold();
+                                            font-size: 60px;
+                                            line-height: 60px !important;
+                                            margin-bottom: 22px;
+                                        }
+                                    }
+                                    div#in-context-copy {
+                                        p.es-p {
+                                            color: $es-gray;
+                                            @include regular();
+                                            font-size: 24px;
+                                            line-height: 40px  !important;
+                                            a.es-paragraph-link {
+                                                @include bold();
+                                                color: $es-blue;
+                                                text-decoration: underline;
+                                            }
+                                        }
+                                    }
                                 }
                             }
-                            div.col:first-child {
-                                width: 25%;
-                                padding-left: 0px;
+                            div#elaine-studies-row2 {
+                                width: 100%;
+                                div.es-col.left {
+                                    div#icon-three-women {
+                                    margin: 0;
+                                    height: 167px;
+                                        img {
+                                            height: 167px;
+                                        }
+                                    }
+                                    div.et_pb_module {
+                                        div.et_pb_text_inner {
+                                            h2.h2-heading {
+                                                text-align: center;
+                                                color: $es-purple;
+                                                @include bold();
+                                                font-size: 75px;
+                                                line-height: 40px  !important;
+                                                padding: 40px 0 0 0;
+                                            }
+                                        }
+                                    }
+                                    div.et_pb_module {
+                                        div.et_pb_text_inner {
+                                            p.es-p {
+                                                width: 269px;
+                                                text-align: center;
+                                                color: $es-gray;
+                                                @include regular();
+                                                font-size: 30px;
+                                                line-height: 40px  !important;
+                                                margin: 0 auto;
+                                            }
+                                        }
+                                    }
+                                }
+                                div.es-col.right {
+                                    div#icon-clipboard {
+                                        margin: 0;
+                                        height: 167px;
+                                        img {
+                                            height: 155px;
+                                        }
+                                    }
+                                    div.et_pb_module {
+                                        div.et_pb_text_inner {
+                                            h2.h2-heading {
+                                                text-align: center;
+                                                color: $es-purple;
+                                                @include bold();
+                                                font-size: 75px;
+                                                line-height: 40px  !important;
+                                                padding: 40px 0 0 0;
+                                            }
+                                        }
+                                    }
+                                    div.et_pb_module {
+                                        div.et_pb_text_inner {
+                                            p.es-p {
+                                                width: 495px;
+                                                text-align: center;
+                                                color: $es-gray;
+                                                @include regular();
+                                                font-size: 30px;
+                                                line-height: 40px  !important;
+                                                margin: 0 auto;
+                                            }
+                                        }
+                                    }
+                                }
                             }
-                            div.col:last-child {
-                                width: 41%;
-                                padding-right: 0px;
+                            div#elaine-studies-row3 {
+
                             }
+                            div#elaine-studies-row4 {
+
+                            }
+                            div#elaine-studies-row5 {
+
+                            }
+                            div#elaine-studies-row6 {
+
+                            }
+                            div#elaine-studies-row7 {
+
+                            }
+                            div#elaine-studies-row8 {
+
+                            }
+                        }
+                        div#section-blue-wave {
+
+                        }
+                        div#esr1-mutation-section {
+
+                        }
+                        div#section-blue-wave {
+
+                        }
+                        div#elaine-trials-section {
+
+                        }
+                        div#at-a-glance-section {
+                            div#at-glance-row {
+                                background: $es-white;
+                                padding: 40px;
+                                padding-left: 225px;
+                                margin: 0 auto 40px;
+                                border-radius: 20px;
+                                border: 2px solid $es-purple;
+                                height: 334px;
+                                display: flex;
+                                justify-content: center;
+                                align-items: center;
+                                div.es-col {
+                                    div.et_pb_module {
+                                        margin-bottom: 0;
+                                        div.et_pb_text_inner {
+                                            h2 {
+                                                @include bold();
+                                                font-size: 40px;
+                                                line-height: 55px !important;
+                                                padding: 0 !important;
+                                            }
+                                        }
+                                    }
+                                    div#triple-col-copy {
+                                        div.et_pb_text_inner {
+                                            div#at-a-glance {
+                                                div.block-ttl {
+                                                text-align: left;
+                                                margin: 0 0 45px;
+                                                    strong {
+                                                        @include bold();
+                                                        font-size: 24px;
+                                                        line-height: 30px;
+                                                    }
+                                                }
+                                                div.cols-holder {
+                                                    display: flex;
+                                                    div.col {
+                                                        width: 33.33%;
+                                                        padding: 0px 8px 0 40px;
+                                                        text-align: left;
+                                                        position: relative;
+                                                        span {
+                                                            @include regular();
+                                                            font-size: 23px;
+                                                            line-height: 30px;
+                                                        }
+                                                    }
+                                                    div.col:not(:last-child) {
+                                                        &:after {
+                                                        content: "";
+                                                        width: 4px;
+                                                        background: $es-button-grey;
+                                                        height: 95%;
+                                                        position: absolute;
+                                                        top: 0;
+                                                        right: -8px;
+                                                        opacity: 0.25;
+                                                        }
+                                                    }
+                                                    div.col:first-child {
+                                                        width: 25%;
+                                                        padding-left: 0px;
+                                                    }
+                                                    div.col:last-child {
+                                                        width: 41%;
+                                                        padding-right: 0px;
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                        div#references-section {
+
                         }
                     }
                 }
@@ -174,9 +267,7 @@ div#at-a-glance-section {
         }
     }
 }
-div#references-section {
 
-}
 .sub-container {
   display: flex;
   justify-content: center;
