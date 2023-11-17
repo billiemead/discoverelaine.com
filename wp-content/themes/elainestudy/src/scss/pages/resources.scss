@@ -30,18 +30,18 @@ div#et-main-area {
                         div#glossary-section {
                             padding: 0;
                             div.es-glossary-title-row {
-                                div.es-col.one {
-                                    div#glossary-title-icon {
-                                        img {
-
-                                        }
+                              display: flex;
+                              align-items: center;
+                                div#glossary-title-icon {
+                                    img {
+                                        margin-right: 0;
                                     }
-
                                 }
                                 div.es-col.two {
                                     div#glossary-title {
                                         h2.h2-heading {
-
+                                            color: $es-dark-blue;
+                                            padding:0;
                                         }
                                     }
                                 }
@@ -49,16 +49,26 @@ div#et-main-area {
 
                                 }
                             }
+
+                            div#glossary-subhead {
+                                h4.h4-heading {
+                                    color: $es-dark-blue;
+                                }
+                            }
+
                             div.es-glossary-content-row {
+                                h5.glossary-h5 {
+                                    padding-top: 60px;
+                                    padding-bottom: 15px;
+                                    @include bold();
+                                    font-size: 24px;
+                                    line-height: 40px;
+                                    color: $es-blue;
+                                }
+                                h5.glossary-h5:first-of-type {
+                                  padding-top:0;
+                                }
                                 div.es-col {
-                                    h5.glossary-h5 {
-                                        padding-top: 60px;
-                                        padding-bottom: 15px;
-                                        @include bold();
-                                        font-size: 30px;
-                                        line-height: 55px;
-                                        color: $es-dark-blue;
-                                    }
                                     p.es-p {
                                         @include regular();
                                         font-size: 24px;
@@ -70,6 +80,13 @@ div#et-main-area {
                         }
                         div#section-blue-wave {
                         }
+                        div#media-section {
+                            div.es-media-title-row {
+                              display: flex;
+                              align-items: center;
+                            }
+                        }
+
                     }
                 }
             }
