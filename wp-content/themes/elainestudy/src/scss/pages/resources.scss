@@ -32,6 +32,11 @@ div#et-main-area {
                             div.es-glossary-title-row {
                               display: flex;
                               align-items: center;
+
+                                .es-col.one {
+                                    margin-right: 45px;
+                                }
+
                                 div#glossary-title-icon {
                                     img {
                                         margin-right: 0;
@@ -86,8 +91,48 @@ div#et-main-area {
                         }
                         div#media-section {
                             div.es-media-title-row {
-                              display: flex;
-                              align-items: center;
+                                display: flex;
+                                align-items: center;
+
+                                .es-col.one {
+                                    margin-right: 45px;
+                                }
+
+                                div#glossary-title-icon {
+                                    img {
+                                        margin-right: 0;
+                                    }
+                                }
+                            }
+
+                            #media-title {
+                                h2.h2-heading {
+                                    @include bold();
+                                    font-size: 50px;
+                                    color: $es-dark-blue;
+                                    padding:0;
+                                }
+                            }
+
+                            div.es-video-row {
+                                h3.h3-heading {
+                                    @include bold();
+                                    font-size: 40px;
+                                    color: $es-dark-blue;
+                                    padding:0;
+                                    margin-bottom: 35px;
+                                }
+
+                                p {
+                                    font-size: 24px;
+                                    line-height: 40px;
+                                }
+
+                                img {
+                                    
+                                    height:390px;
+                                    object-fit: cover;
+                                }
                             }
                         }
 
