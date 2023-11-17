@@ -218,9 +218,9 @@ div#et-main-area {
 
                             div#recruiting-hero-section {
                                 background-size: contain;
-                                background-position: right -3% center;
+                                background-position: bottom center;
                                 background-image: url( "/wp-content/themes/elainestudy/images/es-new-hero1-538x264.png" ) !important;
-                                height: 264px;
+                                height: 380px;
                                 margin: 0;
 
                                 .es-recruiting-hero-row {
@@ -229,35 +229,48 @@ div#et-main-area {
 
                                 h1.hero-h1 {
                                     @include bold();
-                                    font-size: 70px;
-                                    line-height: 90px;
+                                    font-size: 35px;
+                                    line-height: 37px;
                                     margin-top: 0px;
                                     margin-bottom: 0px;
                                     color: $es-white;
                                     padding:0;
+                                    text-align: center;
                                 }
 
                             }
 
                             div#recruiting-about-section {
+
+                                .es-row {
+                                    display:flex;
+                                    flex-direction: column;
+                                    align-items: center;
+                                }
+
+                                .es-col.left {
+                                    width:auto;
+                                }
+
                                 h2 {
-                                    font-size: 60px;
-                                    line-height: 60px;
+                                    font-size: 35px;
+                                    line-height: 37px;
                                     color: $es-dark-blue;
                                     @include bold();
-                                    margin-bottom: 45px;
+                                    margin-bottom: 35px;
+                                    margin-top:20px;
                                 }
 
                                 h3 {
-                                    font-size: 24px;
-                                    line-height: 40px;
+                                    font-size: 20px;
+                                    line-height: 24px;
                                     color: $es-dark-blue;
                                     @include bold();
                                 }
 
                                 p {
-                                    font-size: 24px;
-                                    line-height: 40px;;
+                                    font-size: 20px;
+                                    line-height: 35px;;
                                     color: $es-gray;
                                 }
                             }
@@ -302,22 +315,26 @@ div#et-main-area {
                                     }
                                 }
 
+
+
                                 div.es-video-row {
-                                    height:auto;
+                                    width: 75%;
 
                                     h3 {
                                         @include bold();
-                                        font-size: 40px;
-                                        line-height: 55px;;
+                                        font-size: 28px;
+                                        line-height: 36px;;
                                         color: $es-dark-blue;
                                         padding:0;
-                                        text-align: left;
+                                        text-align: center;
+                                        margin:30px 0;
                                     }
 
                                     p {
-                                        font-size: 24px;
-                                        line-height: 40px;
+                                        font-size: 20px;
+                                        line-height: 30px;
                                         text-align: left;
+                                        margin-bottom: 30px;
                                     }
 
                                     img {
@@ -335,20 +352,26 @@ div#et-main-area {
                                         text-align: center;
                                     }
 
+                                    .es-btn {
+                                        font-size: 19px;
+                                        line-height: 19px;
+                                    }
+
                                 }
                             }
 
                             div#recruiting-sermonix-section {
                                 background-color: $es-purple;
-                                height: 882px;
-                                padding:40px 0;
+                                height: auto;
+                                padding:20px 0;
 
                                 .es-recruiting-sermonix-row {
-                                    height: 768px;
+                                    height: auto;
                                     margin-top:10px;
                                     background-color: $es-white;
                                     border-radius:45px;
                                     box-shadow: 5px 3px 20px -1px rgba(0,0,0,0.2);
+                                    padding:20px 30px;
 
                                     .es-recruiting-sermonix-text {
                                         max-width: 1000px;
@@ -356,21 +379,24 @@ div#et-main-area {
                                     }
 
                                     h3 {
-                                        font-size: 60px;
-                                        line-height: 60px;
+                                        font-size: 35px;
+                                        line-height: 37px;
                                         @include bold();
                                         color: $es-dark-blue;
                                         margin-bottom: 40px;
                                     }
 
                                     p {
-                                        font-size: 24px;
-                                        line-height: 40px;
+                                        font-size: 20px;
+                                        line-height: 34px;
                                         @include bold();
                                     }
 
                                     .es-btn {
                                         margin-top:20px;
+                                        font-size:20px;
+                                        line-height: 40px;
+                                        @include bold();
                                     }
                                 }
                             }
