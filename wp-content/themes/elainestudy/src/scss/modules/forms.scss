@@ -4,8 +4,11 @@
 /* ******* DISCOVER-ELAINE 2023 FORMS START ******* */
 
 div#es-form-section {
-    max-height: 507px;
+    height: 507px;
     padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     .et_pb_row {
         max-width: 1300px;
         padding: 50px 0 !important;
