@@ -179,12 +179,13 @@ div#et-main-area {
                                 display: flex;
                                 justify-content: flex-start;
                                 align-items: center;
+
                                 div.es-row {
                                     padding: 0;
                                     div.es-col {
                                         h1.hero-h1 {
                                             @include bold();
-                                            font-size: 70px;
+                                            font-size: 50px;
                                             line-height: 90px;
                                             color: $es-purple;
                                             padding-bottom: 0px;
@@ -197,9 +198,10 @@ div#et-main-area {
                                 div.es-glossary-title-row {
                                   display: flex;
                                   align-items: center;
+                                  flex-direction: column;
 
                                     .es-col.one {
-                                        margin-right: 45px;
+                                        margin-right: 0px;
                                     }
 
                                     div#glossary-title-icon {
@@ -211,9 +213,10 @@ div#et-main-area {
                                         div#glossary-title {
                                             h2.h2-heading {
                                                 @include bold();
-                                                font-size: 50px;
+                                                font-size: 40px;
                                                 color: $es-dark-blue;
                                                 padding:0;
+                                                text-align: center;
                                             }
                                         }
                                     }
@@ -224,7 +227,8 @@ div#et-main-area {
 
                                 div#glossary-subhead {
                                     h4.h4-heading {
-                                        font-size: 32px;
+                                        font-size: 26px;
+                                        line-height: 36px;
                                         @include bold();
                                         color: $es-dark-blue;
                                         padding-bottom:0;
@@ -234,11 +238,11 @@ div#et-main-area {
 
                                 div.es-glossary-content-row {
                                     h5.glossary-h5 {
-                                        padding-top: 60px;
-                                        padding-bottom: 15px;
+                                        padding-top: 40px;
+                                        padding-bottom: 0px;
                                         @include bold();
-                                        font-size: 24px;
-                                        line-height: 40px;
+                                        font-size: 20px;
+                                        line-height: 35px;
                                         color: $es-blue;
                                     }
                                     h5.glossary-h5:first-of-type {
@@ -246,8 +250,8 @@ div#et-main-area {
                                     }
                                     
                                     .glossary-paragraph {
-                                        font-size: 24px;
-                                        line-height: 40px;
+                                        font-size: 20px;
+                                        line-height: 35px;
                                     }
 
                                     div.es-col {
@@ -261,6 +265,7 @@ div#et-main-area {
                                 }
                             }
                             div#section-blue-wave {
+                                margin: 70px 0;
                             }
                             div#media-section {
 
