@@ -10,6 +10,53 @@ div#et-main-area {
                 div.et-l {
                     div.et_builder_inner_content {
 
+                        div#recruiting-hero-section {
+                            background-size: contain;
+                            background-position: right -3% center;
+                            background-image: url( "/wp-content/themes/elainestudy/images/es-new-hero1-538x264.png" ) !important;
+                            height: 264px;
+                            margin: 0;
+
+                            .es-recruiting-hero-row {
+                                padding:0;
+                            }
+
+                            h1.hero-h1 {
+                                @include bold();
+                                font-size: 70px;
+                                line-height: 90px;
+                                margin-top: 0px;
+                                margin-bottom: 0px;
+                                color: $es-white;
+                                padding:0;
+                            }
+
+                        }
+
+                        div#recruiting-about-section {
+                            h2 {
+                                font-size: 60px;
+                                line-height: 60px;
+                                color: $es-dark-blue;
+                                @include bold();
+                                margin-bottom: 45px;
+                            }
+
+                            h3 {
+                                font-size: 24px;
+                                line-height: 40px;
+                                color: $es-dark-blue;
+                                @include bold();
+                            }
+
+                            p {
+                                font-size: 24px;
+                                line-height: 40px;;
+                                color: $es-gray;
+                            }
+                        }
+
+
                     }
                 }
             }
