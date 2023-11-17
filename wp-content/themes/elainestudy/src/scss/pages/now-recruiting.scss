@@ -56,6 +56,81 @@ div#et-main-area {
                             }
                         }
 
+                        div#recruiting-story-section {
+                            padding-top:0;
+                            margin:0;
+
+                            h2 {
+                                font-size: 60px;
+                                line-height: 60px;
+                                color: $es-dark-blue;
+                                @include bold();
+                                margin-bottom: 45px;
+                            }
+
+                            h3 {
+                                font-size: 24px;
+                                line-height: 40px;
+                                color: $es-dark-blue;
+                                @include bold();
+                            }
+
+                            p {
+                                font-size: 24px;
+                                line-height: 40px;;
+                                color: $es-gray;
+                            }
+
+                            .recruiting-story-row {
+                                h3 {
+                                    font-size: 24px;
+                                    line-height: 40px;
+                                    color: $es-dark-blue;
+                                    @include bold();
+                                }
+
+                                p {
+                                    font-size: 24px;
+                                    line-height: 40px;;
+                                    color: $es-gray;
+                                }
+                            }
+
+                            div.es-video-row {
+                                height:auto;
+
+                                h3 {
+                                    @include bold();
+                                    font-size: 40px;
+                                    line-height: 55px;;
+                                    color: $es-dark-blue;
+                                    padding:0;
+                                    text-align: left;
+                                }
+
+                                p {
+                                    font-size: 24px;
+                                    line-height: 40px;
+                                    text-align: left;
+                                }
+
+                                img {
+                                    
+                                    width:100%;
+                                    height:auto;
+                                }
+
+                                .es-col-right {
+                                    padding:0 60px;
+                                }
+
+                                .es-video-info {
+                                    padding: 0;
+                                    text-align: center;
+                                }
+
+                            }
+                        }
 
                     }
                 }
