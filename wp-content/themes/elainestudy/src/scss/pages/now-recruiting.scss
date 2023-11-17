@@ -132,6 +132,43 @@ div#et-main-area {
                             }
                         }
 
+                        div#recruiting-sermonix-section {
+                            background-color: $es-purple;
+                            height: 882px;
+                            padding:40px 0;
+
+                            .es-recruiting-sermonix-row {
+                                height: 768px;
+                                margin-top:10px;
+                                background-color: $es-white;
+                                border-radius:45px;
+                                box-shadow: 5px 3px 20px -1px rgba(0,0,0,0.2);
+
+                                .es-recruiting-sermonix-text {
+                                    max-width: 1000px;
+                                    margin: auto;
+                                }
+
+                                h3 {
+                                    font-size: 60px;
+                                    line-height: 60px;
+                                    @include bold();
+                                    color: $es-dark-blue;
+                                    margin-bottom: 40px;
+                                }
+
+                                p {
+                                    font-size: 24px;
+                                    line-height: 40px;
+                                    @include bold();
+                                }
+
+                                .es-btn {
+                                    margin-top:20px;
+                                }
+                            }
+                        }
+
                     }
                 }
             }
