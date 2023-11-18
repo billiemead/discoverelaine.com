@@ -25,14 +25,13 @@ div.hero-section {
 a.es-btn {
     @include regular();
     font-size: 24px;
-    line-height: 40px;
-    height: 60px;
+    line-height: 40px !important;
+    height: 60px !important;
     color: $es-white !important;
-    border-color: $es-blue;
-    background-color: $es-blue;
-    padding:0;
-    border-radius: 0px;
-    height: 54px;
+    border-color: $es-blue !important;
+    background-color: $es-blue !important;
+    padding: 0 !important;
+    border-radius: 0 !important;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -43,6 +42,14 @@ a.es-btn {
         border-width: 1px;
         border-color: $es-blue !important;
 
+    }
+    &.w-525 {
+        width: 525px;
+        margin: 0 auto;
+    }
+    &.w-640 {
+        width: 660px;
+        margin: 0 auto;
     }
 }
 div.es-row.about {

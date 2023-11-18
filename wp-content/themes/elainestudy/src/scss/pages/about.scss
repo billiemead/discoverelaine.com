@@ -13,10 +13,14 @@ div#et-main-area {
                             background-size: contain;
                             background-position: right -3% center;
                             background-image: url( "/wp-content/themes/elainestudy/images/es-new-hero4-914x467.png" ) !important;
-                            height: 467px;
+                            min-height: 467px;
+                            display: flex;
+                            padding: 2% 0;
                             div.es-row {
+                                padding: 0;
                                 div.es-col.left {
-                                    width: 965px;
+                                    width: 61%;
+                                    margin-right: 0px;
                                     div#hero-heading {
                                     margin: 0;
                                         h1.hero-h1 {
@@ -41,7 +45,6 @@ div#et-main-area {
                         }
                         div#elaine-studies-section {
                             div#elaine-studies-row {
-
                                 div.es-col.left {
                                     width: 314px;
                                     margin-right: 0;
@@ -438,16 +441,20 @@ div#et-main-area {
                                             }
                                         }
                                     }
-
                                     h4.h4-heading {
                                         color: $es-dark-blue;
                                         @include bold();
                                         font-size: 40px;
                                         line-height: 55px  !important;
+                                        sup {
+                                            font-size: 1rem;
+                                            bottom: 1.2em;
+                                        }
                                     }
                                     .center {
                                         width: 816px;
                                         text-align: center;
+                                        margin: 0 auto;
                                     }
                                     p.es-p.center {
                                     }
@@ -590,7 +597,142 @@ div#et-main-area {
                             }
                         }
                         div#references-section {
-
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+@media all and (max-width: 1800px) {
+    div#et-main-area {
+        div#main-content {
+            article.page {
+                div.entry-content {
+                    div.et-l {
+                        div.et_builder_inner_content {
+                            div#about-hero-section {
+                                background-position: right -20% center;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+@media all and (max-width: 1700px) {
+    div#et-main-area {
+        div#main-content {
+            article.page {
+                div.entry-content {
+                    div.et-l {
+                        div.et_builder_inner_content {
+                            div#about-hero-section {
+                                background-position: right -30% center;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+@media all and (max-width: 1600px) {
+    div#et-main-area {
+        div#main-content {
+            article.page {
+                div.entry-content {
+                    div.et-l {
+                        div.et_builder_inner_content {
+                            div#about-hero-section {
+                                background-position: right -50% center;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+@media all and (max-width: 1500px) {
+    div#et-main-area {
+        div#main-content {
+            article.page {
+                div.entry-content {
+                    div.et-l {
+                        div.et_builder_inner_content {
+                            div#about-hero-section {
+                                background-position: right -75% center;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+@media all and (max-width: 1400px) {
+    div#et-main-area {
+        div#main-content {
+            article.page {
+                div.entry-content {
+                    div.et-l {
+                        div.et_builder_inner_content {
+                            div#about-hero-section {
+                                background-position: right -100% center;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+@media all and (max-width: 1300px) {
+    div#et-main-area {
+        div#main-content {
+            article.page {
+                div.entry-content {
+                    div.et-l {
+                        div.et_builder_inner_content {
+                            div#about-hero-section {
+                                background-position: right -150% center;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+@media all and (max-width: 1200px) {
+    div#et-main-area {
+        div#main-content {
+            article.page {
+                div.entry-content {
+                    div.et-l {
+                        div.et_builder_inner_content {
+                            div#about-hero-section {
+                                background-position: right -200% center;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+@media all and (max-width: 1100px) {
+    div#et-main-area {
+        div#main-content {
+            article.page {
+                div.entry-content {
+                    div.et-l {
+                        div.et_builder_inner_content {
+                            div#about-hero-section {
+                                background-position: right -250% center;
+                            }
                         }
                     }
                 }
@@ -600,8 +742,1201 @@ div#et-main-area {
 }
 
 @media all and (max-width: 1024px) {
+    div#et-main-area {
+        div#main-content {
+            article.page {
+                div.entry-content {
+                    div.et-l {
+                        div.et_builder_inner_content {
+                            div#about-hero-section {
+                                background-size: contain;
+                                background-position: right -300% center;
+                                background-image: url( "/wp-content/themes/elainestudy/images/es-new-hero4-914x467.png" ) !important;
+                                height: 467px;
+                                div.es-row {
+                                    div.es-col.left {
+                                        width: 100%;
+                                        div#hero-heading {
+                                        margin: 0;
+                                            h1.hero-h1 {
+                                                @include bold();
+                                                font-size: 60px;
+                                                line-height: 64px;
+                                                margin-top: 20px;
+                                                margin-bottom: 30px;
+                                            }
+                                        }
+                                        div#hero-copy {
+                                        margin: 0;
+                                            p.hero-copy {
+                                                @include regular();
+                                                font-size: 24px;
+                                                line-height: 40px;
+                                                color: $es-white;
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                            div#elaine-studies-section {
+                                div#elaine-studies-row {
+                                    div.es-col.left {
+                                        width: 314px;
+                                        margin-right: 0;
+                                        div#es-purple-image {
+                                            span {
+                                                img {
+                                                    width: 260px;
+                                                }
+                                            }
+                                        }
+                                    }
+                                    div.es-col.right {
+                                        width: 904px;
+                                        div#in-context {
+                                            h2.h2-heading {
+                                                text-align: left;
+                                                color: $es-dark-blue;
+                                                @include bold();
+                                                font-size: 60px;
+                                                line-height: 60px !important;
+                                                margin-bottom: 22px;
+                                                letter-spacing: -1px;
+                                            }
+                                        }
+                                        div#in-context-copy {
+                                            p.es-p {
+                                                color: $es-gray;
+                                                @include regular();
+                                                font-size: 24px;
+                                                line-height: 40px  !important;
+                                                a.es-paragraph-link {
+                                                    @include bold();
+                                                    color: $es-blue;
+                                                    text-decoration: underline;
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                                div#elaine-studies-row2 {
+                                    width: 100%;
+                                    div.es-col.left {
+                                        div#icon-three-women {
+                                        margin: 0;
+                                        height: 167px;
+                                            img {
+                                                height: 167px;
+                                            }
+                                        }
+                                        div.et_pb_module {
+                                            div.et_pb_text_inner {
+                                                h2.h2-heading {
+                                                    text-align: center;
+                                                    color: $es-purple;
+                                                    @include bold();
+                                                    font-size: 75px;
+                                                    line-height: 40px  !important;
+                                                    padding: 40px 0 0 0;
+                                                }
+                                            }
+                                        }
+                                        div.et_pb_module {
+                                            div.et_pb_text_inner {
+                                                p.es-p {
+                                                    width: 269px;
+                                                    text-align: center;
+                                                    color: $es-gray;
+                                                    @include regular();
+                                                    font-size: 30px;
+                                                    line-height: 40px  !important;
+                                                    margin: 0 auto;
+                                                }
+                                            }
+                                        }
+                                    }
+                                    div.es-col.right {
+                                        div#icon-clipboard {
+                                            margin: 0;
+                                            height: 167px;
+                                            img {
+                                                height: 155px;
+                                            }
+                                        }
+                                        div.et_pb_module {
+                                            div.et_pb_text_inner {
+                                                h2.h2-heading {
+                                                    text-align: center;
+                                                    color: $es-purple;
+                                                    @include bold();
+                                                    font-size: 75px;
+                                                    line-height: 40px  !important;
+                                                    padding: 40px 0 0 0;
+                                                }
+                                            }
+                                        }
+                                        div.et_pb_module {
+                                            div.et_pb_text_inner {
+                                                p.es-p {
+                                                    width: 495px;
+                                                    text-align: center;
+                                                    color: $es-gray;
+                                                    @include regular();
+                                                    font-size: 30px;
+                                                    line-height: 40px  !important;
+                                                    margin: 0 auto;
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                                div#elaine-studies-row3 {
+                                    div.es-col {
+                                        h3.h3-heading {
+                                            color: $es-dark-blue;
+                                            @include bold();
+                                            font-size: 38px;
+                                            line-height: 53px  !important;
+                                        }
+                                    }
+                                }
+                                div#elaine-studies-row4 {
+                                    max-width: 785px;
+                                    div.es-col.chart {
+                                        width: 329px;
+                                        margin-right: 0;
+                                        div#er-chart-image {
+                                            img {
+                                                height: 194px;
+                                                width: auto;
+                                            }
+                                        }
+                                    }
+                                    div.es-col.chart-stats {
+                                        width: 456px;
+                                        div#er-chart-heading {
+                                            div.et_pb_text_inner {
+                                                h2.h2-heading {
+                                                    text-align: center;
+                                                    color: $es-purple;
+                                                    @include bold();
+                                                    font-size: 75px;
+                                                    line-height: 40px  !important;
+                                                    padding: 40px 0 0 0;
+                                                }
+                                            }
+                                        }
+                                        div#er-chart-subcopy {
+                                            div.et_pb_text_inner {
+                                                p.es-p {
+                                                    text-align: center;
+                                                    color: $es-gray;
+                                                    @include regular();
+                                                    font-size: 30px;
+                                                    line-height: 40px  !important;
+                                                    margin: 0 auto;
+                                                    sup {
+
+                                                    }
+                                                }
+                                            }
+
+                                        }
+                                    }
+                                }
+                                div#elaine-studies-row5 {
+                                    div.es-col {
+                                        div#metastatic-breast-heading {
+                                            margin-bottom: 40px;
+                                            div.et_pb_text_inner {
+                                                h3.h3-heading {
+                                                    color: $es-dark-blue;
+                                                    @include bold();
+                                                    font-size: 38px;
+                                                    line-height: 40px  !important;
+                                                }
+                                            }
+                                        }
+                                        div#metastatic-breast-subheading {
+                                            margin-bottom: 0;
+                                            div.et_pb_text_inner {
+                                                p.es-p {
+                                                    strong {
+                                                        color: $es-gray;
+                                                        @include bold();
+                                                        font-size: 24px;
+                                                        line-height: 55px  !important;
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                                div#elaine-studies-row6 {
+                                    max-width: 512px;
+                                    padding-bottom: 0px;
+                                    margin-bottom: 0px !important;
+                                    div.es-col.ribbon {
+                                        width: 172px;
+                                        margin-right: 0;
+                                        div#ribbon-image {
+                                            img {
+                                                height: 194px;
+                                                width: auto;
+                                            }
+                                        }
+                                    }
+                                    div.es-col.ribbon-copy {
+                                        width: 340px;
+                                        div#ribbon-heading {
+                                            div.et_pb_text_inner {
+                                                h2.h2-heading {
+                                                    text-align: center;
+                                                    color: $es-purple;
+                                                    @include bold();
+                                                    font-size: 75px;
+                                                    line-height: 40px  !important;
+                                                    padding: 40px 0 0 0;
+                                                }
+                                            }
+                                        }
+                                        div#ribbon-subcopy {
+                                            div.et_pb_text_inner {
+                                                p.es-p {
+                                                    text-align: center;
+                                                    color: $es-gray;
+                                                    @include regular();
+                                                    font-size: 30px;
+                                                    line-height: 40px  !important;
+                                                    margin: 0 auto;
+                                                    sup {
+
+                                                    }
+                                                }
+                                            }
+
+                                        }
+                                    }
+
+                                }
+                                div#elaine-studies-row6b {
+                                    div.es-col {
+
+                                    }
+
+                                }
+                                div#elaine-studies-row7 {
+                                    div.es-col {
+                                        div#esr1-mutation-heading {
+                                            margin-bottom: 40px;
+                                            div.et_pb_text_inner {
+                                                h3.h3-heading {
+                                                    color: $es-dark-blue;
+                                                    @include bold();
+                                                    font-size: 38px;
+                                                    line-height: 40px  !important;
+                                                }
+                                            }
+                                        }
+                                        div#esr1-mutation-subheading {
+                                            margin-bottom: 0;
+                                            div.et_pb_text_inner {
+                                                p.es-p {
+                                                    strong {
+                                                        color: $es-gray;
+                                                        @include bold();
+                                                        font-size: 24px;
+                                                        line-height: 55px  !important;
+                                                    }
+                                                }
+                                            }
+                                        }
+                                        div#esr1-mutation-paragraph {
+
+                                        }
+                                    }
+                                }
+                                div#elaine-studies-row8 {
+                                    div.es-col {
+                                        div#nav-bar-image {
+                                            width: 100%;
+                                            margin-bottom: 8%;
+                                            img {
+                                                height: 134px;
+                                                width: auto;
+                                            }
+                                        }
+                                        div.sub-container {
+                                        display: flex;
+                                        justify-content: center;
+                                            div.et_pb_text_inner {
+                                                width: 1048px;
+                                                div.sub-header-div{
+                                                    display: flex;
+                                                    align-items: center;
+                                                    margin-bottom: 5%;
+                                                    h3.h3-heading {
+                                                        @include bold();
+                                                        font-size: 75px !important;
+                                                        line-height: 80px;
+                                                        color: $es-purple;
+                                                        padding: 0;
+                                                        margin: 0;
+                                                        width: 230px;
+                                                    }
+                                                    h4.h4-heading {
+                                                        @include bold();
+                                                        font-size: 40px !important;
+                                                        line-height: 50px;
+                                                        color: $es-purple;
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                            div#section-blue-wave {
+                                margin-top: 1em !important;
+                                margin-bottom: -2em !important;
+                            }
+                            div#esr1-mutation-section {
+                                div#esr1-mutation-section-row {
+                                    div.es-col {
+                                        div#esr1-mutation-h1-heading {
+                                            div.et_pb_text_inner {
+                                                h2.h2-heading {
+                                                    text-align: left;
+                                                    color: $es-dark-blue;
+                                                    @include bold();
+                                                    font-size: 60px;
+                                                    line-height: 64px !important;
+                                                    margin-bottom: 22px;
+                                                    letter-spacing: -1px;
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                                div#esr1-mutation-section-row2 {
+                                    div.es-col {
+                                        div#cal-container {
+                                            text-align: center;
+                                            margin: 0 auto;
+                                            display: flex;
+                                            justify-content: center;
+                                            div.calendar-container {
+                                                width: 725px;
+                                                display: flex;
+                                                justify-content: center;
+                                                align-items: center;
+                                                div.calendar-wrapper-left {
+                                                    width: 50%;
+                                                    display: flex;
+                                                    flex-direction: column;
+                                                    align-items: center;
+                                                    img#cal-grey {
+                                                        width: 255px;
+                                                        height: auto;
+                                                    }
+                                                    div#cal-copy-left {
+                                                        @include regular();
+                                                        font-size: 30px;
+                                                        line-height: 38px;
+                                                        color: $es-gray;
+                                                        margin-top: 5%;
+                                                        margin-bottom: 10%;
+                                                        span.mbc {
+                                                            @include bold();
+                                                            font-size: 40px;
+                                                        }
+                                                    }
+                                                }
+                                                div.calendar-wrapper-right {
+                                                    width: 50%;
+                                                    display: flex;
+                                                    flex-direction: column;
+                                                    align-items: center;
+                                                    img#cal-blue {
+                                                        width: 255px;
+                                                        height: auto;
+                                                    }
+                                                    div#cal-copy-right {
+                                                        @include regular();
+                                                        font-size: 30px;
+                                                        line-height: 38px;
+                                                        color: $es-dark-blue;
+                                                        margin-top: 5%;
+                                                        margin-bottom: 10%;
+                                                        span.mbc {
+                                                            @include bold();
+                                                            font-size: 40px;
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                        h4.h4-heading {
+                                            color: $es-dark-blue;
+                                            @include bold();
+                                            font-size: 40px;
+                                            line-height: 55px  !important;
+                                            sup {
+                                                font-size: 1rem;
+                                                bottom: 1.2em;
+                                            }
+                                        }
+                                        .center {
+                                            width: 816px;
+                                            text-align: center;
+                                            margin: 0 auto;
+                                        }
+                                        p.es-p.center {
+                                        }
+                                    }
+                                }
+                            }
+                            div#section-blue-wave.bluewave2 {
+                                margin-top: 2em !important;
+                                margin-bottom: 2em !important;
+                            }
+                            div#elaine-trials-section {
+                                div#elaine-trials-row {
+                                    div.es-col {
+                                        div#lasofoxifene-heading {
+                                            div.et_pb_text_inner {
+                                                h2.h2-heading {
+                                                    text-align: left;
+                                                    color: $es-dark-blue;
+                                                    @include bold();
+                                                    font-size: 60px;
+                                                    line-height: 64px !important;
+                                                    margin-bottom: 22px;
+                                                    letter-spacing: -1px;
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                                div#elaine-trials-row2 {
+                                    div.es-col {
+                                        div#lasofoxifene-heading {
+                                            h4.h4-heading {
+                                                color: $es-dark-blue;
+                                                @include bold();
+                                                font-size: 40px;
+                                                line-height: 55px  !important;
+                                            }
+                                        }
+                                        div#lasofoxifene-paragraph {
+
+                                        }
+                                        div#lasofoxifene-button {
+
+                                        }
+                                    }
+                                }
+                            }
+                            div#at-a-glance-section {
+                                div#at-glance-row {
+                                    background: $es-white;
+                                    padding: 40px;
+                                    padding-left: 225px;
+                                    margin: 0 auto 40px;
+                                    border-radius: 20px;
+                                    border: 2px solid $es-purple;
+                                    height: 334px;
+                                    display: flex;
+                                    justify-content: center;
+                                    align-items: center;
+                                    background-image: url('/wp-content/themes/elainestudy/images/es-purple-dot-vert-wave-175x499.png');
+                                    background-repeat: no-repeat;
+                                    background-size: contain;
+                                    background-position-x: 60px;
+                                    div.es-col {
+                                        div.et_pb_module {
+                                            margin-bottom: 0;
+                                            div.et_pb_text_inner {
+                                                h2 {
+                                                    @include bold();
+                                                    font-size: 40px;
+                                                    line-height: 55px !important;
+                                                    padding: 0 !important;
+                                                }
+                                            }
+                                        }
+                                        div#triple-col-copy {
+                                            div.et_pb_text_inner {
+                                                div#at-a-glance {
+                                                    div.block-ttl {
+                                                    text-align: left;
+                                                    margin: 0 0 45px;
+                                                        strong {
+                                                            @include bold();
+                                                            font-size: 24px;
+                                                            line-height: 30px;
+                                                        }
+                                                    }
+                                                    div.cols-holder {
+                                                        display: flex;
+                                                        div.col {
+                                                            width: 33.33%;
+                                                            padding: 0px 8px 0 40px;
+                                                            text-align: left;
+                                                            position: relative;
+                                                            span {
+                                                                @include regular();
+                                                                font-size: 23px;
+                                                                line-height: 30px;
+                                                            }
+                                                        }
+                                                        div.col:not(:last-child) {
+                                                            &:after {
+                                                            content: "";
+                                                            width: 4px;
+                                                            background: $es-button-grey;
+                                                            height: 95%;
+                                                            position: absolute;
+                                                            top: 0;
+                                                            right: -8px;
+                                                            opacity: 0.25;
+                                                            }
+                                                        }
+                                                        div.col:first-child {
+                                                            width: 25%;
+                                                            padding-left: 0px;
+                                                        }
+                                                        div.col:last-child {
+                                                            width: 41%;
+                                                            padding-right: 0px;
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                                div#at-glance-row2 {
+                                    div.es-col {
+                                        div.et_pb_module {
+                                            div.et_pb_text_inner {
+                                                h4.h4-heading {
+                                                    color: $es-dark-blue;
+                                                    @include bold();
+                                                    font-size: 36px;
+                                                    line-height: 44px !important;
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                            div#references-section {
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
 }
 @media all and (max-width: 980px) {
+    div#et-main-area {
+        div#main-content {
+            article.page {
+                div.entry-content {
+                    div.et-l {
+                        div.et_builder_inner_content {
+                            div#about-hero-section {
+                                background-position: center bottom 0px;
+                                background-image: url( "/wp-content/themes/elainestudy/images/es-new-hero4-verical-1050x692.png" ) !important;
+                                height: 100%;
+                                div.es-row {
+                                    div.es-col.left {
+                                        width: 100%;
+                                        div#hero-heading {
+                                        margin: 0;
+                                            h1.hero-h1 {
+                                                @include bold();
+                                                font-size: 60px;
+                                                line-height: 64px;
+                                                margin-top: 20px;
+                                                margin-bottom: 30px;
+                                            }
+                                        }
+                                        div#hero-copy {
+                                        margin: 0;
+                                            p.hero-copy {
+                                                @include regular();
+                                                font-size: 24px;
+                                                line-height: 40px;
+                                                color: $es-white;
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                            div#elaine-studies-section {
+                                div#elaine-studies-row {
+                                    div.es-col.left {
+                                        width: 314px;
+                                        margin-right: 0;
+                                        div#es-purple-image {
+                                            span {
+                                                img {
+                                                    width: 260px;
+                                                }
+                                            }
+                                        }
+                                    }
+                                    div.es-col.right {
+                                        width: 904px;
+                                        div#in-context {
+                                            h2.h2-heading {
+                                                text-align: left;
+                                                color: $es-dark-blue;
+                                                @include bold();
+                                                font-size: 60px;
+                                                line-height: 60px !important;
+                                                margin-bottom: 22px;
+                                                letter-spacing: -1px;
+                                            }
+                                        }
+                                        div#in-context-copy {
+                                            p.es-p {
+                                                color: $es-gray;
+                                                @include regular();
+                                                font-size: 24px;
+                                                line-height: 40px  !important;
+                                                a.es-paragraph-link {
+                                                    @include bold();
+                                                    color: $es-blue;
+                                                    text-decoration: underline;
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                                div#elaine-studies-row2 {
+                                    width: 100%;
+                                    div.es-col.left {
+                                        div#icon-three-women {
+                                        margin: 0;
+                                        height: 167px;
+                                            img {
+                                                height: 167px;
+                                            }
+                                        }
+                                        div.et_pb_module {
+                                            div.et_pb_text_inner {
+                                                h2.h2-heading {
+                                                    text-align: center;
+                                                    color: $es-purple;
+                                                    @include bold();
+                                                    font-size: 75px;
+                                                    line-height: 40px  !important;
+                                                    padding: 40px 0 0 0;
+                                                }
+                                            }
+                                        }
+                                        div.et_pb_module {
+                                            div.et_pb_text_inner {
+                                                p.es-p {
+                                                    width: 269px;
+                                                    text-align: center;
+                                                    color: $es-gray;
+                                                    @include regular();
+                                                    font-size: 30px;
+                                                    line-height: 40px  !important;
+                                                    margin: 0 auto;
+                                                }
+                                            }
+                                        }
+                                    }
+                                    div.es-col.right {
+                                        div#icon-clipboard {
+                                            margin: 0;
+                                            height: 167px;
+                                            img {
+                                                height: 155px;
+                                            }
+                                        }
+                                        div.et_pb_module {
+                                            div.et_pb_text_inner {
+                                                h2.h2-heading {
+                                                    text-align: center;
+                                                    color: $es-purple;
+                                                    @include bold();
+                                                    font-size: 75px;
+                                                    line-height: 40px  !important;
+                                                    padding: 40px 0 0 0;
+                                                }
+                                            }
+                                        }
+                                        div.et_pb_module {
+                                            div.et_pb_text_inner {
+                                                p.es-p {
+                                                    width: 495px;
+                                                    text-align: center;
+                                                    color: $es-gray;
+                                                    @include regular();
+                                                    font-size: 30px;
+                                                    line-height: 40px  !important;
+                                                    margin: 0 auto;
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                                div#elaine-studies-row3 {
+                                    div.es-col {
+                                        h3.h3-heading {
+                                            color: $es-dark-blue;
+                                            @include bold();
+                                            font-size: 38px;
+                                            line-height: 53px  !important;
+                                        }
+                                    }
+                                }
+                                div#elaine-studies-row4 {
+                                    max-width: 785px;
+                                    div.es-col.chart {
+                                        width: 329px;
+                                        margin-right: 0;
+                                        div#er-chart-image {
+                                            img {
+                                                height: 194px;
+                                                width: auto;
+                                            }
+                                        }
+                                    }
+                                    div.es-col.chart-stats {
+                                        width: 456px;
+                                        div#er-chart-heading {
+                                            div.et_pb_text_inner {
+                                                h2.h2-heading {
+                                                    text-align: center;
+                                                    color: $es-purple;
+                                                    @include bold();
+                                                    font-size: 75px;
+                                                    line-height: 40px  !important;
+                                                    padding: 40px 0 0 0;
+                                                }
+                                            }
+                                        }
+                                        div#er-chart-subcopy {
+                                            div.et_pb_text_inner {
+                                                p.es-p {
+                                                    text-align: center;
+                                                    color: $es-gray;
+                                                    @include regular();
+                                                    font-size: 30px;
+                                                    line-height: 40px  !important;
+                                                    margin: 0 auto;
+                                                    sup {
+
+                                                    }
+                                                }
+                                            }
+
+                                        }
+                                    }
+                                }
+                                div#elaine-studies-row5 {
+                                    div.es-col {
+                                        div#metastatic-breast-heading {
+                                            margin-bottom: 40px;
+                                            div.et_pb_text_inner {
+                                                h3.h3-heading {
+                                                    color: $es-dark-blue;
+                                                    @include bold();
+                                                    font-size: 38px;
+                                                    line-height: 40px  !important;
+                                                }
+                                            }
+                                        }
+                                        div#metastatic-breast-subheading {
+                                            margin-bottom: 0;
+                                            div.et_pb_text_inner {
+                                                p.es-p {
+                                                    strong {
+                                                        color: $es-gray;
+                                                        @include bold();
+                                                        font-size: 24px;
+                                                        line-height: 55px  !important;
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                                div#elaine-studies-row6 {
+                                    max-width: 512px;
+                                    padding-bottom: 0px;
+                                    margin-bottom: 0px !important;
+                                    div.es-col.ribbon {
+                                        width: 172px;
+                                        margin-right: 0;
+                                        div#ribbon-image {
+                                            img {
+                                                height: 194px;
+                                                width: auto;
+                                            }
+                                        }
+                                    }
+                                    div.es-col.ribbon-copy {
+                                        width: 340px;
+                                        div#ribbon-heading {
+                                            div.et_pb_text_inner {
+                                                h2.h2-heading {
+                                                    text-align: center;
+                                                    color: $es-purple;
+                                                    @include bold();
+                                                    font-size: 75px;
+                                                    line-height: 40px  !important;
+                                                    padding: 40px 0 0 0;
+                                                }
+                                            }
+                                        }
+                                        div#ribbon-subcopy {
+                                            div.et_pb_text_inner {
+                                                p.es-p {
+                                                    text-align: center;
+                                                    color: $es-gray;
+                                                    @include regular();
+                                                    font-size: 30px;
+                                                    line-height: 40px  !important;
+                                                    margin: 0 auto;
+                                                    sup {
+
+                                                    }
+                                                }
+                                            }
+
+                                        }
+                                    }
+
+                                }
+                                div#elaine-studies-row6b {
+                                    div.es-col {
+
+                                    }
+
+                                }
+                                div#elaine-studies-row7 {
+                                    div.es-col {
+                                        div#esr1-mutation-heading {
+                                            margin-bottom: 40px;
+                                            div.et_pb_text_inner {
+                                                h3.h3-heading {
+                                                    color: $es-dark-blue;
+                                                    @include bold();
+                                                    font-size: 38px;
+                                                    line-height: 40px  !important;
+                                                }
+                                            }
+                                        }
+                                        div#esr1-mutation-subheading {
+                                            margin-bottom: 0;
+                                            div.et_pb_text_inner {
+                                                p.es-p {
+                                                    strong {
+                                                        color: $es-gray;
+                                                        @include bold();
+                                                        font-size: 24px;
+                                                        line-height: 55px  !important;
+                                                    }
+                                                }
+                                            }
+                                        }
+                                        div#esr1-mutation-paragraph {
+
+                                        }
+                                    }
+                                }
+                                div#elaine-studies-row8 {
+                                    div.es-col {
+                                        div#nav-bar-image {
+                                            width: 100%;
+                                            margin-bottom: 8%;
+                                            img {
+                                                height: 134px;
+                                                width: auto;
+                                            }
+                                        }
+                                        div.sub-container {
+                                        display: flex;
+                                        justify-content: center;
+                                            div.et_pb_text_inner {
+                                                width: 1048px;
+                                                div.sub-header-div{
+                                                    display: flex;
+                                                    align-items: center;
+                                                    margin-bottom: 5%;
+                                                    h3.h3-heading {
+                                                        @include bold();
+                                                        font-size: 75px !important;
+                                                        line-height: 80px;
+                                                        color: $es-purple;
+                                                        padding: 0;
+                                                        margin: 0;
+                                                        width: 230px;
+                                                    }
+                                                    h4.h4-heading {
+                                                        @include bold();
+                                                        font-size: 40px !important;
+                                                        line-height: 50px;
+                                                        color: $es-purple;
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                            div#section-blue-wave {
+                                margin-top: 1em !important;
+                                margin-bottom: -2em !important;
+                            }
+                            div#esr1-mutation-section {
+                                div#esr1-mutation-section-row {
+                                    div.es-col {
+                                        div#esr1-mutation-h1-heading {
+                                            div.et_pb_text_inner {
+                                                h2.h2-heading {
+                                                    text-align: left;
+                                                    color: $es-dark-blue;
+                                                    @include bold();
+                                                    font-size: 60px;
+                                                    line-height: 64px !important;
+                                                    margin-bottom: 22px;
+                                                    letter-spacing: -1px;
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                                div#esr1-mutation-section-row2 {
+                                    div.es-col {
+                                        div#cal-container {
+                                            text-align: center;
+                                            margin: 0 auto;
+                                            display: flex;
+                                            justify-content: center;
+                                            div.calendar-container {
+                                                width: 725px;
+                                                display: flex;
+                                                justify-content: center;
+                                                align-items: center;
+                                                div.calendar-wrapper-left {
+                                                    width: 50%;
+                                                    display: flex;
+                                                    flex-direction: column;
+                                                    align-items: center;
+                                                    img#cal-grey {
+                                                        width: 255px;
+                                                        height: auto;
+                                                    }
+                                                    div#cal-copy-left {
+                                                        @include regular();
+                                                        font-size: 30px;
+                                                        line-height: 38px;
+                                                        color: $es-gray;
+                                                        margin-top: 5%;
+                                                        margin-bottom: 10%;
+                                                        span.mbc {
+                                                            @include bold();
+                                                            font-size: 40px;
+                                                        }
+                                                    }
+                                                }
+                                                div.calendar-wrapper-right {
+                                                    width: 50%;
+                                                    display: flex;
+                                                    flex-direction: column;
+                                                    align-items: center;
+                                                    img#cal-blue {
+                                                        width: 255px;
+                                                        height: auto;
+                                                    }
+                                                    div#cal-copy-right {
+                                                        @include regular();
+                                                        font-size: 30px;
+                                                        line-height: 38px;
+                                                        color: $es-dark-blue;
+                                                        margin-top: 5%;
+                                                        margin-bottom: 10%;
+                                                        span.mbc {
+                                                            @include bold();
+                                                            font-size: 40px;
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                        h4.h4-heading {
+                                            color: $es-dark-blue;
+                                            @include bold();
+                                            font-size: 40px;
+                                            line-height: 55px  !important;
+                                            sup {
+                                                font-size: 1rem;
+                                                bottom: 1.2em;
+                                            }
+                                        }
+                                        .center {
+                                            width: 816px;
+                                            text-align: center;
+                                            margin: 0 auto;
+                                        }
+                                        p.es-p.center {
+                                        }
+                                    }
+                                }
+                            }
+                            div#section-blue-wave.bluewave2 {
+                                margin-top: 2em !important;
+                                margin-bottom: 2em !important;
+                            }
+                            div#elaine-trials-section {
+                                div#elaine-trials-row {
+                                    div.es-col {
+                                        div#lasofoxifene-heading {
+                                            div.et_pb_text_inner {
+                                                h2.h2-heading {
+                                                    text-align: left;
+                                                    color: $es-dark-blue;
+                                                    @include bold();
+                                                    font-size: 60px;
+                                                    line-height: 64px !important;
+                                                    margin-bottom: 22px;
+                                                    letter-spacing: -1px;
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                                div#elaine-trials-row2 {
+                                    div.es-col {
+                                        div#lasofoxifene-heading {
+                                            h4.h4-heading {
+                                                color: $es-dark-blue;
+                                                @include bold();
+                                                font-size: 40px;
+                                                line-height: 55px  !important;
+                                            }
+                                        }
+                                        div#lasofoxifene-paragraph {
+
+                                        }
+                                        div#lasofoxifene-button {
+
+                                        }
+                                    }
+                                }
+                            }
+                            div#at-a-glance-section {
+                                div#at-glance-row {
+                                    background: $es-white;
+                                    padding: 40px;
+                                    padding-left: 225px;
+                                    margin: 0 auto 40px;
+                                    border-radius: 20px;
+                                    border: 2px solid $es-purple;
+                                    height: 334px;
+                                    display: flex;
+                                    justify-content: center;
+                                    align-items: center;
+                                    background-image: url('/wp-content/themes/elainestudy/images/es-purple-dot-vert-wave-175x499.png');
+                                    background-repeat: no-repeat;
+                                    background-size: contain;
+                                    background-position-x: 60px;
+                                    div.es-col {
+                                        div.et_pb_module {
+                                            margin-bottom: 0;
+                                            div.et_pb_text_inner {
+                                                h2 {
+                                                    @include bold();
+                                                    font-size: 40px;
+                                                    line-height: 55px !important;
+                                                    padding: 0 !important;
+                                                }
+                                            }
+                                        }
+                                        div#triple-col-copy {
+                                            div.et_pb_text_inner {
+                                                div#at-a-glance {
+                                                    div.block-ttl {
+                                                    text-align: left;
+                                                    margin: 0 0 45px;
+                                                        strong {
+                                                            @include bold();
+                                                            font-size: 24px;
+                                                            line-height: 30px;
+                                                        }
+                                                    }
+                                                    div.cols-holder {
+                                                        display: flex;
+                                                        div.col {
+                                                            width: 33.33%;
+                                                            padding: 0px 8px 0 40px;
+                                                            text-align: left;
+                                                            position: relative;
+                                                            span {
+                                                                @include regular();
+                                                                font-size: 23px;
+                                                                line-height: 30px;
+                                                            }
+                                                        }
+                                                        div.col:not(:last-child) {
+                                                            &:after {
+                                                            content: "";
+                                                            width: 4px;
+                                                            background: $es-button-grey;
+                                                            height: 95%;
+                                                            position: absolute;
+                                                            top: 0;
+                                                            right: -8px;
+                                                            opacity: 0.25;
+                                                            }
+                                                        }
+                                                        div.col:first-child {
+                                                            width: 25%;
+                                                            padding-left: 0px;
+                                                        }
+                                                        div.col:last-child {
+                                                            width: 41%;
+                                                            padding-right: 0px;
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                                div#at-glance-row2 {
+                                    div.es-col {
+                                        div.et_pb_module {
+                                            div.et_pb_text_inner {
+                                                h4.h4-heading {
+                                                    color: $es-dark-blue;
+                                                    @include bold();
+                                                    font-size: 36px;
+                                                    line-height: 44px !important;
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                            div#references-section {
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
 }
 @media all and (max-width: 767px) {
   .sub-container {
