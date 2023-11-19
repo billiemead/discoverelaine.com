@@ -22,6 +22,9 @@ div#footer-container {
     width: 85%;
     justify-content: space-between;
     align-items: center;
+    div.es-logo {
+        width: 25%;
+    }
     div.es-links {
       width: 75%;
       margin: -10px 0 0;
@@ -46,7 +49,7 @@ div#footer-container {
   div.footer-right {
     display: flex;
     width: 15%;
-    max-width: 225px;
+    min-width: 225px;
     justify-content: space-between;
     align-items: flex-end;
     height: 40px;
@@ -96,6 +99,90 @@ div#footer-container {
 }
 
 @media all and (max-width: 1024px) {
+    div#footer-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        div.footer-left {
+            display: flex;
+            width: 85%;
+            justify-content: space-between;
+            align-items: center;
+            div.es-logo {
+                width: 40%;
+            }
+            div.es-links {
+                width: 60%;
+                margin: -10px 0 0;
+                div {
+                    height: 21px;
+                }
+            }
+            div.contact-link {
+                width: 100%;
+            span:nth-of-type(2),
+            span:last-child {
+                margin: 0 0 0 20px;
+            }
+            a {
+                display: block;
+                font-weight: 600;
+                color: $es-gray;
+                text-decoration: underline;
+            }
+            }
+        }
+        div.footer-right {
+            display: flex;
+            width: 15%;
+            min-width: 225px;
+            justify-content: space-between;
+            align-items: flex-end;
+            height: 40px;
+            div.es-so-link {
+            height: 100%;
+            display: flex;
+            margin: 0;
+            padding: 0;
+            align-items: flex-end;
+            a {
+                display: flex;
+            }
+            }
+            div#social-icon-fb {
+                a.exitNotifierLink {
+                    img {
+                        width: 20px;
+                        height: 40px;
+                    }
+                }
+            }
+            div#social-icon-twitter {
+                a.exitNotifierLink {
+                    img {
+                        width: 40px;
+                        height: 38px;
+                    }
+                }
+            }
+            div#social-icon-youtube {
+                a.exitNotifierLink {
+                    img {
+                        width: 31px;
+                        height: 31px;
+                    }
+                }
+            }
+            div#social-icon-youtube {
+                a.exitNotifierLink {
+                    img {
+                        width: 45px;
+                        height: 31px;
+                    }
+                }
+            }
+        }
+    }
 }
 @media all and (max-width: 980px) {
 }
