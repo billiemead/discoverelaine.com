@@ -139,6 +139,19 @@ div#section-blue-wave {
             border-color: $es-blue !important;
 
         }
+        &.w-214 {
+            width: 100%;
+            margin: 0 auto;
+        }
+        &.w-290 {
+            width: 100%;
+            margin: 0 auto;
+        }
+        &.w-335 {
+            width: 100%;
+            margin: 0 auto;
+            max-width: 335px;
+        }
         &.w-525 {
             width: 100%;
             margin: 0 auto;
@@ -187,14 +200,6 @@ div#section-blue-wave {
             border-color: $es-blue !important;
 
         }
-        &.w-525 {
-            width: 100%;
-            margin: 0 auto;
-        }
-        &.w-640 {
-            width: 100%;
-            margin: 0 auto;
-        }
     }
     div#section-blue-wave {
         content:url('/wp-content/themes/elainestudy/images/blue-wave-576x110.png');
@@ -223,14 +228,6 @@ div#section-blue-wave {
             border-width: 1px;
             border-color: $es-blue !important;
 
-        }
-        &.w-525 {
-            width: 100%;
-            margin: 0 auto;
-        }
-        &.w-640 {
-            width: 100%;
-            margin: 0 auto;
         }
     }
 }
