@@ -9,117 +9,73 @@ div#et-main-area {
             div.entry-content {
                 div.et-l {
                     div.et_builder_inner_content {
-
                         div#recruiting-hero-section {
                             background-size: contain;
                             background-position: right -3% center;
                             background-image: url( "/wp-content/themes/elainestudy/images/es-new-hero1-538x264.png" ) !important;
                             height: 264px;
                             margin: 0;
-
+                            padding: 0;
+                            display: flex;
                             .es-recruiting-hero-row {
                                 padding:0;
                             }
 
                             h1.hero-h1 {
-                                @include bold();
-                                font-size: 70px;
-                                line-height: 90px;
-                                margin-top: 0px;
-                                margin-bottom: 0px;
-                                color: $es-white;
-                                padding:0;
+                                margin: 0;
                             }
 
                         }
-
                         div#recruiting-about-section {
-                            h2 {
-                                font-size: 60px;
-                                line-height: 60px;
-                                color: $es-dark-blue;
-                                @include bold();
-                                margin-bottom: 45px;
+                            h2.h2-heading {
                             }
 
-                            h3 {
-                                font-size: 24px;
-                                line-height: 40px;
-                                color: $es-dark-blue;
-                                @include bold();
+                            h3.h3-heading {
                             }
 
-                            p {
-                                font-size: 24px;
-                                line-height: 40px;;
-                                color: $es-gray;
+                            p.es-p {
                             }
                         }
-
                         div#recruiting-story-section {
                             padding-top:0;
                             margin:0;
 
-                            h2 {
-                                font-size: 60px;
-                                line-height: 60px;
-                                color: $es-dark-blue;
-                                @include bold();
+                            h2.h2-heading {
                                 margin-bottom: 45px;
                             }
 
-                            h3 {
-                                font-size: 24px;
-                                line-height: 40px;
-                                color: $es-dark-blue;
-                                @include bold();
+                            h3.h3-heading {
                             }
 
-                            p {
-                                font-size: 24px;
-                                line-height: 40px;;
-                                color: $es-gray;
+                            p.es-p {
                             }
 
                             .recruiting-story-row {
-                                h3 {
-                                    font-size: 24px;
-                                    line-height: 40px;
-                                    color: $es-dark-blue;
-                                    @include bold();
+                                h3.h3-heading {
                                 }
 
-                                p {
-                                    font-size: 24px;
-                                    line-height: 40px;;
-                                    color: $es-gray;
+                                p.es-p {
                                 }
                             }
 
                             div.es-video-row {
                                 height:auto;
-
-                                h3 {
-                                    @include bold();
-                                    font-size: 40px;
-                                    line-height: 55px;;
-                                    color: $es-dark-blue;
+                                min-height: 414px;
+                                h3.h3-heading {
                                     padding:0;
-                                    text-align: left;
                                 }
 
-                                p {
-                                    font-size: 24px;
-                                    line-height: 40px;
-                                    text-align: left;
+                                p.es-p {
                                 }
 
                                 img {
-                                    
+
                                     width:100%;
                                     height:auto;
                                 }
-
+                                .es-col-left {
+                                    width: 50%;
+                                }
                                 .es-col-right {
                                     padding:0 60px;
                                 }
@@ -131,71 +87,81 @@ div#et-main-area {
 
                             }
                         }
-
                         div#recruiting-sermonix-section {
                             background-color: $es-purple;
                             height: 882px;
                             padding:40px 0;
 
-                            .es-recruiting-sermonix-row {
+                            div.es-recruiting-sermonix-row {
                                 height: 768px;
                                 margin-top:10px;
                                 background-color: $es-white;
                                 border-radius:45px;
                                 box-shadow: 5px 3px 20px -1px rgba(0,0,0,0.2);
+                                div.es-col {
+                                    padding: 0 15% 0 15%;
+                                    div#es-recruiting-text-1 {
 
-                                .es-recruiting-sermonix-text {
-                                    max-width: 1000px;
-                                    margin: auto;
-                                }
+                                    }
+                                    div#es-recruiting-text-2 {
+                                        margin-top: 2.5%;
+                                        max-width: 700px;
+                                    }
+                                    div.es-recruiting-sermonix-text {
+                                        max-width: 877px;
+                                        margin: auto;
+                                    }
+                                    h3.h3-heading {
+                                        margin-bottom: 40px;
+                                    }
+                                    p.es-p {
+                                    }
 
-                                h3 {
-                                    font-size: 60px;
-                                    line-height: 60px;
-                                    @include bold();
-                                    color: $es-dark-blue;
-                                    margin-bottom: 40px;
-                                }
-
-                                p {
-                                    font-size: 24px;
-                                    line-height: 40px;
-                                    @include bold();
-                                }
-
-                                .es-btn {
-                                    margin-top:20px;
+                                    a.es-btn {
+                                        margin-top:20px;
+                                    }
                                 }
                             }
                         }
-
-
                         div#recruiting-previous-section {
-                            h2 {
-                                font-size: 40px;
-                                line-height: 30px;
-                                color: $es-dark-blue;
-                                @include bold();
+                            div.es-row.recruit {
+                                h2.h2-heading {
+                                    font-size: 40px;
+                                    line-height: 30px;
+                                }
+                                p.es-p {
+                                }
                             }
+                            div.recruiting-previous-one_two {
+                                max-width: 918px;
+                                margin: 0 auto;
+                                display: flex;
+                                justify-content: space-between;
+                                div.es-col {
+                                    display: flex;
+                                    flex-direction: column;
+                                    width: 50%;
+                                }
+                                div.es-col.left {
+                                    &:first-of-type:after {
+                                    content: "";
+                                    position: absolute;
+                                    right: -30px;
+                                    top: 0;
+                                    width: 2px;
+                                    height: 100%;
+                                    background: $es-gray;
+                                }
+                                }
+                                div.es-col.right {
 
-                            p {
-                                font-size: 24px;
-                                line-height: 40px;;
-                                color: $es-gray;
-                            }
-
-                            .about-es-one_two .et_pb_column:first-of-type:after {
-                                content: "";
-                                position: absolute;
-                                right: -30px;
-                                top: 0;
-                                width: 2px;
-                                height: 100%;
-                                background: #4D596A;
+                                }
                             }
                         }
-
-
+                        div#section-blue-wave {
+                            margin-top: 4em !important;
+                            margin-bottom: 3em !important;
+                        }
                     }
                 }
             }
@@ -205,6 +171,187 @@ div#et-main-area {
 @media all and (max-width: 1024px) {
 }
 @media all and (max-width: 980px) {
+    div#et-main-area {
+    div#main-content {
+        article.page {
+            div.entry-content {
+                div.et-l {
+                    div.et_builder_inner_content {
+                        div#recruiting-hero-section {
+                            background-size: contain;
+                            background-position: right -3% center;
+                            background-image: url( "/wp-content/themes/elainestudy/images/es-new-hero1-538x264.png" ) !important;
+                            height: 264px;
+                            margin: 0;
+                            padding: 0;
+                            display: flex;
+                            .es-recruiting-hero-row {
+                                padding:0;
+                            }
+
+                            h1.hero-h1 {
+                                margin: 0;
+                            }
+
+                        }
+                        div#recruiting-about-section {
+                            div.es-row {
+                                div.es-col.left {
+                                    div.et_pb_module {
+                                        text-align: center;
+                                    }
+                                }
+                                div.es-col.right {
+
+                                }
+                            }
+                            h2.h2-heading {
+                            }
+
+                            h3.h3-heading {
+                            }
+
+                            p.es-p {
+                            }
+                        }
+                        div#recruiting-story-section {
+                            padding-top:0;
+                            margin:0;
+
+                            h2.h2-heading {
+                                margin-bottom: 45px;
+                            }
+
+                            h3.h3-heading {
+                            }
+
+                            p.es-p {
+                            }
+
+                            .recruiting-story-row {
+                                h3.h3-heading {
+                                    text-align: center;
+                                }
+
+                                p.es-p {
+                                    text-align: center;
+                                }
+                            }
+
+                            div.es-video-row {
+                                height:auto;
+                                min-height: 414px;
+                                .es-col-left {
+                                    width: 100%;
+                                    img {
+                                        width:100%;
+                                        height:auto;
+                                    }
+                                }
+                                .es-col-right {
+                                    padding:80px 60px;
+                                    div.es-video-info {
+                                        padding: 0;
+                                        text-align: center;
+                                        h3.h3-heading {
+                                            padding:0;
+                                            text-align: center;
+                                        }
+                                        p.es-p {
+                                            text-align: center;
+                                        }
+                                    }
+                                    div.et_pb_button_module_wrapper {
+                                        margin: 0 auto;
+                                        a.es-btn {
+                                            margin: 0 auto;
+                                            text-align: center;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                        div#recruiting-sermonix-section {
+                            background-color: $es-purple;
+                            height: 100%;
+                            padding:40px 0;
+
+                            div.es-recruiting-sermonix-row {
+                                height: 100%;
+                                margin-top:10px;
+                                background-color: $es-white;
+                                border-radius:45px;
+                                box-shadow: 5px 3px 20px -1px rgba(0,0,0,0.2);
+                                div.es-col {
+                                    padding: 0 15% 0 15%;
+                                    div#es-recruiting-text-1 {
+
+                                    }
+                                    div#es-recruiting-text-2 {
+                                        margin-top: 2.5%;
+                                        max-width: 700px;
+                                    }
+                                    div.es-recruiting-sermonix-text {
+                                        max-width: 877px;
+                                        margin: auto;
+                                    }
+                                    h3.h3-heading {
+                                        margin-bottom: 40px;
+                                    }
+                                    p.es-p {
+                                    }
+
+                                    a.es-btn {
+                                        margin-top:20px;
+                                    }
+                                }
+                            }
+                        }
+                        div#recruiting-previous-section {
+                            div.es-row.recruit {
+                                h2.h2-heading {
+                                    font-size: 40px;
+                                    line-height: 30px;
+                                }
+                                p.es-p {
+                                }
+                            }
+                            div.recruiting-previous-one_two {
+                                max-width: 918px;
+                                margin: 0 auto;
+                                display: flex;
+                                justify-content: space-between;
+                                div.es-col {
+                                    display: flex;
+                                    flex-direction: column;
+                                    width: 50%;
+                                }
+                                div.es-col.left {
+                                    &:first-of-type:after {
+                                    content: "";
+                                    position: absolute;
+                                    right: 0;
+                                    top: 0;
+                                    width: 2px;
+                                    height: 100%;
+                                    background: $es-gray;
+                                }
+                                }
+                                div.es-col.right {
+
+                                }
+                            }
+                        }
+                        div#section-blue-wave {
+                            margin-top: 4em !important;
+                            margin-bottom: 3em !important;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
 }
 @media all and (max-width: 768px) {
 }
@@ -228,9 +375,6 @@ div#et-main-area {
                                 }
 
                                 h1.hero-h1 {
-                                    @include bold();
-                                    font-size: 35px;
-                                    line-height: 37px;
                                     margin-top: 0px;
                                     margin-bottom: 0px;
                                     color: $es-white;
@@ -252,26 +396,15 @@ div#et-main-area {
                                     width:auto;
                                 }
 
-                                h2 {
-                                    font-size: 35px;
-                                    line-height: 37px;
-                                    color: $es-dark-blue;
-                                    @include bold();
+                                h2.h2-heading {
                                     margin-bottom: 35px;
                                     margin-top:20px;
                                 }
 
-                                h3 {
-                                    font-size: 20px;
-                                    line-height: 24px;
-                                    color: $es-dark-blue;
-                                    @include bold();
+                                h3.h3-heading {
                                 }
 
-                                p {
-                                    font-size: 20px;
-                                    line-height: 35px;;
-                                    color: $es-gray;
+                                p.es-p {
                                 }
                             }
 
@@ -279,66 +412,39 @@ div#et-main-area {
                                 padding-top:0;
                                 margin:0;
 
-                                h2 {
-                                    font-size: 60px;
-                                    line-height: 60px;
-                                    color: $es-dark-blue;
-                                    @include bold();
+                                h2.h2-heading {
                                     margin-bottom: 45px;
                                 }
 
-                                h3 {
-                                    font-size: 24px;
-                                    line-height: 40px;
-                                    color: $es-dark-blue;
-                                    @include bold();
+                                h3.h3-heading {
                                 }
 
-                                p {
-                                    font-size: 24px;
-                                    line-height: 40px;;
-                                    color: $es-gray;
+                                p.es-p {
                                 }
 
                                 .recruiting-story-row {
-                                    h3 {
-                                        font-size: 24px;
-                                        line-height: 40px;
-                                        color: $es-dark-blue;
-                                        @include bold();
+                                    h3.h3-heading {
                                     }
 
-                                    p {
-                                        font-size: 24px;
-                                        line-height: 40px;;
-                                        color: $es-gray;
+                                    p.es-p {
                                     }
                                 }
-
-
 
                                 div.es-video-row {
                                     width: 75%;
 
-                                    h3 {
-                                        @include bold();
-                                        font-size: 28px;
-                                        line-height: 36px;;
-                                        color: $es-dark-blue;
+                                    h3.h3-heading {
                                         padding:0;
                                         text-align: center;
                                         margin:30px 0;
                                     }
 
-                                    p {
-                                        font-size: 20px;
-                                        line-height: 30px;
-                                        text-align: left;
+                                    p.es-p {
                                         margin-bottom: 30px;
                                     }
 
                                     img {
-                                        
+
                                         width:100%;
                                         height:auto;
                                     }
@@ -352,9 +458,8 @@ div#et-main-area {
                                         text-align: center;
                                     }
 
-                                    .es-btn {
-                                        font-size: 19px;
-                                        line-height: 19px;
+                                    a.es-btn {
+
                                     }
 
                                 }
@@ -365,69 +470,38 @@ div#et-main-area {
                                 height: auto;
                                 padding:20px 0;
 
-                                .es-recruiting-sermonix-row {
+                                div.es-recruiting-sermonix-row {
                                     height: auto;
                                     margin-top:10px;
                                     background-color: $es-white;
                                     border-radius:45px;
                                     box-shadow: 5px 3px 20px -1px rgba(0,0,0,0.2);
                                     padding:20px 30px;
+                                    div.es-col {
+                                        padding: 0 15% 0 15%;
+                                        div#es-recruiting-text-1 {
 
-                                    .es-recruiting-sermonix-text {
-                                        max-width: 1000px;
-                                        margin: auto;
-                                    }
+                                        }
+                                        div#es-recruiting-text-2 {
+                                            margin-top: 2.5%;
+                                            max-width: 700px;
+                                        }
+                                        div.es-recruiting-sermonix-text {
+                                            max-width: 877px;
+                                            margin: auto;
+                                        }
+                                        h3.h3-heading {
+                                            margin-bottom: 40px;
+                                        }
+                                        p.es-p {
+                                        }
 
-                                    h3 {
-                                        font-size: 35px;
-                                        line-height: 37px;
-                                        @include bold();
-                                        color: $es-dark-blue;
-                                        margin-bottom: 40px;
-                                    }
-
-                                    p {
-                                        font-size: 20px;
-                                        line-height: 34px;
-                                        @include bold();
-                                    }
-
-                                    .es-btn {
-                                        margin-top:20px;
-                                        font-size:20px;
-                                        line-height: 40px;
-                                        @include bold();
+                                        a.es-btn {
+                                            margin-top:20px;
+                                        }
                                     }
                                 }
                             }
-
-
-                            div#recruiting-previous-section {
-                                h2 {
-                                    font-size: 40px;
-                                    line-height: 30px;
-                                    color: $es-dark-blue;
-                                    @include bold();
-                                }
-
-                                p {
-                                    font-size: 24px;
-                                    line-height: 40px;;
-                                    color: $es-gray;
-                                }
-
-                                .about-es-one_two .et_pb_column:first-of-type:after {
-                                    content: "";
-                                    position: absolute;
-                                    right: -30px;
-                                    top: 0;
-                                    width: 2px;
-                                    height: 100%;
-                                    background: #4D596A;
-                                }
-                            }
-
-
                         }
                     }
                 }

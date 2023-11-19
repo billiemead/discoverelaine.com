@@ -43,6 +43,22 @@ a.es-btn {
         border-color: $es-blue !important;
 
     }
+    &.w-214 {
+        width: 214px;
+        height: 54px !important;
+        margin: 0 auto;
+    }
+    &.w-290 {
+        width: 290px;
+        height: 54px !important;
+    }
+    &.w-335 {
+        font-size: 20px;
+        line-height: 20px !important;
+        width: 335px;
+        height: 70px !important;
+        margin: 0 auto;
+    }
     &.w-525 {
         width: 525px;
         margin: 0 auto;
@@ -56,55 +72,15 @@ div.es-row.about {
     max-width: 1220px;
     margin-bottom: 0px !important;
 }
-div.es-section {
-
+div.es-row.recruit {
+    max-width: 1494px;
+    margin-bottom: 0px !important;
 }
-/* * * Blue Wave * * */
 div#section-blue-wave {
     margin-top: 5em;
     margin-bottom: 8em;
-    div#blue-wave-image {
-        img {
+}
 
-        }
-    }
-}
-h1.h1-heading {
-
-}
-h2.h2-heading {
-
-}
-h3.h3-heading {
-
-}
-h4.h4-heading {
-
-}
-h5.h5-heading {
-
-}
-h6.h6-heading {
-
-}
-p.es-p {
-    @include regular();
-    font-size: 24px;
-    line-height: 40px;
-    a {
-        @include bold();
-        text-decoration: underline;
-        color: $es-blue;
-    }
-}
-p.refs {
-    @include regular();
-    font-size: 18px !important;
-    line-height: 30px !important;
-}
-p.es-p.center {
-    text-align: center;
-}
 br.line-break {
 
 }
@@ -124,7 +100,6 @@ div#et-main-area {
         }
     }
 }
-/* * * * BLUE WAVE IMAGE STYLING * * * */
 div#section-blue-wave {
     content:url('/wp-content/themes/elainestudy/images/blue-wave-1920x189.png');
     width: 100%;
@@ -137,20 +112,57 @@ div#section-blue-wave {
         max-width: 820px;
         margin-bottom: 0px !important;
     }
+    div.es-row.recruit {
+    max-width: 820px;
+    margin-bottom: 0px !important;
+}
 }
 @media all and (max-width: 980px) {
+    a.es-btn {
+        @include regular();
+        font-size: 23px;
+        line-height: 38px !important;
+        height: 60px !important;
+        color: $es-white !important;
+        border-color: $es-blue !important;
+        background-color: $es-blue !important;
+        padding: 0 !important;
+        border-radius: 0 !important;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        &:hover {
+            color: $es-blue !important;
+            background-color: $es-white !important;
+            border-style: solid;
+            border-width: 1px;
+            border-color: $es-blue !important;
+
+        }
+        &.w-525 {
+            width: 100%;
+            margin: 0 auto;
+        }
+        &.w-640 {
+            width: 100%;
+            margin: 0 auto;
+        }
+    }
     div.es-row.about {
         max-width: 784px;
         margin-bottom: 0px !important;
     }
-    p.refs {
-        @include regular();
-        font-size: 17px !important;
-        line-height: 23px !important;
+    div.es-row.recruit {
+        max-width: 794px;
+        margin-bottom: 0px !important;
     }
 }
 @media all and (max-width: 767px) {
     div.es-row.about {
+        max-width: 612px;
+        margin-bottom: 0px !important;
+    }
+    div.es-row.recruit {
         max-width: 612px;
         margin-bottom: 0px !important;
     }
@@ -184,13 +196,11 @@ div#section-blue-wave {
             margin: 0 auto;
         }
     }
-    /* * * * BLUE WAVE IMAGE STYLING * * * */
     div#section-blue-wave {
         content:url('/wp-content/themes/elainestudy/images/blue-wave-576x110.png');
     }
 }
 @media all and (max-width: 576px) {
-
     a.es-btn {
         @include regular();
         font-size: 18px;
@@ -222,16 +232,6 @@ div#section-blue-wave {
             width: 100%;
             margin: 0 auto;
         }
-    }
-    p.es-p {
-        @include regular();
-        font-size: 20px;
-        line-height: 35px;
-    }
-    p.refs {
-        @include regular();
-        font-size: 15px !important;
-        line-height: 21px !important;
     }
 }
 @media all and (max-width: 480px) {
