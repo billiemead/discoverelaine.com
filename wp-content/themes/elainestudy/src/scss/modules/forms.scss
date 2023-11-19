@@ -51,12 +51,93 @@ div#es-form-section {
     }
 }
 @media all and (max-width: 1024px) {
+    div#es-form-section {
+        height: 420px;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        .et_pb_row {
+            max-width: 1300px;
+            padding: 50px 0 !important;
+            div#hs-form-head {
+                margin: 0;
+                h2.es-form-heading {
+                    font-size: 38px;
+                    line-height: 43px !important;
+                    text-align: center;
+                }
+            }
+            div#hs-form-subhead {
+                p.es-form-subheading {
+                    font-size: 23px;
+                    line-height: 43px;
+                    color: $es-white;
+                    text-align: center;
+                }
+            }
+        }
+    }
 }
 @media all and (max-width: 980px) {
 }
 @media all and (max-width: 767px) {
+    div#es-form-section {
+        height: 500px;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        .et_pb_row {
+            max-width: 1300px;
+            padding: 50px 0 !important;
+            div#hs-form-head {
+                margin: 0;
+                h2.es-form-heading {
+                    font-size: 38px;
+                    line-height: 43px !important;
+                    text-align: center;
+                }
+            }
+            div#hs-form-subhead {
+                p.es-form-subheading {
+                    font-size: 23px;
+                    line-height: 43px;
+                    color: $es-white;
+                    text-align: center;
+                }
+            }
+        }
+    }
 }
 @media all and (max-width: 576px) {
+    div#es-form-section {
+        height: 100%;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        .et_pb_row {
+            max-width: 1300px;
+            padding: 50px 0 !important;
+            div#hs-form-head {
+                margin: 0;
+                h2.es-form-heading {
+                    font-size: 38px;
+                    line-height: 43px !important;
+                    text-align: center;
+                }
+            }
+            div#hs-form-subhead {
+                p.es-form-subheading {
+                    font-size: 23px;
+                    line-height: 43px;
+                    color: $es-white;
+                    text-align: center;
+                }
+            }
+        }
+    }
 }
 @media all and (max-width: 480px) {
 }
