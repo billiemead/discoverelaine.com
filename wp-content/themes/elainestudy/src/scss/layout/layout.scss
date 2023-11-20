@@ -22,6 +22,15 @@ div.hero-section {
         }
     }
 }
+span.et_pb_scroll_top.et-pb-icon {
+    background: $es-purple-opaque;
+    border-radius: 0px;
+    width: 50px;
+    height: 50px;
+    line-height: 50px;
+    font-size: 35px;
+    padding: 0;
+}
 a.es-btn {
     @include regular();
     font-size: 24px;

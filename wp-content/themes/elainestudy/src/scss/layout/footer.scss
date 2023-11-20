@@ -222,12 +222,23 @@ div#footer-container {
   }
 }
 @media all and (max-width: 767px) {
+    footer {
+        div#es-footer-section {
+            div.et_pb_row {
+                padding: 0 !important;
+                height: 100%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+        }
+    }
   div#es-footer-section {
     height: 400px;
   }
   div#footer-container {
     flex-direction: column;
-    height: 310px;
+    height: 300px;
     div.footer-left {
       width: 100%;
       flex-direction: column;
@@ -297,6 +308,76 @@ div#footer-container {
   }
 }
 @media all and (max-width: 576px) {
+    div#footer-container {
+        flex-direction: column;
+        height: 275px;
+        div.footer-left {
+        width: 100%;
+        flex-direction: column;
+        div.es-links {
+            width: 100%;
+            margin: 0;
+            div {
+            height: 28px;
+            text-align: center;
+            }
+        }
+        div.contact-link {
+            width: 100%;
+            span {
+            margin: 0 0 0 10px;
+            }
+            span:last-child {
+            margin: 0;
+            }
+        }
+        }
+        div.footer-right {
+        width: 100%;
+        justify-content: center;
+        div.es-so-link {
+            margin: 0 20px 0 0;
+        }
+        div.es-so-link:first-child {
+            margin: -15px 20px 0 0 !important;
+        }
+        div.es-so-link:last-child {
+            margin: 0;
+        }
+        div#social-icon-fb {
+            a.exitNotifierLink {
+                img {
+                    width: 15px;
+                    height: 35px;
+                }
+            }
+        }
+        div#social-icon-twitter {
+            a.exitNotifierLink {
+                img {
+                    width: 35px;
+                    height: 33px;
+                }
+            }
+        }
+        div#social-icon-linkedin {
+            a.exitNotifierLink {
+                img {
+                    width: 33px;
+                    height: 33px;
+                }
+            }
+        }
+        div#social-icon-youtube {
+            a.exitNotifierLink {
+                img {
+                    width: 40px;
+                    height: 26px;
+                }
+            }
+        }
+    }
+  }
 }
 @media all and (max-width: 480px) {
 }

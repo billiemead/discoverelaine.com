@@ -17,12 +17,8 @@ div#et-main-area {
                             div.es-row {
                                 padding: 0;
                                 div.es-col {
-                                    h1.hero-h1 {
-                                        @include bold();
-                                        font-size: 70px;
-                                        line-height: 90px;
-                                        color: $es-purple;
-                                        padding-bottom: 0px;
+                                    h1.hero-h1-alt {
+
                                     }
                                 }
                             }
@@ -31,19 +27,11 @@ div#et-main-area {
                             padding: 0;
                             div.es-glossary-content-row {
                                 div.es-col {
-                                    h2.h2-heading {
+                                    h2.h2-heading-alt {
                                         padding-top: 60px;
                                         padding-bottom: 15px;
-                                        @include bold();
-                                        font-size: 30px;
-                                        line-height: 55px;
-                                        color: $es-dark-blue;
                                     }
                                     p.es-p {
-                                        @include regular();
-                                        font-size: 24px;
-                                        line-height: 40px;
-                                        color: $es-gray;
                                         a.privacy-link {
 
                                         }
@@ -51,15 +39,7 @@ div#et-main-area {
                                     ul.privacy-list {
                                         margin-left: 1em;
                                         padding: 0 0 1em 2em;
-                                        @include regular();
-                                        font-size: 24px;
-                                        line-height: 40px;
-                                        color: $es-gray;
                                         li.privacy-list-item {
-                                            @include regular();
-                                            font-size: 24px;
-                                            line-height: 40px;
-                                            color: $es-gray;
                                             padding-bottom: 1.125em;
                                         }
                                     }
@@ -82,6 +62,59 @@ div#et-main-area {
 @media all and (max-width: 980px) {
 }
 @media all and (max-width: 767px) {
+    div#et-main-area {
+    div#main-content {
+        article.page {
+            div.entry-content {
+                div.et-l {
+                    div.et_builder_inner_content {
+                        div#privacy-hero-section {
+                            height: 150px;
+                            display: flex;
+                            justify-content: flex-start;
+                            align-items: center;
+                            div.es-row {
+                                padding: 0;
+                                div.es-col {
+                                    h1.hero-h1-alt {
+
+                                    }
+                                }
+                            }
+                        }
+                        div#privacy-section {
+                            padding: 0;
+                            div.es-glossary-content-row {
+                                div.es-col {
+                                    h2.h2-heading-alt {
+                                        padding-top: 25px;
+                                        padding-bottom: 15px;
+                                    }
+                                    p.es-p {
+                                        a.privacy-link {
+
+                                        }
+                                    }
+                                    ul.privacy-list {
+                                        margin-left: 0.5em;
+                                        padding: 0 0 0.5em 1em;
+                                        li.privacy-list-item {
+                                            padding-bottom: 0.75em;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                        div#section-blue-wave {
+                            margin-top: 7em;
+                            margin-bottom: 3em;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
 }
 @media all and (max-width: 576px) {
 }

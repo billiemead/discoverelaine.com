@@ -6,9 +6,18 @@
 h1.hero-h1 {
     @include bold();
     font-size: 60px;
-    line-height: 64px;
+    line-height: 64px !important;
     margin-top: 20px;
     margin-bottom: 30px;
+    letter-spacing: 0px;
+}
+h1.hero-h1-alt {
+    @include bold();
+    font-size: 70px;
+    line-height: 70px !important;
+    color: $es-purple;
+    padding: 0px;
+    margin: 0px;
     letter-spacing: 0px;
 }
 h1.h1-heading {
@@ -38,6 +47,14 @@ h2.h2-heading {
     &.center {
         text-align: center;
     }
+}
+h2.h2-heading-alt {
+    text-align: left;
+    color: $es-dark-blue;
+    @include bold();
+    font-size: 30px;
+    line-height: 55px !important;
+    letter-spacing: 0px;
 }
 h3.h3-heading-icon {
     text-align: left;
@@ -108,6 +125,13 @@ p.es-p {
         @include bold();
     }
 }
+ul.privacy-list,
+li.privacy-list-item {
+    color: $es-gray;
+    @include regular();
+    font-size: 24px;
+    line-height: 40px  !important;
+}
 p.es-p.center {
     text-align: center;
 }
@@ -125,28 +149,39 @@ p.es-p.center {
         font-size: 55px;
         line-height: 55px !important;
     }
+    h1.hero-h1-alt {
+        font-size: 60px;
+        line-height: 60px !important;
+        padding: 0px;
+        margin: 0px;
+    }
     h2.h2-heading-icon {
         font-size: 70px;
     }
     h3.h3-heading {
-        text-align: left;
-        color: $es-dark-blue;
-        @include bold();
         font-size: 35px;
         line-height: 40px !important;
-        letter-spacing: 0px;
     }
     h3.h3-heading-icon {
         font-size: 32px;
         line-height: 40px !important;
     }
-    h5.h5-heading {
-        text-align: left;
-        color: $es-blue;
-        @include bold();
+    h4.h4-heading {
         font-size: 23px;
         line-height: 38px !important;
-        letter-spacing: 0px;
+    }
+    h5.h5-heading {
+        font-size: 23px;
+        line-height: 38px !important;
+    }
+    p.es-p {
+        font-size: 23px;
+        line-height: 38px  !important;
+    }
+    ul.privacy-list,
+    li.privacy-list-item {
+        font-size: 23px;
+        line-height: 38px  !important;
     }
 }
 @media all and (max-width: 980px) {
@@ -155,29 +190,42 @@ p.es-p.center {
         line-height: 52px;
         margin-top: 20px;
     }
+    h1.hero-h1-alt {
+        font-size: 50px;
+        line-height: 50px !important;
+    }
     h2.h2-heading {
         font-size: 48px;
         line-height: 48px !important;
+    }
+    h2.h2-heading-alt {
+        font-size: 25px;
+        line-height: 45px !important;
     }
     h2.h2-heading-icon {
         font-size: 60px;
         line-height: 40px  !important;
     }
     h3.h3-heading {
-        text-align: left;
-        color: $es-dark-blue;
-        @include bold();
         font-size: 32px;
         line-height: 40px !important;
-        letter-spacing: 0px;
     }
-    h5.h5-heading {
-        text-align: left;
-        color: $es-blue;
-        @include bold();
+    h4.h4-heading {
         font-size: 22px;
         line-height: 37px !important;
-        letter-spacing: 0px;
+    }
+    h5.h5-heading {
+        font-size: 22px;
+        line-height: 37px !important;
+    }
+    p.es-p {
+        font-size: 22px;
+        line-height: 37px  !important;
+    }
+    ul.privacy-list,
+    li.privacy-list-item {
+        font-size: 22px;
+        line-height: 37px  !important;
     }
     p.refs {
         font-size: 17px !important;
@@ -190,6 +238,10 @@ p.es-p.center {
         line-height: 60px;
         margin-top: 10%;
     }
+    h1.hero-h1-alt {
+        font-size: 40px;
+        line-height: 40px !important;
+    }
     h2.h2-heading {
         font-size: 40px;
         line-height: 42px !important;
@@ -199,20 +251,25 @@ p.es-p.center {
         line-height: 70px  !important;
     }
     h3.h3-heading {
-        text-align: left;
-        color: $es-dark-blue;
-        @include bold();
         font-size: 38px;
         line-height: 40px !important;
-        letter-spacing: 0px;
     }
-    h5.h5-heading {
-        text-align: left;
-        color: $es-blue;
-        @include bold();
+    h4.h4-heading {
         font-size: 21px;
         line-height: 36px !important;
-        letter-spacing: 0px;
+    }
+    h5.h5-heading {
+        font-size: 21px;
+        line-height: 36px !important;
+    }
+    p.es-p {
+        font-size: 21px;
+        line-height: 36px  !important;
+    }
+    ul.privacy-list,
+    li.privacy-list-item {
+        font-size: 21px;
+        line-height: 36px  !important;
     }
 }
 
@@ -221,44 +278,42 @@ p.es-p.center {
         font-size: 35px;
         line-height: 40px;
     }
+    h1.hero-h1-alt {
+        font-size: 30px;
+        line-height: 30px !important;
+    }
     h2.h2-heading {
         font-size: 35px;
         line-height: 40px !important;
+    }
+    h2.h2-heading-alt {
+        font-size: 20px;
+        line-height: 35px !important;
     }
     h2.h2-heading-icon {
         font-size: 55px;
         line-height: 40px  !important;
     }
     h3.h3-heading {
-        text-align: left;
-        color: $es-dark-blue;
-        @include bold();
         font-size: 28px;
         line-height: 35px !important;
-        letter-spacing: 0px;
     }
     h4.h4-heading {
-        text-align: left;
-        @include bold();
-        color: $es-gray;
-        letter-spacing: 0px;
         font-size: 20px;
         line-height: 30px !important;
     }
     h5.h5-heading {
-        text-align: left;
-        color: $es-blue;
-        @include bold();
         font-size: 20px;
-        line-height: 35px !important;
-        letter-spacing: 0px;
+        line-height: 30px !important;
     }
     p.es-p {
-        text-align: left;
-        color: $es-gray;
-        @include regular();
         font-size: 20px;
-        line-height: 35px  !important;
+        line-height: 30px  !important;
+    }
+    ul.privacy-list,
+    li.privacy-list-item {
+        font-size: 20px;
+        line-height: 30px  !important;
     }
     p.refs {
         font-size: 15px !important;

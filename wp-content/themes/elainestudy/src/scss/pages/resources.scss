@@ -2,7 +2,6 @@
 @import "../base/font";
 
 /* ******* DISCOVER-ELAINE 2023 RESOURCES PAGE START ******* */
-
 div#et-main-area {
     div#main-content {
         article.page {
@@ -16,45 +15,34 @@ div#et-main-area {
                             align-items: center;
                             div.es-row {
                                 padding: 0;
-                                div.es-col {
-                                    h1.hero-h1 {
-                                        @include bold();
-                                        font-size: 70px;
-                                        line-height: 90px;
-                                        color: $es-purple;
-                                        padding-bottom: 0px;
-                                    }
+                                h1.hero-h1-alt {
                                 }
                             }
                         }
                         div#glossary-section {
-                            padding: 0;
+                            padding: 50px 0 0 0;
                             div#es-glossary-title-row {
                               display: flex;
                               align-items: center;
-
-                                .es-col.one {
+                                div.es-col.one {
                                     margin-right: 0;
-                                }
-
-                                div#glossary-title-icon {
-                                    text-align: left;
-                                    img {
-                                        margin-right: 0;
+                                    width: 15%;
+                                        div#glossary-title-icon {
+                                        text-align: left;
+                                        img {
+                                            margin-right: 0;
+                                        }
                                     }
                                 }
                                 div.es-col.two {
+                                    width: 85%;
                                     div#glossary-title {
                                         h2.h2-heading {
                                             padding:0;
                                         }
                                     }
                                 }
-                                div.es-col.three {
-
-                                }
                             }
-
                             div#glossary-subhead {
                                 h4.h4-heading {
                                     font-size: 32px;
@@ -64,69 +52,103 @@ div#et-main-area {
                                     margin-bottom:20px;
                                 }
                             }
-
                             div#es-glossary-content-row {
                                 h5.h5-heading {
-                                    padding-top: 60px;
-                                    padding-bottom: 15px;
+                                    padding-top: 50px;
+                                    padding-bottom: 10px;
                                 }
                                 h5.h5-heading:first-of-type {
                                   padding-top:0;
                                 }
-
-                                div.es-col {
-                                    p.es-p {
-                                    }
+                                p.es-p {
+                                    padding-bottom: 0;
                                 }
                             }
                         }
                         div#section-blue-wave {
                         }
                         div#media-section {
-
                             padding-top:0px;
-
+                            padding-bottom: 150px;
                             div#es-media-title-row {
                                 display: flex;
                                 align-items: center;
-                                .es-col.one {
+                                padding-bottom: 15px;
+                                div.es-col.one {
+                                    width: 15%;
                                     margin-right: 0px;
-                                    div#glossary-title-icon {
+                                    div#media-title-icon {
+                                        text-align: left;
                                         img {
                                             margin-right: 0;
                                         }
                                     }
                                 }
-                            }
-
-                            div#media-title {
-                                h2.h2-heading {
-                                    padding:0;
+                                div.es-col.two {
+                                    width: 85%;
+                                    padding: 0;
+                                    div#media-title {
+                                        h2.h2-heading {
+                                            padding:0;
+                                        }
+                                    }
                                 }
                             }
+                            div#video-row-1 {
+                                div.es-col.one {
 
+                                }
+                                div.es-col.two {
+
+                                }
+                            }
+                            div#video-row-2 {
+                                div.es-col.one {
+
+                                }
+                                div.es-col.two {
+
+                                }
+                            }
+                            div#video-row-3 {
+                                div.es-col.one {
+
+                                }
+                                div.es-col.two {
+
+                                }
+                            }
                             div.es-video-row {
-
+                                min-height: 414px;
                                 margin-bottom: 80px;
-
-                                h3.h3-heading {
-                                    padding:0;
-                                    margin-bottom: 35px;
+                                padding: 0 !important;
+                                margin: 50px auto 0;
+                                box-shadow: 5px 3px 20px -1px #ddd;
+                                max-width: 1540px;
+                                div.es-col.one {
+                                    img {
+                                        height: 414px;
+                                        object-fit: cover;
+                                    }
                                 }
-
-                                p {
-
+                                div.es-col.two {
+                                    div.es-video-h3 {
+                                        padding: 20px 0;
+                                        h3.h3-heading {
+                                            padding:0;
+                                            margin-bottom: 0px;
+                                        }
+                                    }
+                                    a.es-btn.w-290 {
+                                        margin-top: 25px;
+                                    }
                                 }
-
-                                img {
-
-                                    height:390px;
-                                    object-fit: cover;
-                                }
-
-                                .es-video-info {
-                                    padding: 0 20px;
-                                }
+                            }
+                            .et_pb_column:last-child {
+                                padding: 0 145px 0 50px;
+                                display: flex;
+                                flex-direction: column;
+                                justify-content: center;
                             }
                         }
 
@@ -136,12 +158,319 @@ div#et-main-area {
         }
     }
 }
-
 @media all and (max-width: 1024px) {
+    div#et-main-area {
+        div#main-content {
+            article.page {
+                div.entry-content {
+                    div.et-l {
+                        div.et_builder_inner_content {
+                            div#resources-hero-section {
+                                height: 264px;
+                                display: flex;
+                                justify-content: flex-start;
+                                align-items: center;
+                                div.es-row {
+                                    padding: 0;
+                                    h1.hero-h1-alt {
+                                    }
+                                }
+                            }
+                            div#glossary-section {
+                                padding: 50px 0 0 0;
+                                div#es-glossary-title-row {
+                                display: flex;
+                                align-items: center;
+                                    div.es-col.one {
+                                        margin-right: 0;
+                                        margin-bottom: 0;
+                                        width: 25%;
+                                            div#glossary-title-icon {
+                                            text-align: left;
+                                            img {
+                                                margin-right: 0;
+                                            }
+                                        }
+                                    }
+                                    div.es-col.two {
+                                        width: 75%;
+                                        div#glossary-title {
+                                            h2.h2-heading {
+                                                padding:0;
+                                            }
+                                        }
+                                    }
+                                }
+                                div#glossary-subhead {
+                                    h4.h4-heading {
+                                        font-size: 32px;
+                                        @include bold();
+                                        color: $es-dark-blue;
+                                        padding-bottom:0;
+                                        margin-bottom:20px;
+                                    }
+                                }
+                                div#es-glossary-content-row {
+                                    h5.h5-heading {
+                                        padding-top: 50px;
+                                        padding-bottom: 10px;
+                                    }
+                                    h5.h5-heading:first-of-type {
+                                    padding-top:0;
+                                    }
+                                    p.es-p {
+                                        padding-bottom: 0;
+                                    }
+                                }
+                            }
+                            div#section-blue-wave {
+                            }
+                            div#media-section {
+                                padding-top:0px;
+                                padding-bottom: 150px;
+                                div#es-media-title-row {
+                                    display: flex;
+                                    align-items: center;
+                                    padding-bottom: 15px;
+                                    div.es-col.one {
+                                        width: 25%;
+                                        margin-right: 0px;
+                                        margin-bottom: 0;
+                                        div#media-title-icon {
+                                            text-align: left;
+                                            img {
+                                                margin-right: 0;
+                                            }
+                                        }
+                                    }
+                                    div.es-col.two {
+                                        width: 75%;
+                                        padding: 0;
+                                        div#media-title {
+                                            h2.h2-heading {
+                                                padding:0;
+                                            }
+                                        }
+                                    }
+                                }
+                                div#video-row-1 {
+                                    div.es-col.one {
+
+                                    }
+                                    div.es-col.two {
+
+                                    }
+                                }
+                                div#video-row-2 {
+                                    div.es-col.one {
+
+                                    }
+                                    div.es-col.two {
+
+                                    }
+                                }
+                                div#video-row-3 {
+                                    div.es-col.one {
+
+                                    }
+                                    div.es-col.two {
+
+                                    }
+                                }
+                                div.es-video-row {
+                                    min-height: 414px;
+                                    margin-bottom: 80px;
+                                    padding: 0 !important;
+                                    margin: 50px auto 0;
+                                    box-shadow: 5px 3px 20px -1px #ddd;
+                                    max-width: 1000px;
+                                    flex-direction: column;
+                                    div.es-col.one {
+                                        width: 100%;
+                                        span.et_pb_image_wrap  {
+                                            width: 100%;
+                                            img {
+                                                width: 100%;
+                                                height: auto;
+                                                object-fit: cover;
+                                            }
+                                        }
+
+                                    }
+                                    div.es-col.two {
+                                        width: 100%;
+                                        min-height: 370px;
+                                        div.es-video-h3 {
+                                            padding: 0 0 20px 0;
+                                            h3.h3-heading {
+                                                padding:0;
+                                                margin-bottom: 0px;
+                                            }
+                                        }
+                                        a.es-btn.w-290 {
+                                            margin-top: 25px;
+                                        }
+                                    }
+                                }
+                                .et_pb_column:last-child {
+                                    padding: 60px;
+                                    display: flex;
+                                    flex-direction: column;
+                                    justify-content: center;
+                                }
+                            }
+
+                        }
+                    }
+                }
+            }
+        }
+    }
 }
 @media all and (max-width: 980px) {
 }
 @media all and (max-width: 768px) {
+    div#et-main-area {
+        div#main-content {
+            article.page {
+                div.entry-content {
+                    div.et-l {
+                        div.et_builder_inner_content {
+                            div#resources-hero-section {
+                                height: 150px;
+                                display: flex;
+                                justify-content: flex-start;
+                                align-items: center;
+
+                                div.es-row {
+                                    padding: 0;
+                                    div.es-col {
+                                        h1.hero-h1-alt {
+                                        }
+                                    }
+                                }
+                            }
+                            div#glossary-section {
+                                padding: 50px 0 0 0;
+                                div#es-glossary-title-row {
+                                  display: flex;
+                                  align-items: center;
+                                  flex-direction: column;
+
+                                    div.es-col.one {
+                                        width: 100%;
+                                        margin-right: 0px;
+                                        margin-bottom: 25px;
+                                        div#glossary-title-icon {
+                                            text-align: center;
+                                            img {
+                                               margin-right: 0;
+                                                width:120px;
+                                                height:120px;
+                                            }
+                                        }
+                                    }
+                                    div.es-col.two {
+                                        width: 100%;
+                                        div#glossary-title {
+                                            h2.h2-heading {
+                                                padding:0;
+                                                text-align: center;
+                                            }
+                                        }
+                                    }
+                                }
+                                div#glossary-subhead {
+                                    h4.h4-heading {
+                                        font-size: 26px;
+                                        line-height: 36px;
+                                        @include bold();
+                                        color: $es-dark-blue;
+                                        padding-bottom:0;
+                                        margin-bottom:20px;
+                                    }
+                                }
+                                div#es-glossary-content-row {
+                                    h5.h5-heading {
+                                        padding-top: 40px;
+                                        padding-bottom: 0px;
+                                        @include bold();
+                                        font-size: 20px;
+                                        line-height: 35px;
+                                        color: $es-blue;
+                                    }
+                                    h5.h5-heading:first-of-type {
+                                      padding-top:0;
+                                    }
+                                    div.es-col {
+                                        p.es-p {
+                                        }
+                                    }
+                                }
+                            }
+                            div#section-blue-wave {
+                                margin: 70px 0;
+                            }
+                            div#media-section {
+                                padding:0px;
+                                div#es-media-title-row {
+                                    display: flex;
+                                    align-items: center;
+                                    flex-direction: column;
+                                    div.es-col.one {
+                                        width: 100%;
+                                        margin-right: 0px;
+                                        margin-bottom: 25px;
+                                            div#media-title-icon {
+                                            text-align: center;
+                                            img {
+                                                margin-right: 0;
+                                                width:120px;
+                                                height:120px;
+                                            }
+                                        }
+                                    }
+                                }
+                                div.es-col.two {
+                                    width: 100%;
+                                    div#media-title {
+                                        h2.h2-heading {
+                                            padding:0;
+                                            text-align: center;
+                                        }
+                                    }
+                                }
+
+                                div.es-video-row {
+                                    height:auto;
+                                    margin-bottom: 80px;
+                                    max-width: 1000px;
+                                    width: 80%;
+                                    div.es-col.one {
+                                        span.et_pb_image_wrap  {
+                                            img {
+                                                width:100%;
+                                                height:auto;
+                                            }
+                                        }
+                                    }
+                                    div.es-col.two {
+                                        div.es-video-h3 {
+                                            h3.h3-heading {
+                                                padding: 0;
+                                                margin-bottom: 35px;
+                                                text-align: center;
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
 }
 @media all and (max-width: 576px) {
     div#et-main-area {
@@ -159,30 +488,24 @@ div#et-main-area {
                                 div.es-row {
                                     padding: 0;
                                     div.es-col {
-                                        h1.hero-h1 {
-                                            @include bold();
-                                            font-size: 30px;
-                                            line-height: 90px;
-                                            color: $es-purple;
-                                            padding-bottom: 0px;
+                                        h1.hero-h1-alt {
                                         }
                                     }
                                 }
                             }
                             div#glossary-section {
-                                padding: 0;
+                                padding: 50px 0 0 0;
                                 div#es-glossary-title-row {
                                   display: flex;
                                   align-items: center;
                                   flex-direction: column;
 
-                                    .es-col.one {
+                                    div.es-col.one {
                                         margin-right: 0px;
-                                    }
-
-                                    div#glossary-title-icon {
-                                        img {
-                                            margin-right: 0;
+                                            div#glossary-title-icon {
+                                            img {
+                                                margin-right: 0;
+                                            }
                                         }
                                     }
                                     div.es-col.two {
@@ -192,9 +515,6 @@ div#et-main-area {
                                                 text-align: center;
                                             }
                                         }
-                                    }
-                                    div.es-col.three {
-
                                     }
                                 }
 
@@ -228,22 +548,18 @@ div#et-main-area {
                                 }
                             }
                             div#section-blue-wave {
-                                margin: 70px 0;
+                                margin-top: 2em !important;
+                                margin-bottom: 0em !important;
                             }
                             div#media-section {
-
-                                padding-top:0px;
-                                padding:0 40px;
-
+                                padding:0px;
                                 div#es-media-title-row {
                                     display: flex;
                                     align-items: center;
                                     flex-direction: column;
-
                                     .es-col.one {
                                         margin-right: 0px;
                                     }
-
                                     div.media-title-icon {
                                         text-align: left;
                                         img {
@@ -253,37 +569,37 @@ div#et-main-area {
                                         }
                                     }
                                 }
-
                                 div#media-title {
                                     h2.h2-heading {
                                         padding:0;
                                         text-align: center;
                                     }
                                 }
-
                                 div.es-video-row {
                                     height:auto;
                                     margin-bottom: 80px;
+                                    div.es-col.one {
 
-                                    h3.h3-heading {
-                                        padding:0;
-                                        margin-bottom: 35px;
                                     }
-
-                                    p {
+                                    div.es-col.two {
+                                        min-height: 270px;
+                                        div.es-video-h3 {
+                                            padding: 0px;
+                                            text-align: center;
+                                                h3.h3-heading {
+                                                    padding:0;
+                                                    margin-bottom: 15px;
+                                                }
+                                        }
                                     }
 
                                     img {
-
                                         width:100%;
                                         height:auto;
                                     }
-
-                                    .es-video-info {
-                                        padding: 0 20px;
-                                        text-align: center;
-                                    }
-
+                                }
+                                .et_pb_column:last-child {
+                                    padding: 40px;
                                 }
                             }
 
