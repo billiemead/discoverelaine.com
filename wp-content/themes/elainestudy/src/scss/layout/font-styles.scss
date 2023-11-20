@@ -73,10 +73,10 @@ h4.h4-heading {
 }
 h5.h5-heading {
     text-align: left;
-    color: $es-dark-blue;
+    color: $es-blue;
     @include bold();
-    font-size: 60px;
-    line-height: 60px !important;
+    font-size: 24px;
+    line-height: 40px !important;
     letter-spacing: 0px;
 }
 h6.h6-heading {
@@ -140,6 +140,14 @@ p.es-p.center {
         font-size: 32px;
         line-height: 40px !important;
     }
+    h5.h5-heading {
+        text-align: left;
+        color: $es-blue;
+        @include bold();
+        font-size: 23px;
+        line-height: 38px !important;
+        letter-spacing: 0px;
+    }
 }
 @media all and (max-width: 980px) {
     h1.hero-h1 {
@@ -161,6 +169,14 @@ p.es-p.center {
         @include bold();
         font-size: 32px;
         line-height: 40px !important;
+        letter-spacing: 0px;
+    }
+    h5.h5-heading {
+        text-align: left;
+        color: $es-blue;
+        @include bold();
+        font-size: 22px;
+        line-height: 37px !important;
         letter-spacing: 0px;
     }
     p.refs {
@@ -188,6 +204,14 @@ p.es-p.center {
         @include bold();
         font-size: 38px;
         line-height: 40px !important;
+        letter-spacing: 0px;
+    }
+    h5.h5-heading {
+        text-align: left;
+        color: $es-blue;
+        @include bold();
+        font-size: 21px;
+        line-height: 36px !important;
         letter-spacing: 0px;
     }
 }
@@ -220,6 +244,14 @@ p.es-p.center {
         letter-spacing: 0px;
         font-size: 20px;
         line-height: 30px !important;
+    }
+    h5.h5-heading {
+        text-align: left;
+        color: $es-blue;
+        @include bold();
+        font-size: 20px;
+        line-height: 35px !important;
+        letter-spacing: 0px;
     }
     p.es-p {
         text-align: left;

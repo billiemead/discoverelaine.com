@@ -32,9 +32,13 @@ div#et-main-area {
 
                             h3.h3-heading {
                             }
-
-                            p.es-p {
+                            div#nr-second-paragraph {
+                                p.es-p{
+                                    font-size: 20px;
+                                    line-height: 30px !important;
+                                }
                             }
+
                         }
                         div#recruiting-story-section {
                             padding-top:0;
@@ -43,7 +47,6 @@ div#et-main-area {
                             h2.h2-heading {
                                 margin-bottom: 45px;
                             }
-
                             h3.h3-heading {
                             }
 
