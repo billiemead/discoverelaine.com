@@ -499,7 +499,7 @@ div#et-main-area {
                                   display: flex;
                                   align-items: center;
                                   flex-direction: column;
-
+                                    padding-bottom: 0;
                                     div.es-col.one {
                                         margin-right: 0px;
                                             div#glossary-title-icon {
@@ -557,6 +557,7 @@ div#et-main-area {
                                     display: flex;
                                     align-items: center;
                                     flex-direction: column;
+                                    padding-bottom: 0;
                                     .es-col.one {
                                         margin-right: 0px;
                                     }
@@ -575,6 +576,34 @@ div#et-main-area {
                                         text-align: center;
                                     }
                                 }
+                                div#video-row-1 {
+                                    div.es-col.one {
+
+                                    }
+                                    div.es-col.two {
+
+                                    }
+                                }
+                                div#video-row-2 {
+                                    div.es-col.one {
+
+                                    }
+                                    div.es-col.two {
+
+                                    }
+                                }
+                                div#video-row-3 {
+                                    div.es-col.one {
+
+                                    }
+                                    div.es-col.two {
+                                        padding: 40px 0 0px 0;
+                                        min-height: 100%;
+                                        div.es-video-paragraph {
+                                            padding: 0 30px 0 30px;
+                                        }
+                                    }
+                                }
                                 div.es-video-row {
                                     height:auto;
                                     margin-bottom: 80px;
@@ -583,6 +612,7 @@ div#et-main-area {
                                     }
                                     div.es-col.two {
                                         min-height: 270px;
+                                        padding: 40px 30px;
                                         div.es-video-h3 {
                                             padding: 0px;
                                             text-align: center;
