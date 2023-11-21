@@ -27,6 +27,9 @@ h1.h1-heading {
     font-size: 60px;
     line-height: 60px !important;
     letter-spacing: 0px;
+    &.center {
+        text-align: left;
+    }
 }
 h2.h2-heading-icon {
     text-align: center;
@@ -46,6 +49,9 @@ h2.h2-heading {
     letter-spacing: 0px;
     &.center {
         text-align: center;
+    }
+    &.teal {
+        color: $es-teal;
     }
 }
 h2.h2-heading-alt {
@@ -71,6 +77,20 @@ h3.h3-heading {
     font-size: 40px;
     line-height: 50px !important;
     letter-spacing: 0px;
+    &.center {
+        text-align: center;
+    }
+}
+h3.h3-heading-equals {
+    text-align: left;
+    color: $es-purple;
+    @include bold();
+    font-size: 40px;
+    line-height: 30px !important;
+    letter-spacing: 0px;
+    &.center {
+        text-align: center;
+    }
 }
 h3.h3-heading-nr {
     text-align: left;
@@ -87,6 +107,14 @@ h4.h4-heading {
     letter-spacing: 0px;
     font-size: 24px;
     line-height: 55px !important;
+}
+h4.h4-heading.teal {
+    text-align: center;
+    @include bold();
+    color: $es-teal;
+    letter-spacing: 0px;
+    font-size: 28px;
+    line-height: 30px !important;
 }
 h5.h5-heading {
     text-align: left;
@@ -123,6 +151,9 @@ p.es-p {
     }
     strong {
         @include bold();
+    }
+    &.white {
+        color: $es-white;
     }
 }
 ul.privacy-list,
