@@ -65,6 +65,10 @@ a.es-btn {
         width: 290px;
         height: 54px !important;
     }
+    &.w-326 {
+        width: 326px;
+        height: 54px !important;
+    }
     &.w-335 {
         font-size: 20px;
         line-height: 20px !important;
@@ -92,6 +96,12 @@ a.es-btn {
     }
     &.w-640 {
         width: 660px;
+        margin: 0 auto;
+    }
+    &.w-1120 {
+        font-size: 32px;
+        line-height: 37px;
+        width: 1120px;
         margin: 0 auto;
     }
 }

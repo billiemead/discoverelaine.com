@@ -124,6 +124,14 @@ h5.h5-heading {
     line-height: 40px !important;
     letter-spacing: 0px;
 }
+h5.h5-heading-alt {
+    text-align:center;
+    color: $es-blue;
+    @include bold();
+    font-size: 24px;
+    line-height: 40px !important;
+    padding-top:30px;
+}
 h6.h6-heading {
     text-align: left;
     color: $es-dark-blue;
@@ -155,6 +163,9 @@ p.es-p {
     &.white {
         color: $es-white;
     }
+    &.lh-30 {
+        line-height: 30px !important;
+    }
 }
 ul.privacy-list,
 li.privacy-list-item {
@@ -173,6 +184,49 @@ p.refs {
 }
 p.es-p.center {
     text-align: center;
+}
+
+p.trademark {
+    font-size: 14px;
+    line-height: 20px;
+}
+
+.stat-lg-number {
+  @include bold();
+  color:$es-dark-blue;
+  font-size:120px;
+  line-height: 138px;
+}
+
+.stat-lg-text {
+  @include bold();
+  color:$es-dark-blue;
+  font-size: 40px;
+  line-height: 45px;
+}
+
+.stat-plus-sign {
+  @include bold();
+  color:$es-dark-blue;
+  font-size:68px;
+  line-height: 78px;
+  padding:0 10px;
+}
+
+.stat-md-number {
+  @include bold();
+  color:$es-dark-blue;
+  font-size:101px;
+  line-height: 115px;
+  text-align: center;
+}
+.stat-md-text {
+  @include bold();
+  color:$es-dark-blue;
+  font-size:22px;
+  line-height: 26px;
+  min-width: 134px;
+  text-align: center;
 }
 
 @media all and (max-width: 1024px) {
