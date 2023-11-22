@@ -9,133 +9,176 @@ div#et-main-area {
             div.entry-content {
                 div.et-l {
                     div.et_builder_inner_content {
-
-                      div#home-hero-section {
-                        background-size: contain;
-                        background-position: right -3% center;
-                        background-image: url( "/wp-content/themes/elainestudy/images/es-new-hero2-613x264.png" ) !important;
-                        min-height: 264px;
-                        display: flex;
-                        padding: 2% 0;
-                      }
-
-                      div#home-subhero-section {
-                        // background-image: url(/wp-content/themes/elainestudy/images/new-color-wave-256x108.png);
-                        // background-position: left top;
-                        // background-repeat: no-repeat;
-
-
-                        #home-subhero-text-row {
-                          max-width: 1015px;
+                        div#home-hero-section {
+                            background-size: contain;
+                            background-position: right -3% center;
+                            background-image: url( "/wp-content/themes/elainestudy/images/es-new-hero2-613x264.png" ) !important;
+                            min-height: 264px;
+                            display: flex;
+                            padding: 2% 0;
                         }
-
-                        .es-row.subhero {
-                          .es-col.subhero {
-                            
-                          }
-
+                        div#hp-fullwidth-section {
+                            padding: 65px 0 85px 0;
+                            div#hp-fullwidth {
+                                div.hp-fullwidth-container {
+                                    display: flex;
+                                    justify-content: center;
+                                    align-items: center;
+                                    div.es-col.fp-one {
+                                        width: 37.5%;
+                                        background-image: url("/wp-content/themes/elainestudy/images/hp-dots-right-777x278.png");
+                                        background-repeat: no-repeat;
+                                        background-size: contain;
+                                        height: 278px;
+                                    }
+                                    div.es-col.fp-two {
+                                            width: 25%;
+                                            display: flex;
+                                            flex-direction: column;
+                                            justify-content: center;
+                                            align-items: center;
+                                        div.fp-image-wrapper {
+                                                height: 326px;
+                                                width: 336px;
+                                                display: flex;
+                                                justify-content: center;
+                                                align-items: center;
+                                            img.hp-logo {
+                                                width: 268px;
+                                                height: auto;
+                                                max-width: 100%;
+                                            }
+                                        }
+                                        div.fp-button-wrapper {
+                                            width: 100%;
+                                            display: flex;
+                                            justify-content: center;
+                                            a.es-btn.w-326 {
+                                                text-transform: uppercase;
+                                            }
+                                        }
+                                    }
+                                    div.es-col.fp-three {
+                                        width: 37.5%;
+                                        background-image: url("/wp-content/themes/elainestudy/images/hp-dots-left-777x278.png");
+                                        background-repeat: no-repeat;
+                                        background-size: contain;
+                                        height: 278px;
+                                    }
+                                }
+                            }
                         }
+                        div#home-subhero-section {
+                            padding-top: 0;
+                            #home-subhero-text-row {
+                                padding-top: 0;
+                                max-width: 1015px;
+                            }
+                            .es-row.subhero {
+                                .es-col.subhero {
 
-                      }
-                      div#home-who-section {
-                        padding:0;
+                                }
 
-                        .h2-heading {
-                          font-size: 70px;
-                          line-height: 90px;
+                            }
                         }
-                        .es-row.who {
-                          padding:60px 0;
-
-                          p.es-p {
-                            color:$es-white;
-                            font-size: 24px;
-                            line-height: 40px;
-                          }
-
-                          .es-col-left {
-                            margin-right:60px;
-                            width:347px;
-                          }
-
-                          .es-col.right {
-                            // Needs to be wider to match xd file
-                            width:945px;
-                          }
+                        div#home-who-section {
+                            padding: 0;
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                            .h2-heading {
+                                font-size: 70px;
+                                line-height: 90px;
+                            }
+                            div.es-row.who {
+                                    padding: 0;
+                                    height: 497px;
+                                    display: flex;
+                                    justify-content: center;
+                                    align-items: center;
+                                p.es-p.white {
+                                }
+                                div.es-col-left {
+                                margin-right:60px;
+                                width:347px;
+                                }
+                                div.es-col.right {
+                                // Needs to be wider to match xd file
+                                width:945px;
+                                }
+                            }
                         }
-
-
-                      }
-                      div#home-about-section {
+                        div#home-about-section {
                         padding-bottom: 0;
 
                         h3.h3-heading {
-                          font-size:40px;
-                          line-height:30px;
-                          text-align: center;
+                            font-size:40px;
+                            line-height:30px;
+                            text-align: center;
                         }
                         .es-row.about-es-one_two {
 
                         }
 
                         .home-primary-obj-box {
-                          height: 250px;
-                          border-bottom: 2px solid $es-button-grey;
-                          padding-bottom:40px;
-                          margin-bottom:0;
+                            height: 250px;
+                            border-bottom: 2px solid $es-button-grey;
+                            padding-bottom:40px;
+                            margin-bottom:0;
                         }
 
                         .flex-stats {
-                          display: flex;
-                          align-items: stretch;
-                          justify-content: center;
+                            display: flex;
+                            align-items: stretch;
+                            justify-content: center;
 
-                          height:220px;
-                          border-bottom: 2px solid $es-button-grey;
-                          // padding-bottom:40px;
+                            height:220px;
+                            border-bottom: 2px solid $es-button-grey;
+                            // padding-bottom:40px;
                         }
 
                         .flex-stats-left {
-                          display:flex;
-                          align-items:center;
+                            display:flex;
+                            align-items:center;
                         }
 
                         .flex-stats-right {
-                          display: flex;
-                          flex-direction: column;
-                          align-items: center;
-                          justify-content: center;
-                          padding-left: 30px;
+                            display: flex;
+                            flex-direction: column;
+                            align-items: center;
+                            justify-content: center;
+                            padding-left: 30px;
                         }
 
                         .inline-img {
-                          display: inline;
+                            display: inline;
                         }
 
                         #home-about-row-left {
-                          .flex-stats-left {
+                            border-right: 1px solid $es-button-grey;
+                            .flex-stats-left {
                             // min-width:325px;
-                          }
+                            }
                         }
 
                         #home-about-row-right {
-                          .flex-stats-outer {
+                            .flex-stats-outer {
                             display: flex;
                             align-items: center;
                             justify-content: center;
                             height:220px;
-                            border-bottom: 2px solid $es-button-grey;                        
-                          }
+                            border-bottom: 2px solid $es-button-grey;
+                            }
 
-                          .flex-stats {
+                            .flex-stats {
                             width: 600px;
                             text-align: left;
                             justify-content: left;
                             border:none;
-                          }
+                            }
                         }
 
-                      }
+                        }
                     }
                     div#home-ref-section {
                       padding:0;
