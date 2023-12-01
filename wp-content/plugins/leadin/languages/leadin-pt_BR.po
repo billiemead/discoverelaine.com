@@ -7,7 +7,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2023-11-13T11:41:10+00:00\n"
+"POT-Creation-Date: 2023-11-21T08:51:14+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Language: \n"
 "X-Generator: WP-CLI 2.9.0\n"
@@ -26,7 +26,7 @@ msgid "HubSpot’s official WordPress plugin allows you to add forms, popups, an
 msgstr ""
 
 #. Author of the plugin
-#: public/admin/class-gutenberg.php:41
+#: public/admin/class-gutenberg.php:36
 #: public/admin/class-leadinadmin.php:198
 #: public/admin/class-leadinadmin.php:212
 msgid "HubSpot"
@@ -83,11 +83,11 @@ msgstr "Ignorar e desativar"
 #: public/admin/class-leadinadmin.php:69
 #: public/class-leadin.php:41
 msgid "Hubspot"
-msgstr "Hubspot"
+msgstr "HubSpot"
 
 #: public/admin/class-leadinadmin.php:77
 msgid "Select the content type HubSpot Analytics uses to track this page."
-msgstr "Selecione o tipo de conteúdo que o HubSpot Analytics usa para rastrear esta página."
+msgstr "Selecione o tipo de conteúdo que a HubSpot Analytics usa para rastrear esta página."
 
 #: public/admin/class-leadinadmin.php:81
 msgid "Detect Automatically"
@@ -158,7 +158,7 @@ msgstr "O software de marketing completo da HubSpot %1$s exige PHP %2$s ou super
 
 #: public/admin/class-noticemanager.php:34
 msgid "The HubSpot plugin isn’t connected right now. To use HubSpot tools on your WordPress site, %1$sconnect the plugin now%2$s."
-msgstr "O plug-in do HubSpot não está conectado no momento. Para usar as ferramentas do HubSpot no seu site WordPress, %1$sconecte o plug-in agora%2$s."
+msgstr "O plug-in da HubSpot não está conectado no momento. Para usar as ferramentas da HubSpot no seu site WordPress, %1$sconecte o plug-in agora%2$s."
 
 #: public/admin/class-reviewbanner.php:26
 msgid "Dismiss this notice."
@@ -170,7 +170,7 @@ msgstr "Olá, %1$s."
 
 #: public/admin/class-reviewbanner.php:31
 msgid "Have you got 2 minutes to complete %1$sthis survey%2$s about the HubSpot for WordPress plugin?"
-msgstr "Você tem 2 minutos para participar %1$sdesta pesquisa%2$s sobre o plug-in do HubSpot para o WordPress?"
+msgstr "Você tem 2 minutos para participar %1$sdesta pesquisa%2$s sobre o plug-in da HubSpot para o WordPress?"
 
 #: public/admin/class-reviewbanner.php:32
 msgid "We read every response. Your feedback helps our team make the improvements that you need the most."
@@ -178,7 +178,7 @@ msgstr "Lemos cada resposta. Seu feedback ajuda nossa equipe a fazer as melhoria
 
 #: public/admin/class-reviewbanner.php:33
 msgid "HubSpot for WordPress Team"
-msgstr "Equipe do HubSpot para WordPress"
+msgstr "Equipe da HubSpot para WordPress"
 
 #: public/admin/class-reviewbanner.php:34
 msgid "Thanks,"

@@ -3,182 +3,7 @@
 
 /* ******* DISCOVER-ELAINE 2023 NOW RECRUITING PAGE START ******* */
 
-div#et-main-area {
-    div#main-content {
-        article.page {
-            div.entry-content {
-                div.et-l {
-                    div.et_builder_inner_content {
-                        div#recruiting-hero-section {
-                            background-size: contain;
-                            background-position: right -3% center;
-                            background-image: url( "/wp-content/themes/elainestudy/images/es-new-hero1-538x264.png" ) !important;
-                            height: 264px;
-                            margin: 0;
-                            display: flex;
-                            padding: 2% 0;
-                            div.es-recruiting-hero-row {
-                                padding:0;
-                                h1.hero-h1 {
-                                    margin: 0;
-                                }
-                            }
-                        }
-                        div#recruiting-about-section {
-                            padding: 2%;
-                            div#elaine-study3 {
-                                h2.h2-heading {
-                                }
-                            }
-                            div#study-purpose {
-                                margin-bottom: 15px;
-                                h3.h3-heading-nr {
-                                }
-                            }
-                            div#nr-first-paragraph {
-                                margin-bottom: 15px;
-                            }
-                            div#nr-second-paragraph {
-                                p.es-p{
-                                    font-size: 20px;
-                                    line-height: 30px !important;
-                                }
-                            }
-                            div#quality-of-life {
-                                margin-bottom: 15px;
-                            }
-                            div#nr-third-paragraph {
-                            }
-                        }
-                        div#recruiting-story-section {
-                            padding:0;
-                            margin:0 0 150px 0;
-                            div#video-story-row {
-                                height:auto;
-                                display: flex;
-                                min-height: 414px;
-                                margin-bottom: 80px;
-                                padding: 0 !important;
-                                margin: 50px auto 85px !important;
-                                box-shadow: 5px 3px 20px -1px #ddd;
-                                div.es-col-left {
-                                    width: 50%;
-                                }
-                                div.es-col-right {
-                                    display: flex;
-                                    flex-direction: column;
-                                    justify-content: center;
-                                    align-items: flex-start;
-                                    padding:0 60px;
-                                    div#ls-paragraph {
-                                        margin: 20px 0 25px 0;
-                                    }
-                                }
-                            }
-                            h2.h2-heading {
-                                margin-bottom: 45px;
-                            }
-
-                            div.es-video-info {
-                                h3.h3-heading-nr {
-                                    padding:0;
-                                }
-
-                                img {
-
-                                    width:100%;
-                                    height:auto;
-                                }
-                                .es-video-info {
-                                    padding: 0;
-                                    text-align: center;
-                                }
-
-                            }
-                        }
-                        div#recruiting-sermonix-section {
-                            background-color: $es-purple;
-                            height: 882px;
-                            padding:40px 0;
-
-                            div.es-recruiting-sermonix-row {
-                                height: 768px;
-                                margin-top:10px;
-                                background-color: $es-white;
-                                border-radius:45px;
-                                box-shadow: 5px 3px 20px -1px rgba(0,0,0,0.2);
-                                div.es-col {
-                                    padding: 0 15% 0 15%;
-                                    div#es-recruiting-text-1 {
-
-                                    }
-                                    div#es-recruiting-text-2 {
-                                        margin-top: 2.5%;
-                                        max-width: 700px;
-                                    }
-                                    div.es-recruiting-sermonix-text {
-                                        max-width: 877px;
-                                        margin: auto;
-                                    }
-                                    h3.h3-heading-nr {
-                                        margin-bottom: 40px;
-                                    }
-                                    p.es-p {
-                                    }
-
-                                    a.es-btn {
-                                        margin-top:20px;
-                                        text-transform: uppercase;
-                                    }
-                                }
-                            }
-                        }
-                        div#recruiting-previous-section {
-                            div.es-row.recruit {
-                                h2.h2-heading {
-                                    font-size: 40px;
-                                    line-height: 30px;
-                                }
-                                p.es-p {
-                                }
-                            }
-                            div.recruiting-previous-one_two {
-                                max-width: 975px;
-                                margin: 0 auto;
-                                display: flex;
-                                justify-content: space-between;
-                                div.es-col {
-                                    display: flex;
-                                    flex-direction: column;
-                                    width: 50%;
-                                }
-                                div.es-col.left {
-                                    &:first-of-type:after {
-                                    content: "";
-                                    position: absolute;
-                                    right: -30px;
-                                    top: 0;
-                                    width: 2px;
-                                    height: 100%;
-                                    background: $es-gray;
-                                }
-                                }
-                                div.es-col.right {
-
-                                }
-                            }
-                        }
-                        div#section-blue-wave {
-                            margin-top: 4em !important;
-                            margin-bottom: 3em !important;
-                        }
-                    }
-                }
-            }
-        }
-    }
-}
-@media all and (max-width: 1024px) {
+body.nowrecruiting-page {
     div#et-main-area {
         div#main-content {
             article.page {
@@ -186,38 +11,16 @@ div#et-main-area {
                     div.et-l {
                         div.et_builder_inner_content {
                             div#recruiting-hero-section {
-                                background-size: contain;
-                                background-position: right -33% center;
                                 background-image: url( "/wp-content/themes/elainestudy/images/es-new-hero1-538x264.png" ) !important;
-                                height: 264px;
-                                .es-recruiting-hero-row {
+                                div.es-row.hero {
                                     padding:0;
-                                }
-                                h1.hero-h1 {
-                                    margin: 0;
+                                    h1.hero-h1 {
+                                        margin: 0;
+                                    }
                                 }
                             }
                             div#recruiting-about-section {
-                                div.es-row {
-                                    display: flex;
-                                    flex-direction: column;
-                                    div.es-col.left {
-                                        width: 100%;
-                                        margin-right: 0;
-                                        div.et_pb_module {
-                                            text-align: center;
-                                            span.et_pb_image_wrap {
-                                                img {
-                                                    width: 260px;
-                                                }
-                                            }
-                                        }
-                                    }
-                                    div.es-col.right {
-                                        margin-top: 5%;
-                                        width: 100%;
-                                    }
-                                }
+                                padding: 2%;
                                 div#elaine-study3 {
                                     h2.h2-heading {
                                     }
@@ -243,40 +46,27 @@ div#et-main-area {
                                 }
                             }
                             div#recruiting-story-section {
-                                padding-top:0;
-                                margin:0;
+                                padding:0;
+                                margin:0 0 150px 0;
                                 div#video-story-row {
                                     height:auto;
                                     display: flex;
-                                    flex-direction: column;
                                     min-height: 414px;
                                     margin-bottom: 80px;
                                     padding: 0 !important;
-                                    margin: 50px auto 0;
+                                    margin: 50px auto 85px !important;
                                     box-shadow: 5px 3px 20px -1px #ddd;
                                     div.es-col-left {
-                                        width: 100%;
-                                        div.et_pb_module {
-                                            span.et_pb_image_wrap  {
-                                                width: 100%;
-                                                img {
-                                                    width:100%;
-                                                    height:auto;
-                                                    object-fit: fill;
-                                                }
-                                            }
-                                        }
+                                        width: 50%;
                                     }
                                     div.es-col-right {
                                         display: flex;
                                         flex-direction: column;
                                         justify-content: center;
-                                        align-items: center;
-                                        padding: 60px;
-                                        width: 100%;
-                                        min-height: 370px;
+                                        align-items: flex-start;
+                                        padding:0 60px;
                                         div#ls-paragraph {
-                                            margin: 15px 0 15px 0;
+                                            margin: 20px 0 25px 0;
                                         }
                                     }
                                 }
@@ -284,9 +74,15 @@ div#et-main-area {
                                     margin-bottom: 45px;
                                 }
 
-                                div.es-video-row {
+                                div.es-video-info {
                                     h3.h3-heading-nr {
                                         padding:0;
+                                    }
+
+                                    img {
+
+                                        width:100%;
+                                        height:auto;
                                     }
                                     .es-video-info {
                                         padding: 0;
@@ -378,178 +174,380 @@ div#et-main-area {
         }
     }
 }
-@media all and (max-width: 980px) {
-    div#et-main-area {
-        div#main-content {
-            article.page {
-                div.entry-content {
-                    div.et-l {
-                        div.et_builder_inner_content {
-                            div#recruiting-hero-section {
-                                background-size: contain;
-                                background-position: right -33% center;
-                                background-image: url( "/wp-content/themes/elainestudy/images/es-new-hero1-538x264.png" ) !important;
-                                height: 264px;
-                                .es-recruiting-hero-row {
-                                    padding:0;
-                                }
 
-                                h1.hero-h1 {
-                                    margin: 0;
+@media all and (max-width: 1024px) {
+    body.nowrecruiting-page {
+        div#et-main-area {
+            div#main-content {
+                article.page {
+                    div.entry-content {
+                        div.et-l {
+                            div.et_builder_inner_content {
+                                div#recruiting-hero-section {
+                                    background-image: url( "/wp-content/themes/elainestudy/images/es-new-hero1-538x264.png" ) !important;
+                                    .es-recruiting-hero-row {
+                                        padding:0;
+                                    }
+                                    h1.hero-h1 {
+                                        margin: 0;
+                                    }
                                 }
-
-                            }
-                            div#recruiting-about-section {
-                                div.es-row {
-                                    div.es-col.left {
-                                        div.et_pb_module {
-                                            text-align: center;
+                                div#recruiting-about-section {
+                                    div.es-row {
+                                        display: flex;
+                                        flex-direction: column;
+                                        div.es-col.left {
+                                            width: 100%;
+                                            margin-right: 0;
+                                            div.et_pb_module {
+                                                text-align: center;
+                                                span.et_pb_image_wrap {
+                                                    img {
+                                                        width: 260px;
+                                                    }
+                                                }
+                                            }
+                                        }
+                                        div.es-col.right {
+                                            margin-top: 5%;
+                                            width: 100%;
                                         }
                                     }
-                                    div.es-col.right {
-
-                                    }
-                                }
-                                h2.h2-heading {
-                                }
-
-                                h3.h3-heading-nr {
-                                }
-
-                                p.es-p {
-                                }
-                            }
-                            div#recruiting-story-section {
-                                padding-top:0;
-                                margin:0;
-
-                                h2.h2-heading {
-                                    margin-bottom: 45px;
-                                }
-
-                                h3.h3-heading-nr {
-                                }
-
-                                p.es-p {
-                                }
-
-                                div.recruiting-story-row {
-                                    h3.h3-heading-nr {
-                                        text-align: center;
-                                    }
-
-                                    p.es-p {
-                                        text-align: center;
-                                    }
-                                }
-
-                                div.es-video-row {
-                                    height:auto;
-                                    min-height: 414px;
-                                    .es-col-left {
-                                        width: 100%;
-                                        img {
-                                            width:100%;
-                                            height:auto;
+                                    div#elaine-study3 {
+                                        h2.h2-heading {
                                         }
                                     }
-                                    .es-col-right {
-                                        padding:80px 60px;
-                                        div.es-video-info {
+                                    div#study-purpose {
+                                        margin-bottom: 15px;
+                                        h3.h3-heading-nr {
+                                        }
+                                    }
+                                    div#nr-first-paragraph {
+                                        margin-bottom: 15px;
+                                    }
+                                    div#nr-second-paragraph {
+                                        p.es-p{
+                                            font-size: 20px;
+                                            line-height: 30px !important;
+                                        }
+                                    }
+                                    div#quality-of-life {
+                                        margin-bottom: 15px;
+                                    }
+                                    div#nr-third-paragraph {
+                                    }
+                                }
+                                div#recruiting-story-section {
+                                    padding-top:0;
+                                    margin:0;
+                                    div#video-story-row {
+                                        height:auto;
+                                        display: flex;
+                                        flex-direction: column;
+                                        min-height: 414px;
+                                        margin-bottom: 80px;
+                                        padding: 0 !important;
+                                        margin: 50px auto 0;
+                                        box-shadow: 5px 3px 20px -1px #ddd;
+                                        div.es-col-left {
+                                            width: 100%;
+                                            div.et_pb_module {
+                                                span.et_pb_image_wrap  {
+                                                    width: 100%;
+                                                    img {
+                                                        width:100%;
+                                                        height:auto;
+                                                        object-fit: fill;
+                                                    }
+                                                }
+                                            }
+                                        }
+                                        div.es-col-right {
+                                            display: flex;
+                                            flex-direction: column;
+                                            justify-content: center;
+                                            align-items: center;
+                                            padding: 60px;
+                                            width: 100%;
+                                            min-height: 370px;
+                                            div#ls-paragraph {
+                                                margin: 15px 0 15px 0;
+                                            }
+                                        }
+                                    }
+                                    h2.h2-heading {
+                                        margin-bottom: 45px;
+                                    }
+
+                                    div.es-video-row {
+                                        h3.h3-heading-nr {
+                                            padding:0;
+                                        }
+                                        .es-video-info {
                                             padding: 0;
                                             text-align: center;
+                                        }
+
+                                    }
+                                }
+                                div#recruiting-sermonix-section {
+                                    background-color: $es-purple;
+                                    height: 882px;
+                                    padding:40px 0;
+
+                                    div.es-recruiting-sermonix-row {
+                                        height: 768px;
+                                        margin-top:10px;
+                                        background-color: $es-white;
+                                        border-radius:45px;
+                                        box-shadow: 5px 3px 20px -1px rgba(0,0,0,0.2);
+                                        div.es-col {
+                                            padding: 0 15% 0 15%;
+                                            div#es-recruiting-text-1 {
+
+                                            }
+                                            div#es-recruiting-text-2 {
+                                                margin-top: 2.5%;
+                                                max-width: 700px;
+                                            }
+                                            div.es-recruiting-sermonix-text {
+                                                max-width: 877px;
+                                                margin: auto;
+                                            }
                                             h3.h3-heading-nr {
-                                                padding:0;
-                                                text-align: center;
+                                                margin-bottom: 40px;
                                             }
                                             p.es-p {
-                                                text-align: center;
                                             }
-                                        }
-                                        div.et_pb_button_module_wrapper {
-                                            margin: 0 auto;
+
                                             a.es-btn {
-                                                margin: 0 auto;
-                                                text-align: center;
+                                                margin-top:20px;
+                                                text-transform: uppercase;
                                             }
                                         }
                                     }
                                 }
-                            }
-                            div#recruiting-sermonix-section {
-                                background-color: $es-purple;
-                                height: 100%;
-                                padding:40px 0;
-
-                                div.es-recruiting-sermonix-row {
-                                    height: 100%;
-                                    margin-top:10px;
-                                    background-color: $es-white;
-                                    border-radius:45px;
-                                    box-shadow: 5px 3px 20px -1px rgba(0,0,0,0.2);
-                                    div.es-col {
-                                        padding: 0 15% 0 15%;
-                                        div#es-recruiting-text-1 {
-
-                                        }
-                                        div#es-recruiting-text-2 {
-                                            margin-top: 2.5%;
-                                            max-width: 700px;
-                                        }
-                                        div.es-recruiting-sermonix-text {
-                                            max-width: 877px;
-                                            margin: auto;
-                                        }
-                                        h3.h3-heading-nr {
-                                            margin-bottom: 40px;
+                                div#recruiting-previous-section {
+                                    div.es-row.recruit {
+                                        h2.h2-heading {
+                                            font-size: 40px;
+                                            line-height: 30px;
                                         }
                                         p.es-p {
                                         }
+                                    }
+                                    div.recruiting-previous-one_two {
+                                        max-width: 975px;
+                                        margin: 0 auto;
+                                        display: flex;
+                                        justify-content: space-between;
+                                        div.es-col {
+                                            display: flex;
+                                            flex-direction: column;
+                                            width: 50%;
+                                        }
+                                        div.es-col.left {
+                                            &:first-of-type:after {
+                                            content: "";
+                                            position: absolute;
+                                            right: -30px;
+                                            top: 0;
+                                            width: 2px;
+                                            height: 100%;
+                                            background: $es-gray;
+                                        }
+                                        }
+                                        div.es-col.right {
 
-                                        a.es-btn {
-                                            margin-top:20px;
                                         }
                                     }
                                 }
+                                div#section-blue-wave {
+                                    margin-top: 4em !important;
+                                    margin-bottom: 3em !important;
+                                }
                             }
-                            div#recruiting-previous-section {
-                                div.es-row.recruit {
-                                    h2.h2-heading {
-                                        font-size: 40px;
-                                        line-height: 30px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+@media all and (max-width: 980px) {
+    body.nowrecruiting-page {
+        div#et-main-area {
+            div#main-content {
+                article.page {
+                    div.entry-content {
+                        div.et-l {
+                            div.et_builder_inner_content {
+                                div#recruiting-hero-section {
+                                    background-size: contain;
+                                    background-position: right -33% center;
+                                    background-image: url( "/wp-content/themes/elainestudy/images/es-new-hero1-538x264.png" ) !important;
+                                    height: 264px;
+                                    .es-recruiting-hero-row {
+                                        padding:0;
                                     }
+
+                                    h1.hero-h1 {
+                                        margin: 0;
+                                    }
+
+                                }
+                                div#recruiting-about-section {
+                                    div.es-row {
+                                        div.es-col.left {
+                                            div.et_pb_module {
+                                                text-align: center;
+                                            }
+                                        }
+                                        div.es-col.right {
+
+                                        }
+                                    }
+                                    h2.h2-heading {
+                                    }
+
+                                    h3.h3-heading-nr {
+                                    }
+
                                     p.es-p {
                                     }
                                 }
-                                div.recruiting-previous-one_two {
-                                    max-width: 918px;
-                                    margin: 0 auto;
-                                    display: flex;
-                                    justify-content: space-between;
-                                    div.es-col {
-                                        display: flex;
-                                        flex-direction: column;
-                                        width: 50%;
-                                    }
-                                    div.es-col.left {
-                                        &:first-of-type:after {
-                                        content: "";
-                                        position: absolute;
-                                        right: 0;
-                                        top: 0;
-                                        width: 2px;
-                                        height: 100%;
-                                        background: $es-gray;
-                                    }
-                                    }
-                                    div.es-col.right {
+                                div#recruiting-story-section {
+                                    padding-top:0;
+                                    margin:0;
 
+                                    h2.h2-heading {
+                                        margin-bottom: 45px;
+                                    }
+
+                                    h3.h3-heading-nr {
+                                    }
+
+                                    p.es-p {
+                                    }
+
+                                    div.recruiting-story-row {
+                                        h3.h3-heading-nr {
+                                            text-align: center;
+                                        }
+
+                                        p.es-p {
+                                            text-align: center;
+                                        }
+                                    }
+
+                                    div.es-video-row {
+                                        height:auto;
+                                        min-height: 414px;
+                                        .es-col-left {
+                                            width: 100%;
+                                            img {
+                                                width:100%;
+                                                height:auto;
+                                            }
+                                        }
+                                        .es-col-right {
+                                            padding:80px 60px;
+                                            div.es-video-info {
+                                                padding: 0;
+                                                text-align: center;
+                                                h3.h3-heading-nr {
+                                                    padding:0;
+                                                    text-align: center;
+                                                }
+                                                p.es-p {
+                                                    text-align: center;
+                                                }
+                                            }
+                                            div.et_pb_button_module_wrapper {
+                                                margin: 0 auto;
+                                                a.es-btn {
+                                                    margin: 0 auto;
+                                                    text-align: center;
+                                                }
+                                            }
+                                        }
                                     }
                                 }
-                            }
-                            div#section-blue-wave {
-                                margin-top: 4em !important;
-                                margin-bottom: 3em !important;
+                                div#recruiting-sermonix-section {
+                                    background-color: $es-purple;
+                                    height: 100%;
+                                    padding:40px 0;
+
+                                    div.es-recruiting-sermonix-row {
+                                        height: 100%;
+                                        margin-top:10px;
+                                        background-color: $es-white;
+                                        border-radius:45px;
+                                        box-shadow: 5px 3px 20px -1px rgba(0,0,0,0.2);
+                                        div.es-col {
+                                            padding: 0 15% 0 15%;
+                                            div#es-recruiting-text-1 {
+
+                                            }
+                                            div#es-recruiting-text-2 {
+                                                margin-top: 2.5%;
+                                                max-width: 700px;
+                                            }
+                                            div.es-recruiting-sermonix-text {
+                                                max-width: 877px;
+                                                margin: auto;
+                                            }
+                                            h3.h3-heading-nr {
+                                                margin-bottom: 40px;
+                                            }
+                                            p.es-p {
+                                            }
+
+                                            a.es-btn {
+                                                margin-top:20px;
+                                            }
+                                        }
+                                    }
+                                }
+                                div#recruiting-previous-section {
+                                    div.es-row.recruit {
+                                        h2.h2-heading {
+                                            font-size: 40px;
+                                            line-height: 30px;
+                                        }
+                                        p.es-p {
+                                        }
+                                    }
+                                    div.recruiting-previous-one_two {
+                                        max-width: 918px;
+                                        margin: 0 auto;
+                                        display: flex;
+                                        justify-content: space-between;
+                                        div.es-col {
+                                            display: flex;
+                                            flex-direction: column;
+                                            width: 50%;
+                                        }
+                                        div.es-col.left {
+                                            &:first-of-type:after {
+                                            content: "";
+                                            position: absolute;
+                                            right: 0;
+                                            top: 0;
+                                            width: 2px;
+                                            height: 100%;
+                                            background: $es-gray;
+                                        }
+                                        }
+                                        div.es-col.right {
+
+                                        }
+                                    }
+                                }
+                                div#section-blue-wave {
+                                    margin-top: 4em !important;
+                                    margin-bottom: 3em !important;
+                                }
                             }
                         }
                     }
@@ -559,179 +557,181 @@ div#et-main-area {
     }
 }
 @media all and (max-width: 768px) {
-    div#et-main-area {
-        div#main-content {
-            article.page {
-                div.entry-content {
-                    div.et-l {
-                        div.et_builder_inner_content {
-                            div#recruiting-hero-section {
-                                .es-recruiting-hero-row {
-                                    padding:0;
+    body.nowrecruiting-page {
+        div#et-main-area {
+            div#main-content {
+                article.page {
+                    div.entry-content {
+                        div.et-l {
+                            div.et_builder_inner_content {
+                                div#recruiting-hero-section {
+                                    .es-recruiting-hero-row {
+                                        padding:0;
+                                    }
+                                    h1.hero-h1 {
+                                        margin: 0;
+                                    }
                                 }
-                                h1.hero-h1 {
-                                    margin: 0;
-                                }
-                            }
-                            div#recruiting-about-section {
-                                div.es-row {
-                                    div.es-col.left {
-                                        div.et_pb_module {
-                                            text-align: center;
+                                div#recruiting-about-section {
+                                    div.es-row {
+                                        div.es-col.left {
+                                            div.et_pb_module {
+                                                text-align: center;
+                                            }
+                                        }
+                                        div.es-col.right {
+
                                         }
                                     }
-                                    div.es-col.right {
-
+                                    h2.h2-heading {
                                     }
-                                }
-                                h2.h2-heading {
-                                }
 
-                                h3.h3-heading-nr {
-                                }
-
-                                p.es-p {
-                                }
-                            }
-                            div#recruiting-story-section {
-                                padding-top:0;
-                                margin:0;
-
-                                h2.h2-heading {
-                                    margin-bottom: 45px;
-                                }
-
-                                h3.h3-heading-nr {
-                                }
-
-                                p.es-p {
-                                }
-
-                                div.recruiting-story-row {
                                     h3.h3-heading-nr {
-                                        text-align: center;
                                     }
 
                                     p.es-p {
-                                        text-align: center;
                                     }
                                 }
+                                div#recruiting-story-section {
+                                    padding-top:0;
+                                    margin:0;
 
-                                div.es-video-row {
-                                    height:auto;
-                                    min-height: 414px;
-                                    .es-col-left {
-                                        width: 100%;
-                                        img {
-                                            width:100%;
-                                            height:auto;
+                                    h2.h2-heading {
+                                        margin-bottom: 45px;
+                                    }
+
+                                    h3.h3-heading-nr {
+                                    }
+
+                                    p.es-p {
+                                    }
+
+                                    div.recruiting-story-row {
+                                        h3.h3-heading-nr {
+                                            text-align: center;
+                                        }
+
+                                        p.es-p {
+                                            text-align: center;
                                         }
                                     }
-                                    .es-col-right {
-                                        padding:80px 60px;
-                                        div.es-video-info {
-                                            padding: 0;
-                                            text-align: center;
-                                            h3.h3-heading-nr {
-                                                padding:0;
+
+                                    div.es-video-row {
+                                        height:auto;
+                                        min-height: 414px;
+                                        .es-col-left {
+                                            width: 100%;
+                                            img {
+                                                width:100%;
+                                                height:auto;
+                                            }
+                                        }
+                                        .es-col-right {
+                                            padding:80px 60px;
+                                            div.es-video-info {
+                                                padding: 0;
                                                 text-align: center;
+                                                h3.h3-heading-nr {
+                                                    padding:0;
+                                                    text-align: center;
+                                                }
+                                                p.es-p {
+                                                    text-align: center;
+                                                }
+                                            }
+                                            div.et_pb_button_module_wrapper {
+                                                margin: 0 auto;
+                                                a.es-btn {
+                                                    margin: 0 auto;
+                                                    text-align: center;
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                                div#recruiting-sermonix-section {
+                                    background-color: $es-purple;
+                                    height: 100%;
+                                    padding:40px 0;
+
+                                    div.es-recruiting-sermonix-row {
+                                        height: 100%;
+                                        margin-top:10px;
+                                        background-color: $es-white;
+                                        border-radius:45px;
+                                        box-shadow: 5px 3px 20px -1px rgba(0,0,0,0.2);
+                                        div.es-col {
+                                            padding: 0 15% 0 15%;
+                                            div#es-recruiting-text-1 {
+
+                                            }
+                                            div#es-recruiting-text-2 {
+                                                margin-top: 2.5%;
+                                                max-width: 700px;
+                                            }
+                                            div.es-recruiting-sermonix-text {
+                                                max-width: 877px;
+                                                margin: auto;
+                                            }
+                                            h3.h3-heading-nr {
+                                                margin-bottom: 40px;
                                             }
                                             p.es-p {
-                                                text-align: center;
                                             }
-                                        }
-                                        div.et_pb_button_module_wrapper {
-                                            margin: 0 auto;
+
                                             a.es-btn {
-                                                margin: 0 auto;
-                                                text-align: center;
+                                                margin-top:20px;
                                             }
                                         }
                                     }
                                 }
-                            }
-                            div#recruiting-sermonix-section {
-                                background-color: $es-purple;
-                                height: 100%;
-                                padding:40px 0;
 
-                                div.es-recruiting-sermonix-row {
-                                    height: 100%;
-                                    margin-top:10px;
-                                    background-color: $es-white;
-                                    border-radius:45px;
-                                    box-shadow: 5px 3px 20px -1px rgba(0,0,0,0.2);
-                                    div.es-col {
-                                        padding: 0 15% 0 15%;
-                                        div#es-recruiting-text-1 {
-
-                                        }
-                                        div#es-recruiting-text-2 {
-                                            margin-top: 2.5%;
-                                            max-width: 700px;
-                                        }
-                                        div.es-recruiting-sermonix-text {
-                                            max-width: 877px;
-                                            margin: auto;
-                                        }
-                                        h3.h3-heading-nr {
-                                            margin-bottom: 40px;
+                                div#recruiting-previous-section {
+                                    div.es-row.recruit {
+                                        max-width: 100%;
+                                        width: 100%;
+                                        h2.h2-heading {
+                                            font-size: 40px;
+                                            line-height: 30px;
                                         }
                                         p.es-p {
                                         }
+                                    }
+                                    div.recruiting-previous-one_two {
+                                        max-width: 100%;
+                                        margin: 0 auto;
+                                        display: flex;
+                                        justify-content: center;
+                                        flex-direction: column;
+                                        align-items: center;
+                                        div.es-col {
+                                            display: flex;
+                                            flex-direction: column;
+                                            width: 100%;
+                                        }
+                                        div.es-col.left {
+                                            &:first-of-type:after {
+                                            content: "";
+                                            position: relative;
+                                            right: 0;
+                                            top: unset;
+                                            bottom: 0;
+                                            width: 100%;
+                                            height: 2px;
+                                            background: $es-gray;
+                                            margin-top: 9%;
+                                            margin-bottom: 5%;
+                                        }
+                                        }
+                                        div.es-col.right {
 
-                                        a.es-btn {
-                                            margin-top:20px;
                                         }
                                     }
                                 }
-                            }
-
-                            div#recruiting-previous-section {
-                                div.es-row.recruit {
-                                    max-width: 100%;
-                                    width: 100%;
-                                    h2.h2-heading {
-                                        font-size: 40px;
-                                        line-height: 30px;
-                                    }
-                                    p.es-p {
-                                    }
+                                div#section-blue-wave {
+                                    margin-top: 4em !important;
+                                    margin-bottom: 3em !important;
                                 }
-                                div.recruiting-previous-one_two {
-                                    max-width: 100%;
-                                    margin: 0 auto;
-                                    display: flex;
-                                    justify-content: center;
-                                    flex-direction: column;
-                                    align-items: center;
-                                    div.es-col {
-                                        display: flex;
-                                        flex-direction: column;
-                                        width: 100%;
-                                    }
-                                    div.es-col.left {
-                                        &:first-of-type:after {
-                                        content: "";
-                                        position: relative;
-                                        right: 0;
-                                        top: unset;
-                                        bottom: 0;
-                                        width: 100%;
-                                        height: 2px;
-                                        background: $es-gray;
-                                        margin-top: 9%;
-                                        margin-bottom: 5%;
-                                    }
-                                    }
-                                    div.es-col.right {
-
-                                    }
-                                }
-                            }
-                            div#section-blue-wave {
-                                margin-top: 4em !important;
-                                margin-bottom: 3em !important;
                             }
                         }
                     }
@@ -741,146 +741,148 @@ div#et-main-area {
     }
 }
 @media all and (max-width: 576px) {
-    div#et-main-area {
-        div#main-content {
-            article.page {
-                div.entry-content {
-                    div.et-l {
-                        div.et_builder_inner_content {
-                            div#recruiting-hero-section {
-                                height: 100vw;
-                                margin: 0;
-                                background-size: contain;
-                                background-position: center bottom 0px;
-                                background-image: url( "/wp-content/themes/elainestudy/images/es-new-hero1-vertical-826x462.png" ) !important;
-                                padding: 5%;
-                                .es-recruiting-hero-row {
-                                    padding:0;
+    body.nowrecruiting-page {
+        div#et-main-area {
+            div#main-content {
+                article.page {
+                    div.entry-content {
+                        div.et-l {
+                            div.et_builder_inner_content {
+                                div#recruiting-hero-section {
+                                    height: 100vw;
                                     margin: 0;
-                                    width: 100%;
-                                    padding-top: 10%;
-                                }
-
-                                h1.hero-h1 {
-                                    margin-top: 0px;
-                                    margin-bottom: 0px;
-                                    color: $es-white;
-                                    padding:0;
-                                    text-align: center;
-                                }
-
-                            }
-                            div#recruiting-about-section {
-
-                                .es-row {
-                                    display:flex;
-                                    flex-direction: column;
-                                    align-items: center;
-                                }
-
-                                .es-col.left {
-                                    width:auto;
-                                }
-
-                                h2.h2-heading {
-                                    margin-bottom: 35px;
-                                    margin-top:20px;
-                                }
-
-                                h3.h3-heading-nr {
-                                }
-
-                                p.es-p {
-                                }
-                            }
-                            div#recruiting-story-section {
-                                padding-top:0;
-                                margin:0;
-                                div#video-story-row {
-                                    div.es-col-left {
-
+                                    background-size: contain;
+                                    background-position: center bottom 0px;
+                                    background-image: url( "/wp-content/themes/elainestudy/images/es-new-hero1-vertical-826x462.png" ) !important;
+                                    padding: 5%;
+                                    .es-recruiting-hero-row {
+                                        padding:0;
+                                        margin: 0;
+                                        width: 100%;
+                                        padding-top: 10%;
                                     }
-                                    div.es-col-right {
-                                        div#ls-paragraph {
-                                            margin: 20px 0 25px 0;
-                                            padding: 0 40px 0 40px;
-                                        }
-                                    }
-                                    div.es-col-right {
-                                        padding: 40px 0 0 0;
-                                        min-height: 100%;
-                                    }
-                                }
-                                h2.h2-heading {
-                                    margin-bottom: 45px;
-                                }
-                                div.es-video-info {
-                                    padding: 0;
-                                    text-align: center;
-                                        h3.h3-heading-nr {
-                                            padding:0;
-                                            text-align: center;
-                                            margin: 0 0 30px 0;
-                                        }
-                                        img {
-                                            width:100%;
-                                            height:auto;
-                                        }
-                                        p.es-p {
-                                            margin-bottom: 30px;
-                                        }
-                                }
-                                div.et_pb_button_module_wrapper {
-                                    margin: 0 auto;
-                                    width: 100%;
-                                    a.es-btn {
-                                        margin: 0 auto;
+
+                                    h1.hero-h1 {
+                                        margin-top: 0px;
+                                        margin-bottom: 0px;
+                                        color: $es-white;
+                                        padding:0;
                                         text-align: center;
                                     }
+
                                 }
-                                div.es-video-row {
-                                    width: 75%;
+                                div#recruiting-about-section {
+
+                                    .es-row {
+                                        display:flex;
+                                        flex-direction: column;
+                                        align-items: center;
+                                    }
+
+                                    .es-col.left {
+                                        width:auto;
+                                    }
+
+                                    h2.h2-heading {
+                                        margin-bottom: 35px;
+                                        margin-top:20px;
+                                    }
+
+                                    h3.h3-heading-nr {
+                                    }
+
+                                    p.es-p {
+                                    }
                                 }
-                            }
-                            div#recruiting-sermonix-section {
-                                background-color: $es-purple;
-                                height: auto;
-                                padding: 60px 0;
-                                div.es-recruiting-sermonix-row {
-                                    height: auto;
-                                    margin-top:10px;
-                                    background-color: $es-white;
-                                    border-radius:45px;
-                                    box-shadow: 5px 3px 20px -1px rgba(0,0,0,0.2);
-                                    padding: 0;
-                                    div.es-col {
-                                        padding: 10% 15%;
-                                        div#es-recruiting-text-1 {
+                                div#recruiting-story-section {
+                                    padding-top:0;
+                                    margin:0;
+                                    div#video-story-row {
+                                        div.es-col-left {
 
                                         }
-                                        div#es-recruiting-text-2 {
-                                            margin-top: 2.5%;
-                                            max-width: 700px;
+                                        div.es-col-right {
+                                            div#ls-paragraph {
+                                                margin: 20px 0 25px 0;
+                                                padding: 0 40px 0 40px;
+                                            }
                                         }
-                                        div.es-recruiting-sermonix-text {
-                                            max-width: 877px;
-                                            margin: auto;
+                                        div.es-col-right {
+                                            padding: 40px 0 0 0;
+                                            min-height: 100%;
                                         }
-                                        h3.h3-heading-nr {
-                                            margin-bottom: 40px;
-                                        }
-                                        p.es-p {
-                                        }
-
+                                    }
+                                    h2.h2-heading {
+                                        margin-bottom: 45px;
+                                    }
+                                    div.es-video-info {
+                                        padding: 0;
+                                        text-align: center;
+                                            h3.h3-heading-nr {
+                                                padding:0;
+                                                text-align: center;
+                                                margin: 0 0 30px 0;
+                                            }
+                                            img {
+                                                width:100%;
+                                                height:auto;
+                                            }
+                                            p.es-p {
+                                                margin-bottom: 30px;
+                                            }
+                                    }
+                                    div.et_pb_button_module_wrapper {
+                                        margin: 0 auto;
+                                        width: 100%;
                                         a.es-btn {
-                                            margin-top:20px;
+                                            margin: 0 auto;
+                                            text-align: center;
+                                        }
+                                    }
+                                    div.es-video-row {
+                                        width: 75%;
+                                    }
+                                }
+                                div#recruiting-sermonix-section {
+                                    background-color: $es-purple;
+                                    height: auto;
+                                    padding: 60px 0;
+                                    div.es-recruiting-sermonix-row {
+                                        height: auto;
+                                        margin-top:10px;
+                                        background-color: $es-white;
+                                        border-radius:45px;
+                                        box-shadow: 5px 3px 20px -1px rgba(0,0,0,0.2);
+                                        padding: 0;
+                                        div.es-col {
+                                            padding: 10% 15%;
+                                            div#es-recruiting-text-1 {
+
+                                            }
+                                            div#es-recruiting-text-2 {
+                                                margin-top: 2.5%;
+                                                max-width: 700px;
+                                            }
+                                            div.es-recruiting-sermonix-text {
+                                                max-width: 877px;
+                                                margin: auto;
+                                            }
+                                            h3.h3-heading-nr {
+                                                margin-bottom: 40px;
+                                            }
+                                            p.es-p {
+                                            }
+
+                                            a.es-btn {
+                                                margin-top:20px;
+                                            }
                                         }
                                     }
                                 }
-                            }
-                            div#section-blue-wave {
-                                margin-top: 2em !important;
-                                margin-bottom: 3em !important;
+                                div#section-blue-wave {
+                                    margin-top: 2em !important;
+                                    margin-bottom: 3em !important;
+                                }
                             }
                         }
                     }
@@ -893,5 +895,4 @@ div#et-main-area {
 }
 @media all and (max-width: 320px) {
 }
-
 /* ******* DISCOVER-ELAINE 2023 NOW RECRUITING PAGE END ******* */

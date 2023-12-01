@@ -3,6 +3,8 @@
 $es-blue: #2493D1;
 $es-purple: #6B297D;
 $es-purple-opaque: rgba(107, 41, 125, 0.85);
+$es-hero-backg-start: #D8E1F2;
+$es-hero-backg-end: #F6F8FC;
 $es-gray: #4D596A;
 $es-dark-blue: #045398;
 $es-teal: #0E8D97;
@@ -10,4 +12,10 @@ $es-light-gray: #E4E6E9;
 $es-white: #ffffff;
 $es-black: #000000;
 $es-button-grey: #707070;
+
+@mixin hero-2-gradient {
+    background: $es-hero-backg-start;
+    background: linear-gradient(45deg, $es-hero-backg-start 0%, $es-hero-backg-end 100%);
+};
+
 /* ******* DISCOVER-ELAINE 2023 COLORS START ******* */

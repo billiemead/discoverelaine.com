@@ -3,24 +3,45 @@
 
 /* ******* DISCOVER-ELAINE 2023 LAYOUT START ******* */
 
+/* *** HEROS *** */
 div.hero-section {
-    padding-top: 0px;
-    padding-bottom: 0px;
-    background-color: #6b297d!important;
-    div.es-row {
-        div.es-col.double {
-            h1.hero-h1 {
-
-            }
-            p.hero-copy {
-
-            }
+    background-color: $es-purple !important;
+    background-size: contain;
+    background-position: right -3% center;
+    height: 264px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 0;
+    background-repeat: no-repeat;
+        div.es-row.hero {
+            padding: 0;
         }
-        div.es-col.double {
-
-        }
+    &.alt {
+        height: 467px;
     }
 }
+div.hero-section-2 {
+    @include hero-2-gradient();
+    min-height: 264px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+/* *** ROWS *** */
+div.es-row {
+    max-width: 1640px;
+}
+div.es-row.about,
+div.es-row.equals {
+    max-width: 1220px;
+    margin-bottom: 0px !important;
+}
+div.es-row.recruit {
+    max-width: 1494px;
+    margin-bottom: 0px !important;
+}
+/* *** SCROLL TO TOP *** */
 span.et_pb_scroll_top.et-pb-icon {
     background: $es-purple-opaque;
     border-radius: 0px;
@@ -30,6 +51,15 @@ span.et_pb_scroll_top.et-pb-icon {
     font-size: 35px;
     padding: 0;
 }
+/* *** BLUE WAVE SECTION *** */
+div#section-blue-wave {
+    content:url('/wp-content/themes/elainestudy/images/blue-wave-1920x189.png');
+    width: 100%;
+    height: auto;
+    margin-top: 1em;
+    margin-bottom: 1em;
+}
+/* *** BUTTONS *** */
 a.es-btn {
     @include regular();
     font-size: 24px;
@@ -100,87 +130,96 @@ a.es-btn {
     }
     &.w-1120 {
         font-size: 32px;
-        line-height: 37px;
+        line-height: 37px !important;
         width: 1120px;
         margin: 0 auto;
+        height: 74px !important;
+    }
+}
+div.es-btn {
+    @include regular();
+    text-transform: uppercase;
+    font-size: 24px;
+    line-height: 40px !important;
+    height: 60px !important;
+    color: $es-white !important;
+    border-color: $es-blue !important;
+    background-color: $es-blue !important;
+    padding: 0 !important;
+    border-radius: 0 !important;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    &.w-214 {
+        font-weight: bold !important;
+        width: 214px;
+        height: 54px !important;
+        margin: 0 auto;
+    }
+    &.w-256 {
+        width: 256px;
+        height: 44px !important;
+        margin: 0 auto;
+    }
+    &.w-326 {
+        font-weight: bold !important;
+        width: 326px;
+        height: 54px !important;
     }
 }
 .et_pb_button:after,
 .et_pb_button:before {
     display: none !important;
 }
-div.es-row {
-    max-width: 1640px;
-}
-div.es-row.about,
-div.es-row.equals {
-    max-width: 1220px;
-    margin-bottom: 0px !important;
-}
-div.es-row.recruit {
-    max-width: 1494px;
-    margin-bottom: 0px !important;
-}
-div#section-blue-wave {
-    margin-top: 5em;
-    margin-bottom: 8em;
-}
-div#et-main-area {
-    div#main-content {
-        article.page {
-            div.entry-content {
-                div.et-l {
-                    div.et_builder_inner_content {
-                        div#ES_hero_section {
-                            max-height: 264px;
-                            padding: 62px 0 !important;
-                        }
-                    }
-                }
-            }
-        }
-    }
-}
-div#section-blue-wave {
-    content:url('/wp-content/themes/elainestudy/images/blue-wave-1920x189.png');
-    width: 100%;
-    height: auto;
-    margin-top: 1em;
-    margin-bottom: 1em;
-}
+
 @media all and (max-width: 1024px) {
+    /* *** HEROS *** */
+    div.hero-section {
+        height: 141px;
+    }
+    div.hero-section-2 {
+        height: 141px;
+    }
     div.es-row.about,
     div.es-row.equals {
         max-width: 820px;
         margin-bottom: 0px !important;
     }
     div.es-row.recruit {
-    max-width: 820px;
-    margin-bottom: 0px !important;
-}
+        max-width: 820px;
+        margin-bottom: 0px !important;
+    }
+    a.es-btn.w-1120 {
+        width: 100%;
+    }
+    div.es-btn {
+        font-size: 32px;
+        line-height: 38px !important;
+        margin-top: 3%;
+        &.w-256 {
+        width: 330px;
+        height: 70px !important;
+        margin: 0 auto;
+        }
+        &.w-326 {
+            width: 330px;
+            height: 70px !important;
+        }
+    }
+    div.es-btn.w-214 {
+        width: 220px;
+        font-size: 22px;
+        line-height: 40px !important;
+    }
+    /* *** BLUE WAVE SECTION *** */
+    div#section-blue-wave {
+        content:url('/wp-content/themes/elainestudy/images/blue-wave-1024x148.png');
+    }
 }
 @media all and (max-width: 980px) {
     a.es-btn {
-        @include regular();
         font-size: 23px;
         line-height: 38px !important;
-        height: 60px !important;
-        color: $es-white !important;
-        border-color: $es-blue !important;
-        background-color: $es-blue !important;
-        padding: 0 !important;
-        border-radius: 0 !important;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        &:hover {
-            color: $es-blue !important;
-            background-color: $es-white !important;
-            border-style: solid;
-            border-width: 1px;
-            border-color: $es-blue !important;
-
-        }
         &.w-214 {
             width: 100%;
             margin: 0 auto;
@@ -203,6 +242,10 @@ div#section-blue-wave {
             margin: 0 auto;
         }
     }
+    div.es-btn {
+        font-size: 23px;
+        line-height: 38px !important;
+    }
     div.es-row.about,
     div.es-row.equals {
         max-width: 784px;
@@ -213,7 +256,10 @@ div#section-blue-wave {
         margin-bottom: 0px !important;
     }
 }
-@media all and (max-width: 767px) {
+@media all and (max-width: 768px) {
+    div.hero-section-2 {
+        min-height: 150px;
+    }
     div.es-row.about,
     div.es-row.equals {
         max-width: 612px;
@@ -224,54 +270,51 @@ div#section-blue-wave {
         margin-bottom: 0px !important;
     }
     a.es-btn {
-        @include regular();
         font-size: 22px;
         line-height: 28px !important;
         height: 78px !important;
-        color: $es-white !important;
-        border-color: $es-blue !important;
-        background-color: $es-blue !important;
-        padding: 0 !important;
-        border-radius: 0 !important;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        &:hover {
-            color: $es-blue !important;
-            background-color: $es-white !important;
-            border-style: solid;
-            border-width: 1px;
-            border-color: $es-blue !important;
-
+    }
+    div.es-btn {
+        font-size: 22px;
+        line-height: 28px !important;
+        height: 78px !important;
+        &.w-256 {
+        font-size: 30px;
+        line-height: 40px !important;
+        width: 335px;
+        height: 88px !important;
+        margin: 0 auto;
+        }
+        &.w-326 {
+        font-size: 30px;
+        line-height: 40px !important;
+        width: 335px;
+        height: 88px !important;
+        margin: 0 auto;
         }
     }
+    /* *** BLUE WAVE SECTION *** */
     div#section-blue-wave {
         content:url('/wp-content/themes/elainestudy/images/blue-wave-576x110.png');
     }
 }
 @media all and (max-width: 576px) {
     a.es-btn {
-        @include regular();
         font-size: 18px;
         line-height: 24px !important;
-        height: 78px !important;
-        color: $es-white !important;
-        border-color: $es-blue !important;
-        background-color: $es-blue !important;
-        padding: 0 !important;
-        border-radius: 0 !important;
-        display: flex;
-        justify-content: center;
-        align-items: center;
         padding-left: 60px!important;
         padding-right: 60px!important;
-        &:hover {
-            color: $es-blue !important;
-            background-color: $es-white !important;
-            border-style: solid;
-            border-width: 1px;
-            border-color: $es-blue !important;
-
+    }
+    div.es-btn {
+        font-size: 18px;
+        line-height: 24px !important;
+        padding-left: 60px!important;
+        padding-right: 60px!important;
+        &.w-256 {
+            padding: 0 !important;
+        }
+        &.w-326 {
+            padding: 0 !important;
         }
     }
 }

@@ -2,53 +2,50 @@
 @import "../base/font";
 
 /* ******* DISCOVER-ELAINE 2023 NOW PRIVACY POLICY PAGE START ******* */
+body.privacypolicy-page {
+    div#et-main-area {
+        div#main-content {
+            article.page {
+                div.entry-content {
+                    div.et-l {
+                        div.et_builder_inner_content {
+                            div#privacy-hero-section {
+                                div.es-row {
+                                    padding: 0;
+                                    div.es-col {
+                                        h1.hero-h1-alt {
 
-div#et-main-area {
-    div#main-content {
-        article.page {
-            div.entry-content {
-                div.et-l {
-                    div.et_builder_inner_content {
-                        div#privacy-hero-section {
-                            height: 264px;
-                            display: flex;
-                            justify-content: flex-start;
-                            align-items: center;
-                            div.es-row {
+                                        }
+                                    }
+                                }
+                            }
+                            div#privacy-section {
                                 padding: 0;
-                                div.es-col {
-                                    h1.hero-h1-alt {
-
-                                    }
-                                }
-                            }
-                        }
-                        div#privacy-section {
-                            padding: 0;
-                            div.es-glossary-content-row {
-                                div.es-col {
-                                    h2.h2-heading-alt {
-                                        padding-top: 60px;
-                                        padding-bottom: 15px;
-                                    }
-                                    p.es-p {
-                                        a.privacy-link {
-
+                                div.es-glossary-content-row {
+                                    div.es-col {
+                                        h2.h2-heading-alt {
+                                            padding-top: 60px;
+                                            padding-bottom: 15px;
                                         }
-                                    }
-                                    ul.privacy-list {
-                                        margin-left: 1em;
-                                        padding: 0 0 1em 2em;
-                                        li.privacy-list-item {
-                                            padding-bottom: 1.125em;
+                                        p.es-p {
+                                            a.privacy-link {
+
+                                            }
+                                        }
+                                        ul.privacy-list {
+                                            margin-left: 1em;
+                                            padding: 0 0 1em 2em;
+                                            li.privacy-list-item {
+                                                padding-bottom: 1.125em;
+                                            }
                                         }
                                     }
                                 }
                             }
-                        }
-                        div#section-blue-wave {
-                            margin-top: 7em;
-                            margin-bottom: 3em;
+                            div#section-blue-wave {
+                                margin-top: 7em;
+                                margin-bottom: 3em;
+                            }
                         }
                     }
                 }
@@ -61,60 +58,58 @@ div#et-main-area {
 }
 @media all and (max-width: 980px) {
 }
-@media all and (max-width: 767px) {
-    div#et-main-area {
-    div#main-content {
-        article.page {
-            div.entry-content {
-                div.et-l {
-                    div.et_builder_inner_content {
-                        div#privacy-hero-section {
-                            height: 150px;
-                            display: flex;
-                            justify-content: flex-start;
-                            align-items: center;
-                            div.es-row {
-                                padding: 0;
-                                div.es-col {
-                                    h1.hero-h1-alt {
+@media all and (max-width: 768px) {
+    body.privacypolicy-page {
+        div#et-main-area {
+            div#main-content {
+                article.page {
+                    div.entry-content {
+                        div.et-l {
+                            div.et_builder_inner_content {
+                                div#privacy-hero-section {
+                                    div.es-row {
+                                        padding: 0;
+                                        div.es-col {
+                                            h1.hero-h1-alt {
 
-                                    }
-                                }
-                            }
-                        }
-                        div#privacy-section {
-                            padding: 0;
-                            div.es-glossary-content-row {
-                                div.es-col {
-                                    h2.h2-heading-alt {
-                                        padding-top: 25px;
-                                        padding-bottom: 15px;
-                                    }
-                                    p.es-p {
-                                        a.privacy-link {
-
-                                        }
-                                    }
-                                    ul.privacy-list {
-                                        margin-left: 0.5em;
-                                        padding: 0 0 0.5em 1em;
-                                        li.privacy-list-item {
-                                            padding-bottom: 0.75em;
+                                            }
                                         }
                                     }
                                 }
+                                div#privacy-section {
+                                    padding: 0;
+                                    div.es-glossary-content-row {
+                                        div.es-col {
+                                            h2.h2-heading-alt {
+                                                padding-top: 25px;
+                                                padding-bottom: 15px;
+                                            }
+                                            p.es-p {
+                                                a.privacy-link {
+
+                                                }
+                                            }
+                                            ul.privacy-list {
+                                                margin-left: 0.5em;
+                                                padding: 0 0 0.5em 1em;
+                                                li.privacy-list-item {
+                                                    padding-bottom: 0.75em;
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                                div#section-blue-wave {
+                                    margin-top: 7em;
+                                    margin-bottom: 3em;
+                                }
                             }
-                        }
-                        div#section-blue-wave {
-                            margin-top: 7em;
-                            margin-bottom: 3em;
                         }
                     }
                 }
             }
         }
     }
-}
 }
 @media all and (max-width: 576px) {
 }

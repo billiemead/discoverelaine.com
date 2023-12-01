@@ -12,7 +12,7 @@
 .ja_md {
     width: 1071px;
     height: auto;
-    min-height: 767px;
+    min-height: 768px;
 }
 .ja_noTitle .ja_close_round {
     right: 28px;
@@ -153,9 +153,9 @@ p.es-exit-copy {
 }
 @media all and (max-width: 980px) {
 }
-@media all and (max-width: 767px) {
+@media all and (max-width: 768px) {
     .ja_md {
-        min-height: 767px;
+        min-height: 768px;
     }
     .ja_btn_wrap.optBack {
     width: 100%;

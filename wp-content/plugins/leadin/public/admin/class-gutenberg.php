@@ -19,12 +19,7 @@ class Gutenberg {
 		}
 
 		add_action( 'init', array( $this, 'register_gutenberg_block' ) );
-
-		// block_categories hook deprecated in 5.8 for block_categories_all https://developer.wordpress.org/reference/hooks/block_categories/.
-		global $wp_version;
-		$is_block_categories_supported = Versions::is_version_less_than( $wp_version, '5.8' );
-		$block_categories_hook         = $is_block_categories_supported ? 'block_categories' : 'block_categories_all';
-		add_filter( $block_categories_hook, array( $this, 'add_hubspot_category' ) );
+		add_filter( 'block_categories_all', array( $this, 'add_hubspot_category' ) );
 	}
 
 	/**

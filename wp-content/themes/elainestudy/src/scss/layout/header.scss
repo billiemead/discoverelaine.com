@@ -2,7 +2,7 @@
 @import "../base/font";
 
 /* ******* DISCOVER-ELAINE 2023 HEADER START ******* */
-#top-menu .menu-item-has-children > a:first-child:after,
+ul#top-menu .menu-item-has-children > a:first-child:after,
 #et-secondary-nav .menu-item-has-children > a:first-child:after {
     font-size: 24px;
     right: 0;
@@ -12,10 +12,14 @@
     width: 100%;
     text-align: center;
 }
-#main-header {
+header#main-header {
     height: 160px;
     display: flex;
-    .container {
+    &.et-fixed-header {
+        -webkit-box-shadow: 0px 0px 10px 1px rgba(0,0,0,0.35) !important;
+        box-shadow: 0px 0px 10px 1px rgba(0,0,0,0.35) !important;
+    }
+   div.container {
         width: 80%;
         display: flex;
         justify-content: space-around;
@@ -57,8 +61,8 @@
                         align-items: center;
                         a {
                             @include regular();
-                            font-size: 18px;
-                            line-height: 21px;
+                            font-size: 20px;
+                            line-height: 23px;
                             padding: 0 !important;
                             letter-spacing: -0.5px;
                             text-transform: uppercase;
@@ -66,16 +70,16 @@
                         }
                         ul.sub-menu {
                             top: 160px;
-                            width: 375px;
+                            width: 415px;
                             padding: 30px 40px;
                             left: -2%;
                         }
                         li {
                             height: 100%;
                             a {
-                                width: 300px;
-                                font-size: 17px;
-                                line-height: 42px !important;
+                                width: 330px;
+                                font-size: 21px;
+                                line-height: 60px !important;
                                 text-transform: uppercase;
                                 text-align: left;
                             }
@@ -86,8 +90,8 @@
                         background-color: $es-blue;
                         a {
                             color: $es-white;
-                            font-size: 26px;
-                            line-height: 28px;
+                            font-size: 28px;
+                            line-height: 30px;
                             text-align: center;
                             max-width: 200px;
                         }
@@ -99,7 +103,7 @@
                     }
                     > li.menu-item:nth-child(5) {
                         ul.sub-menu {
-                            width: 200px;
+                            width: 233px;
                         }
                     }
                 }
@@ -108,8 +112,8 @@
     }
 }
 @media all and (max-width: 1300px) {
-    #main-header {
-        .container {
+   header#main-header {
+       div.container {
             div.logo_container {
                 a {
                     img#logo {
@@ -178,10 +182,10 @@
     }
 }
 @media all and (max-width: 1024px) {
-    #main-header {
-        height: 160px;
+   header#main-header {
+        height: 130px;
         display: flex;
-        .container {
+       div.container {
             width: 80%;
             display: flex;
             justify-content: space-around;
@@ -195,7 +199,7 @@
                 }
                 a {
                     img#logo {
-                        max-height: 100px;
+                        max-height: 64px;
                     }
                 }
             }
@@ -216,21 +220,21 @@
                         justify-content: space-between;
                         li.menu-item {
                             padding: 0 !important;
-                            height: 160px;
+                            height: 130px;
                             display: flex;
                             justify-content: center;
                             align-items: center;
                             a {
                                 @include regular();
-                                font-size: 18px;
-                                line-height: 21px;
+                                font-size: 16px;
+                                line-height: 18px;
                                 padding: 0 !important;
                                 letter-spacing: -0.5px;
                                 text-transform: uppercase;
                             }
                             ul.sub-menu {
-                                top: 160px;
-                                width: 375px;
+                                top: 130px;
+                                width: 340px;
                                 padding: 30px 40px;
                                 left: -2%;
                             }
@@ -238,31 +242,36 @@
                                 height: 100%;
                                 a {
                                     width: 300px;
-                                    font-size: 17px;
+                                    font-size: 16px;
                                     line-height: 42px !important;
                                     text-transform: uppercase;
                                 }
                             }
                         }
                         > li.menu-item:first-child {
-                            width: 160px;
+                            width: 140px;
                             background-color: $es-blue;
                             a {
                                 color: $es-white;
-                                font-size: 20px;
-                                line-height: 22px;
+                                font-size: 16px;
+                                line-height: 18px;
                                 text-align: center;
-                                max-width: 140px;
+                                max-width: 110px;
+                            }
+                        }
+                        > li.menu-item:nth-child(3) {
+                            ul.sub-menu {
+                                width: 310px;
                             }
                         }
                         > li.menu-item:nth-child(4) {
                             ul.sub-menu {
-                                width: 325px;
+                                width: 250px;
                             }
                         }
                         > li.menu-item:nth-child(5) {
                             ul.sub-menu {
-                                width: 200px;
+                                width: 190px;
                             }
                         }
                     }
@@ -272,10 +281,10 @@
     }
 }
 @media all and (max-width: 980px) {
-    #main-header {
+   header#main-header {
     height: 100px;
     display: flex;
-        .container {
+       div.container {
             width: 80%;
             display: flex;
             justify-content: space-around;
@@ -323,13 +332,13 @@
                             position: fixed;
                             left: 0;
                             padding: 0;
-                            background: #fff;
+                            background: $es-white;
                             width: 100%;
                             visibility: visible;
                             opacity: 1;
                             display: none;
                             z-index: 9999;
-                            border-top: 3px solid #2ea3f2;
+                            border-top: 0px solid $es-blue;
                             box-shadow: 0 2px 5px rgba(0,0,0,.1);
                             -moz-box-shadow: 0 2px 5px rgba(0,0,0,.1);
                             -webkit-box-shadow: 0 2px 5px rgba(0,0,0,.1);
@@ -362,6 +371,12 @@
                                     }
                                 }
                             }
+                            li.et_first_mobile_item {
+                                background-color: $es-blue;
+                                a {
+                                    color: $es-white;
+                                }
+                            }
                         }
                     }
                 }
@@ -369,7 +384,7 @@
         }
     }
 }
-@media all and (max-width: 767px) {
+@media all and (max-width: 768px) {
 }
 @media all and (max-width: 576px) {
 }

@@ -6,15 +6,15 @@
 h1.hero-h1 {
     @include bold();
     font-size: 60px;
-    line-height: 64px !important;
-    margin-top: 20px;
-    margin-bottom: 30px;
+    line-height: 90px !important;
+    margin: 0;
     letter-spacing: 0px;
+    color: $es-white
 }
 h1.hero-h1-alt {
     @include bold();
     font-size: 70px;
-    line-height: 70px !important;
+    line-height: 90px !important;
     color: $es-purple;
     padding: 0px;
     margin: 0px;
@@ -28,7 +28,10 @@ h1.h1-heading {
     line-height: 60px !important;
     letter-spacing: 0px;
     &.center {
-        text-align: left;
+        text-align: center;
+    }
+    &.white {
+        color: $es-white;
     }
 }
 h2.h2-heading-icon {
@@ -191,36 +194,37 @@ p.trademark {
     line-height: 20px;
 }
 
-.stat-lg-number {
+h3.stat-lg-number {
   @include bold();
   color:$es-dark-blue;
   font-size:120px;
   line-height: 138px;
 }
 
-.stat-lg-text {
+h3.stat-lg-text {
   @include bold();
   color:$es-dark-blue;
   font-size: 40px;
   line-height: 45px;
 }
 
-.stat-plus-sign {
+h3.stat-plus-sign {
   @include bold();
   color:$es-dark-blue;
   font-size:68px;
   line-height: 78px;
   padding:0 10px;
+  margin-bottom: 15%;
 }
 
-.stat-md-number {
+h3.stat-md-number {
   @include bold();
   color:$es-dark-blue;
   font-size:101px;
   line-height: 115px;
   text-align: center;
 }
-.stat-md-text {
+p.stat-md-text {
   @include bold();
   color:$es-dark-blue;
   font-size:22px;
@@ -234,11 +238,13 @@ p.trademark {
         font-size: 55px;
         line-height: 55px !important;
     }
+    h1.hero-h1 {
+        font-size: 30px;
+        line-height: 90px !important;
+    }
     h1.hero-h1-alt {
-        font-size: 60px;
-        line-height: 60px !important;
-        padding: 0px;
-        margin: 0px;
+        font-size: 30px;
+        line-height: 38px !important;
     }
     h2.h2-heading-icon {
         font-size: 70px;
@@ -260,8 +266,8 @@ p.trademark {
         line-height: 38px !important;
     }
     p.es-p {
-        font-size: 23px;
-        line-height: 38px  !important;
+        font-size: 24px;
+        line-height: 40px  !important;
     }
     ul.privacy-list,
     li.privacy-list-item {
@@ -273,11 +279,6 @@ p.trademark {
     h1.hero-h1 {
         font-size: 48px;
         line-height: 52px !important;
-        margin-top: 20px;
-    }
-    h1.hero-h1-alt {
-        font-size: 50px;
-        line-height: 50px !important;
     }
     h2.h2-heading {
         font-size: 48px;
@@ -317,11 +318,10 @@ p.trademark {
         line-height: 23px !important;
     }
 }
-@media all and (max-width: 767px) {
+@media all and (max-width: 768px) {
     h1.hero-h1 {
-        font-size: 55px;
-        line-height: 60px !important;
-        margin-top: 10%;
+        font-size: 40px;
+        line-height: 48px !important;
     }
     h1.hero-h1-alt {
         font-size: 40px;
@@ -361,7 +361,7 @@ p.trademark {
 @media all and (max-width: 576px) {
     h1.hero-h1 {
         font-size: 35px;
-        line-height: 40px !important;
+        line-height: 37px !important;
     }
     h1.hero-h1-alt {
         font-size: 30px;

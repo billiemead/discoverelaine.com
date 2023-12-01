@@ -1,22 +1,19 @@
 <?php
 
 // WordPress Admin CSS
-function admin_style()
-{
+function admin_style() {
     wp_enqueue_style('admin-styles', get_stylesheet_directory_uri() . '/adminstyles.css');
 }
 add_action('admin_enqueue_scripts', 'admin_style');
 
 add_action('wp_enqueue_scripts', 'Divi_child_style');
-function Divi_child_style()
-{
+function Divi_child_style() {
     wp_enqueue_style('parent-style', get_template_directory_uri() . '/style.css');
     wp_enqueue_style('child-style', get_stylesheet_directory_uri() . '/style.css', array('parent-style'));
 }
 
 // smacss
-function es_assets()
-{
+function es_assets() {
     wp_register_style('es-stylesheet', get_theme_file_uri() . '/dist/css/bundle.css', array(), '1.0.0', 'all');
     wp_enqueue_style('es-stylesheet');
     wp_enqueue_script('es_js', get_theme_file_uri() . '/dist/js/bundle.js', array('jquery'), '1.0.0', true);
@@ -35,30 +32,28 @@ function hubspot_javascript() {
 add_action('wp_head', 'hubspot_javascript');
 
 // Add Google Analytics script to page head
-function ganalytics_javascript()
-{
-?>
-    <!-- Global site tag - Google Analytics Start -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-157942511-1"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
+function ganalytics_javascript() {
+    ?>
+        <!-- Global site tag - Google Analytics Start -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-157942511-1"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
 
-        function gtag() {
-            dataLayer.push(arguments);
-        }
-        gtag('js', new Date());
+            function gtag() {
+                dataLayer.push(arguments);
+            }
+            gtag('js', new Date());
 
-        gtag('config', 'UA-157942511-1');
-    </script>
-    <!-- Global site tag - Google Analytics End -->
-<?php
+            gtag('config', 'UA-157942511-1');
+        </script>
+        <!-- Global site tag - Google Analytics End -->
+    <?php
 }
 add_action('wp_head', 'ganalytics_javascript');
 
 // Add HotJar script to page head
-function hotjar_javascript()
-{
-?>
+function hotjar_javascript() {
+    ?>
     <!-- Hotjar Tracking Code for https://discoverelaine.com/ -->
     <script>
         (function(h, o, t, j, a, r) {
@@ -81,8 +76,31 @@ function hotjar_javascript()
 }
 add_action('wp_head', 'hotjar_javascript');
 
-function marker_io()
+add_filter('body_class', 'custom_class');
+function custom_class($classes)
 {
+    if (is_front_page()) {
+        $classes[] = 'home-page';
+    }
+    if (is_page('now-recruiting')) {
+        $classes[] = 'nowrecruiting-page';
+    }
+    if (is_page('equals')) {
+        $classes[] = 'equals-page';
+    }
+    if (is_page('about')) {
+        $classes[] = 'about-page';
+    }
+    if (is_page('resources')) {
+        $classes[] = 'resources-page';
+    }
+    if (is_page('privacy-policy')) {
+        $classes[] = 'privacypolicy-page';
+    }
+    return $classes;
+}
+
+function marker_io() {
     $current_url = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ?
         "https" : "http") . "://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
 
@@ -96,7 +114,7 @@ function marker_io()
 
             !function(e,r,a){if(!e.__Marker){e.__Marker={};var t=[],n={__cs:t};["show","hide","isVisible","capture","cancelCapture","unload","reload","isExtensionInstalled","setReporter","setCustomData","on","off"].forEach(function(e){n[e]=function(){var r=Array.prototype.slice.call(arguments);r.unshift(e),t.push(r)}}),e.Marker=n;var s=r.createElement("script");s.async=1,s.src="https://edge.marker.io/latest/shim.js";var i=r.getElementsByTagName("script")[0];i.parentNode.insertBefore(s,i)}}(window,document);
         </script>
-<?php
+    <?php
     }
 }
 add_action('wp_head', 'marker_io');

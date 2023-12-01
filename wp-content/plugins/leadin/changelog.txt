@@ -1,3 +1,6 @@
+= 10.2.14 (2023-11-15) =
+* Remove deprecated block_categories method
+
 = 10.2.13 (2023-11-13) =
 * Bump WP tested version and fix feedback banner show up condition
 
@@ -303,7 +306,4 @@
 
 = 7.52.0 (2021-03-08) =
 * Updated getting started checklist to use OAuth2 API's
-
-= 7.51.201 (2021-03-08) =
-* Added translations to the disconnect feedback form.
 
