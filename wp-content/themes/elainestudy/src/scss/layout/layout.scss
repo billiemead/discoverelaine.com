@@ -257,12 +257,23 @@ div.es-btn {
     }
 }
 @media all and (max-width: 768px) {
+    div.hero-section {
+        background-size: contain;
+        background-position: center bottom 0px;
+        padding: 35px 0;
+        min-height: 100%;
+        justify-content: flex-start;
+        align-items: flex-start;
+        padding-bottom: 65%;
+        height: 100%;
+    }
+
     div.hero-section-2 {
         min-height: 150px;
     }
     div.es-row.about,
     div.es-row.equals {
-        max-width: 612px;
+        max-width: 80%;
         margin-bottom: 0px !important;
     }
     div.es-row.recruit {
