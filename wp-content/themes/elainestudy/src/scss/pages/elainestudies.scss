@@ -77,6 +77,14 @@ body.home-page {
 
                                 }
                             }
+                            div#hp-dots-section {
+                                display: none;
+                                div#hp-dots {
+                                    svg {
+
+                                    }
+                                }
+                            }
                             div#home-who-section {
                                 padding: 0;
                                 display: flex;
@@ -577,8 +585,7 @@ body.home-page {
                         div.et-l {
                             div.et_builder_inner_content {
                                 div#home-hero-section {
-                                    background-image: url( "/wp-content/themes/elainestudy/images/es-new-hero2-tablet-327x141.png" ) !important;
-                                    min-height: 141px;
+                                    background-image: url( "/wp-content/themes/elainestudy/images/home-mob-hero-414x187.png" ) !important;
                                 }
                                 div#hp-fullwidth-section {
                                     padding: 60px 0 40px 0;
@@ -638,6 +645,15 @@ body.home-page {
 
                                         }
 
+                                    }
+                                }
+                                div#hp-dots-section {
+                                    display: block;
+                                    padding: 0 0 4em 0;
+                                    div#hp-dots {
+                                        svg {
+
+                                        }
                                     }
                                 }
                                 div#home-who-section {

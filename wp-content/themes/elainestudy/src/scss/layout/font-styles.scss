@@ -6,7 +6,7 @@
 h1.hero-h1 {
     @include bold();
     font-size: 60px;
-    line-height: 90px !important;
+    line-height: 60px !important;
     margin: 0;
     letter-spacing: 0px;
     color: $es-white
@@ -240,7 +240,7 @@ p.stat-md-text {
     }
     h1.hero-h1 {
         font-size: 30px;
-        line-height: 90px !important;
+        line-height: 38px !important;
     }
     h1.hero-h1-alt {
         font-size: 30px;
@@ -276,10 +276,10 @@ p.stat-md-text {
     }
 }
 @media all and (max-width: 980px) {
-    h1.hero-h1 {
+/*     h1.hero-h1 {
         font-size: 48px;
         line-height: 52px !important;
-    }
+    } */
     h2.h2-heading {
         font-size: 48px;
         line-height: 48px !important;
@@ -330,6 +330,9 @@ p.stat-md-text {
     h2.h2-heading {
         font-size: 40px;
         line-height: 42px !important;
+        &.teal {
+            color: $es-teal;
+        }
     }
     h2.h2-heading-icon {
         font-size: 75px;
@@ -338,6 +341,15 @@ p.stat-md-text {
     h3.h3-heading {
         font-size: 38px;
         line-height: 40px !important;
+    }
+    h3.h3-heading-icon {
+        font-size: 40px;
+        line-height: 40px !important;
+        margin-bottom: 25px;
+    }
+    h3.h3-heading-equals {
+        font-size: 35px;
+        line-height: 37px !important;
     }
     h4.h4-heading {
         font-size: 21px;
@@ -370,6 +382,10 @@ p.stat-md-text {
     h2.h2-heading {
         font-size: 35px;
         line-height: 40px !important;
+        &.teal {
+            font-size: 40px;
+            color: $es-teal;
+        }
     }
     h2.h2-heading-alt {
         font-size: 20px;
