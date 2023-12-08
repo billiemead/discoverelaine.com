@@ -3,7 +3,7 @@
 Plugin Name: Video PopUp
 Plugin URI: https://wp-plugins.in/video-popup
 Description: Display YouTube, Vimeo, SoundCloud, and MP4 Video in Popup. Pop-up Video on Page Load, Responsive video Popup, Retina ready, visual editor, unlimited Popup's, and many features! Easy to use.
-Version: 1.1.3
+Version: 1.1.4
 Author: Alobaidi
 Author URI: https://wp-plugins.in
 License: GPLv2 or later

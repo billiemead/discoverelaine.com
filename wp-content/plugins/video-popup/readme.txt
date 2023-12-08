@@ -2,8 +2,8 @@
 Contributors: Alobaidi
 Tags: video popup, youtube lightbox, popup, video lightbox, lightbox
 Requires at least: 2.6.0
-Tested up to: 6.2
-Stable tag: 1.1.3
+Tested up to: 6.4.1
+Stable tag: 1.1.4
 Requires PHP: 5.2.4
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -90,6 +90,10 @@ Get the Premium Extension at a low price! [Get it](https://wp-plugins.in/Get-VP-
 * [Support and Contact](https://wp-plugins.in/VP-Support-and-Contact)
 
 == Changelog ==
+
+= 1.1.4 =
+
+In this update, we've sanitized the output of Shortcode attributes.
 
 = 1.1.3 =
 
