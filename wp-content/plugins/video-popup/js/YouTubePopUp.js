@@ -9,5 +9,5 @@
 
 jQuery(function(){
     jQuery("a.vp-a").YouTubePopUp();
-    jQuery("a.vp-s").YouTubePopUp( { autoplay: 1 } ); // Disable autoplay
+    jQuery("a.vp-s").YouTubePopUp( { autoplay: 0 } ); // Disable autoplay
 });
