@@ -1,0 +1,90 @@
+@import "../base/colors";
+@import "../base/font";
+
+/* ******* DISCOVER-ELAINE 2023 HOVERS START ******* */
+
+/* * * * DESKTOP * * * */
+header#main-header {
+    div.container {
+        div#et-top-navigation {
+            nav#top-menu-nav {
+                ul#top-menu {
+                    li.menu-item {
+                        a:hover {
+                            transition: all 0.3s ease;
+                            color: $es-blue;
+                            background: none !important;
+                            opacity: 1;
+                        }
+                    }
+                    > li.menu-item:first-child {
+                        > a:hover {
+                            color: $es-white !important;
+                            pointer-events: auto;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+footer {
+    div#es-footer-section {
+        div.et_pb_row {
+            div#footer-container {
+                    div.footer-left {
+                        div.es-links {
+                            div.es-bottom-menu {
+                                a:hover {
+                                    transition: all 0.3s ease;
+                                    color: $es-blue;
+                                }
+                            }
+                        }
+                    }
+                }
+        }
+    }
+}
+p.es-p {
+    a:hover {
+        transition: all 0.3s ease;
+        color: $es-purple;
+    }
+}
+/* * * * MOBILE * * * */
+
+header#main-header {
+    div.container {
+        div#et-top-navigation {
+            div#et_mobile_nav_menu {
+                div.mobile_nav {
+                    ul#mobile_menu{
+                        li.menu-item {
+                            a:hover {
+                                transition: all 0.3s ease;
+                                color: $es-blue;
+                                opacity: 1;
+                            }
+                        }
+                        > li.menu-item:first-child {
+                            a:hover {
+                                font-weight: 900 !important;
+                                color: $es-white !important;
+                            }
+                        }
+                        ul.sub-menu {
+                            li.menu-item {
+                                a:hover {
+                                    background: none !important;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+/* ******* DISCOVER-ELAINE 2023 HOVERS START ******* */

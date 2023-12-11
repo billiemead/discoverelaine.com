@@ -11,7 +11,7 @@ body.nowrecruiting-page {
                     div.et-l {
                         div.et_builder_inner_content {
                             div#recruiting-hero-section {
-                                background-image: url( "/wp-content/themes/elainestudy/images/es-new-hero1-538x264.png" ) !important;
+                                background-image: url( "/wp-content/themes/elainestudy/images/heros/es-hero-now-recruit-desktop-613x264.png" ) !important;
                                 div.es-row.hero {
                                     padding:0;
                                     h1.hero-h1 {
@@ -46,49 +46,71 @@ body.nowrecruiting-page {
                                 }
                             }
                             div#recruiting-story-section {
-                                padding:0;
-                                margin:0 0 150px 0;
-                                div#video-story-row {
-                                    height:auto;
-                                    display: flex;
+                                padding-top:0px;
+                                padding-bottom: 150px;
+                                div.es-video-row {
                                     min-height: 414px;
                                     margin-bottom: 80px;
                                     padding: 0 !important;
-                                    margin: 50px auto 85px !important;
+                                    margin: 50px auto 0;
                                     box-shadow: 5px 3px 20px -1px #ddd;
-                                    div.es-col-left {
-                                        width: 50%;
+                                    max-width: 1540px;
+                                    div.es-col.one {
+                                        width: 40%;
+                                        padding: 0;
+                                        margin: 0;
+                                        div.es-video-image {
+                                            height: 100%;
+                                            width: 100%;
+                                            padding: 0;
+                                            margin: 0;
+                                            div.et_pb_text_inner {
+                                                height: 100%;
+                                                width: 100%;
+                                                padding: 0;
+                                                margin: 0;
+                                                p.vp-img-paragraph {
+                                                    height: 100%;
+                                                    width: 100%;
+                                                    padding: 0;
+                                                    margin: 0;
+                                                    a.vp-s.vp-yt-type.noExitNotifier {
+                                                        height: 100%;
+                                                        width: 100%;
+                                                        display: block;
+                                                        padding: 0;
+                                                        margin: 0;
+                                                        img.vp-img {
+                                                            height: 100%;
+                                                            object-fit: cover;
+                                                            width: 100%;
+                                                            padding: 0;
+                                                            margin: 0;
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
                                     }
-                                    div.es-col-right {
-                                        display: flex;
-                                        flex-direction: column;
-                                        justify-content: center;
-                                        align-items: flex-start;
-                                        padding:0 60px;
-                                        div#ls-paragraph {
-                                            margin: 20px 0 25px 0;
+                                    div.es-col.two {
+                                        width: 60%;
+                                        div.es-video-h3 {
+                                            padding: 20px 0;
+                                            h3.h3-heading {
+                                                padding:0;
+                                                margin-bottom: 0px;
+                                            }
+                                        }
+                                        a.es-btn.w-290 {
+                                            margin-top: 25px;
                                         }
                                     }
                                 }
-                                h2.h2-heading {
-                                    margin-bottom: 45px;
-                                }
-
-                                div.es-video-info {
-                                    h3.h3-heading-nr {
-                                        padding:0;
-                                    }
-
-                                    img {
-
-                                        width:100%;
-                                        height:auto;
-                                    }
-                                    .es-video-info {
-                                        padding: 0;
-                                        text-align: center;
-                                    }
-
+                                .et_pb_column:last-child {
+                                    padding: 0 145px 0 50px;
+                                    display: flex;
+                                    flex-direction: column;
+                                    justify-content: center;
                                 }
                             }
                             div#recruiting-sermonix-section {
@@ -184,7 +206,7 @@ body.nowrecruiting-page {
                         div.et-l {
                             div.et_builder_inner_content {
                                 div#recruiting-hero-section {
-                                    background-image: url( "/wp-content/themes/elainestudy/images/es-new-hero1-538x264.png" ) !important;
+                                    background-image: url( "/wp-content/themes/elainestudy/images/heros/es-hero-now-recruit-tablet-327x141.png" ) !important;
                                     .es-recruiting-hero-row {
                                         padding:0;
                                     }
@@ -238,56 +260,71 @@ body.nowrecruiting-page {
                                     }
                                 }
                                 div#recruiting-story-section {
-                                    padding-top:0;
-                                    margin:0;
-                                    div#video-story-row {
-                                        height:auto;
-                                        display: flex;
+                                    padding-top:0px;
+                                    padding-bottom: 150px;
+                                    div.es-video-row {
+                                        max-width: 1000px;
                                         flex-direction: column;
-                                        min-height: 414px;
-                                        margin-bottom: 80px;
-                                        padding: 0 !important;
-                                        margin: 50px auto 0;
-                                        box-shadow: 5px 3px 20px -1px #ddd;
-                                        div.es-col-left {
+                                        div.es-col.one {
+                                            height: 100%;
                                             width: 100%;
-                                            div.et_pb_module {
-                                                span.et_pb_image_wrap  {
+                                            padding: 0;
+                                            margin: 0;
+                                            div.es-video-image {
+                                                height: 100%;
+                                                width: 100%;
+                                                padding: 0;
+                                                margin: 0;
+                                                div.et_pb_text_inner {
+                                                    height: 100%;
                                                     width: 100%;
-                                                    img {
-                                                        width:100%;
-                                                        height:auto;
-                                                        object-fit: fill;
+                                                    padding: 0;
+                                                    margin: 0;
+                                                    p.vp-img-paragraph {
+                                                        height: 100%;
+                                                        width: 100%;
+                                                        padding: 0;
+                                                        margin: 0;
+                                                        a.vp-s.vp-yt-type.noExitNotifier {
+                                                            height: 100%;
+                                                            width: 100%;
+                                                            display: block;
+                                                            padding: 0;
+                                                            margin: 0;
+                                                            img.vp-img {
+                                                                height: 100%;
+                                                                object-fit: cover;
+                                                                width: 100%;
+                                                                padding: 0;
+                                                                margin: 0;
+                                                                max-width: 100%;
+                                                            }
+                                                        }
                                                     }
                                                 }
                                             }
                                         }
-                                        div.es-col-right {
-                                            display: flex;
-                                            flex-direction: column;
-                                            justify-content: center;
-                                            align-items: center;
-                                            padding: 60px;
+                                        div.es-col.two {
                                             width: 100%;
+                                            height: 100%;
                                             min-height: 370px;
-                                            div#ls-paragraph {
-                                                margin: 15px 0 15px 0;
+                                            div.es-video-h3 {
+                                                padding: 0 0 20px 0;
+                                                h3.h3-heading {
+                                                    padding:0;
+                                                    margin-bottom: 0px;
+                                                }
+                                            }
+                                            a.es-btn.w-290 {
+                                                margin-top: 25px;
                                             }
                                         }
                                     }
-                                    h2.h2-heading {
-                                        margin-bottom: 45px;
-                                    }
-
-                                    div.es-video-row {
-                                        h3.h3-heading-nr {
-                                            padding:0;
-                                        }
-                                        .es-video-info {
-                                            padding: 0;
-                                            text-align: center;
-                                        }
-
+                                    .et_pb_column:last-child {
+                                        padding: 60px;
+                                        display: flex;
+                                        flex-direction: column;
+                                        justify-content: center;
                                     }
                                 }
                                 div#recruiting-sermonix-section {
@@ -383,18 +420,12 @@ body.nowrecruiting-page {
                         div.et-l {
                             div.et_builder_inner_content {
                                 div#recruiting-hero-section {
-                                    background-size: contain;
-                                    background-position: right -33% center;
-                                    background-image: url( "/wp-content/themes/elainestudy/images/es-new-hero1-538x264.png" ) !important;
-                                    height: 264px;
                                     .es-recruiting-hero-row {
                                         padding:0;
                                     }
-
                                     h1.hero-h1 {
                                         margin: 0;
                                     }
-
                                 }
                                 div#recruiting-about-section {
                                     div.es-row {
@@ -403,75 +434,9 @@ body.nowrecruiting-page {
                                                 text-align: center;
                                             }
                                         }
-                                        div.es-col.right {
-
-                                        }
-                                    }
-                                    h2.h2-heading {
-                                    }
-
-                                    h3.h3-heading-nr {
-                                    }
-
-                                    p.es-p {
                                     }
                                 }
                                 div#recruiting-story-section {
-                                    padding-top:0;
-                                    margin:0;
-
-                                    h2.h2-heading {
-                                        margin-bottom: 45px;
-                                    }
-
-                                    h3.h3-heading-nr {
-                                    }
-
-                                    p.es-p {
-                                    }
-
-                                    div.recruiting-story-row {
-                                        h3.h3-heading-nr {
-                                            text-align: center;
-                                        }
-
-                                        p.es-p {
-                                            text-align: center;
-                                        }
-                                    }
-
-                                    div.es-video-row {
-                                        height:auto;
-                                        min-height: 414px;
-                                        .es-col-left {
-                                            width: 100%;
-                                            img {
-                                                width:100%;
-                                                height:auto;
-                                            }
-                                        }
-                                        .es-col-right {
-                                            padding:80px 60px;
-                                            div.es-video-info {
-                                                padding: 0;
-                                                text-align: center;
-                                                h3.h3-heading-nr {
-                                                    padding:0;
-                                                    text-align: center;
-                                                }
-                                                p.es-p {
-                                                    text-align: center;
-                                                }
-                                            }
-                                            div.et_pb_button_module_wrapper {
-                                                margin: 0 auto;
-                                                a.es-btn {
-                                                    margin: 0 auto;
-                                                    text-align: center;
-                                                }
-                                            }
-                                        }
-                                    }
                                 }
                                 div#recruiting-sermonix-section {
                                     background-color: $es-purple;
@@ -565,6 +530,7 @@ body.nowrecruiting-page {
                         div.et-l {
                             div.et_builder_inner_content {
                                 div#recruiting-hero-section {
+                                    background-image: url( "/wp-content/themes/elainestudy/images/heros/es-hero-now-recruit-mobile-414x231.png" ) !important;
                                     .es-recruiting-hero-row {
                                         padding:0;
                                     }
@@ -579,70 +545,51 @@ body.nowrecruiting-page {
                                                 text-align: center;
                                             }
                                         }
-                                        div.es-col.right {
-
-                                        }
-                                    }
-                                    h2.h2-heading {
-                                    }
-
-                                    h3.h3-heading-nr {
-                                    }
-
-                                    p.es-p {
                                     }
                                 }
                                 div#recruiting-story-section {
-                                    padding-top:0;
-                                    margin:0;
-
-                                    h2.h2-heading {
-                                        margin-bottom: 45px;
-                                    }
-
-                                    h3.h3-heading-nr {
-                                    }
-
-                                    p.es-p {
-                                    }
-
-                                    div.recruiting-story-row {
-                                        h3.h3-heading-nr {
-                                            text-align: center;
-                                        }
-
-                                        p.es-p {
-                                            text-align: center;
-                                        }
-                                    }
-
+                                    padding-bottom: 75px;
                                     div.es-video-row {
                                         height:auto;
-                                        min-height: 414px;
-                                        .es-col-left {
-                                            width: 100%;
-                                            img {
-                                                width:100%;
-                                                height:auto;
+                                        margin-bottom: 80px;
+                                        max-width: 1000px;
+                                        width: 80%;
+                                        div.es-col.one {
+                                            div.es-video-image {
+                                                height: 100%;
+                                                padding: 0;
+                                                margin: 0;
+                                                div.et_pb_text_inner {
+                                                    height: 100%;
+                                                    width: 100%;
+                                                    padding: 0;
+                                                    margin: 0;
+                                                    p.vp-img-paragraph {
+                                                        height: 100%;
+                                                        padding: 0;
+                                                        margin: 0;
+                                                        a.vp-s.vp-yt-type.noExitNotifier {
+                                                            height: 100%;
+                                                            display: block;
+                                                            padding: 0;
+                                                            margin: 0;
+                                                            img.vp-img {
+                                                                height: 100%;
+                                                                object-fit: cover;
+                                                                width: auto;
+                                                                padding: 0;
+                                                                margin: 0;
+                                                            }
+                                                        }
+                                                    }
+                                                }
                                             }
                                         }
-                                        .es-col-right {
-                                            padding:80px 60px;
-                                            div.es-video-info {
-                                                padding: 0;
-                                                text-align: center;
-                                                h3.h3-heading-nr {
-                                                    padding:0;
-                                                    text-align: center;
-                                                }
-                                                p.es-p {
-                                                    text-align: center;
-                                                }
-                                            }
-                                            div.et_pb_button_module_wrapper {
-                                                margin: 0 auto;
-                                                a.es-btn {
-                                                    margin: 0 auto;
+                                        div.es-col.two {
+                                            div.es-video-h3 {
+                                                h3.h3-heading {
+                                                    padding: 0;
+                                                    margin-bottom: 35px;
                                                     text-align: center;
                                                 }
                                             }
@@ -749,12 +696,6 @@ body.nowrecruiting-page {
                         div.et-l {
                             div.et_builder_inner_content {
                                 div#recruiting-hero-section {
-                                    height: 100vw;
-                                    margin: 0;
-                                    background-size: contain;
-                                    background-position: center bottom 0px;
-                                    background-image: url( "/wp-content/themes/elainestudy/images/es-new-hero1-vertical-826x462.png" ) !important;
-                                    padding: 5%;
                                     .es-recruiting-hero-row {
                                         padding:0;
                                         margin: 0;
@@ -787,60 +728,65 @@ body.nowrecruiting-page {
                                         margin-bottom: 35px;
                                         margin-top:20px;
                                     }
-
-                                    h3.h3-heading-nr {
-                                    }
-
-                                    p.es-p {
-                                    }
                                 }
                                 div#recruiting-story-section {
-                                    padding-top:0;
-                                    margin:0;
-                                    div#video-story-row {
-                                        div.es-col-left {
-
-                                        }
-                                        div.es-col-right {
-                                            div#ls-paragraph {
-                                                margin: 20px 0 25px 0;
-                                                padding: 0 40px 0 40px;
-                                            }
-                                        }
-                                        div.es-col-right {
-                                            padding: 40px 0 0 0;
-                                            min-height: 100%;
-                                        }
-                                    }
-                                    h2.h2-heading {
-                                        margin-bottom: 45px;
-                                    }
-                                    div.es-video-info {
-                                        padding: 0;
-                                        text-align: center;
-                                            h3.h3-heading-nr {
-                                                padding:0;
-                                                text-align: center;
-                                                margin: 0 0 30px 0;
-                                            }
-                                            img {
-                                                width:100%;
-                                                height:auto;
-                                            }
-                                            p.es-p {
-                                                margin-bottom: 30px;
-                                            }
-                                    }
-                                    div.et_pb_button_module_wrapper {
-                                        margin: 0 auto;
-                                        width: 100%;
-                                        a.es-btn {
-                                            margin: 0 auto;
-                                            text-align: center;
-                                        }
-                                    }
+                                    padding-bottom: 50px;
                                     div.es-video-row {
-                                        width: 75%;
+                                        height:auto;
+                                        margin-bottom: 80px;
+                                        div.es-col.one {
+                                            div.es-video-image {
+                                                height: 100%;
+                                                padding: 0;
+                                                margin: 0;
+                                                div.et_pb_text_inner {
+                                                    height: 100%;
+                                                    width: 100%;
+                                                    padding: 0;
+                                                    margin: 0;
+                                                    p.vp-img-paragraph {
+                                                        height: 100%;
+                                                        padding: 0;
+                                                        margin: 0;
+                                                        a.vp-s.vp-yt-type.noExitNotifier {
+                                                            height: 100%;
+                                                            display: block;
+                                                            padding: 0;
+                                                            margin: 0;
+                                                            img.vp-img {
+                                                                height: 100%;
+                                                                object-fit: cover;
+                                                                width: auto;
+                                                                padding: 0;
+                                                                margin: 0;
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                        div.es-col.two {
+                                            min-height: 100%;
+                                            padding: 40px 0 0px 0;
+                                            div.es-video-h3 {
+                                                padding: 0px;
+                                                text-align: center;
+                                                    h3.h3-heading {
+                                                        padding:0;
+                                                        margin-bottom: 15px;
+                                                    }
+                                            }
+                                            div.es-video-paragraph {
+                                                padding: 0 30px 0 30px;
+                                            }
+                                        }
+                                        img {
+                                            width:100%;
+                                            height:auto;
+                                        }
+                                    }
+                                    .et_pb_column:last-child {
+                                        padding: 40px;
                                     }
                                 }
                                 div#recruiting-sermonix-section {

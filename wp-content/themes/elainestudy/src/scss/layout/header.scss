@@ -67,6 +67,7 @@ header#main-header {
                             letter-spacing: -0.5px;
                             text-transform: uppercase;
                             text-align: center;
+                            transition: all 0.3s ease;
                         }
                         ul.sub-menu {
                             top: 160px;
@@ -78,7 +79,7 @@ header#main-header {
                             height: 100%;
                             a {
                                 width: 330px;
-                                font-size: 21px;
+                                font-size: 20px;
                                 line-height: 60px !important;
                                 text-transform: uppercase;
                                 text-align: left;
@@ -88,6 +89,7 @@ header#main-header {
                     > li.menu-item:first-child {
                         width: 234px;
                         background-color: $es-blue;
+                        transition: all 0.3s ease;
                         a {
                             color: $es-white;
                             font-size: 28px;
@@ -95,6 +97,10 @@ header#main-header {
                             text-align: center;
                             max-width: 200px;
                         }
+                    }
+                    > li.menu-item:first-child:hover {
+                        background-color: $es-purple;
+                        transition: all 0.3s ease;
                     }
                     > li.menu-item:nth-child(4) {
                         ul.sub-menu {
@@ -140,7 +146,7 @@ header#main-header {
                             }
                             ul.sub-menu {
                                 top: 160px;
-                                width: 375px;
+                                width: 350px;
                                 padding: 30px 40px;
                                 left: -2%;
                             }
@@ -148,8 +154,8 @@ header#main-header {
                                 height: 100%;
                                 a {
                                     width: 300px;
-                                    font-size: 17px;
-                                    line-height: 42px !important;
+                                    font-size: 18px;
+                                    line-height: 45px !important;
                                     text-transform: uppercase;
                                 }
                             }
@@ -165,14 +171,19 @@ header#main-header {
                                 max-width: 180px;
                             }
                         }
-                        > li.menu-item:nth-child(4) {
+                        > li.menu-item:nth-child(3) {
                             ul.sub-menu {
                                 width: 325px;
                             }
                         }
+                        > li.menu-item:nth-child(4) {
+                            ul.sub-menu {
+                                width: 270px;
+                            }
+                        }
                         > li.menu-item:nth-child(5) {
                             ul.sub-menu {
-                                width: 200px;
+                                width: 238px;
                             }
                         }
                     }
@@ -243,7 +254,7 @@ header#main-header {
                                 a {
                                     width: 300px;
                                     font-size: 16px;
-                                    line-height: 42px !important;
+                                    line-height: 45px !important;
                                     text-transform: uppercase;
                                 }
                             }
@@ -343,9 +354,9 @@ header#main-header {
                             -moz-box-shadow: 0 2px 5px rgba(0,0,0,.1);
                             -webkit-box-shadow: 0 2px 5px rgba(0,0,0,.1);
                             top: 100px;
-                            bottom: 0;
-                            overflow-y: scroll;
+                            overflow-y: auto;
                             overflow-x: hidden;
+                            height: 85vh;
                             li.menu-item {
                                 a {
                                     @include demi-bold();
@@ -363,7 +374,7 @@ header#main-header {
                                         padding: 0 5%;
                                         a {
                                             @include regular();
-                                            font-size: 14px;
+                                            font-size: 16px;
                                             line-height: 16px;
                                             text-transform: uppercase;
                                             height: 38px;
@@ -371,6 +382,7 @@ header#main-header {
                                     }
                                 }
                             }
+
                             li.et_first_mobile_item {
                                 background-color: $es-blue;
                                 a {

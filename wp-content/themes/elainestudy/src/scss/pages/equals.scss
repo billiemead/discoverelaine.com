@@ -10,7 +10,7 @@ body.equals-page {
                     div.et-l {
                         div.et_builder_inner_content {
                             div#equals-hero-section {
-                                    background-image: url("/wp-content/themes/elainestudy/images/es-new-hero3-600x264.png") !important;
+                                    background-image: url("/wp-content/themes/elainestudy/images/heros/es-hero-equals-desktop-613x264.png") !important;
                                 h1.hero-h1 {
                                     width: 1107px;
                                 }
@@ -953,7 +953,7 @@ body.equals-page {
                         div.et-l {
                             div.et_builder_inner_content {
                                 div#equals-hero-section {
-                                    background-image: url("/wp-content/themes/elainestudy/images/equals-tablet-hero-322x141.png") !important;
+                                    background-image: url("/wp-content/themes/elainestudy/images/heros/es-hero-equals-tablet-327x141.png") !important;
                                     h1.hero-h1 {
                                         width: 422px;
                                     }
@@ -1435,7 +1435,7 @@ body.equals-page {
                         div.et-l {
                             div.et_builder_inner_content {
                                 div#equals-hero-section {
-                                    background-image: url("/wp-content/themes/elainestudy/images/equals-mob-hero-414x230.png") !important;
+                                    background-image: url("/wp-content/themes/elainestudy/images/heros/es-hero-equals-mobile-414x236.png") !important;
                                     h1.hero-h1 {
                                         width: 100%;
                                     }
@@ -1616,7 +1616,8 @@ body.equals-page {
                                     }
                                 }
                                 div#triple-survey-section {
-                                    padding: 60px 0 60px 0;
+                                    padding: 55% 0 60px 0;
+                                    background-position-y: 3.5%;
                                     div.es-row {
                                         width: 80%;
                                         height: 100%;
@@ -1639,15 +1640,20 @@ body.equals-page {
                                             border-right: none;
                                             height: unset;
                                             margin-right: 0;
-                                            padding: 55px 55px 20px 55px;
+                                            padding: 55px 25px 40px 25px;
                                             align-items: flex-start;
                                             min-width: 100%;
                                             align-self: stretch;
+                                            border-bottom: 1px solid #707070;
+                                            p.es-p {
+                                                font-size: 25px;
+                                                line-height: 41px !important;
+                                            }
                                         }
                                         div.es-col.right {
                                             display: flex;
                                             flex-direction: column;
-                                            padding: 20px 55px 55px 55px;
+                                            padding: 40px 25px 55px 25px;
                                             justify-content: center;
                                             align-items: flex-start;
                                             height: 100%;
@@ -1690,7 +1696,7 @@ body.equals-page {
                                             }
                                         }
                                         div.es-col.right {
-                                            padding-right: 65px;
+                                            padding-right: 25px;
                                         }
                                     }
                                     div#ts-row-3 {
@@ -1750,7 +1756,7 @@ body.equals-page {
                                     div.es-row.equals.steering {
                                         div.es-col {
                                             h3.h3-heading-icon {
-
+                                                text-align: center;
                                             }
                                             p.es-p {
 
@@ -1769,6 +1775,7 @@ body.equals-page {
                                         }
                                     }
                                     div#steering-row-1 {
+                                        padding-bottom: 0;
                                         div.es-col {
                                             h2.h2-heading.center.teal {
 

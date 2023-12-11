@@ -154,11 +154,13 @@ p.es-p {
         @include bold();
         text-decoration: underline;
         color: $es-blue;
+        transition: all 0.3s ease;
     }
     a.es-paragraph-link {
         @include bold();
         text-decoration: underline;
         color: $es-blue;
+        transition: all 0.3s ease;
     }
     strong {
         @include bold();

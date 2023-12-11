@@ -11,7 +11,7 @@ body.home-page {
                     div.et-l {
                         div.et_builder_inner_content {
                             div#home-hero-section {
-                                background-image: url( "/wp-content/themes/elainestudy/images/es-new-hero2-613x264.png" ) !important;
+                                background-image: url( "/wp-content/themes/elainestudy/images/heros/es-hero-home-desktop-613x264.png" ) !important;
                             }
                             div#hp-fullwidth-section {
                                 padding: 65px 0 85px 0;
@@ -95,26 +95,27 @@ body.home-page {
                                     line-height: 90px;
                                 }
                                 div.es-row.who {
-                                        padding: 0;
-                                        height: 497px;
+                                        height: 100%;
+                                        padding: 80px 0 80px 0;
                                         display: flex;
                                         justify-content: flex-start;
-                                        align-items: center;
+                                        align-items: flex-start;
                                     p.es-p.white {
                                     }
                                     div.es-col-left {
-                                        width:22%;
+                                        width:30%;
+                                        margin-right: 4%;
                                         div#elaine-round-img {
                                             span.et_pb_image_wrap  {
                                                 img {
-                                                    max-width: 348px;
-                                                    max-height: 348px;
+                                                    /* max-width: 348px;
+                                                    max-height: 348px; */
                                                 }
                                             }
                                         }
                                     }
                                     div.es-col.right {
-                                        width:78%;
+                                        width:70%;
                                     }
                                 }
                             }
@@ -122,7 +123,7 @@ body.home-page {
                                 padding-bottom: 0;
                                 div#home-about-row {
                                     display: flex;
-                                    width: 100%;
+                                    width: 80%;
                                     justify-content: stretch;
                                     align-items: flex-start;
                                     flex-wrap: nowrap;
@@ -199,7 +200,10 @@ body.home-page {
                                             padding-bottom: 60px;
                                         }
                                         div.inline-img {
+                                            padding-top: 0;
                                             display: inline;
+                                            margin-top: 40px;
+                                            margin-bottom: 20px;
                                         }
                                     }
                                     div.home-about-col.left {
@@ -283,8 +287,7 @@ body.home-page {
                         div.et-l {
                             div.et_builder_inner_content {
                                 div#home-hero-section {
-                                    background-image: url( "/wp-content/themes/elainestudy/images/es-new-hero2-tablet-327x141.png" ) !important;
-                                    min-height: 141px;
+                                    background-image: url( "/wp-content/themes/elainestudy/images/heros/es-hero-home-tablet-327x141.png" ) !important;
                                 }
                                 div#hp-fullwidth-section {
                                     padding: 40px 0 35px 0;
@@ -295,7 +298,6 @@ body.home-page {
                                             align-items: center;
                                             div.es-col.fp-one {
                                                 width: 34%;
-                                                background-image: url("/wp-content/themes/elainestudy/images/hp-dots-right-777x278.png");
                                                 background-repeat: no-repeat;
                                                 background-size: contain;
                                                 height: 175px;
@@ -329,7 +331,6 @@ body.home-page {
                                             }
                                             div.es-col.fp-three {
                                                 width: 34%;
-                                                background-image: url("/wp-content/themes/elainestudy/images/hp-dots-left-777x278.png");
                                                 background-repeat: no-repeat;
                                                 background-size: contain;
                                                 height: 175px;
@@ -354,7 +355,7 @@ body.home-page {
                                     }
                                 }
                                 div#home-who-section {
-                                    padding: 70px 0;
+                                    padding: 0;
                                     display: flex;
                                     justify-content: center;
                                     align-items: center;
@@ -363,10 +364,6 @@ body.home-page {
                                         line-height: 90px;
                                     }
                                     div.es-row.who {
-                                            padding: 0;
-                                            height: 100%;
-                                            display: flex;
-                                            justify-content: flex-start;
                                             align-items: flex-start;
                                         p.es-p.white {
                                         }
@@ -479,7 +476,7 @@ body.home-page {
                                                     padding-bottom: 60px;
                                             }
                                             div.inline-img {
-                                                display: inline;
+
                                             }
                                         }
                                         div.home-about-col.left {
@@ -547,33 +544,6 @@ body.home-page {
         }
     }
 }
-/* @media all and (min-width: 981px) {
-  .three-studies-column:not(:last-child) {
-    &:after {
-      content: '';
-      display: block;
-      position: absolute;
-      right: -30px;
-      top: 10%;
-      width: 1px;
-      height: 90%;
-      background: $es-gray;
-    }
-  }
-  .about-es-one_two {
-    .et_pb_column:first-of-type {
-      &:after {
-        content: '';
-        position: absolute;
-        right: -30px;
-        top: 10%;
-        width: 1px;
-        height: 90%;
-        background: $es-gray;
-      }
-    }
-  }
-} */
 @media all and (max-width: 980px) {
 }
 @media all and (max-width: 768px) {
@@ -585,9 +555,7 @@ body.home-page {
                         div.et-l {
                             div.et_builder_inner_content {
                                 div#home-hero-section {
-                                    background-image: url( "/wp-content/themes/elainestudy/images/home-mob-hero-414x187.png" ) !important;
-                                    padding-bottom: 53%;
-                                    padding-top: 40px;
+                                    background-image: url( "/wp-content/themes/elainestudy/images/heros/es-hero-home-mobile-414x187.png" ) !important;
                                 }
                                 div#hp-fullwidth-section {
                                     padding: 60px 0 80px 0;
@@ -667,7 +635,7 @@ body.home-page {
                                     }
                                 }
                                 div#home-who-section {
-                                    padding: 70px 0;
+                                    padding: 60px 0;
                                     display: flex;
                                     justify-content: center;
                                     align-items: center;
@@ -677,8 +645,6 @@ body.home-page {
                                     }
                                     div.es-row.who {
                                             padding: 0;
-                                            height: 100%;
-                                            display: flex;
                                             justify-content: flex-start;
                                             align-items: center;
                                             flex-direction: column;
@@ -720,7 +686,7 @@ body.home-page {
                                                 margin-bottom: 60px;
                                             }
                                             div.about-heading {
-                                                margin-bottom: 2%;
+                                                margin-bottom: 5%;
                                                 h3.h3-heading {
                                                     font-size:40px;
                                                     line-height:30px;
@@ -795,7 +761,7 @@ body.home-page {
                                                     margin-bottom: 0;
                                             }
                                             div.inline-img {
-                                                display: inline;
+
                                             }
                                         }
                                         div.home-about-col.left {
@@ -871,8 +837,6 @@ body.home-page {
                     div.entry-content {
                         div.et-l {
                             div.et_builder_inner_content {
-                                div#home-hero-section {
-                                }
                                 div#hp-fullwidth-section {
                                     div#hp-fullwidth {
                                         div.hp-fullwidth-container {
@@ -942,7 +906,7 @@ body.home-page {
                                     }
                                 }
                                 div#home-who-section {
-                                    padding: 70px 0;
+                                    padding: 50px 0;
                                     display: flex;
                                     justify-content: center;
                                     align-items: center;
@@ -951,12 +915,6 @@ body.home-page {
                                         line-height: 40px;
                                     }
                                     div.es-row.who {
-                                            padding: 0;
-                                            height: 100%;
-                                            display: flex;
-                                            justify-content: flex-start;
-                                            align-items: center;
-                                            flex-direction: column;
                                         p.es-p.white {
                                         }
                                         div.es-col-left {
@@ -1044,7 +1002,7 @@ body.home-page {
                                                 justify-content: center;
                                                 height:100%;
                                                 border-bottom: 2px solid $es-button-grey;
-                                                padding: 25px 0;
+                                                padding: 35px 0;
                                                 div.flex-stats {
                                                     display: flex;
                                                     align-items: center;
@@ -1109,8 +1067,13 @@ body.home-page {
                                                     margin-bottom: 0;
                                             }
                                             div.inline-img {
-                                                display: inline;
-                                                margin-bottom: 30px;
+
+                                            }
+                                            div.inline-img:first-of-type {
+                                                margin-top: 40px;
+                                            }
+                                            div.inline-img:last-of-type {
+                                                margin-bottom: 40px;
                                             }
                                         }
                                         div.home-about-col.left {
@@ -1139,7 +1102,7 @@ body.home-page {
                                         }
                                     }
                                     div#home-about-button-row {
-                                        padding: 40px 0 30px 0;
+                                        padding: 15px 0 20px 0;
                                         a.es-btn.w-1120 {
                                             font-size: 18px;
                                             line-height: 24px !important;
@@ -1159,26 +1122,26 @@ body.home-page {
         div.es-three-studies {
             div.studies-link {
                 a {
-                font-size: 16px;
-                display: flex;
-                flex-direction: column;
-                flex-wrap: wrap;
-                justify-content: center;
-                width: 100%;
-                height: 80px;
-                padding: 10px;
-                color: #fff;
-                background: $es-blue;
-                border: 2px solid $es-blue;
-                &:hover,
-                &:focus {
-                    color: $es-blue;
-                    background: #fff;
+                    font-size: 16px;
+                    display: flex;
+                    flex-direction: column;
+                    flex-wrap: wrap;
+                    justify-content: center;
+                    width: 100%;
+                    height: 80px;
+                    padding: 10px;
+                    color: #fff;
+                    background: $es-blue;
                     border: 2px solid $es-blue;
-                }
-                .is-closed {
-                    font-size: 0.7rem;
-                }
+                    &:hover,
+                    &:focus {
+                        color: $es-blue;
+                        background: #fff;
+                        border: 2px solid $es-blue;
+                    }
+                    .is-closed {
+                        font-size: 0.7rem;
+                    }
                 }
             }
         }
@@ -1188,5 +1151,4 @@ body.home-page {
 }
 @media all and (max-width: 320px) {
 }
-
 /* ******* DISCOVER-ELAINE 2023 ELAINE STUDIES PAGE END ******* */

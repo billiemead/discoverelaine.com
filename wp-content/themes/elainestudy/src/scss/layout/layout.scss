@@ -20,6 +20,9 @@ div.hero-section {
     &.alt {
         height: 467px;
     }
+    &.about {
+        height: 467px;
+    }
 }
 div.hero-section-2 {
     @include hero-2-gradient();
@@ -174,11 +177,13 @@ div.es-btn {
 
 @media all and (max-width: 1024px) {
     /* *** HEROS *** */
-    div.hero-section {
-        height: 141px;
-    }
+    div.hero-section,
     div.hero-section-2 {
         height: 141px;
+        min-height: 141px;
+    }
+    div.hero-section.about {
+        height: 617px;
     }
     div.es-row.about,
     div.es-row.equals {
@@ -217,6 +222,12 @@ div.es-btn {
     }
 }
 @media all and (max-width: 980px) {
+    div.hero-section {
+        background-position: right -33% center;
+        &.about {
+
+        }
+    }
     a.es-btn {
         font-size: 23px;
         line-height: 38px !important;
@@ -260,14 +271,17 @@ div.es-btn {
     div.hero-section {
         background-size: contain;
         background-position: center bottom 0px;
-        padding: 35px 0;
+        padding: 40px 0 0 0;
         min-height: 100%;
         justify-content: flex-start;
         align-items: flex-start;
-        padding-bottom: 65%;
-        height: 100%;
-    }
+        padding-bottom: 53%;
+        /* height: 100%; */
+        height: 100vw;
+        &.about {
 
+        }
+    }
     div.hero-section-2 {
         min-height: 150px;
     }

@@ -92,30 +92,6 @@ body.resources-page {
                                         }
                                     }
                                 }
-                                div#video-row-1 {
-                                    div.es-col.one {
-
-                                    }
-                                    div.es-col.two {
-
-                                    }
-                                }
-                                div#video-row-2 {
-                                    div.es-col.one {
-
-                                    }
-                                    div.es-col.two {
-
-                                    }
-                                }
-                                div#video-row-3 {
-                                    div.es-col.one {
-
-                                    }
-                                    div.es-col.two {
-
-                                    }
-                                }
                                 div.es-video-row {
                                     min-height: 414px;
                                     margin-bottom: 80px;
@@ -124,12 +100,44 @@ body.resources-page {
                                     box-shadow: 5px 3px 20px -1px #ddd;
                                     max-width: 1540px;
                                     div.es-col.one {
-                                        img {
-                                            height: 414px;
-                                            object-fit: cover;
+                                        width: 40%;
+                                        padding: 0;
+                                        margin: 0;
+                                        div.es-video-image {
+                                            height: 100%;
+                                            width: 100%;
+                                            padding: 0;
+                                            margin: 0;
+                                            div.et_pb_text_inner {
+                                                height: 100%;
+                                                width: 100%;
+                                                padding: 0;
+                                                margin: 0;
+                                                p.vp-img-paragraph {
+                                                    height: 100%;
+                                                    width: 100%;
+                                                    padding: 0;
+                                                    margin: 0;
+                                                    a.vp-s.vp-yt-type.noExitNotifier {
+                                                        height: 100%;
+                                                        width: 100%;
+                                                        display: block;
+                                                        padding: 0;
+                                                        margin: 0;
+                                                        img.vp-img {
+                                                            height: 100%;
+                                                            object-fit: cover;
+                                                            width: 100%;
+                                                            padding: 0;
+                                                            margin: 0;
+                                                        }
+                                                    }
+                                                }
+                                            }
                                         }
                                     }
                                     div.es-col.two {
+                                        width: 60%;
                                         div.es-video-h3 {
                                             padding: 20px 0;
                                             h3.h3-heading {
@@ -250,52 +258,51 @@ body.resources-page {
                                             }
                                         }
                                     }
-                                    div#video-row-1 {
-                                        div.es-col.one {
-
-                                        }
-                                        div.es-col.two {
-
-                                        }
-                                    }
-                                    div#video-row-2 {
-                                        div.es-col.one {
-
-                                        }
-                                        div.es-col.two {
-
-                                        }
-                                    }
-                                    div#video-row-3 {
-                                        div.es-col.one {
-
-                                        }
-                                        div.es-col.two {
-
-                                        }
-                                    }
                                     div.es-video-row {
-                                        min-height: 414px;
-                                        margin-bottom: 80px;
-                                        padding: 0 !important;
-                                        margin: 50px auto 0;
-                                        box-shadow: 5px 3px 20px -1px #ddd;
                                         max-width: 1000px;
                                         flex-direction: column;
                                         div.es-col.one {
+                                            height: 100%;
                                             width: 100%;
-                                            span.et_pb_image_wrap  {
+                                            padding: 0;
+                                            margin: 0;
+                                            div.es-video-image {
+                                                height: 100%;
                                                 width: 100%;
-                                                img {
+                                                padding: 0;
+                                                margin: 0;
+                                                div.et_pb_text_inner {
+                                                    height: 100%;
                                                     width: 100%;
-                                                    height: auto;
-                                                    object-fit: cover;
+                                                    padding: 0;
+                                                    margin: 0;
+                                                    p.vp-img-paragraph {
+                                                        height: 100%;
+                                                        width: 100%;
+                                                        padding: 0;
+                                                        margin: 0;
+                                                        a.vp-s.vp-yt-type.noExitNotifier {
+                                                            height: 100%;
+                                                            width: 100%;
+                                                            display: block;
+                                                            padding: 0;
+                                                            margin: 0;
+                                                            img.vp-img {
+                                                                height: 100%;
+                                                                object-fit: cover;
+                                                                width: 100%;
+                                                                padding: 0;
+                                                                margin: 0;
+                                                                max-width: 100%;
+                                                            }
+                                                        }
+                                                    }
                                                 }
                                             }
-
                                         }
                                         div.es-col.two {
                                             width: 100%;
+                                            height: 100%;
                                             min-height: 370px;
                                             div.es-video-h3 {
                                                 padding: 0 0 20px 0;
@@ -434,17 +441,39 @@ body.resources-page {
                                             }
                                         }
                                     }
-
                                     div.es-video-row {
                                         height:auto;
                                         margin-bottom: 80px;
                                         max-width: 1000px;
                                         width: 80%;
                                         div.es-col.one {
-                                            span.et_pb_image_wrap  {
-                                                img {
-                                                    width:100%;
-                                                    height:auto;
+                                            div.es-video-image {
+                                                height: 100%;
+                                                padding: 0;
+                                                margin: 0;
+                                                div.et_pb_text_inner {
+                                                    height: 100%;
+                                                    width: 100%;
+                                                    padding: 0;
+                                                    margin: 0;
+                                                    p.vp-img-paragraph {
+                                                        height: 100%;
+                                                        padding: 0;
+                                                        margin: 0;
+                                                        a.vp-s.vp-yt-type.noExitNotifier {
+                                                            height: 100%;
+                                                            display: block;
+                                                            padding: 0;
+                                                            margin: 0;
+                                                            img.vp-img {
+                                                                height: 100%;
+                                                                object-fit: cover;
+                                                                width: auto;
+                                                                padding: 0;
+                                                                margin: 0;
+                                                            }
+                                                        }
+                                                    }
                                                 }
                                             }
                                         }
@@ -567,22 +596,6 @@ body.resources-page {
                                             text-align: center;
                                         }
                                     }
-                                    div#video-row-1 {
-                                        div.es-col.one {
-
-                                        }
-                                        div.es-col.two {
-
-                                        }
-                                    }
-                                    div#video-row-2 {
-                                        div.es-col.one {
-
-                                        }
-                                        div.es-col.two {
-
-                                        }
-                                    }
                                     div#video-row-3 {
                                         div.es-col.one {
 
@@ -599,7 +612,35 @@ body.resources-page {
                                         height:auto;
                                         margin-bottom: 80px;
                                         div.es-col.one {
-
+                                            div.es-video-image {
+                                                height: 100%;
+                                                padding: 0;
+                                                margin: 0;
+                                                div.et_pb_text_inner {
+                                                    height: 100%;
+                                                    width: 100%;
+                                                    padding: 0;
+                                                    margin: 0;
+                                                    p.vp-img-paragraph {
+                                                        height: 100%;
+                                                        padding: 0;
+                                                        margin: 0;
+                                                        a.vp-s.vp-yt-type.noExitNotifier {
+                                                            height: 100%;
+                                                            display: block;
+                                                            padding: 0;
+                                                            margin: 0;
+                                                            img.vp-img {
+                                                                height: 100%;
+                                                                object-fit: cover;
+                                                                width: auto;
+                                                                padding: 0;
+                                                                margin: 0;
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                            }
                                         }
                                         div.es-col.two {
                                             min-height: 270px;
@@ -613,7 +654,6 @@ body.resources-page {
                                                     }
                                             }
                                         }
-
                                         img {
                                             width:100%;
                                             height:auto;
