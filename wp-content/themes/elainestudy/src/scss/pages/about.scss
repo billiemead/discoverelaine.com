@@ -401,6 +401,11 @@ body.about-page {
                                     }
                                 }
                             }
+                            div#top-wave-mobile-section {
+                                display: none;
+                                opacity: 0;
+                                visibility: hidden;
+                            }
                             div#at-a-glance-section {
                                 div#at-glance-row {
                                     background: $es-white;
@@ -959,7 +964,7 @@ body.about-page {
                                     background-image: url( "/wp-content/themes/elainestudy/images/heros/es-hero-about-tablet-594x616.png" ) !important;
                                     div.es-row {
                                         div.es-col.left {
-                                            width: 100%;
+                                            width: 55%;
                                             div#hero-heading {
                                             margin: 0;
                                             }
@@ -974,22 +979,23 @@ body.about-page {
                                 div#elaine-studies-section {
                                     div#elaine-studies-row {
                                         display: flex;
-                                        flex-direction: column;
+                                        /* flex-direction: column; */
                                         div.es-col.left {
-                                            width: 100%;
-                                            margin-right: 0;
+                                            width: 25%;
+                                            margin-right: 5%;
                                             display: flex;
                                             div#es-purple-image {
+                                                margin: 0 !important;
                                                 span {
                                                     img {
-                                                        width: 260px;
+                                                        width: 200px;
                                                     }
                                                 }
                                             }
                                         }
                                         div.es-col.right {
-                                            width: 100%;
-                                            margin-top: 5%;
+                                            width: 75%;
+                                            margin-top: 0;
                                             div#in-context {
                                                 h2.h2-heading {
                                                     margin-bottom: 22px;
@@ -1004,9 +1010,14 @@ body.about-page {
                                         }
                                     }
                                     div#elaine-studies-row2 {
-                                        width: 100%;
-                                        max-width: 820px;
+                                        width: 80%;
+                                        max-width: 100%;
+                                        flex-direction: column;
+                                        align-items: center;
+                                        justify-content: center;
+                                        margin-top: 8%;
                                         div.es-col.left {
+                                            margin-bottom: 8%;
                                             div#icon-three-women {
                                             margin: 0;
                                             height: 147px;
@@ -1030,6 +1041,7 @@ body.about-page {
                                             }
                                         }
                                         div.es-col.right {
+                                            margin-bottom: 8%;
                                             div#icon-clipboard {
                                                 margin: 0;
                                                 height: 147px;
@@ -1054,16 +1066,19 @@ body.about-page {
                                         }
                                     }
                                     div#elaine-studies-row3 {
-                                        max-width: 820px;
+                                        max-width: 100%;
                                         div.es-col {
                                             h3.h3-heading {
+                                                width: 80%;
                                             }
                                         }
                                     }
                                     div#elaine-studies-row4 {
-                                        max-width: 60%;
+                                        padding-top: 10%;
+                                        padding-bottom: 5%;
+                                        max-width: 100%;
                                         div.es-col.chart {
-                                            width: 35%;
+                                            width: 50%;
                                             margin-right: 0;
                                             div#er-chart-image {
                                                 img {
@@ -1073,7 +1088,7 @@ body.about-page {
                                             }
                                         }
                                         div.es-col.chart-stats {
-                                            width: 65%;
+                                            width: 50%;
                                             div#er-chart-heading {
                                                 div.et_pb_text_inner {
                                                 }
@@ -1098,6 +1113,7 @@ body.about-page {
                                                 margin-bottom: 40px;
                                                 div.et_pb_text_inner {
                                                     h3.h3-heading {
+                                                        width: 80%;
                                                     }
                                                 }
                                             }
@@ -1113,6 +1129,8 @@ body.about-page {
                                         }
                                     }
                                     div#elaine-studies-row6 {
+                                        padding-top: 10%;
+
                                         padding-bottom: 0px;
                                         margin-bottom: 0px !important;
                                         display: flex;
@@ -1155,11 +1173,13 @@ body.about-page {
 
                                     }
                                     div#elaine-studies-row7 {
+                                        padding-top: 5%;
                                         div.es-col {
                                             div#esr1-mutation-heading {
                                                 margin-bottom: 40px;
                                                 div.et_pb_text_inner {
                                                     h3.h3-heading {
+                                                        width: 80%;
                                                     }
                                                 }
                                             }
@@ -1178,6 +1198,8 @@ body.about-page {
                                         }
                                     }
                                     div#elaine-studies-row8 {
+                                        padding-top: 10%;
+                                        padding-bottom: 5%;
                                         div.es-col {
                                             display: flex;
                                             flex-direction: column;
@@ -1193,7 +1215,7 @@ body.about-page {
                                             div.sub-container {
                                                 display: flex;
                                                 justify-content: center;
-                                                max-width: 700px;
+                                                max-width: 100%;
                                                 align-items: center;
                                                 div.et_pb_text_inner {
                                                     width: 100%;
@@ -1259,7 +1281,7 @@ body.about-page {
                                                         flex-direction: column;
                                                         align-items: center;
                                                         img#cal-grey {
-                                                            width: 200px;
+                                                            /* width: 200px; */
                                                             height: auto;
                                                         }
                                                         div#cal-copy-left {
@@ -1281,7 +1303,7 @@ body.about-page {
                                                         flex-direction: column;
                                                         align-items: center;
                                                         img#cal-blue {
-                                                            width: 200px;
+                                                            /* width: 200px; */
                                                             height: auto;
                                                         }
                                                         div#cal-copy-right {
@@ -1300,6 +1322,10 @@ body.about-page {
                                                 }
                                             }
                                             h3.h3-heading {
+                                                font-size: 40px;
+                                                line-height: 55px !important;
+                                                margin-top: 10%;
+                                                margin-bottom: 8%;
                                                 sup {
                                                     font-size: 1rem;
                                                     bottom: 1.2em;
@@ -1309,6 +1335,7 @@ body.about-page {
                                                 width: 100%;
                                                 text-align: center;
                                                 margin: 0 auto;
+                                                max-width: 100%;
                                             }
                                             p.es-p.center {
                                             }
@@ -1347,9 +1374,10 @@ body.about-page {
                                     }
                                 }
                                 div#at-a-glance-section {
+                                    padding-bottom: 10%;
                                     div#at-glance-row {
                                         padding: 75px 0 !important;
-                                        margin: 50px auto 40px !important;
+                                        margin: 100px auto 60px !important;
                                         height: auto;
                                         max-width: 100%;
                                         width: 80%;
@@ -1365,8 +1393,8 @@ body.about-page {
                                                                 margin: 0;
                                                             }
                                                             div#two {
-                                                                margin: 0 3% 0 3%;
-                                                                min-width: 300px;
+                                                                margin: 0 2% 0 2%;
+                                                                min-width: unset;
                                                                 display: flex;
                                                                 flex-direction: column;
                                                             }
@@ -1392,6 +1420,8 @@ body.about-page {
                                                                     line-height: 45px !important;
                                                                     text-align: center;
                                                                     padding: 0 !important;
+                                                                    max-width: 80%;
+                                                                    margin: 0 auto;
                                                                 }
                                                             }
                                                         }
@@ -1551,6 +1581,7 @@ body.about-page {
                                             }
                                         }
                                         div.es-col.right {
+                                            margin-bottom: 6%;
                                             div#icon-clipboard {
                                                 margin: 0;
                                                 height: 147px;
@@ -1998,7 +2029,8 @@ body.about-page {
                                     div.es-row {
                                         div.es-col.left {
                                             width: 100%;
-                                            margin-bottom: 80%;
+                                            margin-bottom: 65%;
+                                            margin-top: 10%;
                                                 div#hero-heading {
                                                     margin: 0;
 
@@ -2050,6 +2082,7 @@ body.about-page {
                                         flex-direction: column;
                                         justify-content: center;
                                         align-items: center;
+                                        margin-top: 0;
                                         div.es-col.left {
                                             width: 100%;
                                             margin-bottom: 10%;
@@ -2081,6 +2114,7 @@ body.about-page {
                                         }
                                         div.es-col.right {
                                             width: 100%;
+                                            margin-bottom: 4%;
                                             div#icon-clipboard {
                                                 margin: 0;
                                                 height: 167px;
@@ -2110,6 +2144,7 @@ body.about-page {
                                     div#elaine-studies-row3 {
                                         div.es-col {
                                             h3.h3-heading {
+                                                width: 100%;
                                             }
                                         }
                                     }
@@ -2158,6 +2193,7 @@ body.about-page {
                                                 margin-bottom: 40px;
                                                 div.et_pb_text_inner {
                                                     h3.h3-heading {
+                                                        width: 100%;
                                                     }
                                                 }
                                             }
@@ -2226,6 +2262,7 @@ body.about-page {
                                                 margin-bottom: 40px;
                                                 div.et_pb_text_inner {
                                                     h3.h3-heading {
+                                                        width: 100%;
                                                     }
                                                 }
                                             }
@@ -2257,7 +2294,7 @@ body.about-page {
                                                     display: flex;
                                                     justify-content: center;
                                                 div.et_pb_text_inner {
-                                                    width: 1048px;
+                                                    width: 100%;
                                                     div.sub-header-div{
                                                         display: flex;
                                                         align-items: center;
@@ -2271,6 +2308,7 @@ body.about-page {
                                                             text-align: center !important;
                                                         }
                                                         h3.h3-heading-icon {
+                                                            width: 100%;
                                                             text-align: center;
                                                         }
                                                     }
@@ -2371,6 +2409,9 @@ body.about-page {
                                                 width: 100%;
                                             }
                                             h3.h3-heading {
+                                                font-size: 28px;
+                                                line-height: 35px !important;
+                                                margin-top: 0%;
                                                 sup {
                                                     font-size: 1rem;
                                                     bottom: 1.2em;
@@ -2418,6 +2459,11 @@ body.about-page {
                                     }
                                 }
                                 div#top-wave-mobile-section {
+                                    display: block;
+                                    opacity: 1;
+                                    visibility: visible;
+                                    margin-top: 15%;
+                                    margin-bottom: 10%;
                                     div#top-wave-mobile {
                                         img.top-wave-background {
                                             width: 100%;
@@ -2426,87 +2472,97 @@ body.about-page {
                                 }
                                 div#at-a-glance-section {
                                     div#at-glance-row {
-                                        background: $es-white;
-                                        padding: 40px;
-                                        margin: 0 auto 40px;
-                                        border-radius: 20px;
+                                        padding: 50px 0 !important;
+                                        margin: 40px auto 40px !important;
+                                        height: auto;
+                                        max-width: 100%;
+                                        width: 80%;
                                         border: none;
-                                        height: 100%;
-                                        display: flex;
-                                        justify-content: center;
-                                        align-items: center;
-                                        /* background-image: url('/wp-content/themes/elainestudy/images/es-purple-dot-vert-wave-175x499.png'); */
-                                        background-repeat: no-repeat;
-                                        background-size: contain;
-                                        background-position-x: 60px;
                                         div.es-col {
-                                            margin-bottom: 0;
-                                            div.et_pb_module {
-                                                margin-bottom: 0;
-                                                text-align: center;
+                                            div#triple-col-heading {
                                                 div.et_pb_text_inner {
-                                                    h3.h3-heading {
-                                                        padding: 0 !important;
-                                                        width: 260px;
-                                                        margin: 0 auto;
+                                                    div#at-a-glance-top {
+                                                        div.cols-holder-top {
+                                                            display: flex;
+                                                            flex-direction: column;
+                                                            div#one {
+                                                                display: none
+                                                            }
+                                                            div#two {
+                                                                margin: 0;
+                                                                min-width: 300px;
+                                                                display: flex;
+                                                                flex-direction: column;
+                                                            }
+                                                            div#three {
+                                                                display: none
+                                                            }
+                                                            div.col {
+                                                                img.color-wave {
+
+                                                                }
+                                                                h4.h4-heading {
+                                                                    text-align: center;
+                                                                    padding: 0 !important;
+                                                                    text-align: center;
+                                                                    padding: 0 !important;
+                                                                    font-size: 20px;
+                                                                    margin-top: 8%;
+                                                                }
+                                                                h3.h3-heading {
+                                                                    font-size: 40px;
+                                                                    line-height: 45px !important;
+                                                                    text-align: center;
+                                                                    padding: 0 !important;
+                                                                    width: 100%;
+                                                                    margin: 0 auto;
+                                                                }
+                                                            }
+                                                        }
                                                     }
                                                 }
                                             }
                                             div#triple-col-copy {
                                                 div.et_pb_text_inner {
                                                     div#at-a-glance {
-                                                        display: flex;
-                                                        flex-direction: column;
-                                                        justify-content: center;
-                                                        align-items: center;
-                                                        div.block-ttl {
-                                                        text-align: center !important;
-                                                        margin: 0 0 45px;
-                                                            h4.h4-heading {
-                                                            }
-                                                        }
                                                         div.cols-holder {
                                                             display: flex;
                                                             flex-direction: column;
+                                                            justify-content: center;
+                                                            align-items: center;
+                                                            padding: 0;
                                                             div.col {
                                                                 width: 100%;
-                                                                padding: 0px;
+                                                                max-width: 500px;
+                                                                padding: 50px 0 50px 0 !important;
                                                                 text-align: center;
                                                                 position: relative;
                                                                 span {
                                                                     @include regular();
                                                                     font-size: 23px;
                                                                     line-height: 30px;
-                                                                    display: block;
-                                                                    padding-top: 35px;
-                                                                    padding-bottom: 35px;
                                                                 }
                                                             }
-                                                            div.col:not(:last-child) {
+                                                            div.col:not(:nth-child(3)) {
                                                                 &:after {
                                                                 content: "";
-                                                                width: 4px;
-                                                                width: 256px;
+                                                                width: 80%;
                                                                 background: $es-button-grey;
-                                                                height: 2px;
+                                                                height: 1px;
                                                                 position: absolute;
+                                                                top: unset;
                                                                 bottom: 0;
-                                                                top: inherit;
-                                                                opacity: 0.5;
-                                                                text-align: center;
-                                                                left: 0;
                                                                 right: 0;
-                                                                margin: auto;
-                                                                transform: translateY(-50%);
+                                                                left: 0;
+                                                                opacity: 0.5;
+                                                                margin: 0 auto;
                                                                 }
                                                             }
                                                             div.col:first-child {
-                                                                width: 100%;
-                                                                padding: 0px;
+                                                                padding-top: 20px !important;
                                                             }
-                                                            div.col:last-child {
-                                                                width: 100%;
-                                                                padding: 0px;
+                                                            div.col:nth-child(3) {
+                                                                padding-bottom: 0px !important;
                                                             }
                                                         }
                                                     }
@@ -2546,8 +2602,6 @@ body.about-page {
                                 div#about-hero-section {
                                     div.es-row {
                                         div.es-col.left {
-                                            width: 100%;
-                                            margin-bottom: 80%;
                                                 div#hero-heading {
                                                     margin: 0;
 
@@ -2594,11 +2648,12 @@ body.about-page {
                                     }
                                     div#elaine-studies-row2 {
                                         width: 100%;
-                                        max-width: 612px;
+                                        max-width: 100%;
                                         display: flex;
                                         flex-direction: column;
                                         justify-content: center;
                                         align-items: center;
+                                        margin-top: 0;
                                         div.es-col.left {
                                             width: 100%;
                                             margin-bottom: 50px;
@@ -2630,6 +2685,7 @@ body.about-page {
                                             }
                                         }
                                         div.es-col.right {
+                                            margin-bottom: 0;
                                             width: 100%;
                                             div#icon-clipboard {
                                                 margin: 0;
@@ -2814,7 +2870,7 @@ body.about-page {
                                                 display: flex;
                                                 justify-content: center;
                                                 div.et_pb_text_inner {
-                                                    width: 1048px;
+                                                    width: 100%;
                                                     div.sub-header-div{
                                                         display: flex;
                                                         align-items: center;
@@ -2860,6 +2916,12 @@ body.about-page {
                                     }
                                     div#esr1-mutation-section-row2 {
                                         div.es-col {
+                                            div#median-heading {
+                                                margin: 0 auto;
+                                                width: 80%;
+                                                margin-top: 10px;
+                                                margin-bottom: 20px;
+                                            }
                                             div#cal-container {
                                                 text-align: center;
                                                 margin: 0 auto;
@@ -2876,20 +2938,26 @@ body.about-page {
                                                         display: flex;
                                                         flex-direction: column;
                                                         align-items: center;
+                                                        padding-right: 5%;
                                                         img#cal-grey {
-                                                            width: 150px;
+                                                            width: 130px;
                                                             height: auto;
                                                         }
                                                         div#cal-copy-left {
                                                             @include regular();
-                                                            font-size: 22px;
-                                                            line-height: 32px;
+                                                            font-size: 16px;
+                                                            line-height: 24px;
                                                             color: $es-gray;
                                                             margin-top: 5%;
                                                             margin-bottom: 10%;
+                                                            width: 80%;
+                                                            min-height: 75px;
+                                                            br {
+                                                                display: none;
+                                                            }
                                                             span.mbc {
                                                                 @include bold();
-                                                                font-size: 25px;
+                                                                font-size: 16px;
                                                             }
                                                         }
                                                     }
@@ -2898,20 +2966,26 @@ body.about-page {
                                                         display: flex;
                                                         flex-direction: column;
                                                         align-items: center;
+                                                        padding-left: 5%;
                                                         img#cal-blue {
-                                                            width: 150px;
+                                                            width: 130px;
                                                             height: auto;
                                                         }
                                                         div#cal-copy-right {
                                                             @include regular();
-                                                            font-size: 22px;
-                                                            line-height: 32px;
+                                                            font-size: 16px;
+                                                            line-height: 24px;
                                                             color: $es-dark-blue;
                                                             margin-top: 5%;
                                                             margin-bottom: 10%;
+                                                            width: 80%;
+                                                            min-height: 75px;
+                                                            br {
+                                                                display: none;
+                                                            }
                                                             span.mbc {
                                                                 @include bold();
-                                                                font-size: 25px;
+                                                                font-size: 16px;
                                                             }
                                                         }
                                                     }
@@ -2939,7 +3013,7 @@ body.about-page {
                                     }
                                 }
                                 div#section-blue-wave.bluewave2 {
-                                    margin-top: 2em !important;
+                                    margin-top: 0 !important;
                                     margin-bottom: -2em !important;
                                 }
                                 div#elaine-trials-section {
@@ -2948,7 +3022,7 @@ body.about-page {
                                             div#lasofoxifene-heading {
                                                 div.et_pb_text_inner {
                                                     h2.h2-heading {
-                                                        margin-bottom: 22px;
+                                                        margin-bottom: 0;
                                                         text-align: center;
                                                     }
                                                 }
@@ -2970,95 +3044,114 @@ body.about-page {
                                         }
                                     }
                                 }
+                                div#top-wave-mobile-section {
+                                    margin-top: 15%;
+                                    margin-bottom: 10%;
+                                    div#top-wave-mobile {
+                                        img.top-wave-background {
+                                            width: 100%;
+                                        }
+                                    }
+                                }
                                 div#at-a-glance-section {
                                     div#at-glance-row {
-                                        background: $es-white;
-                                        padding: 40px;
-                                        margin: 0 auto 40px;
-                                        border-radius: 20px;
+                                        padding: 50px 0 !important;
+                                        margin: 40px auto 40px !important;
+                                        height: auto;
+                                        max-width: 100%;
+                                        width: 80%;
                                         border: none;
-                                        height: 100%;
-                                        display: flex;
-                                        justify-content: center;
-                                        align-items: center;
-                                        /* background-image: url('/wp-content/themes/elainestudy/images/es-purple-dot-vert-wave-175x499.png'); */
-                                        background-repeat: no-repeat;
-                                        background-size: contain;
-                                        background-position-x: 60px;
                                         div.es-col {
-                                            margin-bottom: 0;
-                                            div.et_pb_module {
-                                                margin-bottom: 0;
-                                                text-align: center;
+                                            div#triple-col-heading {
                                                 div.et_pb_text_inner {
-                                                    h3.h3-heading {
-                                                        padding: 0 !important;
-                                                        width: 260px;
-                                                        margin: 0 auto;
+                                                    div#at-a-glance-top {
+                                                        div.cols-holder-top {
+                                                            display: flex;
+                                                            flex-direction: column;
+                                                            div#one {
+                                                                display: none
+                                                            }
+                                                            div#two {
+                                                                margin: 0;
+                                                                min-width: 300px;
+                                                                display: flex;
+                                                                flex-direction: column;
+                                                            }
+                                                            div#three {
+                                                                display: none
+                                                            }
+                                                            div.col {
+                                                                img.color-wave {
+
+                                                                }
+                                                                h4.h4-heading {
+                                                                    text-align: center;
+                                                                    padding: 0 !important;
+                                                                    text-align: center;
+                                                                    padding: 0 !important;
+                                                                    font-size: 20px;
+                                                                    margin-top: 8%;
+                                                                }
+                                                                h3.h3-heading {
+                                                                    font-size: 40px;
+                                                                    line-height: 45px !important;
+                                                                    text-align: center;
+                                                                    padding: 0 !important;
+                                                                    width: 75%;
+                                                                    margin: 0 auto;
+                                                                }
+                                                            }
+                                                        }
                                                     }
                                                 }
                                             }
                                             div#triple-col-copy {
                                                 div.et_pb_text_inner {
                                                     div#at-a-glance {
-                                                        display: flex;
-                                                        flex-direction: column;
-                                                        justify-content: center;
-                                                        align-items: center;
-                                                        div.block-ttl {
-                                                        text-align: center !important;
-                                                        margin: 45px 0 45px 0;
-                                                            h4.h4-heading {
-                                                            }
-                                                        }
                                                         div.cols-holder {
                                                             display: flex;
                                                             flex-direction: column;
+                                                            justify-content: center;
+                                                            align-items: center;
+                                                            padding: 0 20px 0 20px;
                                                             div.col {
                                                                 width: 100%;
-                                                                padding: 0px;
+                                                                max-width: 500px;
+                                                                padding: 30px 0 30px 0 !important;
                                                                 text-align: center;
                                                                 position: relative;
                                                                 span {
                                                                     @include regular();
-                                                                    font-size: 20px;
+                                                                    font-size: 23px;
                                                                     line-height: 30px;
-                                                                    display: block;
-                                                                    padding-top: 25px;
-                                                                    padding-bottom: 25px;
                                                                 }
                                                             }
-                                                            div.col:not(:last-child) {
+                                                            div.col:not(:nth-child(3)) {
                                                                 &:after {
                                                                 content: "";
-                                                                width: 4px;
-                                                                width: 256px;
+                                                                width: 100%;
                                                                 background: $es-button-grey;
-                                                                height: 2px;
+                                                                height: 1px;
                                                                 position: absolute;
+                                                                top: unset;
                                                                 bottom: 0;
-                                                                top: inherit;
-                                                                opacity: 0.5;
-                                                                text-align: center;
-                                                                left: 0;
                                                                 right: 0;
-                                                                margin: auto;
-                                                                transform: translateY(-50%);
+                                                                left: 0;
+                                                                opacity: 0.5;
+                                                                margin: 0 auto;
                                                                 }
                                                             }
                                                             div.col:first-child {
-                                                                width: 100%;
-                                                                padding: 0px;
+                                                                /* width: 60%; */
+                                                                padding-top: 20px !important;
                                                                 span {
-                                                                    padding-top: 0px;
+                                                                    margin: 0 auto;
+                                                                    display: block;
+                                                                    width: 60%;
                                                                 }
                                                             }
-                                                            div.col:last-child {
-                                                                width: 100%;
-                                                                padding: 0px;
-                                                                span {
-                                                                    padding-bottom: 0px;
-                                                                }
+                                                            div.col:nth-child(3) {
+                                                                padding-bottom: 0px !important;
                                                             }
                                                         }
                                                     }
@@ -3074,12 +3167,6 @@ body.about-page {
                                                     }
                                                 }
                                             }
-                                            div.et_pb_button_module_wrapper {
-                                                a#about-btn-5 {
-                                                    padding: 0 3em 0 3em !important;
-                                                }
-                                            }
-
                                         }
                                     }
                                 }
