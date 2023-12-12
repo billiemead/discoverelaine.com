@@ -53,6 +53,11 @@ span.et_pb_scroll_top.et-pb-icon {
     line-height: 50px;
     font-size: 35px;
     padding: 0;
+    transition: all 0.3s ease;
+    &:hover {
+        background: $es-dark-blue;
+        transition: all 0.3s ease;
+    }
 }
 /* *** BLUE WAVE SECTION *** */
 div#section-blue-wave {
@@ -61,6 +66,11 @@ div#section-blue-wave {
     height: auto;
     margin-top: 1em;
     margin-bottom: 1em;
+}
+a:hover {
+    color: $es-dark-blue;
+    text-decoration: none;
+    transition: all 0.3s ease;
 }
 /* *** BUTTONS *** */
 a.es-btn {
@@ -76,12 +86,14 @@ a.es-btn {
     display: flex;
     justify-content: center;
     align-items: center;
+    transition: all 0.3s ease;
     &:hover {
-        color: $es-blue !important;
-        background-color: $es-white !important;
+        transition: all 0.3s ease;
+        color: $es-white !important;
+        background-color: $es-dark-blue !important;
         border-style: solid;
         border-width: 1px;
-        border-color: $es-blue !important;
+        border-color: $es-dark-blue !important;
 
     }
     &.w-214 {
@@ -94,11 +106,19 @@ a.es-btn {
         height: 54px !important;
         margin: 0 auto;
     }
+    &.w-256 {
+        text-transform: uppercase;
+        width: 256px;
+        height: 44px !important;
+        margin: 0 auto;
+    }
     &.w-290 {
         width: 290px;
         height: 54px !important;
     }
     &.w-326 {
+        text-transform: uppercase;
+        font-weight: bold !important;
         width: 326px;
         height: 54px !important;
     }
@@ -153,6 +173,15 @@ div.es-btn {
     display: flex;
     justify-content: center;
     align-items: center;
+    transition: all 0.3s ease;
+    &:hover {
+        color: $es-white !important;
+        background-color: $es-dark-blue !important;
+        border-style: solid;
+        border-width: 1px;
+        border-color: $es-dark-blue !important;
+        transition: all 0.3s ease;
+    }
     &.w-214 {
         font-weight: bold !important;
         width: 214px;
@@ -197,6 +226,15 @@ div.es-btn {
     a.es-btn.w-1120 {
         width: 100%;
     }
+    a.es-btn.w-326 {
+        width: 330px;
+        height: 70px !important;
+    }
+    a.es-btn.w-256 {
+        width: 330px;
+        height: 70px !important;
+        margin: 0 auto;
+    }
     div.es-btn {
         font-size: 32px;
         line-height: 38px !important;
@@ -222,15 +260,15 @@ div.es-btn {
     }
 }
 @media all and (max-width: 980px) {
-    div.hero-section {
+    /* div.hero-section {
         background-position: right -33% center;
         &.about {
 
         }
-    }
+    } */
     a.es-btn {
-        font-size: 23px;
-        line-height: 38px !important;
+        /* font-size: 23px;
+        line-height: 38px !important; */
         &.w-214 {
             width: 100%;
             margin: 0 auto;
@@ -254,8 +292,8 @@ div.es-btn {
         }
     }
     div.es-btn {
-        font-size: 23px;
-        line-height: 38px !important;
+        /* font-size: 23px;
+        line-height: 38px !important; */
     }
     div.es-row.about,
     div.es-row.equals {
@@ -298,6 +336,20 @@ div.es-btn {
         font-size: 22px;
         line-height: 28px !important;
         height: 78px !important;
+        &.w-256 {
+        font-size: 30px;
+        line-height: 40px !important;
+        width: 335px;
+        height: 88px !important;
+        margin: 0 auto;
+        }
+        &.w-326 {
+        font-size: 30px;
+        line-height: 40px !important;
+        width: 335px;
+        height: 88px !important;
+        margin: 0 auto;
+        }
     }
     div.es-btn {
         font-size: 22px;
@@ -329,6 +381,12 @@ div.es-btn {
         line-height: 24px !important;
         padding-left: 60px!important;
         padding-right: 60px!important;
+        &.w-256 {
+            padding: 0 !important;
+        }
+        &.w-326 {
+            padding: 0 !important;
+        }
     }
     div.es-btn {
         font-size: 18px;

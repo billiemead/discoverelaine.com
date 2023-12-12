@@ -59,6 +59,7 @@ header#main-header {
                         display: flex;
                         justify-content: center;
                         align-items: center;
+                        transition: all 0.3s ease;
                         a {
                             @include regular();
                             font-size: 20px;
@@ -99,7 +100,7 @@ header#main-header {
                         }
                     }
                     > li.menu-item:first-child:hover {
-                        background-color: $es-purple;
+                        background-color: $es-dark-blue;
                         transition: all 0.3s ease;
                     }
                     > li.menu-item:nth-child(4) {

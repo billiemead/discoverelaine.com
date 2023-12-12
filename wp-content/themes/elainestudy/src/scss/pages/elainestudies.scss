@@ -264,11 +264,13 @@ body.home-page {
             color: #fff;
             background: $es-blue;
             border: 2px solid $es-blue;
+            transition: all 0.3s ease;
             &:hover,
             &:focus {
                 color: $es-blue;
                 background: #fff;
                 border: 2px solid $es-blue;
+                transition: all 0.3s ease;
             }
             .is-closed {
                 font-size: 0.7rem;
@@ -530,11 +532,13 @@ body.home-page {
                 color: #fff;
                 background: $es-blue;
                 border: 2px solid $es-blue;
+                transition: all 0.3s ease;
                 &:hover,
                 &:focus {
                     color: $es-blue;
                     background: #fff;
                     border: 2px solid $es-blue;
+                    transition: all 0.3s ease;
                 }
                 .is-closed {
                     font-size: 0.7rem;
@@ -815,11 +819,13 @@ body.home-page {
                 color: #fff;
                 background: $es-blue;
                 border: 2px solid $es-blue;
+                transition: all 0.3s ease;
                 &:hover,
                 &:focus {
                     color: $es-blue;
                     background: #fff;
                     border: 2px solid $es-blue;
+                    transition: all 0.3s ease;
                 }
                 .is-closed {
                     font-size: 0.7rem;
@@ -1133,11 +1139,13 @@ body.home-page {
                     color: #fff;
                     background: $es-blue;
                     border: 2px solid $es-blue;
+                    transition: all 0.3s ease;
                     &:hover,
                     &:focus {
                         color: $es-blue;
                         background: #fff;
                         border: 2px solid $es-blue;
+                        transition: all 0.3s ease;
                     }
                     .is-closed {
                         font-size: 0.7rem;

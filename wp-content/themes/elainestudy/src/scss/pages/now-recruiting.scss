@@ -21,6 +21,19 @@ body.nowrecruiting-page {
                             }
                             div#recruiting-about-section {
                                 padding: 2%;
+                                div.es-row.recruit {
+                                    div.es-col.left {
+                                        div#es3-logo {
+                                            text-align: center;
+                                        }
+                                        div#es3-btn {
+
+                                        }
+                                    }
+                                    div.es-col.right {
+
+                                    }
+                                }
                                 div#elaine-study3 {
                                     h2.h2-heading {
                                     }
@@ -328,24 +341,26 @@ body.nowrecruiting-page {
                                     }
                                 }
                                 div#recruiting-sermonix-section {
-                                    background-color: $es-purple;
-                                    height: 882px;
-                                    padding:40px 0;
-
+                                    height: 100%;
+                                    padding: 90px 0;
                                     div.es-recruiting-sermonix-row {
-                                        height: 768px;
-                                        margin-top:10px;
-                                        background-color: $es-white;
-                                        border-radius:45px;
-                                        box-shadow: 5px 3px 20px -1px rgba(0,0,0,0.2);
+                                        height: 100%;
+                                        padding: 8% 0;
                                         div.es-col {
-                                            padding: 0 15% 0 15%;
+                                            padding: 0 12.5% 0 12.5%;
                                             div#es-recruiting-text-1 {
 
                                             }
                                             div#es-recruiting-text-2 {
                                                 margin-top: 2.5%;
                                                 max-width: 700px;
+                                            }
+                                            div.es-recruiting-sermonix-heading {
+                                                margin-top: 13.5%;
+                                                margin-bottom: 10%;
+                                                h2.h2-heading.center {
+
+                                                }
                                             }
                                             div.es-recruiting-sermonix-text {
                                                 max-width: 877px;
@@ -357,8 +372,8 @@ body.nowrecruiting-page {
                                             p.es-p {
                                             }
 
-                                            a.es-btn {
-                                                margin-top:20px;
+                                            a.es-btn.w-214 {
+                                                margin-top: 10%;
                                                 text-transform: uppercase;
                                             }
                                         }

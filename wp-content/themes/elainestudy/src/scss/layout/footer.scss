@@ -2,12 +2,11 @@
 @import "../base/font";
 
 /* ******* DISCOVER-ELAINE 2023 FOOTER START ******* */
-
 footer {
     div#es-footer-section {
         height: 175px;
         div.et_pb_row {
-            padding: 32px 0 !important;
+            padding: 30px 0 !important;
             div#footer-container {
                 display: flex;
                 justify-content: space-between;
@@ -112,7 +111,7 @@ footer {
                             a.exitNotifierLink:focus {
                                 span.social-icon.sc-facebook {
                                     transition: all 0.5s ease;
-                                    background-image: url("/wp-content/themes/elainestudy/images/social-icon-facebook-hover.svg");
+                                    background-image: url("/wp-content/themes/elainestudy/images/social-icon-facebook-hover-blue.svg");
                                 }
                             }
                         }
@@ -129,7 +128,7 @@ footer {
                             a.exitNotifierLink:focus {
                                 span.social-icon.sc-x {
                                     transition: all 0.5s ease;
-                                    background-image: url("/wp-content/themes/elainestudy/images/social-icon-x-hover.svg");
+                                    background-image: url("/wp-content/themes/elainestudy/images/social-icon-x-hover-blue.svg");
                                 }
                             }
                         }
@@ -146,7 +145,7 @@ footer {
                             a.exitNotifierLink:focus {
                                 span.social-icon.sc-linkedin {
                                     transition: all 0.5s ease;
-                                    background-image: url("/wp-content/themes/elainestudy/images/social-icon-linkedin-hover.svg");
+                                    background-image: url("/wp-content/themes/elainestudy/images/social-icon-linkedin-hover-blue.svg");
                                 }
                             }
                         }
@@ -163,7 +162,7 @@ footer {
                             a.exitNotifierLink:focus {
                                 span.social-icon.sc-youtube {
                                     transition: all 0.5s ease;
-                                    background-image: url("/wp-content/themes/elainestudy/images/social-icon-youtube-hover.svg");
+                                    background-image: url("/wp-content/themes/elainestudy/images/social-icon-youtube-hover-blue.svg");
                                 }
                             }
                         }
@@ -200,10 +199,12 @@ footer {
                         div.es-links {
                             width: 73%;
                             margin: 0;
-                            font-size: 14px;
-                            line-height: 19px;
+                            font-size: 16px;
+                            line-height: 20px;
                             div.es-ft {
-
+                                height: 20px;
+                                font-size: 16px;
+                                line-height: 20px;
                                 & .copy {
 
                                 }
@@ -221,6 +222,8 @@ footer {
                             }
                             div.es-bottom-menu {
                                     a {
+                                        font-size: 16px;
+                                        line-height: 20px !important;
                                     }
                                     span.vert-pipe {
                                     }
