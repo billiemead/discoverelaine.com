@@ -148,10 +148,22 @@ body.home-page {
 
                                         }
                                         div.home-primary-obj-box {
-                                            height: 225px;
+                                            height: auto;
                                             border-bottom: 2px solid $es-button-grey;
                                             padding-bottom:40px;
                                             margin-bottom:0;
+                                            min-height: 250px;
+                                        }
+                                        div#stats-left-1,
+                                        div#stats-right-1 {
+                                            min-height: 195px;
+                                        }
+                                        div#stats-right-1 {
+                                            min-width: 500px;
+                                        }
+                                        div#stats-left-2,
+                                        div#stats-right-2 {
+                                            min-height: 240px;
                                         }
                                         div#stats-left-1,
                                         div#stats-left-2,
@@ -163,12 +175,16 @@ body.home-page {
                                             display: flex;
                                             align-items: center;
                                             justify-content: center;
-                                            height:220px;
+                                            height: auto;
                                             border-bottom: 2px solid $es-button-grey;
+                                            padding: 15px 0;
                                             div.flex-stats {
                                                 display: flex;
                                                 align-items: center;
                                                 justify-content: flex-start;
+                                                p.es-p {
+                                                    font-size: 1.1vw;
+                                                }
                                                 div.flex-stats-left {
                                                     display:flex;
                                                     align-items:center;
