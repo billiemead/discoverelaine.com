@@ -5668,20 +5668,20 @@ function et_divi_add_customizer_css() {
 
 		<?php if ( $menu_link_active !== '#2ea3f2' ) { ?>
 			<?php if ( $color_scheme !== 'none' ) { ?>
-				.et_color_scheme_red #top-menu li.current-menu-ancestor > a,
+				<!-- .et_color_scheme_red #top-menu li.current-menu-ancestor > a, -->
 				.et_color_scheme_red #top-menu li.current-menu-item > a,
 				.et_color_scheme_red #top-menu li.current_page_item > a,
-				.et_color_scheme_pink #top-menu li.current-menu-ancestor > a,
+				<!-- .et_color_scheme_pink #top-menu li.current-menu-ancestor > a, -->
 				.et_color_scheme_pink #top-menu li.current-menu-item > a,
 				.et_color_scheme_pink #top-menu li.current_page_item> a,
-				.et_color_scheme_orange #top-menu li.current-menu-ancestor > a,
+				<!-- .et_color_scheme_orange #top-menu li.current-menu-ancestor > a, -->
 				.et_color_scheme_orange #top-menu li.current-menu-item > a,
 				.et_color_scheme_orange #top-menu li.current_page_item > a,
-				.et_color_scheme_green #top-menu li.current-menu-ancestor > a,
+				<!-- .et_color_scheme_green #top-menu li.current-menu-ancestor > a, -->
 				.et_color_scheme_green #top-menu li.current-menu-item > a,
 				.et_color_scheme_green #top-menu li.current_page_item > a,
 			<?php } ?>
-			#top-menu li.current-menu-ancestor > a,
+			<!-- #top-menu li.current-menu-ancestor > a, -->
 			#top-menu li.current-menu-item > a,
 			#top-menu li.current_page_item > a { color: <?php echo esc_html( $menu_link_active ); ?>; }
 		<?php } ?>
@@ -6251,7 +6251,7 @@ function et_divi_add_customizer_css() {
 				.et-fixed-header .et_search_form_container input:-ms-input-placeholder { color: <?php echo esc_html( $fixed_menu_link ); ?> !important; }
 			<?php } ?>
 			<?php if ( $fixed_menu_link_active !== '#2ea3f2' ) { ?>
-				.et-fixed-header #top-menu li.current-menu-ancestor > a,
+				<!-- .et-fixed-header #top-menu li.current-menu-ancestor > a, -->
 				.et-fixed-header #top-menu li.current-menu-item > a,
 				.et-fixed-header #top-menu li.current_page_item > a { color: <?php echo esc_html( $fixed_menu_link_active ); ?> !important; }
 			<?php } ?>
