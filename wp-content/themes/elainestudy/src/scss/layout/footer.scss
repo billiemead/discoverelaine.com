@@ -172,7 +172,24 @@ footer {
         }
     }
 }
-
+@media all and (max-width: 1550px) {
+    footer {
+        div#es-footer-section {
+            div.et_pb_row {
+                div#footer-container {
+                    div.footer-left {
+                        div.es-logo {
+                            width: 30%;
+                        }
+                        div.es-links {
+                            width: 70%;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
 @media all and (max-width: 1024px) {
     footer {
         div#es-footer-section {
