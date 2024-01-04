@@ -44,6 +44,7 @@ body.resources-page {
                                     margin: 0;
                                     h4.h4-heading {
                                         font-size: 32px;
+                                        line-height: 38px !important;
                                         @include bold();
                                         color: $es-dark-blue;
                                         padding-bottom:0;
@@ -523,8 +524,9 @@ body.resources-page {
                                                 text-align: center;
                                                 img {
                                                 margin-right: 0;
-                                                    width:120px;
-                                                    height:120px;
+                                                    width:150px;
+                                                    height:150px;
+                                                    max-width: 150px;
                                                 }
                                             }
                                         }
@@ -532,6 +534,8 @@ body.resources-page {
                                             width: 100%;
                                             div#glossary-title {
                                                 h2.h2-heading {
+                                                    font-size: 40px;
+                                                    line-height: 45px !important;
                                                     padding:0;
                                                     text-align: center;
                                                 }
@@ -541,7 +545,7 @@ body.resources-page {
                                     div#glossary-subhead {
                                         h4.h4-heading {
                                             font-size: 26px;
-                                            line-height: 36px;
+                                            line-height: 36px !important;
                                             @include bold();
                                             color: $es-dark-blue;
                                             padding-bottom:0;
@@ -552,6 +556,7 @@ body.resources-page {
 
                                     }
                                     div#es-glossary-content-row {
+                                        padding: 60px 0 0px 0;
                                         h5.h5-heading {
                                             padding-top: 40px;
                                             padding-bottom: 0px;
@@ -582,25 +587,28 @@ body.resources-page {
                                                 text-align: center;
                                                 img {
                                                     margin-right: 0;
-                                                    width:120px;
-                                                    height:120px;
+                                                    width:150px;
+                                                    height:150px;
+                                                    max-width: 150px;
                                                 }
                                             }
                                         }
-                                    }
-                                    div.es-col.two {
-                                        width: 100%;
-                                        div#media-title {
-                                            h2.h2-heading {
-                                                padding:0;
-                                                text-align: center;
+                                        div.es-col.two {
+                                            width: 100%;
+                                            div#media-title {
+                                                h2.h2-heading {
+                                                    font-size: 40px;
+                                                    line-height: 45px !important;
+                                                    padding:0;
+                                                    text-align: center;
+                                                }
                                             }
                                         }
                                     }
                                     div.es-video-row {
                                         height:auto;
                                         margin-bottom: 80px;
-                                        max-width: 1000px;
+                                        max-width: 100%;
                                         width: 80%;
                                         div.es-col.one {
                                             div.es-video-image {
@@ -647,12 +655,17 @@ body.resources-page {
                                         }
                                         div#video1-col-two {
                                             padding-right: 35px;
+                                            div.es-video-h3 {
+                                                h3.h3-heading {
+                                                    max-width: 75%;
+                                                }
+                                            }
                                         }
                                         div#video2-col-two {
                                             padding-right: 35px;
                                             div.es-video-h3 {
                                                 h3.h3-heading {
-                                                    max-width: 275px;
+                                                    max-width:60%;
                                                 }
                                             }
                                         }
@@ -660,7 +673,7 @@ body.resources-page {
                                             padding-right: 35px;
                                             div.es-video-h3 {
                                                 h3.h3-heading {
-                                                    max-width: 350px;
+                                                    max-width: 75%;
                                                 }
                                             }
                                         }
@@ -669,10 +682,13 @@ body.resources-page {
                                         }
                                     }
                                     div.et_pb_column:last-child {
-                                        padding: 40px 35px 50px 35px;
+                                        padding: 40px 35px 70px 35px;
                                         display: flex;
                                         flex-direction: column;
                                         justify-content: center;
+                                    }
+                                    div#video-row-1 {
+                                        margin-top: 65px;
                                     }
                                 }
                             }
@@ -707,6 +723,9 @@ body.resources-page {
                                             margin-right: 0px;
                                                 div#glossary-title-icon {
                                                 img {
+                                                    width: 120px;
+                                                    height: 120px;
+                                                    max-width: 120px;
                                                     margin-right: 0;
                                                 }
                                             }
@@ -714,6 +733,8 @@ body.resources-page {
                                         div.es-col.two {
                                             div#glossary-title {
                                                 h2.h2-heading {
+                                                    font-size: 40px;
+                                                    line-height: 45px !important;
                                                     padding:0;
                                                     text-align: center;
                                                 }
@@ -724,7 +745,7 @@ body.resources-page {
                                     div#glossary-subhead {
                                         h4.h4-heading {
                                             font-size: 26px;
-                                            line-height: 36px;
+                                            line-height: 36px !important;
                                             @include bold();
                                             color: $es-dark-blue;
                                             padding-bottom:0;
@@ -732,9 +753,10 @@ body.resources-page {
                                         }
                                     }
                                     div#glossary-container {
-
+                                        padding: 60px 0 60px 0;
                                     }
                                     div#es-glossary-content-row {
+                                        padding: 60px 0 0px 0;
                                         h5.h5-heading {
                                             padding-top: 40px;
                                             padding-bottom: 0px;
@@ -750,7 +772,7 @@ body.resources-page {
                                 }
                                 div#section-blue-wave {
                                     margin-top: 2em !important;
-                                    margin-bottom: 0em !important;
+                                    margin-bottom: 5em !important;
                                 }
                                 div#media-section {
                                     padding:0px;
@@ -759,36 +781,30 @@ body.resources-page {
                                         align-items: center;
                                         flex-direction: column;
                                         padding-bottom: 0;
-                                        .es-col.one {
+                                        div.es-col.one {
                                             margin-right: 0px;
-                                        }
-                                        div.media-title-icon {
-                                            text-align: left;
-                                            img {
-                                                margin-right: 0;
-                                                width:120px;
-                                                height:120px;
+                                            div#media-title-icon {
+                                                text-align: center;
+                                                img {
+                                                    margin-right: 0;
+                                                    width:120px;
+                                                    height:120px;
+                                                    max-width: 120px;
+                                                }
                                             }
                                         }
-                                    }
-                                    div#media-title {
-                                        h2.h2-heading {
-                                            padding:0;
-                                            text-align: center;
-                                        }
-                                    }
-                                    div#video-row-3 {
                                         div.es-col.two {
-                                            padding: 40px 0 0px 0;
-                                            min-height: 100%;
-                                            div.es-video-paragraph {
-                                                padding: 0 30px 0 30px;
+                                            div#media-title {
+                                                h2.h2-heading {
+                                                    padding:0;
+                                                    text-align: center;
+                                                }
                                             }
                                         }
                                     }
                                     div.es-video-row {
                                         height:auto;
-                                        margin-bottom: 80px;
+                                        margin: 0 auto 50px;
                                         div.es-col.one {
                                             div.es-video-image {
                                                 height: 100%;
@@ -821,32 +837,67 @@ body.resources-page {
                                             }
                                         }
                                         div.es-col.two {
-                                            min-height: 270px;
-                                            padding: 40px 30px;
+                                            min-height: 100%;
+                                            padding: 40px 30px 70px 30px;
                                             div.es-video-h3 {
                                                 padding: 0px;
                                                 text-align: center;
                                                     h3.h3-heading {
+                                                        font-size: 28px;
+                                                        line-height: 36px !important;
                                                         padding:0;
                                                         margin-bottom: 15px;
                                                     }
                                             }
                                         }
                                         div#video1-col-two {
-                                            padding-right: 170px;
+                                            padding-right: 30px;
+                                            div.es-video-h3 {
+                                                h3.h3-heading {
+                                                    max-width: 70%;
+                                                }
+                                            }
                                         }
                                         div#video2-col-two {
-                                            padding-right: 90px;
+                                            padding-right: 30px;
+                                            div.es-video-h3 {
+                                                h3.h3-heading {
+                                                    max-width: 70%;
+                                                }
+                                            }
                                         }
                                         div#video3-col-two {
-                                            padding-right: 80px;
+                                            padding-right: 30px;
+                                            div.es-video-h3 {
+                                                h3.h3-heading {
+                                                    max-width: 70%;
+                                                }
+                                            }
                                         }
                                         div#video4-col-two {
-                                            padding-right: 100px;
+                                            padding-right: 30px;
+                                            div.es-video-h3 {
+                                                h3.h3-heading {
+                                                    max-width: 70%;
+                                                }
+                                            }
                                         }
                                         img {
                                             width:100%;
                                             height:auto;
+                                        }
+                                    }
+                                    div#video-row-4 {
+                                        div.es-col.two {
+                                            padding: 40px 0 0 0;
+                                            p.es-p {
+                                                margin-left: 30px;
+                                                margin-right: 30px;
+                                            }
+                                            a.es-btn {
+                                                height: 70px !important;
+                                                font-size: 19px;
+                                            }
                                         }
                                     }
                                     div.et_pb_column:last-child {
@@ -863,6 +914,213 @@ body.resources-page {
     }
 }
 @media all and (max-width: 480px) {
+    body.resources-page {
+        div#et-main-area {
+            div#main-content {
+                article.page {
+                    div.entry-content {
+                        div.et-l {
+                            div.et_builder_inner_content {
+                                div#resources-hero-section {
+                                    div.es-row {
+                                        padding: 0;
+                                    }
+                                }
+                                div#glossary-section {
+                                    padding: 50px 0 0 0;
+                                    div#es-glossary-title-row {
+                                    display: flex;
+                                    align-items: center;
+                                    flex-direction: column;
+                                        padding-bottom: 0;
+                                        div.es-col.one {
+                                            margin-right: 0px;
+                                                div#glossary-title-icon {
+                                                img {
+                                                    margin-right: 0;
+                                                }
+                                            }
+                                        }
+                                        div.es-col.two {
+                                            div#glossary-title {
+                                                h2.h2-heading {
+                                                    font-size: 40px;
+                                                    line-height: 45px !important;
+                                                    padding:0;
+                                                    text-align: center;
+                                                }
+                                            }
+                                        }
+                                    }
+
+                                    div#glossary-subhead {
+                                        h4.h4-heading {
+                                            font-size: 26px;
+                                            line-height: 36px !important;
+                                            @include bold();
+                                            color: $es-dark-blue;
+                                            padding-bottom:0;
+                                            margin-bottom:0;
+                                        }
+                                    }
+                                    div#glossary-container {
+                                        padding: 40px 0 40px 0;
+                                    }
+                                    div#es-glossary-content-row {
+                                        padding: 40px 0 0px 0;
+                                        h5.h5-heading {
+                                            padding-top: 40px;
+                                            padding-bottom: 0px;
+                                            @include bold();
+                                            font-size: 20px;
+                                            line-height: 35px;
+                                            color: $es-blue;
+                                        }
+                                        h5.h5-heading:first-of-type {
+                                        padding-top:0;
+                                        }
+                                    }
+                                }
+                                div#section-blue-wave {
+                                    margin-top: 1em !important;
+                                    margin-bottom: 3em !important;
+                                }
+                                div#media-section {
+                                    padding:0px;
+                                    div#es-media-title-row {
+                                        display: flex;
+                                        align-items: center;
+                                        flex-direction: column;
+                                        padding-bottom: 0;
+                                        div.es-col.one {
+                                            margin-right: 0px;
+                                        }
+                                        div.es-col.two {
+                                            div#media-title-icon {
+                                                img {
+                                                    margin-right: 0;
+                                                    width:120px;
+                                                    height:120px;
+                                                }
+                                            }
+                                        }
+                                    }
+                                    div#media-title {
+                                        h2.h2-heading {
+                                            padding:0;
+                                            text-align: center;
+                                        }
+                                    }
+                                    div.es-video-row {
+                                        height:auto;
+                                        margin: 0 auto 50px;
+                                        div.es-col.one {
+                                            div.es-video-image {
+                                                height: 100%;
+                                                padding: 0;
+                                                margin: 0;
+                                                div.et_pb_text_inner {
+                                                    height: 100%;
+                                                    width: 100%;
+                                                    padding: 0;
+                                                    margin: 0;
+                                                    p.vp-img-paragraph {
+                                                        height: 100%;
+                                                        padding: 0;
+                                                        margin: 0;
+                                                        a.media-link {
+                                                            height: 100%;
+                                                            display: block;
+                                                            padding: 0;
+                                                            margin: 0;
+                                                            img.vp-img {
+                                                                height: 100%;
+                                                                object-fit: cover;
+                                                                width: auto;
+                                                                padding: 0;
+                                                                margin: 0;
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                        div.es-col.two {
+                                            min-height: 100%;
+                                            padding: 40px 30px 70px 30px;
+                                            div.es-video-h3 {
+                                                padding: 0px;
+                                                text-align: center;
+                                                    h3.h3-heading {
+                                                        font-size: 28px;
+                                                        line-height: 36px !important;
+                                                        padding:0;
+                                                        margin-bottom: 15px;
+                                                    }
+                                            }
+                                        }
+                                        div#video1-col-two {
+                                            padding-right: 30px;
+                                            div.es-video-h3 {
+                                                h3.h3-heading {
+                                                    max-width: 90%;
+                                                }
+                                            }
+                                        }
+                                        div#video2-col-two {
+                                            padding-right: 30px;
+                                            div.es-video-h3 {
+                                                h3.h3-heading {
+                                                    max-width: 80%;
+                                                }
+                                            }
+                                        }
+                                        div#video3-col-two {
+                                            padding-right: 30px;
+                                            div.es-video-h3 {
+                                                h3.h3-heading {
+                                                    max-width: 80%;
+                                                }
+                                            }
+                                        }
+                                        div#video4-col-two {
+                                            padding-right: 30px;
+                                            div.es-video-h3 {
+                                                h3.h3-heading {
+                                                    max-width: 70%;
+                                                }
+                                            }
+                                        }
+                                        img {
+                                            width:100%;
+                                            height:auto;
+                                        }
+                                    }
+                                    div#video-row-4 {
+                                        div.es-col.two {
+                                            padding: 40px 0 0 0;
+                                            p.es-p {
+                                                margin-left: 30px;
+                                                margin-right: 30px;
+                                            }
+                                            a.es-btn {
+                                                height: 70px !important;
+                                                font-size: 19px;
+                                            }
+                                        }
+                                    }
+                                    div.et_pb_column:last-child {
+                                        padding: 40px;
+                                    }
+                                }
+
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
 }
 @media all and (max-width: 320px) {
 }
