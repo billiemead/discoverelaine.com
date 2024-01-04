@@ -30,22 +30,10 @@ footer {
                         div.es-ft {
                             height: 21px;
                             line-height: 21px;
-                            & .copy {
-
-                            }
-                            & .addone {
-
-                            }
                         }
                         div.es-ft-lowersection {
                             display: flex;
                             flex-direction: column;
-                            & .addtwo {
-
-                            }
-                            & .tel {
-
-                            }
                         }
                         div.es-bottom-menu {
                             display: block;
@@ -222,27 +210,11 @@ footer {
                                 height: 20px;
                                 font-size: 16px;
                                 line-height: 20px;
-                                & .copy {
-
-                                }
-                                & .addone {
-
-                                }
-                            }
-                            div.es-ft-lowersection {
-                                & .addtwo {
-
-                                }
-                                & .tel {
-
-                                }
                             }
                             div.es-bottom-menu {
                                     a {
                                         font-size: 16px;
                                         line-height: 20px !important;
-                                    }
-                                    span.vert-pipe {
                                     }
                             }
                         }
@@ -307,7 +279,7 @@ footer {
 @media all and (max-width: 768px) {
     footer {
         div#es-footer-section {
-            height: 395px;
+            height: 415px;
             div.et_pb_row {
                 padding: 35px 0 !important;
                 div#footer-container {
@@ -329,7 +301,6 @@ footer {
                         }
                         div.es-links {
                             width: 100%;
-                            margin: 0;
                             margin: 0 auto;
                             align-items: center;
                             padding-top: 15px;
@@ -339,12 +310,6 @@ footer {
                                 height: 24px;
                                 line-height: 24px;
                                 text-align: center;
-                                & .copy {
-
-                                }
-                                & .addone {
-
-                                }
                             }
                             div.es-ft-lowersection {
                                 flex-direction: row;
@@ -358,10 +323,6 @@ footer {
                             div.es-bottom-menu {
                                 text-align: center;
                                 line-height: 24px;
-                                    a {
-                                    }
-                                    span.vert-pipe {
-                                    }
                             }
                         }
                     }

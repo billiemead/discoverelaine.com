@@ -1,0 +1,34 @@
+@import "../base/colors";
+@import "../base/font";
+
+/* ******* DISCOVER-ELAINE 2023 VIDEO MODULE START ******* */
+
+div.YouTubePopUp-Wrap.VideoPopUpWrap {
+    div.Video-PopUp-Content {
+        div.vp-flex {
+            max-width: 100%;
+            width: 60vw;
+            height: auto;
+            background-color: #000;
+            aspect-ratio: 16 / 9;
+            video {
+                border: none;
+                border-radius: 0;
+                -moz-border-radius: 0;
+                -webkit-border-radius: 0;
+            }
+        }
+    }
+}
+
+@media all and (max-width: 1024px) {
+}
+@media all and (max-width: 980px) {
+}
+@media all and (max-width: 768px) {
+}
+@media all and (max-width: 576px) {
+}
+@media all and (max-width: 480px) {
+}
+/* ******* DISCOVER-ELAINE 2023 VIDEO MODULE END ******* */
