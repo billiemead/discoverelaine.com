@@ -22,10 +22,26 @@ div.YouTubePopUp-Wrap.VideoPopUpWrap {
 }
 
 @media all and (max-width: 1024px) {
+    div.YouTubePopUp-Wrap.VideoPopUpWrap {
+        div.Video-PopUp-Content {
+            div.vp-flex {
+                width: 80vw;
+            }
+        }
+    }
 }
 @media all and (max-width: 980px) {
 }
 @media all and (max-width: 768px) {
+    div.YouTubePopUp-Wrap.VideoPopUpWrap {
+        div.Video-PopUp-Content {
+            div.vp-flex {
+                width: 80vw;
+                max-width: 100% !important;
+                height: auto !important;
+            }
+        }
+    }
 }
 @media all and (max-width: 576px) {
 }
