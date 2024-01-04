@@ -50,10 +50,11 @@ span.et_pb_scroll_top.et-pb-icon {
     border-radius: 0px;
     width: 50px;
     height: 50px;
-    line-height: 50px;
+    line-height: 42px;
     font-size: 35px;
     padding: 0;
     transition: all 0.3s ease;
+    border: 3px solid $es-white;
     &:hover {
         background: $es-dark-blue;
         transition: all 0.3s ease;
@@ -296,10 +297,6 @@ div.es-btn {
             margin: 0 auto;
         }
     }
-    div.es-btn {
-        /* font-size: 23px;
-        line-height: 38px !important; */
-    }
     div.es-row.about,
     div.es-row.equals {
         max-width: 784px;
@@ -320,10 +317,6 @@ div.es-btn {
         align-items: flex-start;
         padding-bottom: 65%;
         height: 100%;
-        /* height: 100vw; */
-        &.about {
-
-        }
     }
     div.hero-section-2 {
         min-height: 150px;
@@ -414,9 +407,9 @@ div.es-btn {
         &.w-256 {
             height: auto !important;
         }
-        &.w-326 {
+        /* &.w-326 {
             height: auto !important;
-        }
+        } */
     }
     div.es-btn {
         padding-left: 10% !important;
@@ -425,9 +418,9 @@ div.es-btn {
         &.w-256 {
             height: auto !important;
         }
-        &.w-326 {
+       /*  &.w-326 {
             height: auto !important;
-        }
+        } */
     }
 }
 @media all and (max-width: 320px) {

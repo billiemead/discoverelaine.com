@@ -1,17 +1,18 @@
 /* ******* DISCOVER-ELAINE 2023 COLORS START ******* */
 
-$es-blue: #2493D1;
-$es-purple: #6B297D;
+$es-blue: #2493d1;
+$es-purple: #6b297d;
 $es-purple-opaque: rgba(107, 41, 125, 0.85);
-$es-hero-backg-start: #D8E1F2;
-$es-hero-backg-end: #F6F8FC;
-$es-gray: #4D596A;
+$es-hero-backg-start: #d8e1f2;
+$es-hero-backg-end: #f6f8fc;
+$es-gray: #4d596a;
 $es-dark-blue: #045398;
-$es-teal: #0E8D97;
-$es-light-gray: #E4E6E9;
+$es-teal: #0e8D97;
+$es-light-gray: #e4e6e9;
 $es-white: #ffffff;
 $es-black: #000000;
 $es-button-grey: #707070;
+$es-box-shadow-grey: #d6d6d6;
 
 @mixin hero-2-gradient {
     background: $es-hero-backg-start;

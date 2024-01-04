@@ -26,21 +26,6 @@ body.nowrecruiting-page {
                                         div#es3-logo {
                                             text-align: center;
                                         }
-                                        div#es3-btn {
-
-                                        }
-                                    }
-                                    div.es-col.right {
-
-                                    }
-                                }
-                                div#elaine-study3 {
-                                    h2.h2-heading {
-                                    }
-                                }
-                                div#study-purpose {
-                                    margin-bottom: 15px;
-                                    h3.h3-heading-nr {
                                     }
                                 }
                                 div#nr-first-paragraph {
@@ -54,8 +39,6 @@ body.nowrecruiting-page {
                                 }
                                 div#quality-of-life {
                                     margin-bottom: 15px;
-                                }
-                                div#nr-third-paragraph {
                                 }
                             }
                             div#recruiting-story-section {
@@ -139,9 +122,6 @@ body.nowrecruiting-page {
                                     box-shadow: 5px 3px 20px -1px rgba(0,0,0,0.2);
                                     div.es-col {
                                         padding: 0 15% 0 15%;
-                                        div#es-recruiting-text-1 {
-
-                                        }
                                         div#es-recruiting-text-2 {
                                             margin-top: 2.5%;
                                             max-width: 700px;
@@ -153,9 +133,6 @@ body.nowrecruiting-page {
                                         h3.h3-heading-nr {
                                             margin-bottom: 40px;
                                         }
-                                        p.es-p {
-                                        }
-
                                         a.es-btn {
                                             margin-top:20px;
                                             text-transform: uppercase;
@@ -168,8 +145,6 @@ body.nowrecruiting-page {
                                     h2.h2-heading {
                                         font-size: 40px;
                                         line-height: 30px;
-                                    }
-                                    p.es-p {
                                     }
                                 }
                                 div.recruiting-previous-one_two {
@@ -192,9 +167,6 @@ body.nowrecruiting-page {
                                         height: 100%;
                                         background: $es-gray;
                                     }
-                                    }
-                                    div.es-col.right {
-
                                     }
                                 }
                             }
@@ -220,8 +192,6 @@ body.nowrecruiting-page {
                             div.et_builder_inner_content {
                                 div#recruiting-hero-section {
                                     background-image: url( "/wp-content/themes/elainestudy/images/heros/es-hero-now-recruit-tablet-327x141.png" ) !important;
-                                    h1.hero-h1 {
-                                    }
                                 }
                                 div#recruiting-about-section {
                                     div.es-row {
@@ -244,14 +214,8 @@ body.nowrecruiting-page {
                                             width: 100%;
                                         }
                                     }
-                                    div#elaine-study3 {
-                                        h2.h2-heading {
-                                        }
-                                    }
                                     div#study-purpose {
                                         margin-bottom: 15px;
-                                        h3.h3-heading-nr {
-                                        }
                                     }
                                     div#nr-first-paragraph {
                                         margin-bottom: 15px;
@@ -264,8 +228,6 @@ body.nowrecruiting-page {
                                     }
                                     div#quality-of-life {
                                         margin-bottom: 15px;
-                                    }
-                                    div#nr-third-paragraph {
                                     }
                                 }
                                 div#recruiting-story-section {
@@ -344,9 +306,6 @@ body.nowrecruiting-page {
                                         padding: 8% 0;
                                         div.es-col {
                                             padding: 0 12.5% 0 12.5%;
-                                            div#es-recruiting-text-1 {
-
-                                            }
                                             div#es-recruiting-text-2 {
                                                 margin-top: 2.5%;
                                                 max-width: 700px;
@@ -354,9 +313,6 @@ body.nowrecruiting-page {
                                             div.es-recruiting-sermonix-heading {
                                                 margin-top: 13.5%;
                                                 margin-bottom: 10%;
-                                                h2.h2-heading.center {
-
-                                                }
                                             }
                                             div.es-recruiting-sermonix-text {
                                                 max-width: 877px;
@@ -365,9 +321,6 @@ body.nowrecruiting-page {
                                             h3.h3-heading-nr {
                                                 margin-bottom: 40px;
                                             }
-                                            p.es-p {
-                                            }
-
                                             a.es-btn.w-214 {
                                                 margin-top: 10%;
                                                 text-transform: uppercase;
@@ -380,8 +333,6 @@ body.nowrecruiting-page {
                                         h2.h2-heading {
                                             font-size: 40px;
                                             line-height: 30px;
-                                        }
-                                        p.es-p {
                                         }
                                     }
                                     div.recruiting-previous-one_two {
@@ -396,17 +347,14 @@ body.nowrecruiting-page {
                                         }
                                         div.es-col.left {
                                             &:first-of-type:after {
-                                            content: "";
-                                            position: absolute;
-                                            right: -30px;
-                                            top: 0;
-                                            width: 2px;
-                                            height: 100%;
-                                            background: $es-gray;
-                                        }
-                                        }
-                                        div.es-col.right {
-
+                                                content: "";
+                                                position: absolute;
+                                                right: -30px;
+                                                top: 0;
+                                                width: 2px;
+                                                height: 100%;
+                                                background: $es-gray;
+                                            }
                                         }
                                     }
                                 }
@@ -430,10 +378,6 @@ body.nowrecruiting-page {
                     div.entry-content {
                         div.et-l {
                             div.et_builder_inner_content {
-                                div#recruiting-hero-section {
-                                    h1.hero-h1 {
-                                    }
-                                }
                                 div#recruiting-about-section {
                                     div.es-row {
                                         div.es-col.left {
@@ -442,8 +386,6 @@ body.nowrecruiting-page {
                                             }
                                         }
                                     }
-                                }
-                                div#recruiting-story-section {
                                 }
                                 div#recruiting-sermonix-section {
                                     background-color: $es-purple;
@@ -458,9 +400,6 @@ body.nowrecruiting-page {
                                         box-shadow: 5px 3px 20px -1px rgba(0,0,0,0.2);
                                         div.es-col {
                                             padding: 0 15% 0 15%;
-                                            div#es-recruiting-text-1 {
-
-                                            }
                                             div#es-recruiting-text-2 {
                                                 margin-top: 2.5%;
                                                 max-width: 700px;
@@ -472,9 +411,6 @@ body.nowrecruiting-page {
                                             h3.h3-heading-nr {
                                                 margin-bottom: 40px;
                                             }
-                                            p.es-p {
-                                            }
-
                                             a.es-btn {
                                                 margin-top:20px;
                                             }
@@ -486,8 +422,6 @@ body.nowrecruiting-page {
                                         h2.h2-heading {
                                             font-size: 40px;
                                             line-height: 30px;
-                                        }
-                                        p.es-p {
                                         }
                                     }
                                     div.recruiting-previous-one_two {
@@ -510,9 +444,6 @@ body.nowrecruiting-page {
                                             height: 100%;
                                             background: $es-gray;
                                         }
-                                        }
-                                        div.es-col.right {
-
                                         }
                                     }
                                 }
@@ -538,8 +469,6 @@ body.nowrecruiting-page {
                             div.et_builder_inner_content {
                                 div#recruiting-hero-section {
                                     background-image: url( "/wp-content/themes/elainestudy/images/heros/es-hero-now-recruit-mobile-414x231.png" ) !important;
-                                    h1.hero-h1 {
-                                    }
                                 }
                                 div#recruiting-about-section {
                                     div.es-row {
@@ -612,9 +541,6 @@ body.nowrecruiting-page {
                                         box-shadow: 5px 3px 20px -1px rgba(0,0,0,0.2);
                                         div.es-col {
                                             padding: 0 15% 0 15%;
-                                            div#es-recruiting-text-1 {
-
-                                            }
                                             div#es-recruiting-text-2 {
                                                 margin-top: 2.5%;
                                                 max-width: 700px;
@@ -626,9 +552,6 @@ body.nowrecruiting-page {
                                             h3.h3-heading-nr {
                                                 margin-bottom: 40px;
                                             }
-                                            p.es-p {
-                                            }
-
                                             a.es-btn {
                                                 margin-top:20px;
                                             }
@@ -643,8 +566,6 @@ body.nowrecruiting-page {
                                         h2.h2-heading {
                                             font-size: 40px;
                                             line-height: 30px;
-                                        }
-                                        p.es-p {
                                         }
                                     }
                                     div.recruiting-previous-one_two {
@@ -673,9 +594,6 @@ body.nowrecruiting-page {
                                             margin-bottom: 5%;
                                         }
                                         }
-                                        div.es-col.right {
-
-                                        }
                                     }
                                 }
                                 div#section-blue-wave {
@@ -698,10 +616,6 @@ body.nowrecruiting-page {
                     div.entry-content {
                         div.et-l {
                             div.et_builder_inner_content {
-                                div#recruiting-hero-section {
-                                    h1.hero-h1 {
-                                    }
-                                }
                                 div#recruiting-about-section {
 
                                     .es-row {
@@ -792,9 +706,6 @@ body.nowrecruiting-page {
                                         padding: 0;
                                         div.es-col {
                                             padding: 10% 15%;
-                                            div#es-recruiting-text-1 {
-
-                                            }
                                             div#es-recruiting-text-2 {
                                                 margin-top: 2.5%;
                                                 max-width: 700px;
@@ -806,9 +717,6 @@ body.nowrecruiting-page {
                                             h3.h3-heading-nr {
                                                 margin-bottom: 40px;
                                             }
-                                            p.es-p {
-                                            }
-
                                             a.es-btn {
                                                 margin-top:20px;
                                             }
